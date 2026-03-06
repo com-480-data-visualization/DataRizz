@@ -2,9 +2,10 @@
 
 | Student's name | SCIPER |
 | -------------- | ------ |
-| | |
-| | |
-| | |
+| France Lu | 345 769 |
+| Laura Taghizad | 346 469 |
+| Hana Salvetova | 339 644 |
+| François Goybet | 345 470 |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
