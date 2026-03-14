@@ -15,6 +15,20 @@ Please, fill the following sections about your project.
 
 ## Problematic
 
+The recent Olympic Games 2026 of Milano inspired us to do a data visualisation on this topic. 
+- inegalities in gender over time
+- geopolitics conflict reflected in JO (russe 20206, germany ww2 berlin wall)
+- countries's wealth vs representation in JO
+- host ?
+- pid
+- disciplines
+
+With the recent geopolitics context and the persistent inequalities in wealth, population, host advantage, gender inclusion and sport specialisation, 
+
+**How are inequalities reflected through Olympic Games over time ?**
+
+To what extent do wealth, population, host advantage, gender inclusion, and sport specialization shape a country’s Olympic success?
+
 > Frame the general topic of your visualization and the main axis that you want to develop.
 > - What am I trying to show with my visualization?
 > - Think of an overview for the project, your motivation, and the target audience.
