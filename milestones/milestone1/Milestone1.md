@@ -67,8 +67,11 @@ Additionally, it is designed for those interested in how the sociological, econo
 
 ## Related work
 
-<!-- TODO: delete -->
-> - What others have already done with the data?
-> - Why is your approach original?
-> - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
-> - In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
+Several projects and visualizations have explored Olympic Games data in different ways. We can find among them:
+
+- `TODO`
+- `TODO`
+- `TODO`
+- `TODO`
+
+Our visualizations aim to be dynamic and interactive while guiding the user through the platform. We combine multiple dimensions (gender, GDP per capita, population, discipline trends, and historical conflicts) to provide a narrative showing how social, economic, cultural, and geopolitical contexts are reflected in Olympic participation and medals. While studies of Olympic performance are not entirely novel, our approach differentiates itself by providing a multi-perspective, exploratory, and interactive experience that encourages users to uncover surprising patterns and insights.
