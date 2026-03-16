@@ -11,16 +11,25 @@ Please, fill the following sections about your project.
 
 ## Dataset
 
-Our dataset comes from three sources:
-- [120 years of Olympic history: athletes and results](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?select=athlete_events.csv) with files `athelete_events.csv` and `noc_regions`,
-- [Population by country (1960 - 2020)](https://www.kaggle.com/datasets/aliaamiri/historical-worldwide-countries-population) with the file `TODO`,
-- and [GDP per capita (current US$)](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD) with the file `TODO`.
+The project combines several publicly available datasets to build a unified dataset for analysis and visualization.
 
-<!-- TODO: delete -->
-> Find a dataset (or multiple) that you will explore. Assess the quality of the data it contains and how much preprocessing / data-cleaning it will require before tackling visualization. We recommend using a standard dataset as this course is not about scraping nor data processing.
->
-> Hint: some good pointers for finding quality publicly available datasets ([Google dataset search](https://datasetsearch.research.google.com/), [Kaggle](https://www.kaggle.com/datasets), [OpenSwissData](https://opendata.swiss/en/), [SNAP](https://snap.stanford.edu/data/) and [FiveThirtyEight](https://data.fivethirtyeight.com/)).
+The main dataset comes from the [120 years of Olympic history: athletes and results](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?select=athlete_events.csv) dataset on **Kaggle**, covering Olympic events from 1896 to 2016. Two files are used: `athlete_events.csv`, which contains athlete-level information such as name, gender, age, sport, event, and medal results, and `noc_regions.csv`, which maps National Olympic Committee (NOC) codes to country names.
 
+To add socioeconomic context, two **World Bank** datasets were included: [GDP per capita (current US$)](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD) (`gdp_per_capita.csv`) and [Population by country (1960–2020)](https://www.kaggle.com/datasets/aliaamiri/historical-worldwide-countries-population) (`pop_count.csv`). These allow analysis of the relationship between economic development, population size, and Olympic participation or performance.
+
+A dataset on the [history of large international conflicts](https://www.kaggle.com/datasets/nikolaosroufas/history-of-large-conflicts-between-1800-2024) (`conflicts.csv`) was also included, containing conflict names, participating countries, time periods, and contextual information.
+
+### Data preprocessing and quality assessment
+
+Since the datasets come from different sources, several preprocessing steps were required. Column names were standardized and country names normalized to remove formatting differences.
+
+The GDP and population datasets were converted from wide to long format to produce one row per country and year. Country identifiers were harmonized by mapping Olympic NOC codes to World Bank ISO codes, with a fallback merge using cleaned country names.
+
+For the conflict dataset, countries listed as text were parsed and expanded so conflicts could be matched with Olympic records by country and year.
+
+Remaining data challenges include differences in country naming, geopolitical changes (e.g., USSR, Yugoslavia), missing socioeconomic data before 1960, and text-based conflict records. 
+
+The final dataset (`olympics.csv`) combines Olympic results with GDP, population, and conflict information for each country and year.
 
 ## Problematic
 <!-- 1365 characters -->
