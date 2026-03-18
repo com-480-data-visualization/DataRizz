@@ -30,13 +30,13 @@ Remaining data challenges include differences in country naming, geopolitical ch
 The final dataset (`olympics.csv`) combines Olympic results with GDP, population, and conflict information for each country and year.
 
 ## Problematic
-<!-- 1365 characters -->
+<!-- 1374 characters -->
 
-Since the revival of the Olympic Games in 1894, these sporting events have mirrored global changes. 
-The athletes who participate and win medals are influenced by social, economic, cultural, and geopolitical contexts. 
+Since their revival in 1896, the Olympic Games have mirrored global changes. 
+The athletes who participate and win medals are influenced by sociocultural, economic, and geopolitical contexts. 
 The recent 2026 Winter Olympics in Milan motivated us to study this subject. 
-Winners such as [Lucas Pinheiro Braathen](https://www.olympics.com/en/milano-cortina-2026/news/lucas-pinheiro-braathen-wins-giant-slalom-gold-brazil-s-first-ever-winter-olympics-medal), who won gold in the giant slalom, led us to ask:
-> **How have social, economic, cultural, and geopolitical contexts been reflected in the Olympics over time?**
+Winners such as the Brazilian [Lucas Pinheiro Braathen](https://www.olympics.com/en/milano-cortina-2026/news/lucas-pinheiro-braathen-wins-giant-slalom-gold-brazil-s-first-ever-winter-olympics-medal), who won gold in the giant slalom, led us to ask:
+> **How have sociocultural, economic, and geopolitical contexts been reflected in the Olympics over time?**
 
 To address this question, we will investigate the following topics in relation to the Olympics over time:
 - inequalities in gender;
@@ -53,7 +53,7 @@ Our website will be structured into several tabs:
 
 Our project is intended for people who are interested in Olympic statistics. 
 It is also aimed at those who are eager to discover surprising facts and winners of the Games. 
-Additionally, it is designed for those interested in how the sociological, economic, cultural and geopolitical contexts are reflected in participation and medals.
+Additionally, it is designed for those interested in how the sociocultural, economic, and geopolitical contexts are reflected in participation and medals.
 
 
 ## Exploratory Data Analysis
