@@ -65,16 +65,14 @@ Additionally, it is designed for those interested in how the sociocultural, econ
 
 ## Related work
 
-Several projects and visualizations have explored Olympic Games data in different ways. We can find among them:
+Several projects and visualisations have explored Olympic Games data in different ways. We can find among them:
 
 - [120 Years of Olympic History - Summer Olympics & Weightlifting](https://public.tableau.com/app/profile/kia.prescott/viz/120YearsofOlympicHistory-SummerOlympicsWeightlifting/SummerOlympicGames): Many visualisations focus on Summer Olympics data. Across the different tabs, we can find gender performance comparisons and many visualisations dedicated to weightlifting.
-- [120 Years of Olympic History: Athletes and Results](https://public.tableau.com/app/profile/fifi5043/viz/120YearsOfOlympicHistoryAthletesAndResults/Dashboard2): General interactive visualizations of the dataset at a global scale.
+- [120 Years of Olympic History: Athletes and Results](https://public.tableau.com/app/profile/fifi5043/viz/120YearsOfOlympicHistoryAthletesAndResults/Dashboard2): General interactive visualisations of the dataset at a global scale.
 - [120 years of Olympics History Athletes and Results MS Excel Dashboard: Project Overview](https://github.com/Harshit0512/Harshit0512-120-years-of-Olympics-History-Athletes-and-Results---MS-Excel-Dashboard): A GitHub project providing a general analysis and some visualisations of the dataset.
 - [120 years of Olympic Games | Towards Data Science](https://towardsdatascience.com/120-years-of-olympic-games-56411bc4bd53/): An article providing a dashboard-style analysis of the dataset.
 
-These projects, as well as many existing works, propose general visualizations of the Olympic dataset, such as the evolution of sports and events, athlete participation, and medal distribution across countries. While these projects are informative, they typically focus on overall patterns or a single aspect of the data. In contrast, our approach differs by combining the Olympic dataset with additional datasets, allowing us to enrich the data and explore various types of inequalities at a global scale.
+These projects, as well as many existing works, propose general visualisations of the Olympic dataset, such as the evolution of sports and events, athlete participation, and medal distribution across countries. While these projects are informative, they typically focus on overall patterns or a single aspect of the data. In contrast, our approach differs by combining the Olympic dataset with additional datasets, allowing us to enrich the data and explore various types of inequalities at a global scale.
 
-Our visualizations aim to be dynamic and interactive while guiding the user through the platform. We combine multiple dimensions, including gender, GDP per capita, population, discipline trends, and historical conflicts, to build a narrative showing how social, economic, cultural, and geopolitical contexts are reflected in Olympic participation and medal outcomes. 
-
-While studies of Olympic performance are not entirely new, our approach differentiates itself by providing a multi-perspective, exploratory, and interactive experience that allows users to uncover surprising patterns and insights.
+Our visualisations aim to be dynamic and interactive while guiding the user through the platform. We combine multiple dimensions, including gender, GDP per capita, population, discipline trends, and historical conflicts, to build a narrative showing how sociocultural, economic, and geopolitical contexts are reflected in Olympic participation and medal outcomes. While studies of Olympic performance are not entirely new, our approach differentiates itself by providing a multi-perspective, exploratory, and interactive experience that allows users to uncover surprising patterns and insights relating to inequalities.
 
