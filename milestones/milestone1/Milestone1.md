@@ -23,8 +23,6 @@ A dataset on the [history of large international conflicts](https://www.kaggle.c
 
 Since the datasets come from different sources, several preprocessing steps were required. Column names were standardized and country names normalized to remove formatting differences.
 
-The GDP and population datasets were converted from wide to long format to produce one row per country and year. Country identifiers were harmonized by mapping Olympic NOC codes to World Bank ISO codes, with a fallback merge using cleaned country names.
-
 For the conflict dataset, countries listed as text were parsed and expanded so conflicts could be matched with Olympic records by country and year.
 
 Remaining data challenges include differences in country naming, geopolitical changes (e.g., USSR, Yugoslavia), missing socioeconomic data before 1960, and text-based conflict records. 
