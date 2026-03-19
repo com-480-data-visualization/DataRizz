@@ -60,12 +60,38 @@ Additionally, it is designed for those interested in how the sociocultural, econ
 
 Our [eda.ipynb](eda.ipynb) notebook demonstrates exploratory analysis of our dataset. We provide it's structure and some of the plots here, but more plots are available in the notebook.
 
-# 1 Dataset Preprocessing
+#### 1 Dataset Preprocessing
 
 Datasets were merged and cleaned in [merge_datasets.ipynb](merge_datasets.ipynb)
 
-# 2 Participation Analysis
-![Summer Plot](plots/participating_countries_summer.png)
+#### 2 Participation Analysis
+<img src="plots/participating_countries_summer.png" width="49%">
+<img src="plots/participating_countries_winter.png" width="49%">
+
+The decrease in participating countries in 1976 and 1980 is due to the [Montreal](https://www.olympics.com/ioc/news/diplomatic-controversies) and [Moscow](https://www.britannica.com/event/Moscow-1980-Olympic-Games) Olympic boycotts.
+
+#### 3 Gender Representation
+<img src="plots/gender_distribution.png" width="49%">
+<img src="plots/gender_distribution2.png" width="49%">
+
+#### 4 Sports Distribution
+<img src="plots/sport_participation.png" width="49%">
+
+#### 5 Countries and Medals
+<img src="plots/most_medals_summer.png" width="49%">
+<img src="plots/most_medals_winter.png" width="49%">
+
+#### 6 Economic Inequality
+<img src="plots/gdp.png" width="49%">
+
+#### 7 Athlete Characteristics
+<img src="plots/age_medals.png" width="49%">
+
+
+#### 8 Conflicts & Geopolitics
+<img src="plots/conflicts.png" width="49%">
+
+Between 1955 and 1975, during the Cold War, the United States intervened in Vietnam to contain the spread of communism, while North Vietnam was backed by China and the Soviet Union.
 
 ## Related work
 
