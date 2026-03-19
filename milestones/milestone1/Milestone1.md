@@ -65,8 +65,8 @@ Our [eda.ipynb](eda.ipynb) notebook demonstrates exploratory analysis of our dat
 Datasets were merged and cleaned in [merge_datasets.ipynb](merge_datasets.ipynb)
 
 #### 2 Participation Analysis
-<img src="plots/participating_countries_summer.png" width="49%">
-<img src="plots/participating_countries_winter.png" width="49%">
+<img src="plots/participating_countries_summer.png" width="45%">
+<img src="plots/participating_countries_winter.png" width="45%">
 
 The decrease in participating countries in 1976 and 1980 is due to the [Montreal](https://www.olympics.com/ioc/news/diplomatic-controversies) and [Moscow](https://www.britannica.com/event/Moscow-1980-Olympic-Games) Olympic boycotts.
 
