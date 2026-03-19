@@ -58,10 +58,16 @@ Additionally, it is designed for those interested in how the sociocultural, econ
 
 ## Exploratory Data Analysis
 
-<!-- TODO: delete -->
-> Pre-processing of the data set you chose
-> - Show some basic statistics and get insights about the data
+Our [eda.ipynb](eda.ipynb) notebook demonstrates exploratory analysis of our dataset. We provide it's structure and some of the plots here, but more plots are available in the notebook.
 
+# 1 Dataset Preprocessing
+
+Datasets were merged and cleaned in [merge_datasets.ipynb](merge_datasets.ipynb)
+
+# 2 Participation Analysis
+[View interactive plot](summer_countries.html)
+
+[View interactive plot](winter_countries.html)
 
 ## Related work
 
