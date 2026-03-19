@@ -65,9 +65,7 @@ Our [eda.ipynb](eda.ipynb) notebook demonstrates exploratory analysis of our dat
 Datasets were merged and cleaned in [merge_datasets.ipynb](merge_datasets.ipynb)
 
 # 2 Participation Analysis
-[View interactive plot](summer_countries.html)
-
-[View interactive plot](winter_countries.html)
+[Summer Plot](milestones/milestone1/plots/participating_countries_summer.png)
 
 ## Related work
 
