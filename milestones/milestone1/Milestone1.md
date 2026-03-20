@@ -15,7 +15,7 @@ The project combines several publicly available datasets to build a unified data
 
 The main dataset comes from the [120 years of Olympic history: athletes and results](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?select=athlete_events.csv) dataset on **Kaggle**, covering Olympic events from 1896 to 2016. It contains athlete-level information such as name, gender, age, sport, event, and medal results, and National Olympic Committee (NOC) codes mapped to country names. To add socioeconomic context, the **World Bank** dataset [GDP per capita (current US$)](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD) (`gdp_per_capita.csv`) and the **Kaggle** dataset [Population by country (1960–2020)](https://www.kaggle.com/datasets/aliaamiri/historical-worldwide-countries-population) (`pop_count.csv`) were included. These allow analysis of the relationship between economic development, population size, and Olympic participation or performance. A dataset on the [history of large international conflicts](https://www.kaggle.com/datasets/nikolaosroufas/history-of-large-conflicts-between-1800-2024) (`conflicts.csv`) was also included, containing conflict names, participating countries, time periods, and contextual information. The final dataset (`olympics.csv`) is organized alphabetically by athletes, and individual names may appear multiple times if they participated in different Olympic editions or competed in multiple events.
 
-Since the datasets come from different sources, several preprocessing steps were required. Column names were standardized and country names normalized to remove formatting differences. GDP data is largely missing before 1960, mainly due to changes in country names and geopolitical structures over time. To ensure consistency, decisions were made regarding country naming, particularly for entities such as Yugoslavia, Czechoslovakia, and the USSR/Soviet Union, where names were unified across time periods. For the conflict dataset, countries listed as text were parsed and expanded so conflicts could be matched with Olympic records by country and year. A conflict is associated with an athlete when their country was involved in a conflict during the corresponding Olympic Games edition.
+Since the datasets come from different sources, several preprocessing steps were required. Column names were standardized and country names normalized to remove formatting differences. Some GDP data is missing before 1960, mainly due to changes in country names and geopolitical structures over time. To ensure consistency, decisions were made regarding country naming (e.g. Yugoslavia, Czechoslovakia and the USSR/Soviet Union). For the conflict dataset, countries listed as text were parsed and expanded so conflicts could be matched with Olympic records by country and year. A conflict is associated with an athlete when their country was involved in a conflict during the corresponding Olympic Games edition.
 
 ## Problematic
 <!-- 1374 characters -->
@@ -63,7 +63,8 @@ The decrease in participating countries in 1976 and 1980 is due to the [Montreal
 <img src="plots/gender_distribution2.png" width="49%">
 
 #### 4 Sports Distribution
-<img src="plots/sport_participation.png" width="49%">
+<img src="plots/sport_participation_summer.png" width="49%">
+<img src="plots/sport_participation_winter.png" width="49%">
 
 #### 5 Countries and Medals
 <img src="plots/most_medals_summer.png" width="49%">
