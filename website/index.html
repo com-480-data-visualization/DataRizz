@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Olympic Inequalities</title>
+  <meta name="author" content="France Lu, Laura Taghizad, Hana Salvetová">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.css" />
+</head>
+
+<body>
+  <!-- fullPage.js wrapper — must not be <body> -->
+  <div id="website">
+
+    <!-- Each .section becomes a full-screen panel -->
+    <div class="section" data-anchor="home">
+      <h1>Olympic Inequalities</h1>
+    </div>
+
+    <div class="section" data-anchor="delegations">
+      <h2>Which delegations perform the best in the disciplines?</h2>
+      <img src="data/delegations_summer.png" alt="Delegations Summer" class="full-width">
+    </div>
+    
+    <div class="section" data-anchor="gender">
+      <h2>How unbalanced are the Olympic Games between men and women?</h2>
+      <img src="data/gender_play.png" alt="Gender Play" class="full-width">
+    </div>
+
+    <div class="section" data-anchor="body-type">
+      <h2>Which body type excels in a particular discipline?</h2>
+      <img src="data/body_types.png" alt="Body Types" class="full-width">
+    </div>
+
+    <div class="section" data-anchor="geopolitics">
+      <h2>How do geopolitical conflicts influence the concerned delagations at the Olympic Gymes?</h2>
+    </div>
+
+    <div class="section" data-anchor="fair">
+      <h2>How would a fair distribution of medals look like?</h2>
+      <img src="data/fair_medal_distribution.png" alt="Fair Medal Distribution" class="full-width">
+    </div>
+
+    <!-- A section with horizontal slides -->
+    <!-- <div class="section" data-anchor="work">
+      <div class="slide" data-anchor="alpha">
+        <h2>Project Alpha</h2>
+      </div>
+      <div class="slide">
+        <h2>Project Beta</h2>
+      </div>
+      <div class="slide">
+        <h2>Project Gamma</h2>
+      </div>
+    </div> -->
+
+  </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.js"></script>
+
+<script>
+  new fullpage('#website', {
+    autoScrolling: true,
+    navigation: true,
+    navigationPosition: 'right',
+    scrollingSpeed: 700,
+    responsiveWidth: 900
+  });
+</script>
+
+</html>
