@@ -1,18 +1,17 @@
 /* =============================================
   Import Google Fonts
   =========================================== */
+.carter-one-regular {
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .special-elite-regular {
   font-family: "Special Elite", system-ui;
   font-weight: 400;
   font-style: normal;
 }
-
-.rubik-dirt-regular {
-  font-family: "Rubik Dirt", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
 
 /* =============================================
   General styles
@@ -23,27 +22,35 @@ body {
 }
 
 .section {
-  padding: 5%;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-img);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3%;
 }
 
 /* =============================================
   Headers and paragraphs
   =========================================== */
+h1, h2, p {
+  color: white;
+}
 
-h1 {
-  font-family: "Rubik Dirt", system-ui;
-  font-size: 40px;
+h1, h2 {
+  font-family: "Carter One", sans-serif;
   text-align: center;
 }
 
+h1 {
+  font-size: 60px;
+}
+
 h2 {
-  font-family: "Rubik Dirt", system-ui;
-  font-size: 32px;
-  text-align: center;
+  font-size: 40px;
 }
 
 p {
   font-family: "Special Elite", system-ui;
+  font-size: 24px;
   text-align: justify;
 }
-  
