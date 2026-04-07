@@ -1,0 +1,49 @@
+/* =============================================
+  Import Google Fonts
+  =========================================== */
+.special-elite-regular {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rubik-dirt-regular {
+  font-family: "Rubik Dirt", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* =============================================
+  General styles
+  =========================================== */
+
+body {
+  text-align: center;
+}
+
+.section {
+  padding: 5%;
+}
+
+/* =============================================
+  Headers and paragraphs
+  =========================================== */
+
+h1 {
+  font-family: "Rubik Dirt", system-ui;
+  font-size: 40px;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Rubik Dirt", system-ui;
+  font-size: 32px;
+  text-align: center;
+}
+
+p {
+  font-family: "Special Elite", system-ui;
+  text-align: justify;
+}
+  
