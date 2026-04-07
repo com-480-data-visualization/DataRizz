@@ -8,6 +8,8 @@
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
+[Here](https://com-480-data-visualization.github.io/DataRizz/) is the link to our website.
+
 ## Milestone 1 (20th March, 5pm)
 
 You can find our report for Milestone 1 in [this file](milestones/milestone1/Milestone1.md)
