@@ -7,6 +7,12 @@
   font-style: normal;
 }
 
+.delius-regular {
+  font-family: "Delius", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .special-elite-regular {
   font-family: "Special Elite", system-ui;
   font-weight: 400;
@@ -24,33 +30,116 @@ body {
 .section {
   background-attachment: fixed;
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-img);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 3%;
 }
 
 /* =============================================
+  Layout for the slides
+  =========================================== */
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =============================================
+  Layout for text and images of each question
+  =========================================== */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  align-items: center;     /* vertical alignment */
+  justify-content: start;  /* horizontal alignment */
+}
+
+.text-container {
+  flex: 1; /* Take up remaining space */
+}
+
+.image-container {
+  width: 60%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =============================================
   Headers and paragraphs
   =========================================== */
-h1, h2, p {
+
+h1, h2, h3, p {
   color: white;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: "Carter One", sans-serif;
   text-align: center;
 }
 
 h1 {
   font-size: 60px;
+  padding-bottom: 24px;
 }
 
 h2 {
   font-size: 40px;
+  padding-bottom: 24px;
+}
+
+h3 {
+  font-size: 30px;
+  text-align: left;
 }
 
 p {
-  font-family: "Special Elite", system-ui;
+  font-family: "Delius", cursive;
   font-size: 24px;
   text-align: justify;
+}
+
+/* =============================================
+  Layout for the "About the Team" section
+  =========================================== */
+.about-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  align-items: center;
+}
+
+.about-team-image {
+  width: 25%;
+}
+
+.about-image img,
+.about-team-image img {
+  border-radius: 50%;
+  height: auto;
+  display: block;
+}
+
+.about-team-image img {
+  width: 300px;
+}
+.about-image img {
+  background-color: white;
+  width: 150px;
+}
+
+.about-person {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  align-items: center;
+  justify-content: start;
 }
