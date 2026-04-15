@@ -13,16 +13,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Special+Elite&display=swap"> -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carter+One&family=Delius&display=swap">
 </head>
 
-<body>
+<body style="--bg-img: url('data/intro_background.jpg')">
   <!-- fullPage.js wrapper — must not be <body> -->
   <div id="website">
 
     <!-- Each .section becomes a full-screen panel -->
-    <div class="section" data-anchor="introduction" style="--bg-img: url('data/intro_background.jpg')">
+    <div class="section" data-anchor="introduction">
       <h1>Olympic Inequalities</h1>
       <h2>How have sociocultural, economic, and geopolitical contexts been reflected in the Olympics over time?</h2>
       <p>
@@ -48,7 +47,7 @@
       </p>
     </div>
 
-    <div class="section" data-anchor="delegations" style="--bg-img: url('data/delegations_background.jpg')">
+    <div class="section" data-anchor="delegations">
       <h2>Where Do the Medal Winners Come From?</h2>
       <div class="container" data-anchor="delegations-container">
         <div class="text-container" data-anchor="delegations-text">
@@ -69,13 +68,13 @@
           </p>
         </div>
         <div class="image-container" data-anchor="delegations-graph">
-          <img data-src="data/delegations_summer.png" alt="Delegations Summer" class="full-width">
+          <img data-src="data/delegations_summer.jpg" alt="Delegations Summer">
         </div>
       </div>
     </div>
     
-    <div class="section" data-anchor="gender" style="--bg-img: url('data/gender_background.png')">
-      <h2>How are women represented in the Olympic Games compared to men?</h2>
+    <div class="section" data-anchor="gender">
+      <h2>How has gender representation evolved across Olympic sports and disciplines over time?</h2>
       <div class="container" data-anchor="gender-container">
         <div class="text-container" data-anchor="gender-text">
           <p>
@@ -95,12 +94,12 @@
           </p>
         </div>
         <div class="image-container" data-anchor="gender-graph">
-          <img data-src="data/gender_evolution.png" alt="Gender Evolution" class="full-width">
+          <img data-src="data/gender_evolution.png" alt="Gender Evolution">
         </div>
       </div>
     </div>
 
-    <div class="section" data-anchor="body" style="--bg-img: url('data/body_background.png');">
+    <div class="section" data-anchor="body">
       <h2>Which body type excels in a particular discipline?</h2>
       <div class="container" data-anchor="body-container">
         <div class="text-container" data-anchor="body-text">
@@ -121,27 +120,26 @@
           </p>
         </div>
         <div class="image-container" data-anchor="body-graph">
-          <img data-src="data/body_types.png" alt="Body Types" class="full-width">
+          <img data-src="data/body_types.png" alt="Body Types">
         </div>
       </div>
     </div>
 
-    <div class="section" data-anchor="geopolitics" style="--bg-img: url('data/geopolitics_background.jpg');">
+    <div class="section" data-anchor="geopolitics">
       <div class="slide" data-anchor="geopolitics-map">
-        <h2>How Do Geopolitical Conflicts Affect the Concerned Countries?</h2>
-        <p>Select a year, then pick a county in conflict.</p>
-        <p>PS: Swipe right for the statistics.</p>
-        <img data-src="data/geopolitics_map.png" alt="Geopolitical map" class="full-width">
+        <h2>How do geopolitical conflicts affect the Olympic Games?</h2>
+        <p>Select a year and swipe right for the statistics.</p>
+        <img data-src="data/geopolitics_map.png" alt="Geopolitical map">
       </div>
       <div class="slide" data-anchor="geopolitics-graphs">
-        <h2>How Do Geopolitical Conflicts Affect the Concerned Countries?</h2>
-        <p>Countries in conflict during the period xxx to yyy.</p>
-        <p>PS: Swipe left to select the conflict.</p>
-        <img data-src="data/geopolitics_graphs.png" alt="Geopolitical graphs" class="full-width">
+        <h2>How do geopolitical conflicts affect the Olympic Games?</h2>
+        <p>Countries in conflict during the year XXX.</p>
+        <p>PS: Swipe left to select another year.</p>
+        <img data-src="data/geopolitics_graphs.png" alt="Geopolitical graphs">
       </div>
     </div>
 
-    <div class="section" data-anchor="fair" style="--bg-img: url('data/fair_background.jpg');">
+    <div class="section" data-anchor="fair">
       <h2>What would a fair distribution of Olympic medals look like?</h2>
       <div class="container" data-anchor="body-container">
         <div class="text-container" data-anchor="body-text">
@@ -162,12 +160,12 @@
           </p>
         </div>
         <div class="image-container" data-anchor="body-graph">
-          <img data-src="data/fair_medal_distribution.png" alt="Fair Medal Distribution" class="full-width">
+          <img data-src="data/fair_medal_distribution.png" alt="Fair Medal Distribution">
         </div>
       </div>
     </div>
 
-    <div class="section" data-anchor="conclusion" style="--bg-img: url('data/conclusion_background.jpg');">
+    <div class="section" data-anchor="conclusion">
       <h2>Conclusion</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -192,7 +190,7 @@
       </p>
     </div>
 
-    <div class="section fp-auto-height" data-anchor="about" style="background-color: rgb(23, 23, 111);">
+    <div class="section fp-auto-height" data-anchor="about">
       <footer>
         <h2>About the Team</h2>
         <p style="text-align: center;">
@@ -201,8 +199,8 @@
         <div class="container" data-anchor="about-container">
           <div class="about-container" data-anchor="about-text">
             <div class="about-person" data-anchor="about-hana">
-              <div class="about-image" data-anchor="about-hana-image">
-                <img data-src="data/about-hana.png" alt="Hana Salvetová" class="full-width">
+              <div class="about-people-image" data-anchor="about-hana-image">
+                <img data-src="data/about-hana.png" alt="Hana Salvetová">
               </div>
               <div class="text-container" data-anchor="about-hana-text">
                 <h3>Hana Salvetová</h3>
@@ -210,8 +208,8 @@
               </div>
             </div>
             <div class="about-person" data-anchor="about-laura">
-              <div class="about-image" data-anchor="about-laura-image">
-                <img data-src="data/about-laura.jpg" alt="Laura Taghizad" class="full-width">
+              <div class="about-people-image" data-anchor="about-laura-image">
+                <img data-src="data/about-laura.jpg" alt="Laura Taghizad">
               </div>
               <div class="text-container" data-anchor="about-laura-text">
                 <h3>Laura Taghizad</h3>
@@ -219,8 +217,8 @@
               </div>
             </div>
             <div class="about-person" data-anchor="about-france">
-              <div class="about-image" data-anchor="about-france-image">
-                <img data-src="data/about-france.jpg" alt="France Lu" class="full-width">
+              <div class="about-people-image" data-anchor="about-france-image">
+                <img data-src="data/about-france.jpg" alt="France Lu">
               </div>
               <div class="text-container" data-anchor="about-france-text">
                 <h3>France Lu</h3>
@@ -228,8 +226,11 @@
               </div>
             </div>
           </div>
-          <div class="about-team-image" data-anchor="about-team-image">
-            <img data-src="data/about-datarizz.jpg" alt="About DataRizz" class="full-width">
+          <div class="about-team" data-anchor="about-team">
+            <div class="about-team-image" data-anchor="about-team-image">
+              <img data-src="data/about-datarizz.jpg" alt="About DataRizz">
+            </div>
+            <h3>DataRizz</h3>
           </div>
         </div>
       </footer>
@@ -259,7 +260,11 @@
     navigation: true,
     navigationPosition: 'right',
     scrollingSpeed: 700,
+    slidesNavigation: true,
     controlArrows: false,
+    continuousHorizontal: false,
+    loopHorizontal: false,
+    scrollHorizontally: true,
   });
 </script>
 

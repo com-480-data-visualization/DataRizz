@@ -25,25 +25,25 @@
 
 body {
   text-align: center;
-}
-
-.section {
   background-attachment: fixed;
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-img);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.section {
   padding: 3%;
 }
 
 /* =============================================
-  Layout for the slides
+  Styles for the navigation dots
   =========================================== */
 
-.slide img {
-  width: 100%;
-  height: auto;
-  display: block;
+/* active dot */
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span {
+  background: white; /* active color */
 }
 
 /* =============================================
@@ -52,7 +52,6 @@ body {
 
 .container {
   display: flex;
-  flex-direction: row;
   gap: 2%;
   align-items: center;     /* vertical alignment */
   justify-content: start;  /* horizontal alignment */
@@ -70,6 +69,17 @@ body {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* =============================================
+  Layout for the slides
+  =========================================== */
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: center;
 }
 
 /* =============================================
@@ -109,19 +119,19 @@ p {
 /* =============================================
   Layout for the "About the Team" section
   =========================================== */
-.about-container {
-  flex: 1;
+  .about-container,
+  .about-team {
   display: flex;
   flex-direction: column;
   gap: 2%;
   align-items: center;
 }
 
-.about-team-image {
+.about-team {
   width: 25%;
 }
 
-.about-image img,
+.about-people-image img,
 .about-team-image img {
   border-radius: 50%;
   height: auto;
@@ -131,7 +141,7 @@ p {
 .about-team-image img {
   width: 300px;
 }
-.about-image img {
+.about-people-image img {
   background-color: white;
   width: 150px;
 }

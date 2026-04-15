@@ -8,7 +8,7 @@
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
-[Here](https://com-480-data-visualization.github.io/DataRizz/) is the link to our website.
+Go see our [website](https://com-480-data-visualization.github.io/DataRizz/).
 
 ## Milestone 1 (20th March, 5pm)
 
@@ -16,8 +16,7 @@ You can find our report for Milestone 1 in [this file](milestones/milestone1/Mil
 
 ## Milestone 2 (17th April, 5pm)
 
-**10% of the final grade**
-
+You can find our report for Milestone 2 in [this file](milestones/milestone2/Report_M2.pdf)
 
 ## Milestone 3 (29th May, 5pm)
 
