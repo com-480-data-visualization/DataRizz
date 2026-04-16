@@ -8,15 +8,18 @@
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
-Go see our [website](https://com-480-data-visualization.github.io/DataRizz/).
+
 
 ## Milestone 1 (20th March, 5pm)
 
-You can find our report for Milestone 1 in [this file](milestones/milestone1/Milestone1.md)
+You can find our report for Milestone 1 in [this file](milestones/milestone1/Milestone1.md).
+
 
 ## Milestone 2 (17th April, 5pm)
 
-You can find our report for Milestone 2 in [this file](milestones/milestone2/Report_M2.pdf)
+You can find our report for Milestone 2 in [this file](milestones/milestone2/Report_M2.pdf).  
+Go see our [website](https://com-480-data-visualization.github.io/DataRizz/).
+
 
 ## Milestone 3 (29th May, 5pm)
 
