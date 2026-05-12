@@ -1,9 +1,15 @@
 /* ============================================================
    Geopolitical Conflicts Visualization
-   - real select
-   - real map with highlighted countries
-   - hover tooltips on map and bar charts
-   - no white cards
+   ------------------------------------------------------------
+   Story logic:
+   - Click an event in the text list to update the map.
+   - The selected event is highlighted fully in yellow.
+   - Boycott years show a button for participation impact.
+   - Clicking the button opens a popup bar chart.
+   - Clicking a highlighted country opens a popup medal chart.
+   - Charts only show Summer Olympic years that exist in the dataset.
+   - Bar tooltips show previous and next Summer Olympics comparison,
+     including how much more or less the selected bar has.
    ============================================================ */
 
 (function () {
@@ -15,12 +21,11 @@
 
   const selectors = {
     mapRoot: "#geopolitics-map-viz",
-    yearSelect: "#geo-year-select",
-    yearLabel: "#geo-selected-year",
     eventList: "#geo-event-list",
-    medalsChart: "#geo-medals-chart",
-    countriesChart: "#geo-countries-chart"
+    participationButton: "#geo-participation-button"
   };
+
+  const boycottYears = new Set([1976, 1980, 1984]);
 
   const state = {
     rows: [],
@@ -193,7 +198,7 @@
         "West Germany"
       ],
       countryNotes: {
-        Russia: "Host country of the Moscow Olympics (then USSR).",
+        Russia: "Host country of the Moscow Olympics, then the USSR.",
         "United States of America": "Led the boycott of the 1980 Moscow Olympics.",
         Canada: "Joined the boycott led by the United States.",
         Japan: "Joined the boycott led by the United States.",
@@ -218,7 +223,7 @@
       ],
       countryNotes: {
         "United States of America": "Host country of the 1984 Los Angeles Olympics.",
-        Russia: "Led the boycott of the Los Angeles Olympics (then USSR).",
+        Russia: "Led the boycott of the Los Angeles Olympics, then the USSR.",
         Cuba: "Boycotted the 1984 Olympics with the Soviet bloc.",
         Bulgaria: "Boycotted the 1984 Olympics with the Soviet bloc.",
         Poland: "Boycotted the 1984 Olympics with the Soviet bloc.",
@@ -264,24 +269,6 @@
       countryNotes: {
         Brazil: "Host country of the first Olympics held in South America."
       }
-    },
-    {
-      year: 2020,
-      title: "Tokyo postponed because of COVID-19",
-      description: "The Tokyo Olympics were postponed to 2021 because of the COVID-19 pandemic.",
-      countries: ["Japan"],
-      countryNotes: {
-        Japan: "Host country of the Tokyo Olympics, postponed because of COVID-19."
-      }
-    },
-    {
-      year: 2024,
-      title: "Paris Olympics",
-      description: "The Paris Games strongly emphasized gender parity.",
-      countries: ["France"],
-      countryNotes: {
-        France: "Host country of the 2024 Paris Olympics."
-      }
     }
   ];
 
@@ -303,15 +290,20 @@
 
       state.rows = rows;
       state.columns = detectColumns(rows);
-      state.olympicYears = getOlympicYears(rows);
+
+      // IMPORTANT:
+      // This keeps only Summer Olympic years, so the charts no longer show
+      // empty Winter-only years such as 1984, 1994, 1998, 2002, 2006.
+      state.olympicYears = getSummerOlympicYears(rows);
+
       state.worldGeo = worldGeo;
+
       state.events = geopoliticalEvents.map(event => ({
         ...event,
         hasOlympicData: state.olympicYears.includes(event.year)
       }));
 
       ensureTooltip();
-      setupYearSelect();
 
       const initialYear = state.events[0]?.year || state.olympicYears[0];
       update(initialYear);
@@ -329,7 +321,7 @@
     return {
       year: findColumn(columns, ["Year", "year"]),
       season: findColumn(columns, ["Season", "season"]),
-      country: findColumn(columns, ["NOC", "noc", "Team", "team", "Country", "country"]),
+      country: findColumn(columns, ["Country", "country", "Team", "team", "region", "Region", "NOC", "noc"]),
       medal: findColumn(columns, ["Medal", "medal"]),
       event: findColumn(columns, ["Event", "event"])
     };
@@ -339,117 +331,75 @@
     return candidates.find(c => columns.includes(c)) || null;
   }
 
-  function getOlympicYears(rows) {
+  function getSummerOlympicYears(rows) {
     const yearCol = state.columns.year || "Year";
+    const seasonCol = state.columns.season || "Season";
 
     return Array.from(
       new Set(
         rows
+          .filter(row => String(row[seasonCol] || "").trim() === "Summer")
           .map(row => Number(row[yearCol]))
           .filter(v => Number.isFinite(v))
       )
     ).sort((a, b) => a - b);
   }
 
-  function setupYearSelect() {
-    const select = d3.select(selectors.yearSelect);
-
-    select
-      .selectAll("option")
-      .data(state.events)
-      .join("option")
-      .attr("value", d => d.year)
-      .text(d => d.year);
-
-    select.on("change", function () {
-      update(Number(this.value));
-    });
-  }
-
   function update(year) {
     const selected = state.events.find(d => d.year === year) || state.events[0];
+
     state.currentYear = selected.year;
-
-    d3.select(selectors.yearSelect).property("value", selected.year);
-
-    if (document.querySelector(selectors.yearLabel)) {
-      d3.select(selectors.yearLabel).text(selected.year);
-    }
 
     drawMapPanel(selected);
     drawEventList(selected);
+    updateActionButton(selected);
+  }
 
-    const medalsData = computeMedalsByCountry(selected.year);
-    const participationData = computeParticipationAroundYear(selected.year, 16);
+  function updateActionButton(selected) {
+    const button = d3.select(selectors.participationButton);
 
-    drawBarChart({
-      selector: selectors.medalsChart,
-      data: medalsData,
-      xKey: "country",
-      yKey: "value",
-      title: selected.hasOlympicData
-        ? `Medals by country in ${selected.year}`
-        : `No Olympic medal data for ${selected.year}`,
-      yLabel: "Medals",
-      tooltipFormatter: d =>
-        `<strong>${d.country}</strong><br>Year: ${selected.year}<br>Medals: ${d.value}`
-    });
+    if (boycottYears.has(selected.year)) {
+      button
+        .classed("visible", true)
+        .text("Click to see how this boycott influenced participation")
+        .on("click", () => {
+          const participationData = addNeighborValues(
+            computeParticipationAroundYear(selected.year, 16)
+          );
 
-    drawBarChart({
-      selector: selectors.countriesChart,
-      data: participationData,
-      xKey: "year",
-      yKey: "value",
-      title: `Participating countries around ${selected.year}`,
-      yLabel: "Countries",
-      highlightValue: selected.year,
-      tooltipFormatter: d =>
-        `<strong>${d.year}</strong><br>Participating countries: ${d.value}`
-    });
+          openGeoPopup(
+            `Participating countries around the ${selected.year} boycott`,
+            buildSelectedYearNote({
+              selectedYear: selected.year,
+              selectedLabel: selected.title,
+              metricName: "participating countries",
+              data: participationData,
+              noDataReason: "This chart only shows Summer Olympic years present in the dataset."
+            }),
+            () => {
+              drawBarChart({
+                selector: "#geo-popup-chart",
+                data: participationData,
+                xKey: "year",
+                yKey: "value",
+                title: `Participation around ${selected.year}`,
+                yLabel: "Participating countries",
+                highlightValue: selected.year,
+                tooltipFormatter: d => formatNeighborTooltip(d, "Participating countries")
+              });
+            }
+          );
+        });
+    } else {
+      button
+        .classed("visible", false)
+        .on("click", null);
+    }
   }
 
   /* ============================================================
-     Real data computations
+     Data computations
      ============================================================ */
-
-  function rowsForYear(year) {
-    const { year: yearCol, season: seasonCol } = state.columns;
-
-    return state.rows.filter(row => {
-      const rowYear = Number(row[yearCol]);
-      const season = seasonCol ? String(row[seasonCol] || "").trim() : "Summer";
-      return rowYear === year && season === "Summer";
-    });
-  }
-
-  function computeMedalsByCountry(year) {
-    const { country: countryCol, medal: medalCol, event: eventCol } = state.columns;
-    if (!countryCol) return [];
-
-    const rows = rowsForYear(year).filter(row => isRealMedal(row[medalCol]));
-    const countryEventSets = new Map();
-
-    rows.forEach(row => {
-      const country = String(row[countryCol] || "Unknown");
-      const eventName = eventCol ? String(row[eventCol] || "Unknown Event") : "Unknown Event";
-      const medalName = medalCol ? String(row[medalCol] || "") : "";
-      const uniqueMedalKey = `${eventName}|||${medalName}`;
-
-      if (!countryEventSets.has(country)) {
-        countryEventSets.set(country, new Set());
-      }
-
-      countryEventSets.get(country).add(uniqueMedalKey);
-    });
-
-    return Array.from(countryEventSets.entries())
-      .map(([country, set]) => ({
-        country,
-        value: set.size
-      }))
-      .sort((a, b) => d3.descending(a.value, b.value))
-      .slice(0, 10);
-  }
 
   function computeParticipationAroundYear(selectedYear, windowSize) {
     const { year: yearCol, season: seasonCol, country: countryCol } = state.columns;
@@ -457,7 +407,11 @@
 
     const minYear = selectedYear - windowSize;
     const maxYear = selectedYear + windowSize;
-    const relevantYears = state.olympicYears.filter(y => y >= minYear && y <= maxYear);
+
+    // Only Summer Olympic years are used here.
+    const relevantYears = state.olympicYears
+      .filter(year => year >= minYear && year <= maxYear)
+      .sort((a, b) => a - b);
 
     return relevantYears.map(year => {
       const countries = new Set();
@@ -467,7 +421,7 @@
         const season = seasonCol ? String(row[seasonCol] || "").trim() : "Summer";
 
         if (rowYear === year && season === "Summer") {
-          countries.add(String(row[countryCol] || "Unknown"));
+          countries.add(cleanCountryName(row[countryCol]));
         }
       });
 
@@ -478,10 +432,78 @@
     });
   }
 
+  function computeCountryMedalsAcrossYears(countryName, selectedYear, windowSize) {
+    const {
+      year: yearCol,
+      season: seasonCol,
+      country: countryCol,
+      medal: medalCol,
+      event: eventCol
+    } = state.columns;
+
+    if (!yearCol || !countryCol || !medalCol) return [];
+
+    const minYear = selectedYear - windowSize;
+    const maxYear = selectedYear + windowSize;
+
+    // Only Summer Olympic years are used here.
+    const relevantYears = state.olympicYears
+      .filter(year => year >= minYear && year <= maxYear)
+      .sort((a, b) => a - b);
+
+    return relevantYears.map(year => {
+      const medalKeys = new Set();
+      let participated = false;
+
+      state.rows.forEach(row => {
+        const rowYear = Number(row[yearCol]);
+        const season = seasonCol ? String(row[seasonCol] || "").trim() : "Summer";
+        const rowCountry = normalizeCountryName(cleanCountryName(row[countryCol]));
+
+        if (
+          rowYear === year &&
+          season === "Summer" &&
+          rowCountry === countryName
+        ) {
+          participated = true;
+
+          if (isRealMedal(row[medalCol])) {
+            const eventName = eventCol ? String(row[eventCol] || "Unknown Event") : "Unknown Event";
+            const medalName = medalCol ? String(row[medalCol] || "") : "";
+            medalKeys.add(`${eventName}|||${medalName}`);
+          }
+        }
+      });
+
+      return {
+        year,
+        value: medalKeys.size,
+        participated
+      };
+    });
+  }
+
+  function addNeighborValues(data) {
+    return data.map((d, i) => ({
+      ...d,
+      previousYear: data[i - 1] ? data[i - 1].year : null,
+      previousValue: data[i - 1] ? data[i - 1].value : null,
+      nextYear: data[i + 1] ? data[i + 1].year : null,
+      nextValue: data[i + 1] ? data[i + 1].value : null
+    }));
+  }
+
   function isRealMedal(value) {
     if (value === null || value === undefined) return false;
+
     const text = String(value).trim().toLowerCase();
-    return text !== "" && text !== "na" && text !== "nan" && text !== "none";
+
+    return (
+      text !== "" &&
+      text !== "na" &&
+      text !== "nan" &&
+      text !== "none"
+    );
   }
 
   /* ============================================================
@@ -493,7 +515,7 @@
     root.selectAll("*").remove();
 
     const width = 980;
-    const height = 560;
+    const height = 520;
 
     const svg = root
       .append("svg")
@@ -526,7 +548,10 @@
         const countryName = normalizeCountryName(d.properties.name);
         return involvedCountries.has(countryName) ? 1.6 : 0.6;
       })
-      .style("cursor", "pointer")
+      .style("cursor", d => {
+        const countryName = normalizeCountryName(d.properties.name);
+        return involvedCountries.has(countryName) ? "pointer" : "default";
+      })
       .on("mousemove", function (event, d) {
         const rawName = d.properties.name || "Unknown country";
         const countryName = normalizeCountryName(rawName);
@@ -541,13 +566,24 @@
           showTooltip(event, `
             <strong>${rawName}</strong><br>
             <span style="color:#ffd166;">${selected.year} — ${selected.title}</span><br>
-            ${note}
+            ${note}<br>
+            <span style="color:#f4b400;">Click to see medal performance</span>
           `);
         } else {
-          showTooltip(event, `<strong>${rawName}</strong><br>Not specifically highlighted for ${selected.year}.`);
+          showTooltip(
+            event,
+            `<strong>${rawName}</strong><br>Not specifically highlighted for ${selected.year}.`
+          );
         }
       })
-      .on("mouseleave", hideTooltip);
+      .on("mouseleave", hideTooltip)
+      .on("click", function (event, d) {
+        const countryName = normalizeCountryName(d.properties.name || "");
+
+        if (!involvedCountries.has(countryName)) return;
+
+        openCountryMedalPopup(countryName, selected);
+      });
 
     svg.append("text")
       .attr("x", 12)
@@ -556,6 +592,46 @@
       .attr("font-size", 14)
       .attr("font-family", "Arial, sans-serif")
       .text(`Hover countries to see how they are involved in ${selected.year}.`);
+  }
+
+  function openCountryMedalPopup(countryName, selected) {
+    const data = addNeighborValues(
+      computeCountryMedalsAcrossYears(countryName, selected.year, 16)
+    );
+
+    const selectedRow = data.find(d => d.year === selected.year);
+    const selectedValue = selectedRow ? selectedRow.value : null;
+
+    let note;
+
+    if (!state.olympicYears.includes(selected.year)) {
+      note = `${selected.year} does not appear in the Summer Olympic dataset because the Games were cancelled or not held. The chart skips that year and only shows nearby Summer Olympic Games.`;
+    } else if (!selectedRow) {
+      note = `${countryName} has no data point in ${selected.year}. The chart only shows Summer Olympic years present in the dataset.`;
+    } else if (!selectedRow.participated) {
+      note = `${countryName} has no participation data in ${selected.year}. For boycott years, this usually means the country was absent from the Games.`;
+    } else if (selectedValue === 0) {
+      note = `${countryName} participated in ${selected.year}, but won no medals in this dataset.`;
+    } else {
+      note = `${countryName} won ${selectedValue} medal${selectedValue === 1 ? "" : "s"} in ${selected.year}.`;
+    }
+
+    openGeoPopup(
+      `${countryName}: medals around ${selected.year}`,
+      note,
+      () => {
+        drawBarChart({
+          selector: "#geo-popup-chart",
+          data,
+          xKey: "year",
+          yKey: "value",
+          title: `${countryName}: medals around ${selected.year}`,
+          yLabel: "Medals won",
+          highlightValue: selected.year,
+          tooltipFormatter: d => formatNeighborTooltip(d, "Medals")
+        });
+      }
+    );
   }
 
   function getCountryNote(selected, countryName) {
@@ -570,6 +646,13 @@
     }
 
     return null;
+  }
+
+  function cleanCountryName(value) {
+    return String(value || "")
+      .replace(/\s*-\s*\d+$/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
   }
 
   function normalizeCountryName(name) {
@@ -613,7 +696,7 @@
 
     root.append("p")
       .attr("class", "geo-highlight-event")
-      .html(`<strong>${selected.year}:</strong> ${selected.title}`);
+      .html(`<strong>${selected.year}: ${selected.title}</strong>`);
 
     root.append("p")
       .attr("class", "geo-event-description")
@@ -622,7 +705,7 @@
     if (!selected.hasOlympicData) {
       root.append("p")
         .attr("class", "geo-note")
-        .text("No Olympic competition data exists in the CSV for this year because the Games were cancelled or absent.");
+        .text("No Summer Olympic competition data exists in the CSV for this year because the Games were cancelled or absent.");
     }
 
     const list = root.append("ul").attr("class", "geo-events-list");
@@ -630,7 +713,8 @@
     state.events.forEach(d => {
       list.append("li")
         .classed("active", d.year === selected.year)
-        .html(`<strong>${d.year}:</strong> ${d.title}`);
+        .html(`<strong>${d.year}:</strong> <span>${d.title}</span>`)
+        .on("click", () => update(d.year));
     });
   }
 
@@ -651,9 +735,9 @@
     const root = d3.select(selector);
     root.selectAll("*").remove();
 
-    const width = 680;
-    const height = 370;
-    const margin = { top: 46, right: 18, bottom: 96, left: 64 };
+    const width = 880;
+    const height = 330;
+    const margin = { top: 48, right: 28, bottom: 72, left: 76 };
 
     const svg = root
       .append("svg")
@@ -714,12 +798,14 @@
         if (highlightValue !== null && String(d[xKey]) === String(highlightValue)) {
           return "#f4b400";
         }
+
         return "#8ecae6";
       })
       .attr("stroke", d => {
         if (highlightValue !== null && String(d[xKey]) === String(highlightValue)) {
           return "#ffd166";
         }
+
         return "#d8f3ff";
       })
       .attr("stroke-width", 1.5)
@@ -762,6 +848,114 @@
       .text(yLabel);
   }
 
+  function formatNeighborTooltip(d, metricName) {
+    const previousDiff = d.previousValue === null
+      ? null
+      : d.value - d.previousValue;
+
+    const nextDiff = d.nextValue === null
+      ? null
+      : d.value - d.nextValue;
+
+    const previous = d.previousYear === null
+      ? "No previous Summer Olympics in this view"
+      : `${d.previousYear}: ${d.previousValue} (${formatDifference(previousDiff)} vs previous)`;
+
+    const next = d.nextYear === null
+      ? "No next Summer Olympics in this view"
+      : `${d.nextYear}: ${d.nextValue} (${formatDifference(nextDiff)} vs next)`;
+
+    return `
+      <strong>${d.year}</strong><br>
+      ${metricName}: <strong>${d.value}</strong><br>
+      Previous Summer Olympics: ${previous}<br>
+      Next Summer Olympics: ${next}
+    `;
+  }
+
+  function formatDifference(diff) {
+    if (diff === null || diff === undefined) {
+      return "no comparison";
+    }
+
+    if (diff > 0) {
+      return `+${diff}`;
+    }
+
+    if (diff < 0) {
+      return `${diff}`;
+    }
+
+    return "same";
+  }
+
+  function buildSelectedYearNote({
+    selectedYear,
+    selectedLabel,
+    metricName,
+    data,
+    noDataReason
+  }) {
+    const selectedRow = data.find(d => d.year === selectedYear);
+
+    if (!state.olympicYears.includes(selectedYear)) {
+      return `${selectedYear} does not appear in the Summer Olympic dataset because the Games were cancelled or not held. The chart skips that year and only shows nearby Summer Olympic Games.`;
+    }
+
+    if (!selectedRow) {
+      return `${selectedYear} is not shown as a bar because there is no Summer Olympic data for that year in the selected window. ${noDataReason}`;
+    }
+
+    return `${selectedYear}: ${selectedLabel}. The highlighted bar shows ${selectedRow.value} ${metricName}. Hover over any bar to compare it with the previous and next Summer Olympics shown.`;
+  }
+
+  /* ============================================================
+     Popup
+     ============================================================ */
+
+  function openGeoPopup(title, note, drawCallback) {
+    d3.select("body").select(".geo-popup-overlay").remove();
+
+    const overlay = d3.select("body")
+      .append("div")
+      .attr("class", "geo-popup-overlay");
+
+    const box = overlay.append("div")
+      .attr("class", "geo-popup-box");
+
+    const header = box.append("div")
+      .attr("class", "geo-popup-header");
+
+    const titleBlock = header.append("div")
+      .attr("class", "geo-popup-title-block");
+
+    titleBlock.append("div")
+      .attr("class", "geo-popup-title")
+      .text(title);
+
+    if (note) {
+      titleBlock.append("div")
+        .attr("class", "geo-popup-note")
+        .text(note);
+    }
+
+    header.append("button")
+      .attr("class", "geo-popup-close")
+      .text("Close")
+      .on("click", () => overlay.remove());
+
+    box.append("div")
+      .attr("id", "geo-popup-chart");
+
+    drawCallback();
+
+    overlay.on("click", function (event) {
+      if (event.target === this) {
+        overlay.remove();
+      }
+    });
+  }
+
   /* ============================================================
      Tooltip
      ============================================================ */
@@ -778,8 +972,8 @@
   function showTooltip(event, html) {
     d3.select(".geo-tooltip")
       .html(html)
-      .style("left", `${event.pageX + 14}px`)
-      .style("top", `${event.pageY + 14}px`)
+      .style("left", `${event.clientX + 14}px`)
+      .style("top", `${event.clientY + 14}px`)
       .style("opacity", 1);
   }
 
