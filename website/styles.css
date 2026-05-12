@@ -1,6 +1,7 @@
 /* =============================================
-  Import Google Fonts
-  =========================================== */
+   Fonts
+   =========================================== */
+
 .carter-one-regular {
   font-family: "Carter One", system-ui;
   font-weight: 400;
@@ -20,45 +21,66 @@
 }
 
 /* =============================================
-  General styles
-  =========================================== */
+   Global / page styles
+   =========================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  background-image: none !important;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
 
 body {
-  text-align: center;
-  background-attachment: fixed;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-img);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+#website,
+.section,
+.slide,
+.fp-section,
+.fp-slide,
+.fp-tableCell {
+  background: #000 !important;
+  background-image: none !important;
 }
 
 .section {
   padding: 3%;
+  box-sizing: border-box;
 }
 
 /* =============================================
-  Styles for the navigation dots
-  =========================================== */
+   Navigation dots
+   =========================================== */
 
-/* active dot */
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: rgba(255, 255, 255, 0.35);
+}
+
 #fp-nav ul li a.active span,
 .fp-slidesNav ul li a.active span {
-  background: white; /* active color */
+  background: white;
 }
 
 /* =============================================
-  Layout for text and images of each question
-  =========================================== */
+   General layout
+   =========================================== */
 
 .container {
   display: flex;
   gap: 2%;
-  align-items: center;     /* vertical alignment */
-  justify-content: start;  /* horizontal alignment */
+  align-items: center;
+  justify-content: start;
 }
 
 .text-container {
-  flex: 1; /* Take up remaining space */
+  flex: 1;
 }
 
 .image-container {
@@ -71,28 +93,29 @@ body {
   display: block;
 }
 
-/* =============================================
-  Layout for the slides
-  =========================================== */
-
 .slide img {
   width: 100%;
   height: auto;
   display: block;
-  position: center;
 }
 
 /* =============================================
-  Headers and paragraphs
-  =========================================== */
+   Typography
+   =========================================== */
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   color: white;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Carter One", sans-serif;
   text-align: center;
+  margin: 0;
 }
 
 h1 {
@@ -103,6 +126,7 @@ h1 {
 h2 {
   font-size: 40px;
   padding-bottom: 24px;
+  line-height: 1.15;
 }
 
 h3 {
@@ -117,10 +141,11 @@ p {
 }
 
 /* =============================================
-  Layout for the "About the Team" section
-  =========================================== */
-  .about-container,
-  .about-team {
+   About section
+   =========================================== */
+
+.about-container,
+.about-team {
   display: flex;
   flex-direction: column;
   gap: 2%;
@@ -141,6 +166,7 @@ p {
 .about-team-image img {
   width: 300px;
 }
+
 .about-people-image img {
   background-color: white;
   width: 150px;
@@ -152,4 +178,572 @@ p {
   gap: 2%;
   align-items: center;
   justify-content: start;
+}
+
+/* =============================================
+   Gender section
+   =========================================== */
+
+[data-anchor="gender"] {
+  background: #000 !important;
+}
+
+[data-anchor="gender"] .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+[data-anchor="gender"] .text-container {
+  display: none;
+}
+
+/* NO WHITE BOX */
+#gender-viz {
+  position: relative;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 12px 24px 12px 24px;
+  min-height: 760px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+/* pie chart */
+#gender-pie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* season buttons */
+.gender-controls {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gender-controls button {
+  min-width: 110px;
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 10px 18px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  transition: 0.2s ease;
+}
+
+.gender-controls button:hover {
+  transform: translateY(-1px);
+}
+
+.gender-controls button.active {
+  background: #aeeaf2;
+  color: black;
+  border-color: #aeeaf2;
+}
+
+/* sunbursts */
+.gender-sunbursts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: start;
+  justify-items: center;
+  margin-top: 10px;
+}
+
+.gender-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gender-chart-title {
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.gender-sunburst-svg {
+  overflow: visible;
+}
+
+/* timeline */
+.gender-timeline {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+#gender-play {
+  border: 2px solid #d9d9d9;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  width: 42px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#gender-year {
+  width: 300px;
+  accent-color: #aeeaf2;
+}
+
+#gender-current-year {
+  min-width: 60px;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* tooltip */
+.gender-tooltip {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(20, 20, 20, 0.97);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.35;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  max-width: 280px;
+}
+
+.gender-empty,
+.gender-error {
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* =============================================
+   Responsive
+   =========================================== */
+
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .image-container {
+    width: 100%;
+  }
+
+  .gender-sunbursts {
+    grid-template-columns: 1fr;
+  }
+
+  .gender-controls {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  #gender-viz {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  #gender-year {
+    width: 180px;
+  }
+}
+
+/* =============================================
+   Geopolitics section
+   =========================================== */
+
+[data-anchor="geopolitics"] {
+  background: #000 !important;
+}
+
+[data-anchor="geopolitics"] h2,
+[data-anchor="geopolitics"] p {
+  color: #fff;
+}
+
+.geo-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 28px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+.geo-map-column {
+  width: 100%;
+}
+
+.geo-select-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.geo-select-row label {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#geo-year-select {
+  background: #aeeaf2;
+  color: #111;
+  border: 3px solid #222;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  min-width: 140px;
+}
+
+#geopolitics-map-viz,
+#geo-medals-chart,
+#geo-countries-chart {
+  width: 100%;
+}
+
+.geo-map-svg,
+.geo-bar-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+
+#geo-event-list {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  text-align: left;
+  max-height: none;
+  overflow: visible;
+}
+
+#geo-event-list h3 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 24px;
+}
+
+#geo-event-list p,
+#geo-event-list li {
+  color: rgba(255,255,255,0.92);
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.geo-highlight-event {
+  font-size: 20px !important;
+  margin-bottom: 8px;
+}
+
+.geo-event-description {
+  margin-bottom: 12px;
+}
+
+.geo-note {
+  color: #ffd166 !important;
+}
+
+.geo-events-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.geo-events-list li {
+  margin-bottom: 4px;
+}
+
+.geo-events-list li.active {
+  color: #ff8c7f;
+  font-weight: 700;
+}
+
+.geo-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.geo-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(20, 20, 20, 0.96);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.35;
+  max-width: 280px;
+  z-index: 9999;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  transition: opacity 0.12s ease;
+}
+
+@media (max-width: 1100px) {
+  .geo-layout,
+  .geo-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================
+   Medal distribution Sankey
+   =========================================== */
+
+#medal-viz {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.medal-controls {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.medal-controls label {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.medal-controls select {
+  background: #aeeaf2;
+  color: #111;
+  border: 3px solid #222;
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#medal-sankey {
+  width: 100%;
+}
+
+.medal-sankey-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+
+.medal-timeline {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  align-items: center;
+}
+
+#medal-play {
+  border: 2px solid #d9d9d9;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  width: 42px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#medal-year {
+  width: 340px;
+  accent-color: #f0b000;
+}
+
+#medal-current-year {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  min-width: 64px;
+}
+
+.medal-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(20, 20, 20, 0.96);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.35;
+  max-width: 280px;
+  z-index: 9999;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* =============================================
+   Body types section
+   =========================================== */
+
+[data-anchor="body-types"] {
+  background: #000 !important;
+}
+
+[data-anchor="body-types"] h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+#bodytype-viz {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.bodytype-controls {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.bodytype-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.bodytype-control label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.bodytype-control select {
+  background: #aeeaf2;
+  color: #111;
+  border: 3px solid #333;
+  border-radius: 12px;
+  padding: 8px 34px 8px 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  width: auto;
+  max-width: none;
+}
+
+#bodytype-podium {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.bodytype-3d-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.bodytype-canvas-wrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent;
+}
+
+.bodytype-canvas-wrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.bodytype-label-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.bodytype-athlete-label {
+  position: absolute;
+  top: 78px;
+  width: 27%;
+  color: white;
+  text-align: center;
+  line-height: 1.2;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.bodytype-athlete-0 {
+  left: 5%;
+}
+
+.bodytype-athlete-1 {
+  left: 36.5%;
+}
+
+.bodytype-athlete-2 {
+  right: 5%;
+}
+
+.bodytype-athlete-name {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.bodytype-athlete-meta {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
 }

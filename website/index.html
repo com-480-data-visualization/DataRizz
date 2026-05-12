@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carter+One&family=Delius&display=swap">
 </head>
 
-<body style="--bg-img: url('data/intro_background.jpg')">
+<body>
   <!-- fullPage.js wrapper — must not be <body> -->
   <div id="website">
 
@@ -25,103 +25,120 @@
       <h1>Olympic Inequalities</h1>
       <h2>How have sociocultural, economic, and geopolitical contexts been reflected in the Olympics over time?</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Diam placerat quam quis curae fringilla hac molestie iaculis lobortis. 
-        Adipiscing tellus ad convallis litora molestie nullam pretium diam euismod. 
-        Sapien nunc primis sollicitudin justo nec urna amet turpis conubia. 
-        Nec cras vel leo mattis neque cubilia pharetra dictum nisl vitae. 
-        Morbi phasellus elit sem sed dictum urna finibus.
+        The Olympic Games are often presented as a neutral celebration of human performance.
+        But who gets to participate, who wins, and which countries dominate are shaped by
+        much more than talent alone.
       </p>
+
       <p>
-        Lobortis sem gravida elementum turpis vitae nunc nibh egestas eu ad ullamcorper nec auctor quam. 
-        Inceptos aliquet lacinia tristique sem enim per augue est. 
-        Curae pellentesque adipiscing finibus risus maximus proin habitant sociosqu erat ullamcorper nam quam suspendisse tortor tempus. 
-        Feugiat quis sollicitudin non varius duis nulla tempus metus malesuada.
+        This project explores Olympic inequality through five axes: gender representation,
+        geography of medal winners, athlete body types, geopolitical disruptions, and economic fairness.
       </p>
+
       <p>
-        Luctus ultricies luctus urna vivamus placerat volutpat enim sed magna ornare habitasse lectus finibus. 
-        Integer vehicula pharetra vulputate facilisis litora libero hendrerit sem phasellus ornare scelerisque enim eleifend convallis. 
-        Convallis metus dolor nunc consectetur suspendisse eu mattis odio habitasse dignissim. 
-        Nullam pulvinar non orci facilisis ante semper ullamcorper tortor at dictum taciti pretium turpis fames. 
-        Vivamus class felis bibendum purus at placerat malesuada ex fringilla conubia.
+        Scroll through the story to see how social, political, and economic contexts have shaped
+        the Games over time.
       </p>
     </div>
 
-    <div class="section" data-anchor="delegations">
-      <h2>Where do the medal winners come from?</h2>
-      <div class="container" data-anchor="delegations-container">
-        <div class="text-container" data-anchor="delegations-text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Cubilia purus dolor tellus hac vehicula non suscipit habitasse tincidunt faucibus inceptos sollicitudin. 
-            Egestas morbi dignissim dui lobortis pretium tristique sociosqu vulputate augue inceptos augue. 
-            Laoreet netus donec nam ullamcorper orci netus curae tincidunt blandit. 
-            Himenaeos suscipit hac arcu viverra dictum aliquam imperdiet nostra nam. 
-            Litora maximus et quisque vitae imperdiet quam iaculis.
-          </p>
-          <p>
-            Pulvinar fringilla nisi himenaeos metus tortor orci tellus litora rhoncus dolor porttitor sociosqu lectus nullam. 
-            Nec scelerisque proin ultricies cubilia condimentum maecenas. 
-            Velit ultrices facilisis ex ipsum urna gravida potenti ornare. 
-            Vivamus rutrum est eros ante proin luctus sollicitudin sem nisi dignissim. 
-            Ipsum cubilia rhoncus aliquet dolor sapien risus vestibulum rhoncus nostra porttitor et potenti.
-          </p>
-        </div>
-        <div class="image-container" data-anchor="delegations-graph">
-          <img data-src="data/delegations_summer.jpg" alt="Delegations Summer">
-        </div>
-      </div>
-    </div>
-    
     <div class="section" data-anchor="gender">
       <h2>How has gender representation evolved across Olympic sports and disciplines over time?</h2>
       <div class="container" data-anchor="gender-container">
-        <div class="text-container" data-anchor="gender-text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Cubilia purus dolor tellus hac vehicula non suscipit habitasse tincidunt faucibus inceptos sollicitudin. 
-            Egestas morbi dignissim dui lobortis pretium tristique sociosqu vulputate augue inceptos augue. 
-            Laoreet netus donec nam ullamcorper orci netus curae tincidunt blandit. 
-            Himenaeos suscipit hac arcu viverra dictum aliquam imperdiet nostra nam. 
-            Litora maximus et quisque vitae imperdiet quam iaculis.
-          </p>
-          <p>
-            Pulvinar fringilla nisi himenaeos metus tortor orci tellus litora rhoncus dolor porttitor sociosqu lectus nullam. 
-            Nec scelerisque proin ultricies cubilia condimentum maecenas. 
-            Velit ultrices facilisis ex ipsum urna gravida potenti ornare. 
-            Vivamus rutrum est eros ante proin luctus sollicitudin sem nisi dignissim. 
-            Ipsum cubilia rhoncus aliquet dolor sapien risus vestibulum rhoncus nostra porttitor et potenti.
-          </p>
-        </div>
-        <div class="image-container" data-anchor="gender-graph">
-          <img data-src="data/gender_evolution.png" alt="Gender Evolution">
+        <div id="gender-viz">
+          <div id="gender-pie"></div>
+
+          <div class="gender-controls">
+            <button id="season-summer" class="active">Summer</button>
+            <button id="season-winter">Winter</button>
+          </div>
+
+          <div class="gender-sunbursts">
+            <div id="gender-men"></div>
+            <div id="gender-women"></div>
+          </div>
+
+          <div class="gender-timeline">
+            <button id="gender-play">▶</button>
+            <input id="gender-year" type="range" min="1896" max="2016" step="4">
+            <span id="gender-current-year">1896</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="section" data-anchor="body">
+    <div class="section" data-anchor="delegations">
+
+      <div class="slide" data-anchor="medal-flow">
+        <h2>Where do the medal winners come from?</h2>
+
+        <div id="medal-viz">
+          <div class="medal-controls">
+            <div>
+              <label for="medal-season-select">Season:</label>
+              <select id="medal-season-select">
+                <option value="Summer">Summer</option>
+                <option value="Winter">Winter</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="medal-mode-select">Group by:</label>
+              <select id="medal-mode-select">
+                <option value="continent">Continent</option>
+                <option value="country">Country</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="medal-sankey"></div>
+
+          <div class="medal-timeline">
+            <button id="medal-play">▶</button>
+            <input id="medal-year" type="range">
+            <span id="medal-current-year"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide" data-anchor="never-medaled">
+        <h2>Who participates without reaching the podium?</h2>
+        <div id="never-medaled-viz"></div>
+      </div>
+
+    </div>
+
+    <div class="section" data-anchor="body-types">
       <h2>Which body type excels in a particular discipline?</h2>
-      <div class="container" data-anchor="body-container">
-        <div class="text-container" data-anchor="body-text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Cubilia purus dolor tellus hac vehicula non suscipit habitasse tincidunt faucibus inceptos sollicitudin. 
-            Egestas morbi dignissim dui lobortis pretium tristique sociosqu vulputate augue inceptos augue. 
-            Laoreet netus donec nam ullamcorper orci netus curae tincidunt blandit. 
-            Himenaeos suscipit hac arcu viverra dictum aliquam imperdiet nostra nam. 
-            Litora maximus et quisque vitae imperdiet quam iaculis.
-          </p>
-          <p>
-            Pulvinar fringilla nisi himenaeos metus tortor orci tellus litora rhoncus dolor porttitor sociosqu lectus nullam. 
-            Nec scelerisque proin ultricies cubilia condimentum maecenas. 
-            Velit ultrices facilisis ex ipsum urna gravida potenti ornare. 
-            Vivamus rutrum est eros ante proin luctus sollicitudin sem nisi dignissim. 
-            Ipsum cubilia rhoncus aliquet dolor sapien risus vestibulum rhoncus nostra porttitor et potenti.
-          </p>
+
+      <div id="bodytype-viz">
+        <div class="bodytype-controls">
+          <div class="bodytype-control">
+            <label for="bodytype-season">Season:</label>
+            <select id="bodytype-season"></select>
+          </div>
+
+          <div class="bodytype-control">
+            <label for="bodytype-year">Year:</label>
+            <select id="bodytype-year"></select>
+          </div>
+
+          <div class="bodytype-control">
+            <label for="bodytype-gender">Gender:</label>
+            <select id="bodytype-gender"></select>
+          </div>
+
+          <div class="bodytype-control">
+            <label for="bodytype-sport">Sports:</label>
+            <select id="bodytype-sport"></select>
+          </div>
+
+          <div class="bodytype-control">
+            <label for="bodytype-discipline">Discipline:</label>
+            <select id="bodytype-discipline"></select>
+          </div>
         </div>
-        <div class="image-container" data-anchor="body-graph">
-          <img data-src="data/body_types.png" alt="Body Types">
-        </div>
+
+        <div id="bodytype-podium"></div>
       </div>
     </div>
 
@@ -129,64 +146,53 @@
       <div class="slide" data-anchor="geopolitics-map">
         <h2>How do geopolitical conflicts affect the Olympic Games?</h2>
         <p>Select a year and swipe right for the statistics.</p>
-        <img data-src="data/geopolitics_map.png" alt="Geopolitical map">
+
+        <div class="geo-layout">
+          <div class="geo-map-column">
+            <div class="geo-select-row">
+              <label for="geo-year-select">Year:</label>
+              <select id="geo-year-select"></select>
+            </div>
+
+            <div id="geopolitics-map-viz"></div>
+          </div>
+
+          <div id="geo-event-list"></div>
+        </div>
       </div>
+
       <div class="slide" data-anchor="geopolitics-graphs">
         <h2>How do geopolitical conflicts affect the Olympic Games?</h2>
-        <p>Countries in conflict during the year XXX.</p>
-        <p>PS: Swipe left to select another year.</p>
-        <img data-src="data/geopolitics_graphs.png" alt="Geopolitical graphs">
+        <p>Statistics around the selected geopolitical event.</p>
+
+        <div class="geo-stats-grid">
+          <div id="geo-medals-chart"></div>
+          <div id="geo-countries-chart"></div>
+        </div>
       </div>
     </div>
 
     <div class="section" data-anchor="fair">
       <h2>What would a fair distribution of Olympic medals look like?</h2>
-      <div class="container" data-anchor="body-container">
-        <div class="text-container" data-anchor="body-text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Cubilia purus dolor tellus hac vehicula non suscipit habitasse tincidunt faucibus inceptos sollicitudin. 
-            Egestas morbi dignissim dui lobortis pretium tristique sociosqu vulputate augue inceptos augue. 
-            Laoreet netus donec nam ullamcorper orci netus curae tincidunt blandit. 
-            Himenaeos suscipit hac arcu viverra dictum aliquam imperdiet nostra nam. 
-            Litora maximus et quisque vitae imperdiet quam iaculis.
-          </p>
-          <p>
-            Pulvinar fringilla nisi himenaeos metus tortor orci tellus litora rhoncus dolor porttitor sociosqu lectus nullam. 
-            Nec scelerisque proin ultricies cubilia condimentum maecenas. 
-            Velit ultrices facilisis ex ipsum urna gravida potenti ornare. 
-            Vivamus rutrum est eros ante proin luctus sollicitudin sem nisi dignissim. 
-            Ipsum cubilia rhoncus aliquet dolor sapien risus vestibulum rhoncus nostra porttitor et potenti.
-          </p>
-        </div>
-        <div class="image-container" data-anchor="body-graph">
-          <img data-src="data/fair_medal_distribution.png" alt="Fair Medal Distribution">
-        </div>
-      </div>
+      <div id="fair-viz"></div>
     </div>
 
     <div class="section" data-anchor="conclusion">
       <h2>Conclusion</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Diam placerat quam quis curae fringilla hac molestie iaculis lobortis. 
-        Adipiscing tellus ad convallis litora molestie nullam pretium diam euismod. 
-        Sapien nunc primis sollicitudin justo nec urna amet turpis conubia. 
-        Nec cras vel leo mattis neque cubilia pharetra dictum nisl vitae. 
-        Morbi phasellus elit sem sed dictum urna finibus.
+        The data shows that Olympic success is not only a question of individual excellence.
+        It is also shaped by access, institutions, national wealth, political stability, and the
+        historical inclusion or exclusion of different groups.
       </p>
+
       <p>
-        Lobortis sem gravida elementum turpis vitae nunc nibh egestas eu ad ullamcorper nec auctor quam. 
-        Inceptos aliquet lacinia tristique sem enim per augue est. 
-        Curae pellentesque adipiscing finibus risus maximus proin habitant sociosqu erat ullamcorper nam quam suspendisse tortor tempus. 
-        Feugiat quis sollicitudin non varius duis nulla tempus metus malesuada.
+        Over time, the Games have become more inclusive, especially in terms of gender representation.
+        Yet large inequalities remain in which countries win medals, which sports receive attention,
+        and which bodies are considered optimal for success.
       </p>
+
       <p>
-        Luctus ultricies luctus urna vivamus placerat volutpat enim sed magna ornare habitasse lectus finibus. 
-        Integer vehicula pharetra vulputate facilisis litora libero hendrerit sem phasellus ornare scelerisque enim eleifend convallis. 
-        Convallis metus dolor nunc consectetur suspendisse eu mattis odio habitasse dignissim. 
-        Nullam pulvinar non orci facilisis ante semper ullamcorper tortor at dictum taciti pretium turpis fames. 
-        Vivamus class felis bibendum purus at placerat malesuada ex fringilla conubia.
+        The Olympics are therefore both a sporting event and a mirror of global inequalities.
       </p>
     </div>
 
@@ -252,7 +258,18 @@
   </div>
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.js"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
+
+<script src="js/gender-evolution.js"></script>
+<script src="js/delegations.js"></script>
+<script src="js/never-medaled.js"></script>
+<script type="module" src="js/body-types.js"></script>
+<script src="js/geopolitics-conflicts.js"></script>
+<script src="js/fair-distribution.js"></script>
+
 
 <script>
   new fullpage('#website', {
