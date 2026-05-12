@@ -302,8 +302,6 @@
     d3.select(selectors.winter).on("click", () => setSeason("Winter"));
 
     d3.select(selectors.year).on("input", function () {
-      stopPlaying();
-
       const index = Number(this.value);
       const year = state.availableYears[index];
 
@@ -330,8 +328,8 @@
 
     state.availableYears = Array.from(seasonData.keys())
       .map(Number)
-      .filter(year => year <= STOP_YEAR)
-      .sort((a, b) => a - b);
+      .sort((a, b) => a - b)
+      .filter(year => year <= STOP_YEAR);
 
     state.currentYear = state.availableYears.includes(1896)
       ? 1896
@@ -358,68 +356,40 @@
   function togglePlay() {
     if (state.playing) {
       stopPlaying();
-      return;
+    } else {
+      startPlaying();
     }
-
-    startPlaying();
   }
 
   function startPlaying() {
-    stopPlaying();
-
-    const currentIndex = state.availableYears.indexOf(state.currentYear);
-    const lastIndex = state.availableYears.length - 1;
-
-    if (currentIndex >= lastIndex) {
-      state.currentYear = state.availableYears[lastIndex];
-      d3.select(selectors.year).property("value", lastIndex);
-      update();
-      stopPlaying();
-      return;
-    }
-
     state.playing = true;
     d3.select(selectors.play).text("Ⅱ");
 
-    playNextYear();
-  }
+    state.timer = setInterval(() => {
+      const currentIndex = state.availableYears.indexOf(state.currentYear);
+      const lastIndex = state.availableYears.length - 1;
 
-  function playNextYear() {
-    if (!state.playing) return;
+      if (currentIndex >= lastIndex) {
+        state.currentYear = state.availableYears[lastIndex];
+        d3.select(selectors.year).property("value", lastIndex);
+        update();
+        stopPlaying();
+        return;
+      }
 
-    const currentIndex = state.availableYears.indexOf(state.currentYear);
-    const lastIndex = state.availableYears.length - 1;
+      const nextIndex = currentIndex + 1;
+      state.currentYear = state.availableYears[nextIndex];
 
-    if (currentIndex >= lastIndex) {
-      state.currentYear = state.availableYears[lastIndex];
-      d3.select(selectors.year).property("value", lastIndex);
+      d3.select(selectors.year).property("value", nextIndex);
       update();
-      stopPlaying();
-      return;
-    }
-
-    const nextIndex = currentIndex + 1;
-
-    state.currentYear = state.availableYears[nextIndex];
-    d3.select(selectors.year).property("value", nextIndex);
-    update();
-
-    if (nextIndex >= lastIndex || state.currentYear >= STOP_YEAR) {
-      state.currentYear = state.availableYears[lastIndex];
-      d3.select(selectors.year).property("value", lastIndex);
-      update();
-      stopPlaying();
-      return;
-    }
-
-    state.timer = setTimeout(playNextYear, 1400);
+    }, 1400);
   }
 
   function stopPlaying() {
     state.playing = false;
 
-    if (state.timer !== null) {
-      clearTimeout(state.timer);
+    if (state.timer) {
+      clearInterval(state.timer);
       state.timer = null;
     }
 
@@ -482,9 +452,9 @@
     const container = d3.select(selectors.pie);
     container.selectAll("*").remove();
 
-    const width = 360;
-    const height = 120;
-    const radius = 48;
+    const width = 290;
+    const height = 195;
+    const radius = 78;
 
     const total = totals.men + totals.women;
 
@@ -494,13 +464,11 @@
     const pieData = [
       {
         key: "women",
-        label: "Women",
         value: totals.women,
         percent: womenPct
       },
       {
         key: "men",
-        label: "Men",
         value: totals.men,
         percent: menPct
       }
@@ -514,7 +482,7 @@
 
     const chartGroup = svg
       .append("g")
-      .attr("transform", `translate(95, ${height / 2})`);
+      .attr("transform", `translate(${width / 2}, ${height / 2})`);
 
     const pie = d3.pie()
       .value(d => d.value)
@@ -540,34 +508,10 @@
       .attr("transform", d => `translate(${arc.centroid(d)})`)
       .attr("text-anchor", "middle")
       .attr("font-family", "Arial, sans-serif")
-      .attr("font-size", 13)
+      .attr("font-size", 15)
       .attr("font-weight", 700)
       .attr("fill", "#111")
       .text(d => `${d.data.percent}%`);
-
-    const legend = svg
-      .append("g")
-      .attr("transform", "translate(180, 34)");
-
-    legend
-      .selectAll("circle")
-      .data(pieData)
-      .join("circle")
-      .attr("cx", 0)
-      .attr("cy", (d, i) => i * 30)
-      .attr("r", 8)
-      .attr("fill", d => genderConfig[d.key].centerColor);
-
-    legend
-      .selectAll("text")
-      .data(pieData)
-      .join("text")
-      .attr("x", 18)
-      .attr("y", (d, i) => i * 30 + 5)
-      .attr("font-family", "Arial, sans-serif")
-      .attr("font-size", 16)
-      .attr("fill", "white")
-      .text(d => d.label);
   }
 
   /* ============================================================
@@ -654,7 +598,6 @@
         const top = getTopAncestor(d);
         const baseColor = colorScale(top.data.name);
         const percentage = getGenderPercentageForNode(d, genderKey, compareSport, compareEvent);
-
         return shadeByPercentage(baseColor, percentage);
       })
       .attr("stroke", "#050505")
@@ -668,22 +611,42 @@
         d3.select(this).attr("stroke", "#050505").attr("stroke-width", 1);
       });
 
-    svg
+    const labelGroup = svg
       .append("g")
       .attr("pointer-events", "none")
-      .attr("text-anchor", "middle")
+      .attr("text-anchor", "middle");
+
+    const labels = labelGroup
       .selectAll("text")
       .data(nodes.filter(labelVisible))
       .join("text")
       .attr("transform", d =>
         labelTransform(d, innerHole, sportRingThickness, disciplineRingThickness)
       )
-      .attr("dy", "0.35em")
       .attr("font-family", "Arial, sans-serif")
-      .attr("font-size", d => d.depth === 1 ? 15 : 12)
+      .attr("font-size", d => d.depth === 1 ? 15 : 11)
       .attr("font-weight", d => d.depth === 1 ? 700 : 400)
-      .attr("fill", "#111")
-      .text(d => shortenLabel(d.data.name, d.depth === 1 ? 24 : 42));
+      .attr("fill", "#111");
+
+    labels.each(function (d) {
+      const textEl = d3.select(this);
+      const lines = splitLabelIntoLines(
+        d.data.name,
+        d.depth === 1 ? 16 : 18,
+        2
+      );
+
+      const lineHeight = d.depth === 1 ? 1.05 : 0.95;
+      const startDy = lines.length === 1 ? "0.35em" : "-0.15em";
+
+      lines.forEach((line, i) => {
+        textEl
+          .append("tspan")
+          .attr("x", 0)
+          .attr("dy", i === 0 ? startDy : `${lineHeight}em`)
+          .text(line);
+      });
+    });
 
     svg
       .append("text")
@@ -707,7 +670,6 @@
     }
 
     const total = counts.men + counts.women;
-
     if (!total) return 0;
 
     return counts[genderKey] / total;
@@ -716,6 +678,7 @@
   function shadeByPercentage(baseColor, percentage) {
     const color = d3.hsl(baseColor);
 
+    // Low percentage = lighter, high percentage = darker.
     color.l = 0.9 - percentage * 0.45;
     color.s = Math.min(0.95, color.s + percentage * 0.25);
 
@@ -750,7 +713,6 @@
     const x = ((d.x0 + d.x1) / 2) * 180 / Math.PI;
 
     let y;
-
     if (d.depth === 1) {
       y = innerHole + sportRingThickness / 2;
     } else if (d.depth === 2) {
@@ -762,11 +724,57 @@
     return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
   }
 
-  function shortenLabel(text, maxLength) {
+  function splitLabelIntoLines(text, maxCharsPerLine, maxLines) {
+    if (!text) return [""];
+
+    const cleaned = String(text).trim();
+    if (cleaned.length <= maxCharsPerLine) return [cleaned];
+
+    const words = cleaned.split(/\s+/);
+    const lines = [];
+    let currentLine = "";
+
+    words.forEach(word => {
+      const candidate = currentLine ? `${currentLine} ${word}` : word;
+
+      if (candidate.length <= maxCharsPerLine) {
+        currentLine = candidate;
+      } else {
+        if (currentLine) {
+          lines.push(currentLine);
+          currentLine = word;
+        } else {
+          lines.push(word);
+          currentLine = "";
+        }
+      }
+    });
+
+    if (currentLine) {
+      lines.push(currentLine);
+    }
+
+    let finalLines = lines.slice(0, maxLines);
+
+    if (lines.length > maxLines) {
+      const remaining = lines.slice(maxLines - 1).join(" ");
+      finalLines[maxLines - 1] = truncateText(remaining, maxCharsPerLine);
+    } else {
+      finalLines = finalLines.map((line, index) => {
+        if (index === maxLines - 1) {
+          return truncateText(line, maxCharsPerLine);
+        }
+        return line;
+      });
+    }
+
+    return finalLines;
+  }
+
+  function truncateText(text, maxLength) {
     if (!text) return "";
     if (text.length <= maxLength) return text;
-
-    return text.slice(0, maxLength - 1) + "…";
+    return `${text.slice(0, maxLength - 1)}…`;
   }
 
   /* ============================================================
@@ -787,7 +795,6 @@
     }
 
     const total = counts.men + counts.women;
-
     const menPct = total ? ((counts.men / total) * 100).toFixed(1) : "0.0";
     const womenPct = total ? ((counts.women / total) * 100).toFixed(1) : "0.0";
 

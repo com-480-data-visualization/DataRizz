@@ -6,6 +6,11 @@
    middle: Gold / Silver / Bronze
    target: Top 10 sports/disciplines
 
+   Interactions:
+   - Hover medal → sport links to see continent/country repartition
+   - Click medal → sport links to open a detailed Sankey:
+     continent/country → selected sport for that medal only
+
    Uses real data from data/olympics.csv
    Stops animation at 2016
    ============================================================ */
@@ -526,6 +531,10 @@
         ? getContinent(noc)
         : cleanCountryName(team || noc);
 
+      /*
+        Count one medal once per event/team/medal,
+        not once per athlete row.
+      */
       const uniqueMedalKey = [
         year,
         season,
@@ -559,9 +568,32 @@
       d => d.medal
     );
 
+    /*
+      For medal → sport links, keep the repartition by continent/country.
+      This lets the hover tooltip and click detail Sankey explain where
+      each medal-sport flow comes from.
+    */
     const medalToSport = d3.rollups(
       filteredRows,
-      values => d3.sum(values, d => d.value),
+      values => {
+        const total = d3.sum(values, d => d.value);
+
+        const breakdown = d3.rollups(
+          values,
+          v => d3.sum(v, d => d.value),
+          d => d.source
+        )
+          .map(([source, value]) => ({
+            source,
+            value
+          }))
+          .sort((a, b) => d3.descending(a.value, b.value));
+
+        return {
+          value: total,
+          breakdown
+        };
+      },
       d => d.medal,
       d => d.sport
     );
@@ -607,15 +639,23 @@
     });
 
     medalToSport.forEach(([medal, sports]) => {
-      sports.forEach(([sport, value]) => {
+      sports.forEach(([sport, info]) => {
         if (!nodeIndex.has(medal) || !nodeIndex.has(sport)) return;
 
         links.push({
           source: nodeIndex.get(medal),
           target: nodeIndex.get(sport),
-          value,
+          value: info.value,
           kind: "medal-sport",
-          label: `${medal} → ${sport}: ${value} medals`
+          label: `${medal} → ${sport}: ${info.value} medals`,
+          detail: {
+            year,
+            season,
+            mode,
+            medal,
+            sport,
+            breakdown: info.breakdown
+          }
         });
       });
     });
@@ -772,11 +812,16 @@
       .attr("stroke", d => colorForNode(d.source))
       .attr("stroke-opacity", 0.35)
       .attr("stroke-width", d => Math.max(1, d.width))
+      .style("cursor", d => d.kind === "medal-sport" ? "pointer" : "default")
       .on("mousemove", function (event, d) {
-        d3.select(this).attr("stroke-opacity", 0.75);
+        d3.select(this).attr("stroke-opacity", 0.78);
+
+        const html = d.kind === "medal-sport"
+          ? buildMedalSportTooltip(d)
+          : `<strong>${d.label}</strong>`;
 
         tooltip
-          .html(`<strong>${d.label}</strong>`)
+          .html(html)
           .style("left", `${event.pageX + 14}px`)
           .style("top", `${event.pageY + 14}px`)
           .style("opacity", 1);
@@ -784,6 +829,12 @@
       .on("mouseleave", function () {
         d3.select(this).attr("stroke-opacity", 0.35);
         tooltip.style("opacity", 0);
+      })
+      .on("click", function (event, d) {
+        if (d.kind !== "medal-sport" || !d.detail) return;
+
+        event.stopPropagation();
+        openMedalSportDetail(d.detail);
       });
 
     const node = svg.append("g")
@@ -824,6 +875,236 @@
       .attr("font-size", 13)
       .attr("font-weight", d => d.type === "medal" ? 800 : 600)
       .text(d => shortenLabel(d.name, 22));
+  }
+
+  function buildMedalSportTooltip(link) {
+    const detail = link.detail;
+
+    if (!detail || !detail.breakdown) {
+      return `<strong>${link.label}</strong>`;
+    }
+
+    const total = d3.sum(detail.breakdown, d => d.value);
+
+    const rows = detail.breakdown
+      .slice(0, 8)
+      .map(d => {
+        const pct = total ? Math.round((d.value / total) * 100) : 0;
+
+        return `
+          <div style="display:flex; justify-content:space-between; gap:18px;">
+            <span>${d.source}</span>
+            <strong>${d.value} (${pct}%)</strong>
+          </div>
+        `;
+      })
+      .join("");
+
+    return `
+      <strong>${detail.medal} → ${detail.sport}</strong><br>
+      ${total} medals total<br>
+      <span style="color:#aeeaf2;">Click to open detailed Sankey</span>
+      <div style="margin-top:8px;">
+        ${rows}
+      </div>
+    `;
+  }
+
+  function openMedalSportDetail(detail) {
+    d3.select("body").select(".medal-detail-overlay").remove();
+
+    const overlay = d3.select("body")
+      .append("div")
+      .attr("class", "medal-detail-overlay")
+      .style("position", "fixed")
+      .style("inset", "0")
+      .style("z-index", "99999")
+      .style("background", "rgba(0, 0, 0, 0.96)")
+      .style("color", "white")
+      .style("display", "flex")
+      .style("flex-direction", "column")
+      .style("align-items", "center")
+      .style("justify-content", "center")
+      .style("padding", "34px")
+      .style("box-sizing", "border-box");
+
+    const header = overlay.append("div")
+      .style("width", "min(1200px, 96vw)")
+      .style("display", "flex")
+      .style("align-items", "center")
+      .style("justify-content", "space-between")
+      .style("margin-bottom", "18px");
+
+    header.append("div")
+      .html(`
+        <div style="font-family:Arial, sans-serif; font-size:28px; font-weight:800;">
+          ${detail.medal} medals in ${detail.sport}
+        </div>
+        <div style="font-family:Arial, sans-serif; font-size:15px; color:rgba(255,255,255,0.72); margin-top:4px;">
+          ${detail.season} Olympics, ${detail.year} · grouped by ${detail.mode}
+        </div>
+      `);
+
+    header.append("button")
+      .text("Close")
+      .style("background", "#aeeaf2")
+      .style("border", "2px solid white")
+      .style("border-radius", "10px")
+      .style("padding", "9px 18px")
+      .style("font-family", "Arial, sans-serif")
+      .style("font-size", "15px")
+      .style("font-weight", "800")
+      .style("cursor", "pointer")
+      .on("click", () => overlay.remove());
+
+    const chart = overlay.append("div")
+      .style("width", "min(1200px, 96vw)");
+
+    drawDetailSankey(chart, detail);
+
+    overlay.on("click", function (event) {
+      if (event.target === this) {
+        overlay.remove();
+      }
+    });
+  }
+
+  function drawDetailSankey(container, detail) {
+    const breakdown = detail.breakdown || [];
+    const total = d3.sum(breakdown, d => d.value);
+
+    const width = 1150;
+    const height = Math.max(420, 120 + breakdown.length * 38);
+    const margin = { top: 40, right: 170, bottom: 40, left: 170 };
+
+    const svg = container.append("svg")
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .style("width", "100%")
+      .style("height", "auto");
+
+    const sourceNodes = breakdown.map(d => ({
+      name: d.source,
+      type: "source"
+    }));
+
+    const sportNode = {
+      name: detail.sport,
+      type: "sport"
+    };
+
+    const nodes = [
+      ...sourceNodes,
+      sportNode
+    ];
+
+    const nodeIndex = new Map(nodes.map((d, i) => [d.name, i]));
+
+    const links = breakdown.map(d => ({
+      source: nodeIndex.get(d.source),
+      target: nodeIndex.get(detail.sport),
+      value: d.value,
+      label: `${d.source} → ${detail.sport}: ${d.value} ${detail.medal} medals`
+    }));
+
+    const sankey = d3.sankey()
+      .nodeWidth(20)
+      .nodePadding(14)
+      .nodeAlign(d3.sankeyJustify)
+      .nodeSort((a, b) => {
+        if (a.type === "source" && b.type === "source") {
+          if (detail.mode === "continent") {
+            return nodeRank(a, detail.mode) - nodeRank(b, detail.mode);
+          }
+
+          return d3.descending(a.value, b.value);
+        }
+
+        return 0;
+      })
+      .extent([
+        [margin.left, margin.top],
+        [width - margin.right, height - margin.bottom]
+      ]);
+
+    const graph = sankey({
+      nodes: nodes.map(d => ({ ...d })),
+      links: links.map(d => ({ ...d }))
+    });
+
+    const tooltip = getTooltip();
+
+    svg.append("text")
+      .attr("x", width / 2)
+      .attr("y", 22)
+      .attr("text-anchor", "middle")
+      .attr("fill", "white")
+      .attr("font-family", "Arial, sans-serif")
+      .attr("font-size", 16)
+      .attr("font-weight", 700)
+      .text(`The ${total} ${detail.medal.toLowerCase()} medals in ${detail.sport} are split across ${detail.mode}s`);
+
+    svg.append("g")
+      .attr("fill", "none")
+      .selectAll("path")
+      .data(graph.links)
+      .join("path")
+      .attr("d", d3.sankeyLinkHorizontal())
+      .attr("stroke", d => colorForNode(d.source))
+      .attr("stroke-opacity", 0.45)
+      .attr("stroke-width", d => Math.max(1, d.width))
+      .on("mousemove", function (event, d) {
+        d3.select(this).attr("stroke-opacity", 0.82);
+
+        const pct = total ? Math.round((d.value / total) * 100) : 0;
+
+        tooltip
+          .html(`
+            <strong>${d.label}</strong><br>
+            Share of this ${detail.medal.toLowerCase()}-${detail.sport} flow:
+            <strong>${pct}%</strong>
+          `)
+          .style("left", `${event.pageX + 14}px`)
+          .style("top", `${event.pageY + 14}px`)
+          .style("opacity", 1);
+      })
+      .on("mouseleave", function () {
+        d3.select(this).attr("stroke-opacity", 0.45);
+        tooltip.style("opacity", 0);
+      });
+
+    const node = svg.append("g")
+      .selectAll("g")
+      .data(graph.nodes)
+      .join("g");
+
+    node.append("rect")
+      .attr("x", d => d.x0)
+      .attr("y", d => d.y0)
+      .attr("height", d => Math.max(1, d.y1 - d.y0))
+      .attr("width", d => d.x1 - d.x0)
+      .attr("rx", 5)
+      .attr("fill", d => colorForNode(d))
+      .attr("stroke", "white")
+      .attr("stroke-width", 1.2);
+
+    node.append("text")
+      .attr("x", d => d.x0 < width / 2 ? d.x1 + 10 : d.x0 - 10)
+      .attr("y", d => (d.y0 + d.y1) / 2)
+      .attr("dy", "0.35em")
+      .attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end")
+      .attr("fill", "white")
+      .attr("font-family", "Arial, sans-serif")
+      .attr("font-size", 15)
+      .attr("font-weight", 800)
+      .text(d => {
+        const pct = total ? Math.round((d.value / total) * 100) : 0;
+
+        if (d.type === "sport") {
+          return `${d.name} · ${total}`;
+        }
+
+        return `${d.name} · ${Math.round(d.value)} (${pct}%)`;
+      });
   }
 
   function nodeSort(a, b, mode) {

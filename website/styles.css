@@ -747,3 +747,20 @@ p {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
 }
+
+/* =============================================
+   About section
+   =========================================== */
+
+.team-simple {
+  margin-top: 40px;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+.team-simple p {
+  margin: 8px 0;
+}
