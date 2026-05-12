@@ -1,0 +1,841 @@
+/* ============================================================
+   Gender Evolution Visualization
+   ============================================================
+   Uses real data from data/olympics.csv
+   Stops animation at 2016
+   ============================================================ */
+
+(function () {
+  "use strict";
+
+  const DATA_PATH = "data/olympics.csv";
+  const STOP_YEAR = 2016;
+
+  const selectors = {
+    root: "#gender-viz",
+    pie: "#gender-pie",
+    men: "#gender-men",
+    women: "#gender-women",
+    play: "#gender-play",
+    year: "#gender-year",
+    currentYear: "#gender-current-year",
+    summer: "#season-summer",
+    winter: "#season-winter"
+  };
+
+  const genderConfig = {
+    men: {
+      label: "Men",
+      acceptedValues: ["M", "Men", "Male", "man", "men", "male"],
+      centerColor: "#b9d8fb"
+    },
+    women: {
+      label: "Women",
+      acceptedValues: ["F", "Women", "Female", "woman", "women", "female"],
+      centerColor: "#efc3cb"
+    }
+  };
+
+  const sportColorPalette = [
+    "#a88ad6",
+    "#f1d55b",
+    "#91d18b",
+    "#f4b183",
+    "#9dc3e6",
+    "#f4a6c6",
+    "#c9c9c9",
+    "#b4d6a3",
+    "#ffd9a8",
+    "#c7b3e6",
+    "#b8e0d2",
+    "#f6c1a6",
+    "#d7c6f5",
+    "#d2e7a2",
+    "#a9d5ff",
+    "#ffd6a5",
+    "#caffbf",
+    "#fdffb6",
+    "#bdb2ff",
+    "#ffadad",
+    "#9bf6ff",
+    "#ffc6ff",
+    "#e0bbff",
+    "#ffffb5",
+    "#b5ead7",
+    "#ffdac1",
+    "#d0f4de",
+    "#fcf6bd",
+    "#a9def9",
+    "#e4c1f9",
+    "#ff99c8",
+    "#cdb4db",
+    "#bde0fe",
+    "#ffc8dd",
+    "#ffafcc",
+    "#b8f2e6"
+  ];
+
+  const state = {
+    dataBySeasonYear: new Map(),
+    sportColorScale: null,
+    currentSeason: "Summer",
+    currentYear: null,
+    availableYears: [],
+    playing: false,
+    timer: null
+  };
+
+  document.addEventListener("DOMContentLoaded", init);
+
+  async function init() {
+    const root = document.querySelector(selectors.root);
+
+    if (!root) {
+      console.warn("Gender visualization container #gender-viz was not found.");
+      return;
+    }
+
+    if (typeof d3 === "undefined") {
+      showError("D3 is not loaded.");
+      return;
+    }
+
+    try {
+      const rows = await d3.csv(DATA_PATH, d3.autoType);
+
+      buildDataModel(rows);
+      setupControls();
+      setSeason("Summer");
+    } catch (error) {
+      console.error(error);
+      showError(`Could not load ${DATA_PATH}.`);
+    }
+  }
+
+  /* ============================================================
+     Data preparation
+     ============================================================ */
+
+  function buildDataModel(rows) {
+    if (!rows || rows.length === 0) {
+      throw new Error("CSV file is empty.");
+    }
+
+    const columns = Object.keys(rows[0]);
+
+    const yearCol = findColumn(columns, ["Year", "year"]);
+    const seasonCol = findColumn(columns, ["Season", "season"]);
+    const sexCol = findColumn(columns, ["Sex", "sex", "Gender", "gender"]);
+    const sportCol = findColumn(columns, ["Sport", "sport"]);
+    const eventCol = findColumn(columns, ["Event", "event", "Discipline", "discipline"]);
+
+    if (!yearCol || !seasonCol || !sexCol || !sportCol) {
+      throw new Error("Missing required columns: Year, Season, Sex/Gender, Sport.");
+    }
+
+    const grouped = new Map();
+
+    rows.forEach(row => {
+      const year = Number(row[yearCol]);
+
+      // Hard stop: ignore years after 2016 for this visualization.
+      if (!Number.isFinite(year) || year > STOP_YEAR) return;
+
+      const season = String(row[seasonCol] || "").trim();
+      const sex = normalizeGender(row[sexCol]);
+      const sport = cleanLabel(row[sportCol]);
+
+      const rawEvent = eventCol ? cleanLabel(row[eventCol]) : sport;
+      const event = normalizeDisciplineName(rawEvent, sport);
+
+      if (!year || !season || !sex || !sport || !event) return;
+
+      if (!grouped.has(season)) {
+        grouped.set(season, new Map());
+      }
+
+      const yearKey = String(year);
+
+      if (!grouped.get(season).has(yearKey)) {
+        grouped.get(season).set(yearKey, {
+          men: new Map(),
+          women: new Map(),
+          totals: { men: 0, women: 0 },
+          compareSport: new Map(),
+          compareEvent: new Map()
+        });
+      }
+
+      const bucket = grouped.get(season).get(yearKey);
+      const genderKey = sex === "M" ? "men" : "women";
+
+      bucket.totals[genderKey] += 1;
+
+      if (!bucket[genderKey].has(sport)) {
+        bucket[genderKey].set(sport, new Map());
+      }
+
+      const sportMap = bucket[genderKey].get(sport);
+      sportMap.set(event, (sportMap.get(event) || 0) + 1);
+
+      incrementCompare(bucket.compareSport, sport, genderKey);
+      incrementCompare(bucket.compareEvent, `${sport}|||${event}`, genderKey);
+    });
+
+    state.dataBySeasonYear = grouped;
+    state.sportColorScale = buildGlobalSportColorScale(grouped);
+  }
+
+  function incrementCompare(map, key, genderKey) {
+    if (!map.has(key)) {
+      map.set(key, { men: 0, women: 0 });
+    }
+
+    map.get(key)[genderKey] += 1;
+  }
+
+  function findColumn(columns, candidates) {
+    return candidates.find(candidate => columns.includes(candidate)) || null;
+  }
+
+  function normalizeGender(value) {
+    const text = String(value || "").trim();
+
+    if (genderConfig.men.acceptedValues.includes(text)) return "M";
+    if (genderConfig.women.acceptedValues.includes(text)) return "F";
+
+    return null;
+  }
+
+  function cleanLabel(value) {
+    return String(value || "").trim();
+  }
+
+  function normalizeDisciplineName(value, sport) {
+    let text = String(value || "").trim();
+    const sportText = String(sport || "").trim();
+
+    text = text
+      .replace(/\bWomen's\b/gi, "")
+      .replace(/\bWomens\b/gi, "")
+      .replace(/\bMen's\b/gi, "")
+      .replace(/\bMens\b/gi, "")
+      .replace(/\bWomen\b/gi, "")
+      .replace(/\bMen\b/gi, "")
+      .replace(/\bFemale\b/gi, "")
+      .replace(/\bMale\b/gi, "")
+      .replace(/\bMixed\b/gi, "")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (sportText) {
+      const escapedSport = escapeRegExp(sportText);
+      const sportAtStart = new RegExp("^" + escapedSport + "\\s+", "i");
+      text = text.replace(sportAtStart, "").trim();
+
+      const duplicatedSport = new RegExp("^" + escapedSport + "\\s+" + escapedSport + "$", "i");
+      text = text.replace(duplicatedSport, sportText).trim();
+    }
+
+    text = text
+      .replace(/\s*,\s*/g, ", ")
+      .replace(/\s+-\s+/g, " - ")
+      .replace(/^[-,:\s]+/, "")
+      .replace(/[-,:\s]+$/, "")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    return text || sportText || String(value || "").trim();
+  }
+
+  function escapeRegExp(text) {
+    return String(text).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  function mapToHierarchy(map, rootName) {
+    const children = Array.from(map.entries())
+      .map(([sport, events]) => ({
+        name: sport,
+        children: Array.from(events.entries())
+          .map(([event, value]) => ({
+            name: event,
+            value
+          }))
+          .filter(d => d.value > 0)
+          .sort((a, b) => d3.descending(a.value, b.value))
+      }))
+      .filter(d => d.children.length > 0)
+      .sort((a, b) =>
+        d3.descending(
+          d3.sum(a.children, child => child.value),
+          d3.sum(b.children, child => child.value)
+        )
+      );
+
+    return {
+      name: rootName,
+      children
+    };
+  }
+
+  function buildGlobalSportColorScale(grouped) {
+    const allSports = new Set();
+
+    grouped.forEach(seasonData => {
+      seasonData.forEach(yearData => {
+        yearData.men.forEach((_, sport) => allSports.add(sport));
+        yearData.women.forEach((_, sport) => allSports.add(sport));
+      });
+    });
+
+    return d3.scaleOrdinal()
+      .domain(Array.from(allSports).sort())
+      .range(sportColorPalette);
+  }
+
+  /* ============================================================
+     Controls
+     ============================================================ */
+
+  function setupControls() {
+    d3.select(selectors.summer).on("click", () => setSeason("Summer"));
+    d3.select(selectors.winter).on("click", () => setSeason("Winter"));
+
+    d3.select(selectors.year).on("input", function () {
+      stopPlaying();
+
+      const index = Number(this.value);
+      const year = state.availableYears[index];
+
+      if (year !== undefined) {
+        state.currentYear = year;
+        update();
+      }
+    });
+
+    d3.select(selectors.play).on("click", togglePlay);
+  }
+
+  function setSeason(season) {
+    stopPlaying();
+
+    const seasonData = state.dataBySeasonYear.get(season);
+
+    if (!seasonData || seasonData.size === 0) {
+      showError(`No ${season} data found.`);
+      return;
+    }
+
+    state.currentSeason = season;
+
+    state.availableYears = Array.from(seasonData.keys())
+      .map(Number)
+      .filter(year => year <= STOP_YEAR)
+      .sort((a, b) => a - b);
+
+    state.currentYear = state.availableYears.includes(1896)
+      ? 1896
+      : state.availableYears[0];
+
+    updateSeasonButtons();
+    updateSliderLimits();
+    update();
+  }
+
+  function updateSeasonButtons() {
+    d3.select(selectors.summer).classed("active", state.currentSeason === "Summer");
+    d3.select(selectors.winter).classed("active", state.currentSeason === "Winter");
+  }
+
+  function updateSliderLimits() {
+    d3.select(selectors.year)
+      .attr("min", 0)
+      .attr("max", Math.max(0, state.availableYears.length - 1))
+      .attr("step", 1)
+      .property("value", state.availableYears.indexOf(state.currentYear));
+  }
+
+  function togglePlay() {
+    if (state.playing) {
+      stopPlaying();
+      return;
+    }
+
+    startPlaying();
+  }
+
+  function startPlaying() {
+    stopPlaying();
+
+    const currentIndex = state.availableYears.indexOf(state.currentYear);
+    const lastIndex = state.availableYears.length - 1;
+
+    if (currentIndex >= lastIndex) {
+      state.currentYear = state.availableYears[lastIndex];
+      d3.select(selectors.year).property("value", lastIndex);
+      update();
+      stopPlaying();
+      return;
+    }
+
+    state.playing = true;
+    d3.select(selectors.play).text("Ⅱ");
+
+    playNextYear();
+  }
+
+  function playNextYear() {
+    if (!state.playing) return;
+
+    const currentIndex = state.availableYears.indexOf(state.currentYear);
+    const lastIndex = state.availableYears.length - 1;
+
+    if (currentIndex >= lastIndex) {
+      state.currentYear = state.availableYears[lastIndex];
+      d3.select(selectors.year).property("value", lastIndex);
+      update();
+      stopPlaying();
+      return;
+    }
+
+    const nextIndex = currentIndex + 1;
+
+    state.currentYear = state.availableYears[nextIndex];
+    d3.select(selectors.year).property("value", nextIndex);
+    update();
+
+    if (nextIndex >= lastIndex || state.currentYear >= STOP_YEAR) {
+      state.currentYear = state.availableYears[lastIndex];
+      d3.select(selectors.year).property("value", lastIndex);
+      update();
+      stopPlaying();
+      return;
+    }
+
+    state.timer = setTimeout(playNextYear, 1400);
+  }
+
+  function stopPlaying() {
+    state.playing = false;
+
+    if (state.timer !== null) {
+      clearTimeout(state.timer);
+      state.timer = null;
+    }
+
+    d3.select(selectors.play).text("▶");
+  }
+
+  /* ============================================================
+     Main update
+     ============================================================ */
+
+  function getCurrentYearData() {
+    const seasonData = state.dataBySeasonYear.get(state.currentSeason);
+    if (!seasonData) return null;
+
+    return seasonData.get(String(state.currentYear)) || null;
+  }
+
+  function update() {
+    const yearData = getCurrentYearData();
+
+    if (!yearData) {
+      showError(`No data for ${state.currentSeason} ${state.currentYear}.`);
+      return;
+    }
+
+    d3.select(selectors.currentYear).text(state.currentYear);
+
+    drawPieChart(yearData.totals);
+
+    drawSunburst({
+      selector: selectors.men,
+      title: "Men",
+      data: mapToHierarchy(yearData.men, "Men"),
+      genderKey: "men",
+      compareSport: yearData.compareSport,
+      compareEvent: yearData.compareEvent,
+      colorScale: state.sportColorScale
+    });
+
+    drawSunburst({
+      selector: selectors.women,
+      title: "Women",
+      data: mapToHierarchy(yearData.women, "Women"),
+      genderKey: "women",
+      compareSport: yearData.compareSport,
+      compareEvent: yearData.compareEvent,
+      colorScale: state.sportColorScale
+    });
+
+    if (window.fullpage_api && typeof window.fullpage_api.reBuild === "function") {
+      window.fullpage_api.reBuild();
+    }
+  }
+
+  /* ============================================================
+     Pie chart
+     ============================================================ */
+
+  function drawPieChart(totals) {
+    const container = d3.select(selectors.pie);
+    container.selectAll("*").remove();
+
+    const width = 360;
+    const height = 120;
+    const radius = 48;
+
+    const total = totals.men + totals.women;
+
+    const menPct = total ? Math.round((totals.men / total) * 100) : 0;
+    const womenPct = total ? Math.round((totals.women / total) * 100) : 0;
+
+    const pieData = [
+      {
+        key: "women",
+        label: "Women",
+        value: totals.women,
+        percent: womenPct
+      },
+      {
+        key: "men",
+        label: "Men",
+        value: totals.men,
+        percent: menPct
+      }
+    ];
+
+    const svg = container
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", `0 0 ${width} ${height}`);
+
+    const chartGroup = svg
+      .append("g")
+      .attr("transform", `translate(95, ${height / 2})`);
+
+    const pie = d3.pie()
+      .value(d => d.value)
+      .sort(null);
+
+    const arc = d3.arc()
+      .innerRadius(0)
+      .outerRadius(radius);
+
+    chartGroup
+      .selectAll("path")
+      .data(pie(pieData))
+      .join("path")
+      .attr("d", arc)
+      .attr("fill", d => genderConfig[d.data.key].centerColor)
+      .attr("stroke", "#111")
+      .attr("stroke-width", 2.5);
+
+    chartGroup
+      .selectAll("text")
+      .data(pie(pieData))
+      .join("text")
+      .attr("transform", d => `translate(${arc.centroid(d)})`)
+      .attr("text-anchor", "middle")
+      .attr("font-family", "Arial, sans-serif")
+      .attr("font-size", 13)
+      .attr("font-weight", 700)
+      .attr("fill", "#111")
+      .text(d => `${d.data.percent}%`);
+
+    const legend = svg
+      .append("g")
+      .attr("transform", "translate(180, 34)");
+
+    legend
+      .selectAll("circle")
+      .data(pieData)
+      .join("circle")
+      .attr("cx", 0)
+      .attr("cy", (d, i) => i * 30)
+      .attr("r", 8)
+      .attr("fill", d => genderConfig[d.key].centerColor);
+
+    legend
+      .selectAll("text")
+      .data(pieData)
+      .join("text")
+      .attr("x", 18)
+      .attr("y", (d, i) => i * 30 + 5)
+      .attr("font-family", "Arial, sans-serif")
+      .attr("font-size", 16)
+      .attr("fill", "white")
+      .text(d => d.label);
+  }
+
+  /* ============================================================
+     Sunburst
+     ============================================================ */
+
+  function drawSunburst({
+    selector,
+    title,
+    data,
+    genderKey,
+    compareSport,
+    compareEvent,
+    colorScale
+  }) {
+    const container = d3.select(selector);
+    container.selectAll("*").remove();
+
+    const wrapper = container
+      .append("div")
+      .attr("class", "gender-chart");
+
+    const width = 760;
+    const height = 760;
+
+    const innerHole = 72;
+    const sportRingThickness = 130;
+    const disciplineRingThickness = 230;
+
+    const root = d3.hierarchy(data)
+      .sum(d => d.value || 0)
+      .sort((a, b) => b.value - a.value);
+
+    if (!root.value) {
+      wrapper
+        .append("div")
+        .attr("class", "gender-empty")
+        .text(`No ${title.toLowerCase()} data`);
+      return;
+    }
+
+    d3.partition()
+      .size([2 * Math.PI, 1])(root);
+
+    const svg = wrapper
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", `${-width / 2} ${-height / 2} ${width} ${height}`)
+      .attr("class", "gender-sunburst-svg");
+
+    const arc = d3.arc()
+      .startAngle(d => d.x0)
+      .endAngle(d => d.x1)
+      .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.006))
+      .padRadius(innerHole)
+      .innerRadius(d => {
+        if (d.depth === 1) return innerHole;
+        if (d.depth === 2) return innerHole + sportRingThickness;
+        return innerHole;
+      })
+      .outerRadius(d => {
+        if (d.depth === 1) return innerHole + sportRingThickness - 2;
+        if (d.depth === 2) return innerHole + sportRingThickness + disciplineRingThickness - 2;
+        return innerHole;
+      });
+
+    const nodes = root.descendants().filter(d => d.depth > 0);
+
+    svg
+      .append("circle")
+      .attr("r", innerHole - 4)
+      .attr("fill", genderConfig[genderKey].centerColor)
+      .attr("stroke", "white")
+      .attr("stroke-width", 2.5);
+
+    svg
+      .append("g")
+      .selectAll("path")
+      .data(nodes)
+      .join("path")
+      .attr("d", arc)
+      .attr("fill", d => {
+        const top = getTopAncestor(d);
+        const baseColor = colorScale(top.data.name);
+        const percentage = getGenderPercentageForNode(d, genderKey, compareSport, compareEvent);
+
+        return shadeByPercentage(baseColor, percentage);
+      })
+      .attr("stroke", "#050505")
+      .attr("stroke-width", 1)
+      .on("mousemove", function (event, d) {
+        showTooltip(event, buildTooltip(d, compareSport, compareEvent));
+        d3.select(this).attr("stroke", "white").attr("stroke-width", 1.8);
+      })
+      .on("mouseleave", function () {
+        hideTooltip();
+        d3.select(this).attr("stroke", "#050505").attr("stroke-width", 1);
+      });
+
+    svg
+      .append("g")
+      .attr("pointer-events", "none")
+      .attr("text-anchor", "middle")
+      .selectAll("text")
+      .data(nodes.filter(labelVisible))
+      .join("text")
+      .attr("transform", d =>
+        labelTransform(d, innerHole, sportRingThickness, disciplineRingThickness)
+      )
+      .attr("dy", "0.35em")
+      .attr("font-family", "Arial, sans-serif")
+      .attr("font-size", d => d.depth === 1 ? 15 : 12)
+      .attr("font-weight", d => d.depth === 1 ? 700 : 400)
+      .attr("fill", "#111")
+      .text(d => shortenLabel(d.data.name, d.depth === 1 ? 24 : 42));
+
+    svg
+      .append("text")
+      .attr("text-anchor", "middle")
+      .attr("dy", "0.35em")
+      .attr("font-family", "Arial, sans-serif")
+      .attr("font-size", 17)
+      .attr("font-weight", 700)
+      .attr("fill", "#111")
+      .text(title);
+  }
+
+  function getGenderPercentageForNode(d, genderKey, compareSport, compareEvent) {
+    let counts = { men: 0, women: 0 };
+
+    if (d.depth === 1) {
+      counts = compareSport.get(d.data.name) || counts;
+    } else if (d.depth === 2) {
+      const key = `${d.parent.data.name}|||${d.data.name}`;
+      counts = compareEvent.get(key) || counts;
+    }
+
+    const total = counts.men + counts.women;
+
+    if (!total) return 0;
+
+    return counts[genderKey] / total;
+  }
+
+  function shadeByPercentage(baseColor, percentage) {
+    const color = d3.hsl(baseColor);
+
+    color.l = 0.9 - percentage * 0.45;
+    color.s = Math.min(0.95, color.s + percentage * 0.25);
+
+    return color.formatHex();
+  }
+
+  function getTopAncestor(d) {
+    let node = d;
+
+    while (node.depth > 1) {
+      node = node.parent;
+    }
+
+    return node;
+  }
+
+  function labelVisible(d) {
+    const angle = d.x1 - d.x0;
+
+    if (d.depth === 1) {
+      return angle > 0.15;
+    }
+
+    if (d.depth === 2) {
+      return angle > 0.04;
+    }
+
+    return false;
+  }
+
+  function labelTransform(d, innerHole, sportRingThickness, disciplineRingThickness) {
+    const x = ((d.x0 + d.x1) / 2) * 180 / Math.PI;
+
+    let y;
+
+    if (d.depth === 1) {
+      y = innerHole + sportRingThickness / 2;
+    } else if (d.depth === 2) {
+      y = innerHole + sportRingThickness + disciplineRingThickness / 2;
+    } else {
+      y = innerHole;
+    }
+
+    return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+  }
+
+  function shortenLabel(text, maxLength) {
+    if (!text) return "";
+    if (text.length <= maxLength) return text;
+
+    return text.slice(0, maxLength - 1) + "…";
+  }
+
+  /* ============================================================
+     Tooltip
+     ============================================================ */
+
+  function buildTooltip(d, compareSport, compareEvent) {
+    let counts = { men: 0, women: 0 };
+    let level = "Category";
+
+    if (d.depth === 1) {
+      counts = compareSport.get(d.data.name) || counts;
+      level = "Sport";
+    } else if (d.depth === 2) {
+      const key = `${d.parent.data.name}|||${d.data.name}`;
+      counts = compareEvent.get(key) || counts;
+      level = "Discipline";
+    }
+
+    const total = counts.men + counts.women;
+
+    const menPct = total ? ((counts.men / total) * 100).toFixed(1) : "0.0";
+    const womenPct = total ? ((counts.women / total) * 100).toFixed(1) : "0.0";
+
+    return `
+      <strong>${d.data.name}</strong><br>
+      ${level}<br>
+      Women: <strong>${womenPct}%</strong> (${counts.women})<br>
+      Men: <strong>${menPct}%</strong> (${counts.men})<br>
+      Total athletes: ${total}
+    `;
+  }
+
+  function getTooltip() {
+    let tooltip = d3.select("body").select(".gender-tooltip");
+
+    if (tooltip.empty()) {
+      tooltip = d3.select("body")
+        .append("div")
+        .attr("class", "gender-tooltip");
+    }
+
+    return tooltip;
+  }
+
+  function showTooltip(event, html) {
+    getTooltip()
+      .html(html)
+      .style("left", `${event.clientX + 14}px`)
+      .style("top", `${event.clientY + 14}px`)
+      .style("opacity", 1);
+  }
+
+  function hideTooltip() {
+    getTooltip().style("opacity", 0);
+  }
+
+  /* ============================================================
+     Error
+     ============================================================ */
+
+  function showError(message) {
+    const root = d3.select(selectors.root);
+
+    root.selectAll("*").remove();
+
+    root
+      .append("div")
+      .attr("class", "gender-error")
+      .text(message);
+  }
+})();
