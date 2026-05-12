@@ -250,9 +250,9 @@ p {
 }
 
 .gender-controls button.active {
-  background: #aeeaf2;
+  background: #f4b400;
   color: black;
-  border-color: #aeeaf2;
+  border-color: #f4b400;
 }
 
 /* sunbursts */
@@ -305,7 +305,7 @@ p {
 
 #gender-year {
   width: 300px;
-  accent-color: #aeeaf2;
+  accent-color: #f4b400;
 }
 
 #gender-current-year {
@@ -404,46 +404,28 @@ p {
   color: #fff;
 }
 
+.geo-intro {
+  max-width: 1100px;
+  margin: 0 auto 18px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.88);
+}
+
 .geo-layout {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 28px;
+  grid-template-columns: 1.35fr 0.9fr;
+  gap: 34px;
   align-items: start;
-  margin-top: 18px;
+  margin-top: 12px;
 }
 
 .geo-map-column {
   width: 100%;
 }
 
-.geo-select-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 14px;
-}
-
-.geo-select-row label {
-  color: #fff;
-  font-size: 22px;
-  font-weight: 700;
-}
-
-#geo-year-select {
-  background: #aeeaf2;
-  color: #111;
-  border: 3px solid #222;
-  border-radius: 12px;
-  padding: 10px 18px;
-  font-size: 24px;
-  font-weight: 700;
-  cursor: pointer;
-  min-width: 140px;
-}
-
-#geopolitics-map-viz,
-#geo-medals-chart,
-#geo-countries-chart {
+#geopolitics-map-viz {
   width: 100%;
 }
 
@@ -453,6 +435,38 @@ p {
   height: auto;
   display: block;
   background: transparent;
+}
+
+.geo-action-area {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.geo-action-button {
+  display: none;
+  background: #ffd166;
+  color: #111;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.geo-action-button.visible {
+  display: inline-block;
+}
+
+.geo-action-button:hover {
+  filter: brightness(1.06);
+}
+
+.geo-country-hint {
+  margin: 10px auto 0;
+  text-align: center;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 #geo-event-list {
@@ -474,7 +488,7 @@ p {
 
 #geo-event-list p,
 #geo-event-list li {
-  color: rgba(255,255,255,0.92);
+  color: rgba(255, 255, 255, 0.92);
   font-size: 16px;
   line-height: 1.35;
 }
@@ -482,6 +496,10 @@ p {
 .geo-highlight-event {
   font-size: 20px !important;
   margin-bottom: 8px;
+}
+
+.geo-highlight-event strong {
+  color: #f4b400;
 }
 
 .geo-event-description {
@@ -499,40 +517,109 @@ p {
 
 .geo-events-list li {
   margin-bottom: 4px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.geo-events-list li:hover {
+  color: #ffd166;
 }
 
 .geo-events-list li.active {
-  color: #ff8c7f;
+  color: #f4b400;
   font-weight: 700;
 }
 
-.geo-stats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  align-items: start;
-  margin-top: 28px;
+.geo-events-list li.active strong,
+.geo-events-list li.active span {
+  color: #f4b400;
 }
 
 .geo-tooltip {
-  position: absolute;
+  position: fixed;
   pointer-events: none;
-  background: rgba(20, 20, 20, 0.96);
+  background: rgba(20, 20, 20, 0.98);
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 10px;
   padding: 10px 12px;
   font-size: 14px;
   line-height: 1.35;
-  max-width: 280px;
-  z-index: 9999;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  max-width: 340px;
+  z-index: 1000000;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
   transition: opacity 0.12s ease;
 }
 
+.geo-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px;
+  box-sizing: border-box;
+}
+
+.geo-popup-box {
+  width: min(980px, 94vw);
+  max-height: 88vh;
+  overflow: auto;
+  background: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+}
+
+.geo-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+
+.geo-popup-title-block {
+  text-align: left;
+}
+
+.geo-popup-title {
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.geo-popup-note {
+  margin-top: 6px;
+  color: #ffd166;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.geo-popup-close {
+  background: #ffd166;
+  color: #111;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.geo-popup-close:hover {
+  filter: brightness(1.06);
+}
+
 @media (max-width: 1100px) {
-  .geo-layout,
-  .geo-stats-grid {
+  .geo-layout {
     grid-template-columns: 1fr;
   }
 }
@@ -563,7 +650,7 @@ p {
 }
 
 .medal-controls select {
-  background: #aeeaf2;
+  background: #f4b400;
   color: #111;
   border: 3px solid #222;
   border-radius: 12px;
@@ -674,7 +761,7 @@ p {
 }
 
 .bodytype-control select {
-  background: #aeeaf2;
+  background: #f4b400;
   color: #111;
   border: 3px solid #333;
   border-radius: 12px;
@@ -763,4 +850,25 @@ p {
 
 .team-simple p {
   margin: 8px 0;
+}
+
+/* =============================================
+   Fair distribution controls
+   =========================================== */
+
+#fair-viz select,
+.fair-wrapper select,
+.fair-control select {
+  background: #f4b400 !important;
+  color: #111 !important;
+  border: 3px solid #222 !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+}
+
+#fair-viz select:focus,
+.fair-wrapper select:focus,
+.fair-control select:focus {
+  outline: 2px solid white !important;
 }

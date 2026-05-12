@@ -144,32 +144,29 @@
     </div>
 
     <div class="section" data-anchor="geopolitics">
-      <div class="slide" data-anchor="geopolitics-map">
-        <h2>How do geopolitical conflicts affect the Olympic Games?</h2>
-        <p>Select a year and swipe right for the statistics.</p>
+      <h2>How do geopolitical conflicts affect the Olympic Games?</h2>
 
-        <div class="geo-layout">
-          <div class="geo-map-column">
-            <div class="geo-select-row">
-              <label for="geo-year-select">Year:</label>
-              <select id="geo-year-select"></select>
-            </div>
+      <p class="geo-intro">
+        Click an event to explore its Olympic context. For boycott years, open a participation comparison.
+        Click on a highlighted country to compare its medal performance across nearby Games.
+      </p>
 
-            <div id="geopolitics-map-viz"></div>
+      <div class="geo-layout">
+        <div class="geo-map-column">
+          <div id="geopolitics-map-viz"></div>
+
+          <div class="geo-action-area">
+            <button id="geo-participation-button" class="geo-action-button">
+              Click to see how this boycott influenced participation
+            </button>
+
+            <p id="geo-country-hint" class="geo-country-hint">
+              Click on a highlighted country to see how many medals it won around this year.
+            </p>
           </div>
-
-          <div id="geo-event-list"></div>
         </div>
-      </div>
 
-      <div class="slide" data-anchor="geopolitics-graphs">
-        <h2>How do geopolitical conflicts affect the Olympic Games?</h2>
-        <p>Statistics around the selected geopolitical event.</p>
-
-        <div class="geo-stats-grid">
-          <div id="geo-medals-chart"></div>
-          <div id="geo-countries-chart"></div>
-        </div>
+        <div id="geo-event-list"></div>
       </div>
     </div>
 
