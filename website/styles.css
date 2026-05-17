@@ -46,16 +46,7 @@ body {
 }
 
 .section {
-  padding: 3%;
-}
-
-.section[data-anchor="introduction"] {
-  box-sizing: border-box;
-  background-attachment: fixed;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-img);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding: 5%;
 }
 
 /* Remove "Made with fullpage.js" link at bottom of page */
@@ -118,6 +109,7 @@ h2,
 h3,
 p {
   color: white;
+  line-height: 1.15;
 }
 
 body,
@@ -142,7 +134,6 @@ h1 {
 h2 {
   font-size: 40px;
   padding-bottom: 24px;
-  line-height: 1.15;
 }
 
 h3 {
@@ -152,6 +143,27 @@ h3 {
 
 p {
   text-align: justify;
+  padding-bottom: 6px;
+}
+
+/* =============================================
+   Introduction section
+   =========================================== */
+
+.section[data-anchor="introduction"] {
+  box-sizing: border-box;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-img);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-anchor="introduction"] p {
+  margin: 0 auto;
+  width: 60%;
 }
 
 /* =============================================
