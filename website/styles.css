@@ -35,23 +35,32 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  font-family: Arial, sans-serif;
-}
-
 #website,
 .section,
 .slide,
 .fp-section,
 .fp-slide,
 .fp-tableCell {
-  background: #000 !important;
-  background-image: none !important;
+  background: #000;
+  background-image: none;
 }
 
 .section {
   padding: 3%;
+}
+
+.section[data-anchor="introduction"] {
   box-sizing: border-box;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-img);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Remove "Made with fullpage.js" link at bottom of page */
+.fp-watermark {
+  display: none !important;
 }
 
 /* =============================================
@@ -103,11 +112,18 @@ body {
    Typography
    =========================================== */
 
+body,
 h1,
 h2,
 h3,
 p {
   color: white;
+}
+
+body,
+p {
+  font-family: "Delius", cursive;
+  font-size: 24px;
 }
 
 h1,
@@ -135,49 +151,7 @@ h3 {
 }
 
 p {
-  font-family: "Delius", cursive;
-  font-size: 24px;
   text-align: justify;
-}
-
-/* =============================================
-   About section
-   =========================================== */
-
-.about-container,
-.about-team {
-  display: flex;
-  flex-direction: column;
-  gap: 2%;
-  align-items: center;
-}
-
-.about-team {
-  width: 25%;
-}
-
-.about-people-image img,
-.about-team-image img {
-  border-radius: 50%;
-  height: auto;
-  display: block;
-}
-
-.about-team-image img {
-  width: 300px;
-}
-
-.about-people-image img {
-  background-color: white;
-  width: 150px;
-}
-
-.about-person {
-  display: flex;
-  flex-direction: row;
-  gap: 2%;
-  align-items: center;
-  justify-content: start;
 }
 
 /* =============================================
