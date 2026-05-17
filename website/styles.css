@@ -805,24 +805,11 @@ p {
 
 .bodytype-athlete-label {
   position: absolute;
-  top: 78px;
-  width: 27%;
   color: white;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.35;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
-}
-
-.bodytype-athlete-0 {
-  left: 5%;
-}
-
-.bodytype-athlete-1 {
-  left: 36.5%;
-}
-
-.bodytype-athlete-2 {
-  right: 5%;
+  pointer-events: none;
 }
 
 .bodytype-athlete-name {
@@ -833,6 +820,18 @@ p {
 .bodytype-athlete-meta {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
+}
+
+.bodytype-athlete-stats {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 2px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 10px;
+  letter-spacing: 0.02em;
 }
 
 /* =============================================
