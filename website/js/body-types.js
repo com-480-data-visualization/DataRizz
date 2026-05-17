@@ -1,4 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
+import { AthleteRenderer } from "./AthleteRenderer.js";
 
 (function () {
   "use strict";
@@ -37,19 +38,17 @@ import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
     Bronze: 0xe3c38b
   };
 
-  const medalColors = {
-    Gold: 0xf4c542,
-    Silver: 0xcfd5db,
-    Bronze: 0xd88c32
-  };
-
   document.addEventListener("DOMContentLoaded", init);
 
   async function init() {
     if (!document.querySelector(selectors.root)) return;
 
     try {
-      const rows = await d3.csv(DATA_PATH, d3.autoType);
+      const [rows] = await Promise.all([
+        d3.csv(DATA_PATH, d3.autoType),
+        AthleteRenderer.loadModels("models/man_outfit.glb", "models/woman_outfit.glb")
+      ]);
+
       state.rows = rows;
       state.columns = detectColumns(rows);
 
@@ -59,7 +58,7 @@ import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
       updateScene();
     } catch (error) {
       console.error(error);
-      showError(`Could not load ${DATA_PATH}.`);
+      showError(`Could not load data or 3D models.`);
     }
   }
 
@@ -439,9 +438,9 @@ import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
     const scene = new THREE.Scene();
     scene.background = null;
 
-    const camera = new THREE.PerspectiveCamera(36, width / height, 0.1, 100);
-    camera.position.set(0, 5.6, 15);
-    camera.lookAt(0, 3.3, 0);
+    const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 200);
+    camera.position.set(0, 10, 36);
+    camera.lookAt(0, 6, 0);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -464,18 +463,21 @@ import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
     scene.add(fillLight);
 
     const positions = {
-      Silver: { x: -5.3, podiumHeight: 1.05, podiumWidth: 3.25, podiumDepth: 2.4 },
-      Gold: { x: 0, podiumHeight: 1.45, podiumWidth: 3.8, podiumDepth: 2.4 },
-      Bronze: { x: 5.3, podiumHeight: 0.9, podiumWidth: 3.25, podiumDepth: 2.4 }
+      Silver: { x: -10, podiumHeight: 2.2, podiumWidth: 3.25, podiumDepth: 2.4 },
+      Gold:   { x: 0,   podiumHeight: 3.2, podiumWidth: 3.8,  podiumDepth: 2.4 },
+      Bronze: { x: 10,  podiumHeight: 1.5, podiumWidth: 3.25, podiumDepth: 2.4 }
     };
 
-    ["Silver", "Gold", "Bronze"].forEach((medal, index) => {
+    camera.updateProjectionMatrix();
+    camera.updateMatrixWorld();
+
+    ["Silver", "Gold", "Bronze"].forEach((medal) => {
       const athlete = medalists.find(d => d.medal === medal);
       const pos = positions[medal];
 
       addPodium(scene, pos, medal);
       addHuman(scene, athlete, pos);
-      addAthleteOverlay(overlay, athlete, index);
+      addAthleteOverlay(overlay, athlete, pos, camera, width, height);
     });
 
     renderer.render(scene, camera);
@@ -523,210 +525,34 @@ import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
   }
 
   function addHuman(scene, athlete, pos) {
-    const heightCm = athlete.height || 165;
-    const weightKg = athlete.weight || 60;
-
-    const heightScale = THREE.MathUtils.clamp(heightCm / 165, 0.84, 1.16);
-    const expectedWeight = 22 * Math.pow(heightCm / 100, 2);
-    const widthScale = THREE.MathUtils.clamp(weightKg / expectedWeight, 0.8, 1.25);
-
-    const group = new THREE.Group();
-    group.position.x = pos.x;
-
-    const skin = new THREE.MeshStandardMaterial({
-      color: 0xf0ded2,
-      roughness: 0.9
-    });
-
-    const hairMat = new THREE.MeshStandardMaterial({
-      color: 0x6f5140,
-      roughness: 0.95
-    });
-
-    const suitMat = new THREE.MeshStandardMaterial({
-      color: 0x2f74d0,
-      roughness: 0.6
-    });
-
-    const medalMat = new THREE.MeshStandardMaterial({
-      color: medalColors[athlete.medal],
-      metalness: 0.2,
-      roughness: 0.45
-    });
-
-    const baseY = pos.podiumHeight;
-
-    const torso = new THREE.Mesh(
-      new THREE.CapsuleGeometry(0.48 * widthScale, 1.75 * heightScale, 14, 26),
-      skin
-    );
-    torso.position.set(0, baseY + 2.35 * heightScale, 0);
-    torso.scale.set(1.05, 1, 0.62);
-    group.add(torso);
-
-    const chest = new THREE.Mesh(
-      new THREE.SphereGeometry(0.56 * widthScale, 28, 18),
-      skin
-    );
-    chest.position.set(0, baseY + 3.1 * heightScale, 0);
-    chest.scale.set(1, 0.7, 0.55);
-    group.add(chest);
-
-    const head = new THREE.Mesh(
-      new THREE.SphereGeometry(0.36 * widthScale, 30, 24),
-      skin
-    );
-    head.position.set(0, baseY + 4.25 * heightScale, 0);
-    group.add(head);
-
-    const hair = new THREE.Mesh(
-      new THREE.SphereGeometry(
-        0.39 * widthScale,
-        26,
-        14,
-        0,
-        Math.PI * 2,
-        0,
-        Math.PI / 1.75
-      ),
-      hairMat
-    );
-    hair.position.set(0, baseY + 4.35 * heightScale, 0);
-    group.add(hair);
-
-    addLimb(
-      group,
-      -0.78 * widthScale,
-      baseY + 2.95 * heightScale,
-      0,
-      0.18 * widthScale,
-      1.45 * heightScale,
-      0.75,
-      skin
-    );
-
-    addLimb(
-      group,
-      0.78 * widthScale,
-      baseY + 2.95 * heightScale,
-      0,
-      0.18 * widthScale,
-      1.45 * heightScale,
-      -0.5,
-      skin
-    );
-
-    addLimb(
-      group,
-      -0.26 * widthScale,
-      baseY + 0.9 * heightScale,
-      0,
-      0.19 * widthScale,
-      1.65 * heightScale,
-      0.05,
-      skin
-    );
-
-    addLimb(
-      group,
-      0.26 * widthScale,
-      baseY + 0.9 * heightScale,
-      0,
-      0.19 * widthScale,
-      1.65 * heightScale,
-      -0.05,
-      skin
-    );
-
-    const leftStrap = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.045, 0.045, 1.1, 12),
-      suitMat
-    );
-    leftStrap.position.set(-0.18 * widthScale, baseY + 3.32 * heightScale, 0.44);
-    leftStrap.rotation.z = 0.23;
-    group.add(leftStrap);
-
-    const rightStrap = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.045, 0.045, 1.1, 12),
-      suitMat
-    );
-    rightStrap.position.set(0.18 * widthScale, baseY + 3.32 * heightScale, 0.44);
-    rightStrap.rotation.z = -0.23;
-    group.add(rightStrap);
-
-    const medal = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.15, 0.15, 0.04, 32),
-      medalMat
-    );
-    medal.position.set(0, baseY + 3.14 * heightScale, 0.5);
-    medal.rotation.x = Math.PI / 2;
-    group.add(medal);
-
-    scene.add(group);
-
-    addHeightArrow(scene, pos, heightCm, heightScale);
-    addWeightLabel(scene, pos, weightKg);
+    const gender = state.gender === "Women" ? "woman" : "man";
+    const group = AthleteRenderer.addHuman(scene, athlete, pos, gender);
+    group.scale.multiplyScalar(0.85);
   }
 
-  function addLimb(group, x, y, z, radius, length, rotationZ, material) {
-    const limb = new THREE.Mesh(
-      new THREE.CapsuleGeometry(radius, length, 10, 18),
-      material
-    );
-
-    limb.position.set(x, y, z);
-    limb.rotation.z = rotationZ;
-    group.add(limb);
-  }
-
-  function addHeightArrow(scene, pos, heightCm, heightScale) {
-    const x = pos.x + 1.55;
-    const bottom = pos.podiumHeight;
-    const top = pos.podiumHeight + 4.75 * heightScale;
-    const z = 0.55;
-
-    const mat = new THREE.LineBasicMaterial({ color: 0x222222 });
-
-    scene.add(
-      new THREE.Line(
-        new THREE.BufferGeometry().setFromPoints([
-          new THREE.Vector3(x, bottom, z),
-          new THREE.Vector3(x, top, z)
-        ]),
-        mat
-      )
-    );
-
-    const text = makeTextSprite(`${(heightCm / 100).toFixed(2)} m`, {
-      fontsize: 44,
-      textColor: "#ffffff"
-    });
-
-    text.position.set(x + 0.65, (top + bottom) / 2, z);
-    text.scale.set(1.35, 0.52, 1);
-    scene.add(text);
-  }
-
-  function addWeightLabel(scene, pos, weightKg) {
-    const text = makeTextSprite(`${weightKg} kg`, {
-      fontsize: 44,
-      textColor: "#111111",
-      bgColor: "rgba(245,245,245,0.95)"
-    });
-
-    text.position.set(pos.x + 1.35, pos.podiumHeight + 0.45, 0.75);
-    text.scale.set(1.15, 0.52, 1);
-    scene.add(text);
-  }
-
-  function addAthleteOverlay(container, athlete, index) {
+  function addAthleteOverlay(container, athlete, pos, camera, canvasW, canvasH) {
     const div = document.createElement("div");
-    div.className = `bodytype-athlete-label bodytype-athlete-${index}`;
+    div.className = "bodytype-athlete-label";
+
+    const heightStr = athlete.height ? `${athlete.height} cm` : "– cm";
+    const weightStr = athlete.weight ? `${athlete.weight} kg` : "– kg";
 
     div.innerHTML = `
       <div class="bodytype-athlete-name">${athlete.name}</div>
       <div class="bodytype-athlete-meta">${athlete.noc || ""}</div>
+      <div class="bodytype-athlete-stats">${heightStr}&nbsp;·&nbsp;${weightStr}</div>
     `;
+
+    // Project approximate head position to screen coordinates
+    const v = new THREE.Vector3(pos.x, pos.podiumHeight + 14, 0);
+    v.project(camera);
+    const sx = (v.x + 1) / 2 * canvasW;
+    const sy = (1 - (v.y + 1) / 2) * canvasH;
+
+    div.style.left   = `${sx}px`;
+    div.style.top    = `${Math.max(6, sy - 4)}px`;
+    div.style.transform = "translateX(-50%) translateY(-100%)";
+    div.style.width  = "220px";
 
     container.appendChild(div);
   }
