@@ -380,9 +380,16 @@
 
     state.availableYears = getAvailableYears(season);
 
-    state.currentYear = state.availableYears.includes(1896)
-      ? 1896
-      : state.availableYears[0];
+    const previousYear = state.currentYear;
+    if (previousYear && state.availableYears.includes(previousYear)) {
+      state.currentYear = previousYear;
+    } else if (previousYear) {
+      state.currentYear = state.availableYears.reduce((closest, y) =>
+        Math.abs(y - previousYear) < Math.abs(closest - previousYear) ? y : closest
+      );
+    } else {
+      state.currentYear = state.availableYears[0];
+    }
 
     updateSliderLimits();
     update();
@@ -432,7 +439,7 @@
     }
 
     state.playing = true;
-    d3.select(selectors.play).text("Ⅱ");
+    d3.select(selectors.play).text("II");
 
     playNextYear();
   }
@@ -746,8 +753,8 @@
     root.selectAll("*").remove();
 
     const width = 1280;
-    const height = 650;
-    const margin = { top: 70, right: 40, bottom: 30, left: 40 };
+    const height = 520;
+    const margin = { top: 75, right: 40, bottom: 20, left: 40 };
 
     const svg = root
       .append("svg")
@@ -759,7 +766,7 @@
       .attr("y", 32)
       .attr("text-anchor", "middle")
       .attr("fill", "white")
-      .attr("font-family", "Arial, sans-serif")
+      .attr("font-family", "'Elms Sans', sans-serif")
       .attr("font-size", 24)
       .attr("font-weight", 700)
       .text(`Distribution of medals in ${graph.season} Olympics, ${graph.year}`);
@@ -769,7 +776,7 @@
       .attr("y", 58)
       .attr("text-anchor", "middle")
       .attr("fill", "rgba(255,255,255,0.75)")
-      .attr("font-family", "Arial, sans-serif")
+      .attr("font-family", "'Elms Sans', sans-serif")
       .attr("font-size", 14)
       .text(`Flows show ${graph.mode}s → medal type → top 10 sports · ${graph.medalCount} medals shown`);
 
@@ -779,7 +786,7 @@
         .attr("y", height / 2)
         .attr("text-anchor", "middle")
         .attr("fill", "white")
-        .attr("font-family", "Arial, sans-serif")
+        .attr("font-family", "'Elms Sans', sans-serif")
         .attr("font-size", 22)
         .text("No medal data available for this year.");
 
@@ -871,7 +878,7 @@
       .attr("dy", "0.35em")
       .attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end")
       .attr("fill", "white")
-      .attr("font-family", "Arial, sans-serif")
+      .attr("font-family", "'Elms Sans', sans-serif")
       .attr("font-size", 13)
       .attr("font-weight", d => d.type === "medal" ? 800 : 600)
       .text(d => shortenLabel(d.name, 22));
@@ -937,10 +944,10 @@
 
     header.append("div")
       .html(`
-        <div style="font-family:Arial, sans-serif; font-size:28px; font-weight:800;">
+        <div style="font-family:'Elms Sans', sans-serif; font-size:28px; font-weight:800;">
           ${detail.medal} medals in ${detail.sport}
         </div>
-        <div style="font-family:Arial, sans-serif; font-size:15px; color:rgba(255,255,255,0.72); margin-top:4px;">
+        <div style="font-family:'Elms Sans', sans-serif; font-size:15px; color:rgba(255,255,255,0.72); margin-top:4px;">
           ${detail.season} Olympics, ${detail.year} · grouped by ${detail.mode}
         </div>
       `);
@@ -951,7 +958,7 @@
       .style("border", "2px solid white")
       .style("border-radius", "10px")
       .style("padding", "9px 18px")
-      .style("font-family", "Arial, sans-serif")
+      .style("font-family", "'Elms Sans', sans-serif")
       .style("font-size", "15px")
       .style("font-weight", "800")
       .style("cursor", "pointer")
@@ -1038,7 +1045,7 @@
       .attr("y", 22)
       .attr("text-anchor", "middle")
       .attr("fill", "white")
-      .attr("font-family", "Arial, sans-serif")
+      .attr("font-family", "'Elms Sans', sans-serif")
       .attr("font-size", 16)
       .attr("font-weight", 700)
       .text(`The ${total} ${detail.medal.toLowerCase()} medals in ${detail.sport} are split across ${detail.mode}s`);
@@ -1093,7 +1100,7 @@
       .attr("dy", "0.35em")
       .attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end")
       .attr("fill", "white")
-      .attr("font-family", "Arial, sans-serif")
+      .attr("font-family", "'Elms Sans', sans-serif")
       .attr("font-size", 15)
       .attr("font-weight", 800)
       .text(d => {

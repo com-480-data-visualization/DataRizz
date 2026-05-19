@@ -370,7 +370,7 @@
 
   function startPlaying() {
     state.playing = true;
-    d3.select(selectors.play).text("Ⅱ");
+    d3.select(selectors.play).text("II");
 
     state.timer = setInterval(() => {
       const currentIndex = state.availableYears.indexOf(state.currentYear);

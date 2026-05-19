@@ -641,6 +641,7 @@ p {
   color: white;
   font-size: 18px;
   font-weight: 700;
+  font-family: "Elms Sans", sans-serif;
   margin-right: 8px;
 }
 
@@ -652,6 +653,7 @@ p {
   padding: 8px 14px;
   font-size: 18px;
   font-weight: 700;
+  font-family: "Elms Sans", sans-serif;
   cursor: pointer;
 }
 
