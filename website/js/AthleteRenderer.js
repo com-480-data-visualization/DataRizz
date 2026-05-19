@@ -58,7 +58,7 @@ export class AthleteRenderer {
     base.traverse((obj) => {
       if (!obj.isMesh) return;
       const mat = obj.material;
-      mat.transparent = false;
+mat.transparent = false;
       mat.opacity = 1;
       mat.side = THREE.DoubleSide;
       if (mat.map) mat.map.colorSpace = THREE.SRGBColorSpace;
@@ -66,6 +66,12 @@ export class AthleteRenderer {
 
       if (!obj.name.includes("_basic")) {
         obj.material = medalMat;
+      } else if (obj.name === "woman_basic001_9") {
+        obj.material = new THREE.MeshStandardMaterial({ color: 0x555555, roughness: 0.8 });
+      } else if (obj.name === "woman_basic001_4") {
+        obj.material = new THREE.MeshStandardMaterial({ color: 0x4a2c17, roughness: 0.9 });
+      } else if (obj.name === "woman_basic001_8") {
+        obj.material = new THREE.MeshStandardMaterial({ color: 0x1a2a4a, roughness: 0.6 });
       }
     });
 

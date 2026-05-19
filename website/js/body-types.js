@@ -33,9 +33,9 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
   };
 
   const podiumColors = {
-    Gold: 0xf3e58d,
-    Silver: 0xd5d9de,
-    Bronze: 0xe3c38b
+    Gold:   0xf5f5f5,
+    Silver: 0xf5f5f5,
+    Bronze: 0xf5f5f5
   };
 
   document.addEventListener("DOMContentLoaded", init);
@@ -470,19 +470,19 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     scene.add(fillLight);
 
     const positions = {
-      Silver: { x: -10, podiumHeight: 2.2, podiumWidth: 3.25, podiumDepth: 2.4 },
-      Gold:   { x: 0,   podiumHeight: 3.2, podiumWidth: 3.8,  podiumDepth: 2.4 },
-      Bronze: { x: 10,  podiumHeight: 1.5, podiumWidth: 3.25, podiumDepth: 2.4 }
+      Silver: { x: -9.75, podiumHeight: 2.2, podiumWidth: 10.0, podiumDepth: 3.0 },
+      Gold:   { x: 0,     podiumHeight: 3.2, podiumWidth:  9.5, podiumDepth: 3.0 },
+      Bronze: { x: 9.75,  podiumHeight: 1.5, podiumWidth: 10.0, podiumDepth: 3.0 }
     };
 
     camera.updateProjectionMatrix();
     camera.updateMatrixWorld();
 
+    addConnectedPodium(scene, positions);
     ["Silver", "Gold", "Bronze"].forEach((medal) => {
       const athlete = medalists.find(d => d.medal === medal);
       const pos = positions[medal];
 
-      addPodium(scene, pos, medal);
       addHuman(scene, athlete, pos);
       addAthleteOverlay(overlay, athlete, pos, camera, width, height);
     });
@@ -499,36 +499,72 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     resizeBodytypeSelects();
   }
 
-  function addPodium(scene, pos, medal) {
-    const podium = new THREE.Mesh(
-      new THREE.BoxGeometry(pos.podiumWidth, pos.podiumHeight, pos.podiumDepth),
-      new THREE.MeshStandardMaterial({
-        color: podiumColors[medal],
-        roughness: 0.85
-      })
-    );
+  function addConnectedPodium(scene, pos) {
+    const depth = pos.Gold.podiumDepth;
+    const sideMat = new THREE.MeshStandardMaterial({ color: 0xf5f5f5, roughness: 0.8 });
+    const topMat  = new THREE.MeshStandardMaterial({ color: 0xaaaaaa, roughness: 0.7 });
+    // BoxGeometry face order: right, left, top, bottom, front, back
+    const mat = [sideMat, sideMat, topMat, sideMat, sideMat, sideMat];
 
-    podium.position.set(pos.x, pos.podiumHeight / 2, 0);
-    scene.add(podium);
+    const silverLeft  = pos.Silver.x - pos.Silver.podiumWidth / 2;
+    const goldRight   = pos.Gold.x   + pos.Gold.podiumWidth   / 2;
+    const bronzeRight = pos.Bronze.x + pos.Bronze.podiumWidth / 2;
+    const bronzeH = pos.Bronze.podiumHeight;
+    const silverH = pos.Silver.podiumHeight;
+    const goldH   = pos.Gold.podiumHeight;
 
-    const edges = new THREE.LineSegments(
-      new THREE.EdgesGeometry(
-        new THREE.BoxGeometry(pos.podiumWidth, pos.podiumHeight, pos.podiumDepth)
-      ),
-      new THREE.LineBasicMaterial({ color: 0x222222 })
-    );
+    // Three stacked layers forming a staircase: base / silver+gold step / gold top
+    const layers = [
+      { w: bronzeRight - silverLeft,   h: bronzeH,            cx: (silverLeft + bronzeRight) / 2, cy: bronzeH / 2 },
+      { w: goldRight   - silverLeft,   h: silverH - bronzeH,  cx: (silverLeft + goldRight) / 2,   cy: bronzeH + (silverH - bronzeH) / 2 },
+      { w: pos.Gold.podiumWidth,       h: goldH   - silverH,  cx: pos.Gold.x,                     cy: silverH + (goldH - silverH) / 2 }
+    ];
 
-    edges.position.copy(podium.position);
-    scene.add(edges);
-
-    const rank = makeTextSprite(String(medalRank[medal]), {
-      fontsize: 90,
-      textColor: "#ffffff"
+    layers.forEach(({ w, h, cx, cy }) => {
+      const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, depth), mat);
+      mesh.position.set(cx, cy, 0);
+      scene.add(mesh);
     });
 
-    rank.position.set(pos.x, pos.podiumHeight * 0.5, pos.podiumDepth / 2 + 0.04);
-    rank.scale.set(1.4, 0.7, 1);
-    scene.add(rank);
+    // Olympic rings on gold section only
+    const ringsW = 6.0;
+    const ringsH = ringsW * (175 / 420);
+    const ringsPlane = new THREE.Mesh(
+      new THREE.PlaneGeometry(ringsW, ringsH),
+      new THREE.MeshStandardMaterial({
+        map: new THREE.CanvasTexture(makeOlympicRingsCanvas()),
+        transparent: true,
+        depthWrite: false
+      })
+    );
+    ringsPlane.position.set(pos.Gold.x, pos.Gold.podiumHeight / 2, depth / 2 + 0.01);
+    scene.add(ringsPlane);
+  }
+
+  function makeOlympicRingsCanvas() {
+    const W = 420, H = 175;
+    const canvas = document.createElement("canvas");
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext("2d");
+
+    const rings = [
+      { cx: 113, cy: 62,  color: "#0085C7" },
+      { cx: 210, cy: 62,  color: "#000000" },
+      { cx: 307, cy: 62,  color: "#DF0024" },
+      { cx: 162, cy: 112, color: "#F4C300" },
+      { cx: 259, cy: 112, color: "#009F6B" }
+    ];
+
+    rings.forEach(r => {
+      ctx.beginPath();
+      ctx.arc(r.cx, r.cy, 38, 0, Math.PI * 2);
+      ctx.strokeStyle = r.color;
+      ctx.lineWidth = 9;
+      ctx.stroke();
+    });
+
+    return canvas;
   }
 
   function addHuman(scene, athlete, pos) {
