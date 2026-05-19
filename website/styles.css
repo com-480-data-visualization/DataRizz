@@ -795,14 +795,16 @@ p {
   position: absolute;
   color: white;
   text-align: center;
-  line-height: 1.35;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  line-height: 1.25;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
   pointer-events: none;
+  max-width: 230px;
+  white-space: normal;
 }
 
 .bodytype-athlete-name {
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .bodytype-athlete-meta {

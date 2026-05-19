@@ -433,14 +433,14 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     wrapper.appendChild(canvasWrap);
 
     const width = canvasWrap.clientWidth || 1180;
-    const height = 670;
+    const height = 720;
 
     const scene = new THREE.Scene();
     scene.background = null;
 
     const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 200);
-    camera.position.set(0, 10, 36);
-    camera.lookAt(0, 6, 0);
+    camera.position.set(0, 12, 36);
+    camera.lookAt(0, 8, 0);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -543,16 +543,27 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
       <div class="bodytype-athlete-stats">${heightStr}&nbsp;·&nbsp;${weightStr}</div>
     `;
 
-    // Project approximate head position to screen coordinates
-    const v = new THREE.Vector3(pos.x, pos.podiumHeight + 14, 0);
+    /*
+      The label used to be fixed at podiumHeight + 14.
+      That made short athletes have labels too high above them.
+      Now the label anchor depends on the athlete's real height.
+    */
+    const athleteCm = athlete.height || 170;
+    const normalizedHeight = athleteCm / 170;
+
+    const estimatedBodyHeight = 11.2 * normalizedHeight;
+    const labelWorldY = pos.podiumHeight + estimatedBodyHeight + 0.9;
+
+    const v = new THREE.Vector3(pos.x, labelWorldY, 0);
     v.project(camera);
+
     const sx = (v.x + 1) / 2 * canvasW;
     const sy = (1 - (v.y + 1) / 2) * canvasH;
 
-    div.style.left   = `${sx}px`;
-    div.style.top    = `${Math.max(6, sy - 4)}px`;
+    div.style.left = `${sx}px`;
+    div.style.top = `${Math.max(8, sy)}px`;
     div.style.transform = "translateX(-50%) translateY(-100%)";
-    div.style.width  = "220px";
+    div.style.width = "230px";
 
     container.appendChild(div);
   }
