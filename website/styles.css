@@ -154,6 +154,7 @@ p {
 
 [data-anchor="gender"] {
   background: #000 !important;
+  padding: 0 !important;
 }
 
 [data-anchor="gender"] .container {
@@ -173,8 +174,7 @@ p {
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
-  padding: 12px 24px 12px 24px;
-  min-height: 760px;
+  padding: 4px 24px 4px 24px;
   background: transparent;
   border: none;
   border-radius: 0;
@@ -188,6 +188,33 @@ p {
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+}
+
+/* pie legend */
+.gender-pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 18px;
+  justify-content: center;
+}
+
+.gender-pie-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Elms Sans", sans-serif;
+  font-size: 15px;
+  color: white;
+}
+
+.gender-pie-legend-swatch {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.3);
+  flex-shrink: 0;
 }
 
 /* season buttons */
@@ -208,7 +235,7 @@ p {
   background: #111;
   color: white;
   cursor: pointer;
-  font-family: Arial, sans-serif;
+  font-family: "Elms Sans", sans-serif;
   font-size: 18px;
   transition: 0.2s ease;
 }
@@ -240,7 +267,7 @@ p {
 }
 
 .gender-chart-title {
-  font-family: Arial, sans-serif;
+  font-family: "Elms Sans", sans-serif;
   font-size: 28px;
   font-weight: 700;
   color: white;
@@ -280,7 +307,7 @@ p {
   min-width: 60px;
   text-align: center;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: "Elms Sans", sans-serif;
   font-size: 24px;
   font-weight: 700;
 }
@@ -296,7 +323,7 @@ p {
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 10px;
   padding: 10px 12px;
-  font-family: Arial, sans-serif;
+  font-family: "Elms Sans", sans-serif;
   font-size: 14px;
   line-height: 1.35;
   box-shadow: 0 6px 16px rgba(0,0,0,0.35);
@@ -305,7 +332,7 @@ p {
 
 .gender-empty,
 .gender-error {
-  font-family: Arial, sans-serif;
+  font-family: "Elms Sans", sans-serif;
   color: white;
   font-size: 18px;
   text-align: center;
@@ -556,7 +583,7 @@ p {
 
 .geo-popup-title {
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: "Elms Sans", sans-serif;
   font-size: 24px;
   font-weight: 800;
   text-align: left;
@@ -565,7 +592,7 @@ p {
 .geo-popup-note {
   margin-top: 6px;
   color: #ffd166;
-  font-family: Arial, sans-serif;
+  font-family: "Elms Sans", sans-serif;
   font-size: 14px;
   line-height: 1.35;
   text-align: left;

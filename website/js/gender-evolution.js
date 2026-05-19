@@ -331,9 +331,16 @@
       .sort((a, b) => a - b)
       .filter(year => year <= STOP_YEAR);
 
-    state.currentYear = state.availableYears.includes(1896)
-      ? 1896
-      : state.availableYears[0];
+    const previousYear = state.currentYear;
+    if (previousYear && state.availableYears.includes(previousYear)) {
+      state.currentYear = previousYear;
+    } else if (previousYear) {
+      state.currentYear = state.availableYears.reduce((closest, y) =>
+        Math.abs(y - previousYear) < Math.abs(closest - previousYear) ? y : closest
+      );
+    } else {
+      state.currentYear = state.availableYears[0];
+    }
 
     updateSeasonButtons();
     updateSliderLimits();
@@ -507,11 +514,24 @@
       .join("text")
       .attr("transform", d => `translate(${arc.centroid(d)})`)
       .attr("text-anchor", "middle")
-      .attr("font-family", "Arial, sans-serif")
+      .attr("font-family", "'Elms Sans', sans-serif")
       .attr("font-size", 15)
       .attr("font-weight", 700)
       .attr("fill", "#111")
       .text(d => `${d.data.percent}%`);
+
+    const legend = container.append("div").attr("class", "gender-pie-legend");
+
+    [
+      { key: "women", label: "Women" },
+      { key: "men",   label: "Men"   }
+    ].forEach(({ key, label }) => {
+      const item = legend.append("div").attr("class", "gender-pie-legend-item");
+      item.append("span")
+        .attr("class", "gender-pie-legend-swatch")
+        .style("background-color", genderConfig[key].centerColor);
+      item.append("span").text(label);
+    });
   }
 
   /* ============================================================
@@ -534,12 +554,12 @@
       .append("div")
       .attr("class", "gender-chart");
 
-    const width = 760;
-    const height = 760;
+    const width = 460;
+    const height = 460;
 
-    const innerHole = 72;
-    const sportRingThickness = 130;
-    const disciplineRingThickness = 230;
+    const innerHole = 45;
+    const sportRingThickness = 82;
+    const disciplineRingThickness = 118;
 
     const root = d3.hierarchy(data)
       .sum(d => d.value || 0)
@@ -623,8 +643,8 @@
       .attr("transform", d =>
         labelTransform(d, innerHole, sportRingThickness, disciplineRingThickness)
       )
-      .attr("font-family", "Arial, sans-serif")
-      .attr("font-size", d => d.depth === 1 ? 15 : 11)
+      .attr("font-family", "'Elms Sans', sans-serif")
+      .attr("font-size", d => d.depth === 1 ? 11 : 9)
       .attr("font-weight", d => d.depth === 1 ? 700 : 400)
       .attr("fill", "#111");
 
@@ -632,11 +652,11 @@
       const textEl = d3.select(this);
       const lines = splitLabelIntoLines(
         d.data.name,
-        d.depth === 1 ? 16 : 18,
+        d.depth === 1 ? 11 : 13,
         2
       );
 
-      const lineHeight = d.depth === 1 ? 1.05 : 0.95;
+      const lineHeight = d.depth === 1 ? 0.95 : 0.85;
       const startDy = lines.length === 1 ? "0.35em" : "-0.15em";
 
       lines.forEach((line, i) => {
@@ -652,7 +672,7 @@
       .append("text")
       .attr("text-anchor", "middle")
       .attr("dy", "0.35em")
-      .attr("font-family", "Arial, sans-serif")
+      .attr("font-family", "'Elms Sans', sans-serif")
       .attr("font-size", 17)
       .attr("font-weight", 700)
       .attr("fill", "#111")
@@ -699,11 +719,11 @@
     const angle = d.x1 - d.x0;
 
     if (d.depth === 1) {
-      return angle > 0.15;
+      return angle > 0.22;
     }
 
     if (d.depth === 2) {
-      return angle > 0.04;
+      return angle > 0.08;
     }
 
     return false;
