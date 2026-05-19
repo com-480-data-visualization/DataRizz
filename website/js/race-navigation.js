@@ -12,6 +12,12 @@
     conclusion: "Finish"
   };
 
+  const config = {
+    mainRunnerX: "-25px",   // runner position next to the vertical line
+    firstSideRunnerX: 55,   // runner position on first side slide
+    sideStep: 28            // distance between side slide dots
+  };
+
   const state = {
     sections: [],
     currentSectionIndex: 0,
@@ -27,12 +33,14 @@
       .map((section, index, array) => {
         const anchor = section.dataset.anchor || `section-${index}`;
         const slides = Array.from(section.querySelectorAll(".slide"));
+        const slideCount = Math.max(1, slides.length);
 
         return {
           anchor,
           label: sectionLabels[anchor] || anchor,
-          hasSlides: slides.length > 1,
-          slideCount: slides.length,
+          slideCount,
+          extraSlides: Math.max(0, slideCount - 1),
+          hasSlides: slideCount > 1,
           isStart: index === 0,
           isFinish: index === array.length - 1
         };
@@ -56,7 +64,7 @@
         </div>
 
         <div class="race-finish-wrap" aria-hidden="true">
-            <div class="race-finish-label">FINISH</div>
+          <div class="race-finish-label">FINISH</div>
         </div>
       </div>
     `;
@@ -75,22 +83,48 @@
 
     state.sections.forEach((section, index) => {
       const checkpoint = document.createElement("button");
-
       checkpoint.className = "race-checkpoint";
       checkpoint.type = "button";
-      checkpoint.dataset.index = index;
+      checkpoint.dataset.index = String(index);
       checkpoint.style.top = `${getProgressPercent(index)}%`;
+
+      const sideDots = Array.from({ length: section.extraSlides }, (_, i) => {
+        const slideNumber = i + 1;
+        const left = 66 + i * config.sideStep;
+
+        return `
+          <span
+            class="race-side-dot"
+            data-slide="${slideNumber}"
+            style="left: ${left}px;"
+          ></span>
+        `;
+      }).join("");
+
+      const sidePathWidth =
+        section.extraSlides > 0
+          ? 18 + (section.extraSlides - 1) * config.sideStep
+          : 0;
+
+      checkpoint.style.setProperty("--side-path-width", `${sidePathWidth}px`);
 
       checkpoint.innerHTML = `
         <span class="race-dot"></span>
-        ${section.hasSlides ? `<span class="race-side-dot"></span>` : ""}
+        ${sideDots}
         <span class="race-label">${section.label}</span>
       `;
 
-      checkpoint.addEventListener("click", () => {
-        if (window.fullpage_api) {
-          window.fullpage_api.moveTo(index + 1);
-        }
+      checkpoint.addEventListener("click", (event) => {
+        if (!window.fullpage_api) return;
+
+        const sideDot = event.target.closest(".race-side-dot");
+
+        if (sideDot) {
+            const slideNumber = Number(sideDot.dataset.slide);
+            window.fullpage_api.moveTo(index + 1, slideNumber);
+            return;
+        }    
+        window.fullpage_api.moveTo(index + 1, 0);
       });
 
       container.appendChild(checkpoint);
@@ -104,30 +138,41 @@
     const safeSectionIndex = clamp(sectionIndex, 0, state.sections.length - 1);
     const currentSection = state.sections[safeSectionIndex];
 
+    const safeSlideIndex = clamp(
+      Number(slideIndex) || 0,
+      0,
+      currentSection.slideCount - 1
+    );
+
     state.currentSectionIndex = safeSectionIndex;
-    state.currentSlideIndex = slideIndex;
+    state.currentSlideIndex = safeSlideIndex;
 
     const progress = getProgressPercent(safeSectionIndex);
 
     nav.style.setProperty("--race-progress", `${progress}%`);
 
+    updateRunner(nav, currentSection, progress, safeSlideIndex);
+    updateNavClasses(nav, currentSection, safeSectionIndex, direction);
+    updateCheckpoints(safeSectionIndex, safeSlideIndex);
+  }
+
+  function updateRunner(nav, currentSection, progress, slideIndex) {
     const runner = nav.querySelector(".race-runner");
-    if (runner) {
+    if (!runner) return;
+
     runner.style.top = `${progress}%`;
 
-    const shouldMoveRight =
-        currentSection &&
-        currentSection.hasSlides &&
-        slideIndex > 0;
+    let runnerX = config.mainRunnerX;
 
-    // left of vertical line by default, move right when on horizontal slide
-    runner.style.setProperty(
-        "--runner-x",
-        shouldMoveRight ? "60px" : "-20px"
-    );
+    if (currentSection.hasSlides && slideIndex > 0) {
+        runnerX = `${config.firstSideRunnerX + (slideIndex - 1) * config.sideStep}px`;
     }
 
-    nav.classList.toggle("race-is-start", safeSectionIndex === 0);
+    runner.style.setProperty("--runner-x", runnerX);
+  }
+
+  function updateNavClasses(nav, currentSection, sectionIndex, direction) {
+    nav.classList.toggle("race-is-start", sectionIndex === 0);
     nav.classList.toggle("race-is-finish", Boolean(currentSection?.isFinish));
 
     nav.classList.toggle("race-going-up", direction === "up");
@@ -141,30 +186,28 @@
     nav._raceTimer = window.setTimeout(() => {
       nav.classList.remove("race-is-moving");
     }, 700);
-
-    updateCheckpoints(safeSectionIndex, slideIndex);
   }
 
   function updateCheckpoints(activeSectionIndex, activeSlideIndex) {
     document.querySelectorAll(".race-checkpoint").forEach((checkpoint, index) => {
-      const section = state.sections[index];
-
       checkpoint.classList.toggle("is-active", index === activeSectionIndex);
       checkpoint.classList.toggle("is-passed", index < activeSectionIndex);
 
-      const sideDot = checkpoint.querySelector(".race-side-dot");
+      const sideDots = checkpoint.querySelectorAll(".race-side-dot");
 
-      if (sideDot && section) {
+      sideDots.forEach((sideDot) => {
+        const slideNumber = Number(sideDot.dataset.slide);
+
         const sidePassed =
           index < activeSectionIndex ||
-          (index === activeSectionIndex && activeSlideIndex > 0);
+          (index === activeSectionIndex && activeSlideIndex > slideNumber);
 
         const sideActive =
-          index === activeSectionIndex && activeSlideIndex > 0;
+          index === activeSectionIndex && activeSlideIndex === slideNumber;
 
         sideDot.classList.toggle("is-passed-side", sidePassed);
         sideDot.classList.toggle("is-active-side", sideActive);
-      }
+      });
     });
   }
 

@@ -58,6 +58,14 @@ body {
   background: white;
 }
 
+.fp-slidesNav ul li a span {
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.fp-slidesNav ul li a.active span {
+  background: white !important;
+}
+
 /* =============================================
    Paragraph in two columns
    =========================================== */
@@ -1060,21 +1068,26 @@ p {
   position: absolute;
   left: 46px;
   top: 50%;
-  width: 18px;
+  width: var(--side-path-width, 0px);
   height: 3px;
   transform: translateY(-50%);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.42);
   opacity: 0;
+  z-index: 0;
 }
 
 .race-checkpoint:has(.race-side-dot)::after {
   opacity: 1;
 }
 
+.race-dot,
+.race-side-dot {
+  z-index: 2;
+}
+
 .race-side-dot {
   position: absolute;
-  left: 66px;
   top: 50%;
   width: 11px;
   height: 11px;
@@ -1085,33 +1098,34 @@ p {
   box-shadow:
     0 0 0 2px rgba(0, 0, 0, 0.25),
     0 0 8px rgba(255, 255, 255, 0.24);
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
 }
 
-.race-checkpoint.is-passed .race-side-dot {
-  background: #f4b400;
-  border-color: #f4b400;
-  box-shadow:
-    0 0 0 2px rgba(0, 0, 0, 0.25),
-    0 0 10px rgba(244, 180, 0, 0.65);
-}
-
-.race-checkpoint.is-active .race-side-dot {
-  background: white;
-  border-color: white;
-  transform: translateY(-50%) scale(1.18);
-  box-shadow:
-    0 0 0 4px rgba(244, 180, 0, 0.18),
-    0 0 14px rgba(255, 255, 255, 0.72);
-}
-
-/* Hide text labels for clean look */
+/* Hover labels */
 .race-label {
-  display: none;
+  position: absolute;
+  left: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  padding: 4px 8px;
+
+  font-family: "Elms Sans", sans-serif;
+  font-size: 13px;
+  white-space: nowrap;
+  z-index: 10;
+
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.race-checkpoint:hover .race-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(4px);
 }
 
 /* =============================================
@@ -1126,7 +1140,7 @@ p {
   position: absolute;
 
   /* main position = to the LEFT of the vertical track */
-  left: var(--runner-x, -20px);
+  left: var(--runner-x, -25px);
 
   top: 0%;
   width: 42px;

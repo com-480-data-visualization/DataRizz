@@ -769,7 +769,7 @@
       .attr("font-family", "'Elms Sans', sans-serif")
       .attr("font-size", 24)
       .attr("font-weight", 700)
-      .text(`Distribution of medals in ${graph.season} Olympics, ${graph.year}`);
+      .text(`Distribution of medals in ${graph.season} Olympics`);
 
     svg.append("text")
       .attr("x", width / 2)
