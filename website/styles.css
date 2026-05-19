@@ -95,6 +95,26 @@ body {
 }
 
 /* =============================================
+   Paragraph in two columns
+   =========================================== */
+
+/* .slide[data-anchor$="-text"] {
+  margin: 0 auto;
+}
+
+.section[data-anchor="introduction"] p,
+.section[data-anchor="conclusion"] p,
+.slide[data-anchor$="-text"] p {
+  column-count: 2;
+  column-gap: 40px;
+} */
+
+/* Optional: better spacing between paragraphs inside columns */
+/* .slide[data-anchor$="-text"] p + p {
+  margin-top: 1em;
+} */
+
+/* =============================================
    Typography
    =========================================== */
 
@@ -143,7 +163,7 @@ p {
 .section[data-anchor="title"] {
   box-sizing: border-box;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-img);
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--bg-img);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -157,16 +177,6 @@ p {
   display: flex;
   flex-direction: column;
 }
-/* 
-[data-anchor="introduction"] h2 {
-  margin: 0 auto;
-  width: 80%;
-}
-
-[data-anchor="introduction"] p {
-  margin: 0 auto;
-  width: 60%;
-} */
 
 /* =============================================
    Gender section
@@ -387,7 +397,7 @@ p {
   background: #000 !important;
 }
 
-[data-anchor="geopolitics"] h2,
+[data-anchor="geopolitics"] h2, 
 [data-anchor="geopolitics"] p {
   color: #fff;
 }
