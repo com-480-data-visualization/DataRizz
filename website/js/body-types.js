@@ -439,8 +439,8 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     scene.background = null;
 
     const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 200);
-    camera.position.set(0, 12, 36);
-    camera.lookAt(0, 8, 0);
+    camera.position.set(0, 13, 38);
+    camera.lookAt(0, 7.8, 0);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -552,7 +552,7 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     const normalizedHeight = athleteCm / 170;
 
     const estimatedBodyHeight = 11.2 * normalizedHeight;
-    const labelWorldY = pos.podiumHeight + estimatedBodyHeight + 0.9;
+    const labelWorldY = pos.podiumHeight + estimatedBodyHeight + 3;
 
     const v = new THREE.Vector3(pos.x, labelWorldY, 0);
     v.project(camera);
