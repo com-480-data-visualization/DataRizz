@@ -46,7 +46,14 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     try {
       const [rows] = await Promise.all([
         d3.csv(DATA_PATH, d3.autoType),
-        AthleteRenderer.loadModels("models/man_outfit.glb", "models/woman_outfit.glb")
+        AthleteRenderer.loadModels(
+          "models/man_outfit_gold.glb",
+          "models/man_outfit_silver.glb",
+          "models/man_outfit_bronze.glb",
+          "models/woman_outfit_gold.glb",
+          "models/woman_outfit_silver.glb",
+          "models/woman_outfit_bronze.glb"
+        )
       ]);
 
       state.rows = rows;
