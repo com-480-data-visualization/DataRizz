@@ -44,11 +44,6 @@ body {
   padding: 5%;
 }
 
-/* Remove "Made with fullpage.js" link at bottom of page */
-.fp-watermark {
-  display: none !important;
-}
-
 /* =============================================
    Navigation dots
    =========================================== */
@@ -61,37 +56,6 @@ body {
 #fp-nav ul li a.active span,
 .fp-slidesNav ul li a.active span {
   background: white;
-}
-
-/* =============================================
-   General layout
-   =========================================== */
-
-.container {
-  display: flex;
-  gap: 2%;
-  align-items: center;
-  justify-content: start;
-}
-
-.text-container {
-  flex: 1;
-}
-
-.image-container {
-  width: 60%;
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* =============================================
@@ -163,10 +127,16 @@ p {
 .section[data-anchor="title"] {
   box-sizing: border-box;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--bg-img);
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--bg-img);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.img[alt="Title Logo"] {
+  max-width: 1217px;
+  width: 80%;
+  height: auto;
 }
 
 /* =============================================
@@ -870,4 +840,31 @@ p {
 .fair-wrapper select:focus,
 .fair-control select:focus {
   outline: 2px solid white !important;
+}
+
+/* =============================================
+   Footer
+   =========================================== */
+
+/* Remove "Made with fullpage.js" link at bottom of page */
+.fp-watermark {
+  display: none !important;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+}
+
+[data-anchor="footer"] p {
+  margin: 0;
+  width: auto;
 }
