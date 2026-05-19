@@ -91,8 +91,16 @@ p {
 }
 
 body,
-p {
+p,
+button,
+select,
+input,
+label {
   font-family: "Elms Sans", sans-serif;
+}
+
+body,
+p {
   font-size: 24px;
 }
 
@@ -753,7 +761,7 @@ p {
 
 .bodytype-control label {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
 }
 
@@ -762,8 +770,8 @@ p {
   color: #111;
   border: 3px solid #333;
   border-radius: 12px;
-  padding: 8px 34px 8px 12px;
-  font-size: 15px;
+  padding: 8px 12px 8px 12px;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
   width: auto;
@@ -772,7 +780,7 @@ p {
 
 #bodytype-podium {
   width: 100%;
-  margin: 70px auto 0;
+  margin: 40px auto 0;
 }
 
 .bodytype-3d-wrapper {

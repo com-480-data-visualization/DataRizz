@@ -440,14 +440,14 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     wrapper.appendChild(canvasWrap);
 
     const width = canvasWrap.clientWidth || 1180;
-    const height = 720;
+    const height = 700;
 
     const scene = new THREE.Scene();
     scene.background = null;
 
     const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 200);
-    camera.position.set(0, 13, 38);
-    camera.lookAt(0, 7.8, 0);
+    camera.position.set(0, 18, 38);
+    camera.lookAt(0, 7, 0);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
