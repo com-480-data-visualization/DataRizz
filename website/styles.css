@@ -905,3 +905,377 @@ p {
   margin: 0;
   width: auto;
 }
+
+
+/* =============================================
+   Olympic race navigation - left race map
+   =========================================== */
+
+#race-nav {
+  position: fixed;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9998;
+  pointer-events: none;
+  color: white;
+  font-family: "Elms Sans", sans-serif;
+  --race-progress: 0%;
+}
+
+/* No outer rectangle */
+.race-track-shell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  width: 120px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.race-start {
+  margin-left: 7px;
+  margin-bottom: 2px;
+  font-family: "Carter One", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: #f4b400;
+  text-shadow: 0 0 8px rgba(244, 180, 0, 0.45);
+}
+
+.race-track {
+  position: relative;
+  width: 100%;
+  height: min(68vh, 620px);
+  min-height: 390px;
+}
+
+/* =============================================
+   Main vertical path
+   =========================================== */
+
+.race-track-line,
+.race-track-progress {
+  position: absolute;
+  left: 20px;
+  transform: translateX(-50%);
+  width: 4px;
+  border-radius: 999px;
+}
+
+.race-track-line {
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.38);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.16);
+  z-index: 1;
+}
+
+.race-track-progress {
+  top: 0;
+  height: var(--race-progress);
+  background: linear-gradient(180deg, #f4b400, #ffffff);
+  box-shadow:
+    0 0 12px rgba(244, 180, 0, 0.7),
+    0 0 22px rgba(255, 255, 255, 0.28);
+  transition: height 0.65s ease;
+  z-index: 2;
+}
+
+/* =============================================
+   Checkpoints
+   =========================================== */
+
+.race-checkpoints {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.race-checkpoint {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 76px;
+  height: 34px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Main story dot */
+
+.race-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: #000;
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 0, 0.32),
+    0 0 8px rgba(255, 255, 255, 0.2);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.race-checkpoint.is-passed .race-dot {
+  background: #f4b400;
+  border-color: #f4b400;
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 0, 0.3),
+    0 0 11px rgba(244, 180, 0, 0.7);
+}
+
+.race-checkpoint.is-active .race-dot {
+  background: white;
+  border-color: white;
+  transform: translate(-50%, -50%) scale(1.25);
+  box-shadow:
+    0 0 0 6px rgba(244, 180, 0, 0.22),
+    0 0 18px rgba(255, 255, 255, 0.85);
+}
+
+/* =============================================
+   Side path for sections with horizontal slides
+   =========================================== */
+
+.race-checkpoint::after {
+  content: "";
+  position: absolute;
+  left: 46px;
+  top: 50%;
+  width: 18px;
+  height: 3px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  opacity: 0;
+}
+
+.race-checkpoint:has(.race-side-dot)::after {
+  opacity: 1;
+}
+
+.race-side-dot {
+  position: absolute;
+  left: 66px;
+  top: 50%;
+  width: 11px;
+  height: 11px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  background: #000;
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 0, 0.25),
+    0 0 8px rgba(255, 255, 255, 0.24);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.race-checkpoint.is-passed .race-side-dot {
+  background: #f4b400;
+  border-color: #f4b400;
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 0, 0.25),
+    0 0 10px rgba(244, 180, 0, 0.65);
+}
+
+.race-checkpoint.is-active .race-side-dot {
+  background: white;
+  border-color: white;
+  transform: translateY(-50%) scale(1.18);
+  box-shadow:
+    0 0 0 4px rgba(244, 180, 0, 0.18),
+    0 0 14px rgba(255, 255, 255, 0.72);
+}
+
+/* Hide text labels for clean look */
+.race-label {
+  display: none;
+}
+
+/* =============================================
+   Runner
+   =========================================== */
+
+#race-nav {
+  --runner-facing: 1;
+}
+
+.race-runner {
+  position: absolute;
+
+  /* main position = to the LEFT of the vertical track */
+  left: var(--runner-x, -20px);
+
+  top: 0%;
+  width: 42px;
+  height: 42px;
+
+  transform: translateY(-50%) scaleX(var(--runner-facing));
+  transition:
+    top 0.65s ease,
+    left 0.45s ease,
+    transform 0.25s ease;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 14px rgba(244, 180, 0, 0.35));
+
+  z-index: 4;
+}
+
+.runner-svg,
+.finish-flag-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.runner-svg circle,
+.runner-svg line {
+  fill: none;
+  stroke: white;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.runner-head {
+  fill: white !important;
+}
+
+.runner-arm-front,
+.runner-leg-back {
+  animation: runnerFront 0.32s infinite alternate ease-in-out;
+  transform-origin: 38px 35px;
+}
+
+.runner-arm-back,
+.runner-leg-front {
+  animation: runnerBack 0.32s infinite alternate ease-in-out;
+  transform-origin: 38px 35px;
+}
+
+/* Facing direction */
+#race-nav.race-going-left {
+  --runner-facing: -1;
+}
+
+#race-nav.race-going-right,
+#race-nav.race-going-down,
+#race-nav.race-going-up {
+  --runner-facing: 1;
+}
+
+@keyframes runnerFront {
+  from { transform: rotate(-15deg); }
+  to   { transform: rotate(22deg); }
+}
+
+@keyframes runnerBack {
+  from { transform: rotate(18deg); }
+  to   { transform: rotate(-18deg); }
+}
+
+/* =============================================
+   Finish
+   =========================================== */
+
+.race-finish-wrap {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.race-finish-label {
+  margin-left: 0;
+  font-family: "Carter One", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: #f4b400;
+  text-shadow: 0 0 8px rgba(244, 180, 0, 0.45);
+}
+
+/* =============================================
+   Responsive
+   =========================================== */
+
+@media (max-width: 900px) {
+  #race-nav {
+    left: 12px;
+  }
+
+  .race-track-shell {
+    width: 90px;
+  }
+
+  .race-track {
+    height: min(64vh, 520px);
+    min-height: 330px;
+  }
+
+  .race-checkpoint {
+    width: 64px;
+  }
+
+  .race-side-dot {
+    left: 58px;
+    width: 9px;
+    height: 9px;
+  }
+
+  .race-checkpoint::after {
+    left: 42px;
+    width: 14px;
+  }
+
+  .race-runner {
+    width: 38px;
+    height: 38px;
+  }
+
+  .race-finish-badge {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+.race-side-dot.is-passed-side {
+  background: #f4b400;
+  border-color: #f4b400;
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 0, 0.25),
+    0 0 10px rgba(244, 180, 0, 0.65);
+}
+
+.race-side-dot.is-active-side {
+  background: white;
+  border-color: white;
+  transform: translateY(-50%) scale(1.18);
+  box-shadow:
+    0 0 0 4px rgba(244, 180, 0, 0.18),
+    0 0 14px rgba(255, 255, 255, 0.72);
+}

@@ -322,12 +322,16 @@
 <script type="module" src="js/body-types.js"></script>
 <script src="js/geopolitics-conflicts.js"></script>
 <script src="js/fair-distribution.js"></script>
+<script src="js/race-navigation.js"></script>
 
 
 <script>
   new fullpage('#website', {
     autoScrolling: true,
-    navigation: true,
+
+    // We replace the default fullPage dots with our race track.
+    navigation: false,
+
     navigationPosition: 'right',
     scrollingSpeed: 700,
     slidesNavigation: true,
@@ -335,6 +339,30 @@
     continuousHorizontal: false,
     loopHorizontal: false,
     scrollHorizontally: true,
+
+    onLeave: function(origin, destination, direction) {
+      if (window.RaceNavigation) {
+        window.RaceNavigation.update(destination.index, 0, direction);
+      }
+    },
+
+    afterLoad: function(origin, destination, direction) {
+      if (window.RaceNavigation) {
+        window.RaceNavigation.update(destination.index, 0, direction);
+      }
+    },
+
+    onSlideLeave: function(section, origin, destination, direction) {
+      if (window.RaceNavigation) {
+        window.RaceNavigation.update(section.index, destination.index, direction);
+      }
+    },
+
+    afterSlideLoad: function(section, origin, destination, direction) {
+      if (window.RaceNavigation) {
+        window.RaceNavigation.update(section.index, destination.index, direction);
+      }
+    }
   });
 </script>
 
