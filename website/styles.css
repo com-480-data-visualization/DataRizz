@@ -119,31 +119,40 @@ p {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-family: "Carter One", sans-serif;
   text-align: center;
-  margin: 0;
 }
 
 h1 {
   font-size: 60px;
-  padding-bottom: 24px;
 }
 
 h2 {
   font-size: 40px;
-  padding-bottom: 24px;
-}
-
-h3 {
-  font-size: 30px;
-  text-align: left;
+  padding-bottom: 32px;
+  margin: 0 auto;
+  width: 80%;
 }
 
 p {
   text-align: justify;
   padding-bottom: 6px;
+  margin: 0 auto;
+  width: 60%;
+}
+
+/* =============================================
+   Title section
+   =========================================== */
+
+.section[data-anchor="title"] {
+  box-sizing: border-box;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-img);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* =============================================
@@ -151,20 +160,19 @@ p {
    =========================================== */
 
 .section[data-anchor="introduction"] {
-  box-sizing: border-box;
-  background-attachment: fixed;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-img);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   flex-direction: column;
+}
+/* 
+[data-anchor="introduction"] h2 {
+  margin: 0 auto;
+  width: 80%;
 }
 
 [data-anchor="introduction"] p {
   margin: 0 auto;
   width: 60%;
-}
+} */
 
 /* =============================================
    Gender section
