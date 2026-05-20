@@ -953,15 +953,8 @@
       `);
 
     header.append("button")
+      .attr("class", "medal-popup-close")
       .text("Close")
-      .style("background", "#aeeaf2")
-      .style("border", "2px solid white")
-      .style("border-radius", "10px")
-      .style("padding", "9px 18px")
-      .style("font-family", "'Elms Sans', sans-serif")
-      .style("font-size", "15px")
-      .style("font-weight", "800")
-      .style("cursor", "pointer")
       .on("click", () => overlay.remove());
 
     const chart = overlay.append("div")

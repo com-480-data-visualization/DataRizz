@@ -769,6 +769,21 @@ p {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
+.medal-popup-close {
+  background: #ffd166;
+  color: #111;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.medal-popup-close:hover {
+  filter: brightness(1.06);
+}
+
 /* =============================================
    Body types section
    =========================================== */
