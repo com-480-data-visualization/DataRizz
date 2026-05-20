@@ -113,11 +113,7 @@
       #fair-viz {
         color: white;
         width: 100%;
-      }
-
-      .fair-wrapper {
-        width: 100%;
-        max-width: 1250px;
+        max-width: 1440px;
         margin: 0 auto;
       }
 
@@ -135,7 +131,7 @@
         align-items: center;
         gap: 8px;
         color: white;
-        font-size: 15px;
+        font-size: 18px;
         font-weight: 700;
         white-space: nowrap;
       }
@@ -145,7 +141,7 @@
         border: 2px solid #2c2c2c;
         border-radius: 10px;
         padding: 7px 12px;
-        font-size: 15px;
+        font-size: 18px;
         font-weight: 700;
         color: #111;
         cursor: pointer;
@@ -176,7 +172,6 @@
       }
 
       .fair-country-card {
-        border: 1px solid rgba(255,255,255,0.22);
         border-radius: 16px;
         padding: 20px;
         background: rgba(255,255,255,0.03);
@@ -184,7 +179,7 @@
 
       .fair-country-title {
         text-align: center;
-        font-size: 21px;
+        font-size: 24px;
         font-weight: 800;
         margin-bottom: 6px;
         color: white;
@@ -192,7 +187,7 @@
 
       .fair-country-subtitle {
         text-align: center;
-        font-size: 13px;
+        font-size: 14px;
         color: #d0d0d0;
         margin-bottom: 18px;
       }
@@ -210,7 +205,7 @@
       }
 
       .fair-box-title {
-        font-size: 15px;
+        font-size: 16px;
         font-weight: 800;
         color: white;
         margin-bottom: 12px;
@@ -227,7 +222,7 @@
 
       .fair-medal-label {
         font-size: 14px;
-        font-weight: 700;
+        font-weight: 800;
         color: white;
       }
 
@@ -254,7 +249,7 @@
       .fair-note {
         text-align: center;
         margin-top: 22px;
-        font-size: 13px;
+        font-size: 18px;
         color: #d6d6d6;
         line-height: 1.5;
       }
@@ -288,34 +283,49 @@
     const root = document.querySelector(selectors.root);
 
     root.innerHTML = `
-      <div class="fair-wrapper">
-        <div class="fair-controls">
-          <label class="fair-control">
-            <span>Season:</span>
-            <select id="fair-season"></select>
-          </label>
+      <div class="fair-controls">
+        <label class="fair-control">
+          <span>Season:</span>
+          <select id="fair-season"></select>
+        </label>
 
-          <label class="fair-control">
-            <span>Year:</span>
-            <select id="fair-year"></select>
-          </label>
+        <label class="fair-control">
+          <span>Year:</span>
+          <select id="fair-year"></select>
+        </label>
 
-          <label class="fair-control">
-            <span>Country 1:</span>
-            <select id="fair-country-1"></select>
-          </label>
+        <label class="fair-control">
+          <span>Country 1:</span>
+          <select id="fair-country-1"></select>
+        </label>
 
-          <label class="fair-control">
-            <span>Country 2:</span>
-            <select id="fair-country-2"></select>
-          </label>
-        </div>
+        <label class="fair-control">
+          <span>Country 2:</span>
+          <select id="fair-country-2"></select>
+        </label>
+      </div>
 
-        <div class="fair-grid" id="fair-grid"></div>
+      <div class="fair-grid" id="fair-grid"></div>
 
-        <div class="fair-note">
-          Fair medals are computed as:<br>
-          <strong>actual medals × (mean population / country population) × (mean GDP / country GDP)</strong>
+      <div class="fair-note">
+        Fair medals are computed as:
+
+        <div class="formula">
+          <span>actual medals</span>
+
+          <span class="multiply">×</span>
+
+          <span class="fraction">
+            <span class="top">mean population</span>
+            <span class="bottom">country population</span>
+          </span>
+
+          <span class="multiply">×</span>
+
+          <span class="fraction">
+            <span class="top">mean GDP</span>
+            <span class="bottom">country GDP</span>
+          </span>
         </div>
       </div>
     `;

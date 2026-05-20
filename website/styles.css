@@ -150,7 +150,7 @@ p {
 }
 
 .img[alt="Title Logo"] {
-  max-width: 1217px;
+  max-width: 1440px;
   width: 80%;
   height: auto;
 }
@@ -188,7 +188,7 @@ p {
 #gender-viz {
   position: relative;
   width: 100%;
-  max-width: 1800px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 4px 24px 4px 24px;
   background: transparent;
@@ -641,7 +641,7 @@ p {
 
 #medal-viz {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -746,7 +746,7 @@ p {
 
 #bodytype-viz {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -881,10 +881,43 @@ p {
   cursor: pointer !important;
 }
 
-#fair-viz select:focus,
-.fair-wrapper select:focus,
-.fair-control select:focus {
-  outline: 2px solid white !important;
+.fair-note {
+  color: white;
+  text-align: center;
+  margin-top: 12px;
+  font-size: 18px;
+}
+
+.formula {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.multiply {
+  font-size: 24px;
+}
+
+.fraction {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.fraction .top {
+  display: block;
+  border-bottom: 3px solid white;
+  padding: 0 10px 6px 10px;
+}
+
+.fraction .bottom {
+  display: block;
+  padding: 6px 10px 0 10px;
 }
 
 /* =============================================
