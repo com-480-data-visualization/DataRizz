@@ -587,7 +587,6 @@
     const chartPanel = layout.append("div")
       .attr("class", "never-chart-panel");
 
-    drawContinentSummary(mapPanel, data.byContinent);
     drawMap(mapPanel, data);
     drawBarChart(chartPanel, data.topCountries);
   }
@@ -695,24 +694,6 @@
       topCountries: neverMedaledData.slice(0, 12),
       byContinent
     };
-  }
-
-  function drawContinentSummary(container, data) {
-    const summary = container.append("div")
-      .attr("class", "never-continent-summary");
-
-    summary.selectAll("div")
-      .data(data)
-      .join("div")
-      .attr("class", "never-continent-card")
-      .html(d => `
-        <div class="never-continent-name">
-          <span class="never-continent-dot" style="background:${continentColors[d.continent] || "#c9c9c9"}"></span>
-          ${d.continent}
-        </div>
-        <div class="never-continent-count">${d.countries}</div>
-        <div class="never-continent-detail">countries · ${d3.format(",")(d.participations)} participations</div>
-      `);
   }
 
   function drawMap(container, data) {
