@@ -328,10 +328,8 @@
 <script>
   new fullpage('#website', {
     autoScrolling: true,
-
-    // We replace the default fullPage dots with our race track.
+    scrollOverflow: true,
     navigation: false,
-
     navigationPosition: 'right',
     scrollingSpeed: 700,
     slidesNavigation: true,
@@ -372,6 +370,111 @@
       }
     }
   });
+
+  (function () {
+    let lastMove = 0;
+    let touchStartY = null;
+
+    function shouldForceScroll(target) {
+      const activeSection = document.querySelector(".fp-section.active");
+      const activeSlide = activeSection?.querySelector(".fp-slide.active");
+      const slideAnchor = activeSlide?.dataset.anchor;
+
+      return (
+        slideAnchor === "bodytype-viz" ||
+        slideAnchor === "body-types-viz" ||
+        slideAnchor === "geopolitics-viz" ||
+        slideAnchor === "fair-viz" ||
+        target.closest("#bodytype-viz") ||
+        target.closest("#geopolitics-map-viz") ||
+        target.closest("#geo-event-list") ||
+        target.closest("#fair-viz")
+      );
+    }
+
+    function moveFullpage(deltaY, event) {
+      if (!window.fullpage_api) return;
+      if (Math.abs(deltaY) < 10) return;
+
+      const now = Date.now();
+      if (now - lastMove < 750) {
+        event.preventDefault();
+        return;
+      }
+
+      event.preventDefault();
+      lastMove = now;
+
+      if (deltaY > 0) {
+        window.fullpage_api.moveSectionDown();
+      } else {
+        window.fullpage_api.moveSectionUp();
+      }
+    }
+
+    document.addEventListener("wheel", function (event) {
+      const target = event.target;
+
+      if (target.closest("select, option, button, input, textarea, a, .geo-popup-overlay")) {
+        return;
+      }
+
+      if (!shouldForceScroll(target)) return;
+
+      moveFullpage(event.deltaY, event);
+    }, { passive: false, capture: true });
+
+    document.addEventListener("keydown", function (event) {
+      if (!["ArrowDown", "PageDown", "ArrowUp", "PageUp"].includes(event.key)) return;
+
+      const target = event.target;
+      if (target.closest("input, textarea, a, .geo-popup-overlay")) return;
+
+      document.querySelectorAll("select").forEach(select => {
+        select.addEventListener("change", () => select.blur());
+      });
+
+      const activeSection = document.querySelector(".fp-section.active");
+      const activeSlide = activeSection?.querySelector(".fp-slide.active");
+      const slideAnchor = activeSlide?.dataset.anchor;
+
+      const shouldForceScroll =
+        slideAnchor === "bodytype-viz" ||
+        slideAnchor === "body-types-viz" ||
+        slideAnchor === "geopolitics-viz" ||
+        slideAnchor === "fair-viz" ||
+        slideAnchor === "never-medaled";
+
+      if (!shouldForceScroll || !window.fullpage_api) return;
+
+      event.preventDefault();
+
+      if (event.key === "ArrowDown" || event.key === "PageDown") {
+        window.fullpage_api.moveSectionDown();
+      } else {
+        window.fullpage_api.moveSectionUp();
+      }
+    }, { capture: true });
+
+    document.addEventListener("touchstart", function (event) {
+      touchStartY = event.touches[0].clientY;
+    }, { passive: true, capture: true });
+
+    document.addEventListener("touchmove", function (event) {
+      const target = event.target;
+
+      if (target.closest("select, option, button, input, textarea, a, .geo-popup-overlay")) {
+        return;
+      }
+
+      if (!shouldForceScroll(target) || touchStartY === null) return;
+
+      const currentY = event.touches[0].clientY;
+      const deltaY = touchStartY - currentY;
+
+      moveFullpage(deltaY, event);
+    }, { passive: false, capture: true });
+  })();
 </script>
 
 </html>

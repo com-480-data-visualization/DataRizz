@@ -26,16 +26,22 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     discipline: null
   };
 
+  let resizeTimer = null;
+  let currentRenderer = null;
+  let currentScene = null;
+  let currentAnimationFrame = null;
+  let scrollBridgeInstalled = false;
+  let lastWheelMove = 0;
+
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(updateScene, 150);
+  });
+
   const medalRank = {
     Gold: 1,
     Silver: 2,
     Bronze: 3
-  };
-
-  const podiumColors = {
-    Gold:   0xf5f5f5,
-    Silver: 0xf5f5f5,
-    Bronze: 0xf5f5f5
   };
 
   document.addEventListener("DOMContentLoaded", init);
@@ -65,7 +71,7 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
       updateScene();
     } catch (error) {
       console.error(error);
-      showError(`Could not load data or 3D models.`);
+      showError("Could not load data or 3D models.");
     }
   }
 
@@ -253,14 +259,12 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     return Array.from(
       new Set(
         state.rows
-          .filter(row => {
-            return (
-              String(row[c.season] || "").trim() === season &&
-              Number(row[c.year]) === Number(year) &&
-              normalizeGender(row[c.sex]) === gender &&
-              isRealMedal(row[c.medal])
-            );
-          })
+          .filter(row => (
+            String(row[c.season] || "").trim() === season &&
+            Number(row[c.year]) === Number(year) &&
+            normalizeGender(row[c.sex]) === gender &&
+            isRealMedal(row[c.medal])
+          ))
           .map(row => cleanLabel(row[c.sport]))
           .filter(Boolean)
       )
@@ -273,15 +277,13 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     return Array.from(
       new Set(
         state.rows
-          .filter(row => {
-            return (
-              String(row[c.season] || "").trim() === season &&
-              Number(row[c.year]) === Number(year) &&
-              normalizeGender(row[c.sex]) === gender &&
-              cleanLabel(row[c.sport]) === sport &&
-              isRealMedal(row[c.medal])
-            );
-          })
+          .filter(row => (
+            String(row[c.season] || "").trim() === season &&
+            Number(row[c.year]) === Number(year) &&
+            normalizeGender(row[c.sex]) === gender &&
+            cleanLabel(row[c.sport]) === sport &&
+            isRealMedal(row[c.medal])
+          ))
           .map(row => normalizeDiscipline(row[c.event], row[c.sport]))
           .filter(Boolean)
       )
@@ -291,16 +293,14 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
   function getSelectedMedalists() {
     const c = state.columns;
 
-    const filtered = state.rows.filter(row => {
-      return (
-        String(row[c.season] || "").trim() === state.season &&
-        Number(row[c.year]) === Number(state.year) &&
-        normalizeGender(row[c.sex]) === state.gender &&
-        cleanLabel(row[c.sport]) === state.sport &&
-        normalizeDiscipline(row[c.event], row[c.sport]) === state.discipline &&
-        isRealMedal(row[c.medal])
-      );
-    });
+    const filtered = state.rows.filter(row => (
+      String(row[c.season] || "").trim() === state.season &&
+      Number(row[c.year]) === Number(state.year) &&
+      normalizeGender(row[c.sex]) === state.gender &&
+      cleanLabel(row[c.sport]) === state.sport &&
+      normalizeDiscipline(row[c.event], row[c.sport]) === state.discipline &&
+      isRealMedal(row[c.medal])
+    ));
 
     const grouped = new Map();
 
@@ -315,9 +315,7 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
         normalizeNumber(row[c.weight])
       ].join("|||");
 
-      if (!grouped.has(medal)) {
-        grouped.set(medal, new Map());
-      }
+      if (!grouped.has(medal)) grouped.set(medal, new Map());
 
       if (!grouped.get(medal).has(key)) {
         grouped.get(medal).set(key, {
@@ -346,6 +344,312 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
         height: 165,
         weight: 60
       };
+    });
+  }
+
+  function updateScene() {
+    const mount = document.querySelector(selectors.podium);
+    if (!mount) return;
+
+    cleanupCurrentScene();
+    mount.innerHTML = "";
+
+    if (!state.year || !state.sport || !state.discipline) {
+      showError("No data available for this selection.");
+      resizeBodytypeSelects();
+      rebuildFullPageAfterLayout();
+      return;
+    }
+
+    const medalists = getSelectedMedalists();
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "bodytype-3d-wrapper";
+    mount.appendChild(wrapper);
+
+    const overlay = document.createElement("div");
+    overlay.className = "bodytype-label-overlay";
+    overlay.style.pointerEvents = "none";
+    wrapper.appendChild(overlay);
+
+    const canvasWrap = document.createElement("div");
+    canvasWrap.className = "bodytype-canvas-wrap";
+    canvasWrap.style.pointerEvents = "none";
+    wrapper.appendChild(canvasWrap);
+
+    const width = Math.max(canvasWrap.clientWidth || 1180, 900);
+    const height = 700;
+
+    const scene = new THREE.Scene();
+    scene.background = null;
+    currentScene = scene;
+
+    const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 200);
+    camera.position.set(0, 18, 38);
+    camera.lookAt(0, 7, 0);
+
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true
+    });
+
+    currentRenderer = renderer;
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 0);
+    renderer.domElement.style.pointerEvents = "none";
+    canvasWrap.appendChild(renderer.domElement);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 1.55));
+
+    const keyLight = new THREE.DirectionalLight(0xffffff, 1.25);
+    keyLight.position.set(6, 10, 8);
+    scene.add(keyLight);
+
+    const fillLight = new THREE.DirectionalLight(0xffffff, 0.7);
+    fillLight.position.set(-6, 7, 6);
+    scene.add(fillLight);
+
+    const positions = {
+      Silver: { x: -9.75, podiumHeight: 2.2, podiumWidth: 10.0, podiumDepth: 3.0 },
+      Gold:   { x: 0,     podiumHeight: 3.2, podiumWidth: 9.5,  podiumDepth: 3.0 },
+      Bronze: { x: 9.75,  podiumHeight: 1.5, podiumWidth: 10.0, podiumDepth: 3.0 }
+    };
+
+    camera.updateProjectionMatrix();
+    camera.updateMatrixWorld();
+
+    addConnectedPodium(scene, positions);
+
+    ["Silver", "Gold", "Bronze"].forEach(medal => {
+      const athlete = medalists.find(d => d.medal === medal);
+      const pos = positions[medal];
+
+      addHuman(scene, athlete, pos);
+      addAthleteOverlay(overlay, athlete, pos, camera, width, height);
+    });
+
+    function animate() {
+      currentAnimationFrame = requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+    }
+
+    animate();
+    resizeBodytypeSelects();
+    rebuildFullPageAfterLayout();
+  }
+
+  function rebuildFullPageAfterLayout() {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (
+          window.fullpage_api &&
+          typeof window.fullpage_api.reBuild === "function"
+        ) {
+          window.fullpage_api.reBuild();
+        }
+      });
+    });
+  }
+
+  function cleanupCurrentScene() {
+    if (currentAnimationFrame) {
+      cancelAnimationFrame(currentAnimationFrame);
+      currentAnimationFrame = null;
+    }
+
+    if (currentScene) {
+      currentScene.traverse(object => {
+        if (!object.isMesh) return;
+
+        if (object.geometry) object.geometry.dispose();
+
+        const materials = Array.isArray(object.material)
+          ? object.material
+          : [object.material];
+
+        materials.filter(Boolean).forEach(material => {
+          Object.keys(material).forEach(key => {
+            const value = material[key];
+            if (value && typeof value.dispose === "function") {
+              value.dispose();
+            }
+          });
+
+          if (typeof material.dispose === "function") {
+            material.dispose();
+          }
+        });
+      });
+
+      currentScene = null;
+    }
+
+    if (currentRenderer) {
+      currentRenderer.dispose();
+      currentRenderer.forceContextLoss();
+      currentRenderer.domElement?.remove();
+      currentRenderer = null;
+    }
+  }
+
+  function addConnectedPodium(scene, pos) {
+    const depth = pos.Gold.podiumDepth;
+
+    const sideMat = new THREE.MeshStandardMaterial({
+      color: 0xf5f5f5,
+      roughness: 0.8
+    });
+
+    const topMat = new THREE.MeshStandardMaterial({
+      color: 0xaaaaaa,
+      roughness: 0.7
+    });
+
+    const mat = [sideMat, sideMat, topMat, sideMat, sideMat, sideMat];
+
+    const silverLeft = pos.Silver.x - pos.Silver.podiumWidth / 2;
+    const goldRight = pos.Gold.x + pos.Gold.podiumWidth / 2;
+    const bronzeRight = pos.Bronze.x + pos.Bronze.podiumWidth / 2;
+
+    const bronzeH = pos.Bronze.podiumHeight;
+    const silverH = pos.Silver.podiumHeight;
+    const goldH = pos.Gold.podiumHeight;
+
+    const layers = [
+      {
+        w: bronzeRight - silverLeft,
+        h: bronzeH,
+        cx: (silverLeft + bronzeRight) / 2,
+        cy: bronzeH / 2
+      },
+      {
+        w: goldRight - silverLeft,
+        h: silverH - bronzeH,
+        cx: (silverLeft + goldRight) / 2,
+        cy: bronzeH + (silverH - bronzeH) / 2
+      },
+      {
+        w: pos.Gold.podiumWidth,
+        h: goldH - silverH,
+        cx: pos.Gold.x,
+        cy: silverH + (goldH - silverH) / 2
+      }
+    ];
+
+    layers.forEach(({ w, h, cx, cy }) => {
+      const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, depth), mat);
+      mesh.position.set(cx, cy, 0);
+      scene.add(mesh);
+    });
+
+    const ringsW = 6.0;
+    const ringsH = ringsW * (175 / 420);
+
+    const ringsPlane = new THREE.Mesh(
+      new THREE.PlaneGeometry(ringsW, ringsH),
+      new THREE.MeshStandardMaterial({
+        map: new THREE.CanvasTexture(makeOlympicRingsCanvas()),
+        transparent: true,
+        depthWrite: false
+      })
+    );
+
+    ringsPlane.position.set(
+      pos.Gold.x,
+      pos.Gold.podiumHeight / 2,
+      depth / 2 + 0.01
+    );
+
+    scene.add(ringsPlane);
+  }
+
+  function makeOlympicRingsCanvas() {
+    const W = 420;
+    const H = 175;
+
+    const canvas = document.createElement("canvas");
+    canvas.width = W;
+    canvas.height = H;
+
+    const ctx = canvas.getContext("2d");
+
+    const rings = [
+      { cx: 113, cy: 62, color: "#0085C7" },
+      { cx: 210, cy: 62, color: "#000000" },
+      { cx: 307, cy: 62, color: "#DF0024" },
+      { cx: 162, cy: 112, color: "#F4C300" },
+      { cx: 259, cy: 112, color: "#009F6B" }
+    ];
+
+    rings.forEach(r => {
+      ctx.beginPath();
+      ctx.arc(r.cx, r.cy, 38, 0, Math.PI * 2);
+      ctx.strokeStyle = r.color;
+      ctx.lineWidth = 9;
+      ctx.stroke();
+    });
+
+    return canvas;
+  }
+
+  function addHuman(scene, athlete, pos) {
+    const gender = state.gender === "Women" ? "woman" : "man";
+    const group = AthleteRenderer.addHuman(scene, athlete, pos, gender);
+    group.scale.multiplyScalar(0.85);
+  }
+
+  function addAthleteOverlay(container, athlete, pos, camera, canvasW, canvasH) {
+    const div = document.createElement("div");
+    div.className = "bodytype-athlete-label";
+
+    const heightStr = athlete.height ? `${athlete.height} cm` : "– cm";
+    const weightStr = athlete.weight ? `${athlete.weight} kg` : "– kg";
+
+    div.innerHTML = `
+      <div class="bodytype-athlete-name">${athlete.name}</div>
+      <div class="bodytype-athlete-meta">${athlete.noc || ""}</div>
+      <div class="bodytype-athlete-stats">${heightStr}&nbsp;·&nbsp;${weightStr}</div>
+    `;
+
+    const athleteCm = athlete.height || 170;
+    const normalizedHeight = athleteCm / 170;
+    const estimatedBodyHeight = 11.2 * normalizedHeight;
+    const labelWorldY = pos.podiumHeight + estimatedBodyHeight + 5.2;
+
+    const v = new THREE.Vector3(pos.x, labelWorldY, 0);
+    v.project(camera);
+
+    const sx = ((v.x + 1) / 2) * canvasW;
+    const sy = (1 - (v.y + 1) / 2) * canvasH;
+
+    div.style.left = `${sx}px`;
+    div.style.top = `${Math.max(8, sy)}px`;
+    div.style.transform = "translateX(-50%) translateY(-100%)";
+    div.style.width = "230px";
+
+    container.appendChild(div);
+  }
+
+  function resizeBodytypeSelects() {
+    document.querySelectorAll(".bodytype-control select").forEach(select => {
+      const selectedText = select.options[select.selectedIndex]?.text || "";
+
+      const measurer = document.createElement("span");
+      measurer.style.position = "absolute";
+      measurer.style.visibility = "hidden";
+      measurer.style.whiteSpace = "nowrap";
+      measurer.style.font = window.getComputedStyle(select).font;
+      measurer.textContent = selectedText;
+
+      document.body.appendChild(measurer);
+
+      const width = Math.ceil(measurer.getBoundingClientRect().width) + 62;
+      const cappedWidth = Math.min(width, 420);
+
+      select.style.width = `${cappedWidth}px`;
+
+      document.body.removeChild(measurer);
     });
   }
 
@@ -413,259 +717,6 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     }
 
     return event || sport || "Unknown";
-  }
-
-  function updateScene() {
-    const mount = document.querySelector(selectors.podium);
-    mount.innerHTML = "";
-
-    if (!state.year || !state.sport || !state.discipline) {
-      showError("No data available for this selection.");
-      resizeBodytypeSelects();
-      return;
-    }
-
-    const medalists = getSelectedMedalists();
-
-    const wrapper = document.createElement("div");
-    wrapper.className = "bodytype-3d-wrapper";
-    mount.appendChild(wrapper);
-
-    const overlay = document.createElement("div");
-    overlay.className = "bodytype-label-overlay";
-    wrapper.appendChild(overlay);
-
-    const canvasWrap = document.createElement("div");
-    canvasWrap.className = "bodytype-canvas-wrap";
-    wrapper.appendChild(canvasWrap);
-
-    const width = canvasWrap.clientWidth || 1180;
-    const height = 700;
-
-    const scene = new THREE.Scene();
-    scene.background = null;
-
-    const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 200);
-    camera.position.set(0, 18, 38);
-    camera.lookAt(0, 7, 0);
-
-    const renderer = new THREE.WebGLRenderer({
-      antialias: true,
-      alpha: true
-    });
-
-    renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(0x000000, 0);
-    canvasWrap.appendChild(renderer.domElement);
-
-    scene.add(new THREE.AmbientLight(0xffffff, 1.55));
-
-    const keyLight = new THREE.DirectionalLight(0xffffff, 1.25);
-    keyLight.position.set(6, 10, 8);
-    scene.add(keyLight);
-
-    const fillLight = new THREE.DirectionalLight(0xffffff, 0.7);
-    fillLight.position.set(-6, 7, 6);
-    scene.add(fillLight);
-
-    const positions = {
-      Silver: { x: -9.75, podiumHeight: 2.2, podiumWidth: 10.0, podiumDepth: 3.0 },
-      Gold:   { x: 0,     podiumHeight: 3.2, podiumWidth:  9.5, podiumDepth: 3.0 },
-      Bronze: { x: 9.75,  podiumHeight: 1.5, podiumWidth: 10.0, podiumDepth: 3.0 }
-    };
-
-    camera.updateProjectionMatrix();
-    camera.updateMatrixWorld();
-
-    addConnectedPodium(scene, positions);
-    ["Silver", "Gold", "Bronze"].forEach((medal) => {
-      const athlete = medalists.find(d => d.medal === medal);
-      const pos = positions[medal];
-
-      addHuman(scene, athlete, pos);
-      addAthleteOverlay(overlay, athlete, pos, camera, width, height);
-    });
-
-    renderer.render(scene, camera);
-
-    function animate() {
-      requestAnimationFrame(animate);
-      renderer.render(scene, camera);
-    }
-
-    animate();
-
-    resizeBodytypeSelects();
-  }
-
-  function addConnectedPodium(scene, pos) {
-    const depth = pos.Gold.podiumDepth;
-    const sideMat = new THREE.MeshStandardMaterial({ color: 0xf5f5f5, roughness: 0.8 });
-    const topMat  = new THREE.MeshStandardMaterial({ color: 0xaaaaaa, roughness: 0.7 });
-    // BoxGeometry face order: right, left, top, bottom, front, back
-    const mat = [sideMat, sideMat, topMat, sideMat, sideMat, sideMat];
-
-    const silverLeft  = pos.Silver.x - pos.Silver.podiumWidth / 2;
-    const goldRight   = pos.Gold.x   + pos.Gold.podiumWidth   / 2;
-    const bronzeRight = pos.Bronze.x + pos.Bronze.podiumWidth / 2;
-    const bronzeH = pos.Bronze.podiumHeight;
-    const silverH = pos.Silver.podiumHeight;
-    const goldH   = pos.Gold.podiumHeight;
-
-    // Three stacked layers forming a staircase: base / silver+gold step / gold top
-    const layers = [
-      { w: bronzeRight - silverLeft,   h: bronzeH,            cx: (silverLeft + bronzeRight) / 2, cy: bronzeH / 2 },
-      { w: goldRight   - silverLeft,   h: silverH - bronzeH,  cx: (silverLeft + goldRight) / 2,   cy: bronzeH + (silverH - bronzeH) / 2 },
-      { w: pos.Gold.podiumWidth,       h: goldH   - silverH,  cx: pos.Gold.x,                     cy: silverH + (goldH - silverH) / 2 }
-    ];
-
-    layers.forEach(({ w, h, cx, cy }) => {
-      const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, depth), mat);
-      mesh.position.set(cx, cy, 0);
-      scene.add(mesh);
-    });
-
-    // Olympic rings on gold section only
-    const ringsW = 6.0;
-    const ringsH = ringsW * (175 / 420);
-    const ringsPlane = new THREE.Mesh(
-      new THREE.PlaneGeometry(ringsW, ringsH),
-      new THREE.MeshStandardMaterial({
-        map: new THREE.CanvasTexture(makeOlympicRingsCanvas()),
-        transparent: true,
-        depthWrite: false
-      })
-    );
-    ringsPlane.position.set(pos.Gold.x, pos.Gold.podiumHeight / 2, depth / 2 + 0.01);
-    scene.add(ringsPlane);
-  }
-
-  function makeOlympicRingsCanvas() {
-    const W = 420, H = 175;
-    const canvas = document.createElement("canvas");
-    canvas.width = W;
-    canvas.height = H;
-    const ctx = canvas.getContext("2d");
-
-    const rings = [
-      { cx: 113, cy: 62,  color: "#0085C7" },
-      { cx: 210, cy: 62,  color: "#000000" },
-      { cx: 307, cy: 62,  color: "#DF0024" },
-      { cx: 162, cy: 112, color: "#F4C300" },
-      { cx: 259, cy: 112, color: "#009F6B" }
-    ];
-
-    rings.forEach(r => {
-      ctx.beginPath();
-      ctx.arc(r.cx, r.cy, 38, 0, Math.PI * 2);
-      ctx.strokeStyle = r.color;
-      ctx.lineWidth = 9;
-      ctx.stroke();
-    });
-
-    return canvas;
-  }
-
-  function addHuman(scene, athlete, pos) {
-    const gender = state.gender === "Women" ? "woman" : "man";
-    const group = AthleteRenderer.addHuman(scene, athlete, pos, gender);
-    group.scale.multiplyScalar(0.85);
-  }
-
-  function addAthleteOverlay(container, athlete, pos, camera, canvasW, canvasH) {
-    const div = document.createElement("div");
-    div.className = "bodytype-athlete-label";
-
-    const heightStr = athlete.height ? `${athlete.height} cm` : "– cm";
-    const weightStr = athlete.weight ? `${athlete.weight} kg` : "– kg";
-
-    div.innerHTML = `
-      <div class="bodytype-athlete-name">${athlete.name}</div>
-      <div class="bodytype-athlete-meta">${athlete.noc || ""}</div>
-      <div class="bodytype-athlete-stats">${heightStr}&nbsp;·&nbsp;${weightStr}</div>
-    `;
-
-    /*
-      The label used to be fixed at podiumHeight + 14.
-      That made short athletes have labels too high above them.
-      Now the label anchor depends on the athlete's real height.
-    */
-    const athleteCm = athlete.height || 170;
-    const normalizedHeight = athleteCm / 170;
-
-    const estimatedBodyHeight = 11.2 * normalizedHeight;
-    const labelWorldY = pos.podiumHeight + estimatedBodyHeight + 5.2;
-
-    const v = new THREE.Vector3(pos.x, labelWorldY, 0);
-    v.project(camera);
-
-    const sx = (v.x + 1) / 2 * canvasW;
-    const sy = (1 - (v.y + 1) / 2) * canvasH;
-
-    div.style.left = `${sx}px`;
-    div.style.top = `${Math.max(8, sy)}px`;
-    div.style.transform = "translateX(-50%) translateY(-100%)";
-    div.style.width = "230px";
-
-    container.appendChild(div);
-  }
-
-  function makeTextSprite(message, options = {}) {
-    const fontsize = options.fontsize || 42;
-    const textColor = options.textColor || "#111111";
-    const bgColor = options.bgColor || "rgba(255,255,255,0)";
-
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
-
-    context.font = `${fontsize}px Arial`;
-
-    const width = context.measureText(message).width + 40;
-    const height = fontsize + 34;
-
-    canvas.width = width;
-    canvas.height = height;
-
-    context.font = `${fontsize}px Arial`;
-    context.fillStyle = bgColor;
-    context.fillRect(0, 0, width, height);
-
-    context.fillStyle = textColor;
-    context.textAlign = "center";
-    context.textBaseline = "middle";
-    context.fillText(message, width / 2, height / 2);
-
-    const texture = new THREE.CanvasTexture(canvas);
-
-    const material = new THREE.SpriteMaterial({
-      map: texture,
-      transparent: true
-    });
-
-    return new THREE.Sprite(material);
-  }
-
-  function resizeBodytypeSelects() {
-    document.querySelectorAll(".bodytype-control select").forEach(select => {
-      const selectedText = select.options[select.selectedIndex]?.text || "";
-
-      const measurer = document.createElement("span");
-      measurer.style.position = "absolute";
-      measurer.style.visibility = "hidden";
-      measurer.style.whiteSpace = "nowrap";
-      measurer.style.font = window.getComputedStyle(select).font;
-      measurer.textContent = selectedText;
-
-      document.body.appendChild(measurer);
-
-      const width = Math.ceil(measurer.getBoundingClientRect().width) + 62;
-      const cappedWidth = Math.min(width, 420);
-
-      select.style.width = `${cappedWidth}px`;
-
-      document.body.removeChild(measurer);
-    });
   }
 
   function showError(message) {
