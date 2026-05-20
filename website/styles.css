@@ -413,6 +413,7 @@ p {
 [data-anchor="geopolitics"] h2, 
 [data-anchor="geopolitics"] p {
   color: #fff;
+  width: 100%;
 }
 
 .geo-intro {
@@ -506,7 +507,6 @@ p {
 
 .geo-highlight-event {
   font-size: 20px !important;
-  margin-bottom: 8px;
 }
 
 .geo-highlight-event strong {
@@ -515,6 +515,8 @@ p {
 
 .geo-event-description {
   margin-bottom: 12px;
+  font-size: 18px !important;
+  color: #ffd166 !important;
 }
 
 .geo-note {
@@ -847,23 +849,6 @@ p {
   background: rgba(255, 255, 255, 0.88);
   border-radius: 10px;
   letter-spacing: 0.02em;
-}
-
-/* =============================================
-   About section
-   =========================================== */
-
-.team-simple {
-  margin-top: 40px;
-  text-align: center;
-  color: white;
-  font-size: 28px;
-  line-height: 1.8;
-  font-weight: 700;
-}
-
-.team-simple p {
-  margin: 8px 0;
 }
 
 /* =============================================

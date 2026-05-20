@@ -590,7 +590,7 @@
       .attr("y", 24)
       .attr("fill", "rgba(255,255,255,0.9)")
       .attr("font-size", 14)
-      .attr("font-family", "Arial, sans-serif")
+      .attr("font-family", "Elms Sans")
       .text(`Hover countries to see how they are involved in ${selected.year}.`);
   }
 
