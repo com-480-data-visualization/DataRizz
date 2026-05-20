@@ -363,6 +363,37 @@ p {
 }
 
 /* =============================================
+   Delegations section
+   =========================================== */
+
+.never-timeline {
+  margin-top: 12px;
+}
+
+#never-play {
+  border: 2px solid #d9d9d9;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  width: 42px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#never-year {
+  width: 340px;
+  accent-color: #f0b000;
+}
+
+#never-current-year {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  min-width: 64px;
+}
+
+/* =============================================
    Responsive
    =========================================== */
 

@@ -491,6 +491,14 @@
 
     d3.select(selectors.currentYear).text(state.currentYear);
 
+    window.dispatchEvent(new CustomEvent("olympic-year-change", {
+      detail: {
+        year: state.currentYear,
+        season: state.currentSeason,
+        source: "delegations"
+      }
+    }));
+
     const sankeyData = buildSankeyData({
       year: state.currentYear,
       season: state.currentSeason,

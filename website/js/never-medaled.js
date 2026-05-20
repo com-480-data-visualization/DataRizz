@@ -16,14 +16,24 @@
   const WORLD_GEOJSON_PATH =
     "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
 
+  const STOP_YEAR = 2016;
+
   const selectors = {
-    root: "#never-medaled-viz"
+    root: "#never-medaled-viz",
+    yearSlider: "#never-year",
+    currentYear: "#never-current-year",
+    play: "#never-play"
   };
 
   const state = {
     rows: [],
     columns: {},
-    worldGeo: null
+    worldGeo: null,
+    currentSeason: "Summer",
+    currentYear: null,
+    availableYears: [],
+    playing: false,
+    timer: null
   };
 
   const continentOrder = [
@@ -264,7 +274,8 @@
       state.columns = detectColumns(rows);
 
       injectStyles();
-      render();
+      setupControls();
+      setSeason("Summer");
     } catch (error) {
       console.error(error);
       showError("Could not load never-medaled data.");
@@ -413,6 +424,149 @@
     document.head.appendChild(style);
   }
 
+  function setupControls() {
+    d3.select(selectors.yearSlider).on("input", function () {
+      stopPlaying();
+
+      const index = Number(this.value);
+      const year = state.availableYears[index];
+
+      if (year !== undefined) {
+        state.currentYear = year;
+        update();
+        broadcastYear(year);
+      }
+    });
+
+    d3.select(selectors.play).on("click", togglePlay);
+
+    window.addEventListener("olympic-year-change", event => {
+      const year = Number(event.detail?.year);
+      const season = event.detail?.season || state.currentSeason;
+
+      if (!Number.isFinite(year)) return;
+
+      state.currentSeason = season;
+      state.availableYears = getAvailableYears(season);
+
+      if (state.availableYears.includes(year)) {
+        state.currentYear = year;
+      } else {
+        state.currentYear = state.availableYears.reduce((closest, y) =>
+          Math.abs(y - year) < Math.abs(closest - year) ? y : closest
+        );
+      }
+
+      updateSliderLimits();
+      update();
+    });
+  }
+
+  function setSeason(season) {
+    stopPlaying();
+
+    state.currentSeason = season;
+    state.availableYears = getAvailableYears(season);
+
+    state.currentYear = state.availableYears[0];
+
+    updateSliderLimits();
+    update();
+  }
+
+  function getAvailableYears(season) {
+    const { year: yearCol, season: seasonCol } = state.columns;
+
+    return Array.from(
+      new Set(
+        state.rows
+          .filter(row => String(row[seasonCol] || "").trim() === season)
+          .map(row => Number(row[yearCol]))
+          .filter(year => Number.isFinite(year) && year <= STOP_YEAR)
+      )
+    ).sort((a, b) => a - b);
+  }
+
+  function updateSliderLimits() {
+    d3.select(selectors.yearSlider)
+      .attr("min", 0)
+      .attr("max", Math.max(0, state.availableYears.length - 1))
+      .attr("step", 1)
+      .property("value", state.availableYears.indexOf(state.currentYear));
+
+    d3.select(selectors.currentYear).text(state.currentYear);
+  }
+
+  function update() {
+    if (!state.currentYear) return;
+
+    updateSliderLimits();
+    render();
+  }
+
+  function togglePlay() {
+    if (state.playing) {
+      stopPlaying();
+    } else {
+      startPlaying();
+    }
+  }
+
+  function startPlaying() {
+    stopPlaying();
+
+    const currentIndex = state.availableYears.indexOf(state.currentYear);
+    const lastIndex = state.availableYears.length - 1;
+
+    if (currentIndex >= lastIndex) return;
+
+    state.playing = true;
+    d3.select(selectors.play).text("II");
+
+    playNextYear();
+  }
+
+  function playNextYear() {
+    if (!state.playing) return;
+
+    const currentIndex = state.availableYears.indexOf(state.currentYear);
+    const lastIndex = state.availableYears.length - 1;
+
+    if (currentIndex >= lastIndex) {
+      stopPlaying();
+      return;
+    }
+
+    const nextIndex = currentIndex + 1;
+    state.currentYear = state.availableYears[nextIndex];
+
+    update();
+    broadcastYear(state.currentYear);
+
+    state.timer = setTimeout(playNextYear, 1300);
+  }
+
+  function stopPlaying() {
+    state.playing = false;
+
+    if (state.timer !== null) {
+      clearTimeout(state.timer);
+      state.timer = null;
+    }
+
+    d3.select(selectors.play).text("▶");
+  }
+
+  function broadcastYear(year) {
+    window.dispatchEvent(new CustomEvent("olympic-year-change", {
+      detail: {
+        year,
+        season: state.currentSeason,
+        source: "never-medaled"
+      }
+    }));
+  }
+
   function render() {
     const root = d3.select(selectors.root);
     root.selectAll("*").remove();
@@ -441,6 +595,18 @@
   function computeNeverMedaledCountries() {
     const c = state.columns;
 
+    const rowsForYear = state.rows.filter(row => {
+      const rowYear = Number(row[c.year]);
+      const rowSeason = String(row[c.season] || "").trim();
+
+      return (
+        Number.isFinite(rowYear) &&
+        rowYear <= state.currentYear &&
+        rowYear <= STOP_YEAR &&
+        rowSeason === state.currentSeason
+      );
+    });
+
     if (!c.country || !c.medal || !c.sport) {
       throw new Error("Missing required columns: country, medal, or sport.");
     }
@@ -448,7 +614,7 @@
     const allCountries = new Map();
     const medalCountries = new Set();
 
-    state.rows.forEach(row => {
+    rowsForYear.forEach(row => {
       const country = normalizeCountryName(cleanCountry(row[c.country]));
       const medal = cleanLabel(row[c.medal]);
       const noc = c.noc ? cleanLabel(row[c.noc]) : "";
@@ -478,7 +644,7 @@
 
     const neverSet = new Set(neverMedaledNames);
 
-    const rowsForNeverMedaled = state.rows.filter(row => {
+    const rowsForNeverMedaled = rowsForYear.filter(row => {
       const country = normalizeCountryName(cleanCountry(row[c.country]));
       return neverSet.has(country);
     });
