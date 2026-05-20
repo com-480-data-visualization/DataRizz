@@ -341,6 +341,14 @@
     scrollHorizontally: true,
 
     onLeave: function(origin, destination, direction) {
+      if (origin && origin.item) {
+        const activeSlide = origin.item.querySelector(".fp-slide.active");
+
+        if (activeSlide && activeSlide.dataset.anchor && !activeSlide.dataset.anchor.endsWith("-text")) {
+          window.fullpage_api.silentMoveTo(origin.index + 1, 0);
+        }
+      }
+
       if (window.RaceNavigation) {
         window.RaceNavigation.update(destination.index, 0, direction);
       }
