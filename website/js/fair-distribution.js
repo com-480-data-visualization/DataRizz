@@ -274,6 +274,25 @@
           grid-template-columns: 1fr;
         }
       }
+
+      .fair-prediction-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+
+      .fair-prediction-banner {
+        width: 80%;
+        background: rgba(255, 209, 102, 0.12);
+        border: 1px solid rgba(255, 209, 102, 0.55);
+        color: #ffd166;
+        padding: 14px 18px;
+        border-radius: 12px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.45;
+      }
     `;
 
     document.head.appendChild(style);
@@ -735,6 +754,10 @@
   function renderCountryCard(country, data, maxActual, maxFair) {
     const fairUnavailable = data.factor === null;
 
+    const allFairZero =
+      !fairUnavailable &&
+      medalOrder.every(medal => (data.fair[medal] || 0) === 0);
+
     return `
       <div class="fair-country-card">
         <div class="fair-country-title">${country}</div>
@@ -742,6 +765,14 @@
           Population: ${formatBig(data.population)} &nbsp;•&nbsp;
           GDP: ${formatBig(data.gdp)}
         </div>
+
+        ${allFairZero ? `
+          <div class="fair-prediction-wrapper">
+            <div class="fair-prediction-banner">
+              How would you predict their performance if they had the same GDP and population as the other countries?
+            </div>
+          </div>
+        ` : ""}
 
         <div class="fair-box">
           <div class="fair-box-title">Actual medals</div>
