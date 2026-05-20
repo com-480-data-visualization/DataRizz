@@ -595,7 +595,7 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     const normalizedHeight = athleteCm / 170;
 
     const estimatedBodyHeight = 11.2 * normalizedHeight;
-    const labelWorldY = pos.podiumHeight + estimatedBodyHeight + 3;
+    const labelWorldY = pos.podiumHeight + estimatedBodyHeight + 5.2;
 
     const v = new THREE.Vector3(pos.x, labelWorldY, 0);
     v.project(camera);
