@@ -513,6 +513,19 @@ p {
   overflow: visible;
 }
 
+#geo-event-list p {
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
+  text-align: left;
+}
+
+.geo-highlight-event,
+.geo-event-description {
+  width: 100%;
+  margin-left: 0;
+}
+
 #geo-event-list h3 {
   color: #fff;
   margin-top: 0;
