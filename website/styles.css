@@ -436,7 +436,6 @@ p {
 [data-anchor="geopolitics"] h2, 
 [data-anchor="geopolitics"] p {
   color: #fff;
-  width: 100%;
 }
 
 .geo-intro {
@@ -543,6 +542,7 @@ p {
 
 .geo-highlight-event {
   font-size: 20px !important;
+  margin-bottom: 8px;
 }
 
 .geo-highlight-event strong {
