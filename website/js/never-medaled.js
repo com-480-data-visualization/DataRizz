@@ -350,7 +350,7 @@
         grid-template-columns: 1.08fr 0.92fr;
         gap: 24px;
         align-items: start;
-        margin-top: 4px;
+        margin-top: 50px;
       }
 
       .never-map-panel,

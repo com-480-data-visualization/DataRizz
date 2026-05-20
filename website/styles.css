@@ -367,7 +367,8 @@ p {
    =========================================== */
 
 .never-timeline {
-  margin-top: 12px;
+  margin-top: 32px;
+  transform: none;
 }
 
 #never-play {

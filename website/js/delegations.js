@@ -370,6 +370,31 @@
     });
 
     d3.select(selectors.play).on("click", togglePlay);
+
+    window.addEventListener("olympic-year-change", event => {
+      if (event.detail?.source === "delegations") return;
+
+      const year = Number(event.detail?.year);
+      const season = event.detail?.season || state.currentSeason;
+
+      if (!Number.isFinite(year)) return;
+
+      state.currentSeason = season;
+      d3.select(selectors.seasonSelect).property("value", season);
+
+      state.availableYears = getAvailableYears(season);
+
+      if (state.availableYears.includes(year)) {
+        state.currentYear = year;
+      } else if (state.availableYears.length) {
+        state.currentYear = state.availableYears.reduce((closest, y) =>
+          Math.abs(y - year) < Math.abs(closest - year) ? y : closest
+        );
+      }
+
+      updateSliderLimits();
+      update();
+    });
   }
 
   function setSeason(season) {
