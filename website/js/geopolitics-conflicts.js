@@ -160,7 +160,7 @@
     {
       year: 1976,
       title: "Montreal boycott",
-      description: "Several African nations boycotted the Games after the IOC refused to ban New Zealand.",
+      description: "Several African nations boycotted the Games after the IOC refused to ban New Zealand, whose rugby team had maintained sporting relations with apartheid-era South Africa.",
       countries: [
         "Canada",
         "New Zealand",
@@ -585,12 +585,7 @@
         openCountryMedalPopup(countryName, selected);
       });
 
-    svg.append("text")
-      .attr("x", 12)
-      .attr("y", 24)
-      .attr("fill", "rgba(255,255,255,0.9)")
-      .attr("font-size", 14)
-      .attr("font-family", "Elms Sans")
+    d3.select("#geo-hover-text")
       .text(`Hover countries to see how they are involved in ${selected.year}.`);
   }
 
@@ -712,7 +707,7 @@
     state.events.forEach(d => {
       list.append("li")
         .classed("active", d.year === selected.year)
-        .html(`<strong>${d.year}:</strong> <span>${d.title}</span>`)
+        .html(`<strong>${d.year}:</strong> <span>${d.title.replace(/boycott/gi, '<strong style="color:#ffd166;">boycott</strong>')}</span>`)
         .on("click", () => update(d.year));
     });
   }
