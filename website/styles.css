@@ -436,7 +436,6 @@ p {
 [data-anchor="geopolitics"] h2, 
 [data-anchor="geopolitics"] p {
   color: #fff;
-  width: 100%;
 }
 
 .geo-intro {
@@ -514,19 +513,6 @@ p {
   overflow: visible;
 }
 
-#geo-event-list p {
-  width: 100%;
-  margin: 0;
-  padding-left: 0;
-  text-align: left;
-}
-
-.geo-highlight-event,
-.geo-event-description {
-  width: 100%;
-  margin-left: 0;
-}
-
 #geo-event-list h3 {
   color: #fff;
   margin-top: 0;
@@ -543,6 +529,8 @@ p {
 
 .geo-highlight-event {
   font-size: 20px !important;
+  margin-bottom: 8px;
+  width: 100% !important;
 }
 
 .geo-highlight-event strong {
@@ -550,6 +538,7 @@ p {
 }
 
 .geo-event-description {
+  width: 100% !important;
   margin-bottom: 12px;
   font-size: 18px !important;
   color: #ffd166 !important;
