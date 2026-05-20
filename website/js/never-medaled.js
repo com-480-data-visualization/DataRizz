@@ -4,8 +4,7 @@
    Shows countries that participated but never won any medal.
    Includes:
    - world map of never-medaled countries
-   - continent summary
-   - top countries bar chart
+   - bar chart by continent or country
    Uses real data from data/olympics.csv
    ============================================================ */
 
@@ -20,6 +19,8 @@
 
   const selectors = {
     root: "#never-medaled-viz",
+    seasonSelect: "#never-season-select",
+    modeSelect: "#never-mode-select",
     yearSlider: "#never-year",
     currentYear: "#never-current-year",
     play: "#never-play"
@@ -30,6 +31,7 @@
     columns: {},
     worldGeo: null,
     currentSeason: "Summer",
+    currentMode: "continent",
     currentYear: null,
     availableYears: [],
     playing: false,
@@ -274,6 +276,7 @@
       state.columns = detectColumns(rows);
 
       injectStyles();
+      injectControls(root);
       setupControls();
       setSeason("Summer");
     } catch (error) {
@@ -309,65 +312,50 @@
     style.textContent = `
       #never-medaled-viz {
         width: 100%;
-        max-width: 1440px;
+        max-width: 1280px;
         margin: 0 auto;
         color: white;
       }
 
+      .never-controls {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        align-items: center;
+        margin: 0 auto 8px;
+      }
+
+      .never-controls label {
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: "Elms Sans", sans-serif;
+        margin-right: 8px;
+      }
+
+      .never-controls select {
+        background: #f4b400;
+        color: #111;
+        border: 3px solid #222;
+        border-radius: 12px;
+        padding: 8px 14px;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: "Elms Sans", sans-serif;
+        cursor: pointer;
+      }
+
       .never-layout {
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 42px;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 24px;
         align-items: start;
-        margin-top: 22px;
+        margin-top: 4px;
       }
 
       .never-map-panel,
       .never-chart-panel {
         min-width: 0;
-      }
-
-      .never-continent-summary {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(170px, 1fr));
-        gap: 14px;
-        margin: 0 0 18px;
-      }
-
-      .never-continent-card {
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        border-radius: 14px;
-        padding: 14px 16px;
-        background: rgba(255, 255, 255, 0.045);
-        font-family: Arial, sans-serif;
-      }
-
-      .never-continent-name {
-        font-size: 16px;
-        font-weight: 800;
-        display: flex;
-        align-items: center;
-        gap: 9px;
-      }
-
-      .never-continent-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        display: inline-block;
-      }
-
-      .never-continent-count {
-        margin-top: 7px;
-        font-size: 28px;
-        font-weight: 800;
-        color: #aeeaf2;
-      }
-
-      .never-continent-detail {
-        margin-top: 3px;
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.72);
       }
 
       .never-map-svg,
@@ -380,7 +368,7 @@
 
       .never-panel-title {
         font-family: Arial, sans-serif;
-        font-size: 19px;
+        font-size: 16px;
         font-weight: 800;
         fill: white;
       }
@@ -411,11 +399,12 @@
       }
 
       @media (max-width: 1000px) {
-        .never-layout {
-          grid-template-columns: 1fr;
+        .never-controls {
+          flex-direction: column;
+          gap: 10px;
         }
 
-        .never-continent-summary {
+        .never-layout {
           grid-template-columns: 1fr;
         }
       }
@@ -424,7 +413,41 @@
     document.head.appendChild(style);
   }
 
+  function injectControls(root) {
+    if (root.querySelector(".never-controls")) return;
+
+    root.insertAdjacentHTML("afterbegin", `
+      <div class="never-controls">
+        <div>
+          <label for="never-season-select">Season:</label>
+          <select id="never-season-select">
+            <option value="Summer">Summer</option>
+            <option value="Winter">Winter</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="never-mode-select">Group by:</label>
+          <select id="never-mode-select">
+            <option value="continent">Continent</option>
+            <option value="country">Country</option>
+          </select>
+        </div>
+      </div>
+    `);
+  }
+
   function setupControls() {
+    d3.select(selectors.seasonSelect).on("change", function () {
+      setSeason(this.value);
+      broadcastYear(state.currentYear);
+    });
+
+    d3.select(selectors.modeSelect).on("change", function () {
+      state.currentMode = this.value;
+      update();
+    });
+
     d3.select(selectors.yearSlider).on("input", function () {
       stopPlaying();
 
@@ -447,6 +470,7 @@
       if (!Number.isFinite(year)) return;
 
       state.currentSeason = season;
+      d3.select(selectors.seasonSelect).property("value", season);
       state.availableYears = getAvailableYears(season);
 
       if (state.availableYears.includes(year)) {
@@ -466,9 +490,20 @@
     stopPlaying();
 
     state.currentSeason = season;
+    d3.select(selectors.seasonSelect).property("value", season);
+
     state.availableYears = getAvailableYears(season);
 
-    state.currentYear = state.availableYears[0];
+    const previousYear = state.currentYear;
+    if (previousYear && state.availableYears.includes(previousYear)) {
+      state.currentYear = previousYear;
+    } else if (previousYear && state.availableYears.length) {
+      state.currentYear = state.availableYears.reduce((closest, y) =>
+        Math.abs(y - previousYear) < Math.abs(closest - previousYear) ? y : closest
+      );
+    } else {
+      state.currentYear = state.availableYears[0];
+    }
 
     updateSliderLimits();
     update();
@@ -569,7 +604,7 @@
 
   function render() {
     const root = d3.select(selectors.root);
-    root.selectAll("*").remove();
+    root.selectAll(".never-layout, .never-medaled-error").remove();
 
     const data = computeNeverMedaledCountries();
 
@@ -588,7 +623,7 @@
       .attr("class", "never-chart-panel");
 
     drawMap(mapPanel, data);
-    drawBarChart(chartPanel, data.topCountries);
+    drawBarChart(chartPanel, data.topBars, state.currentMode);
   }
 
   function computeNeverMedaledCountries() {
@@ -688,24 +723,54 @@
       };
     }).filter(d => d.countries > 0);
 
+    const topCountries = neverMedaledData.slice(0, 10).map(d => ({
+      name: d.country,
+      type: "country",
+      country: d.country,
+      continent: d.continent,
+      participations: d.participations,
+      sports: d.sports,
+      firstYear: d.firstYear,
+      lastYear: d.lastYear
+    }));
+
+    const topContinents = byContinent
+      .map(d => {
+        const countries = neverMedaledData.filter(country => country.continent === d.continent);
+
+        return {
+          name: d.continent,
+          type: "continent",
+          continent: d.continent,
+          countries: d.countries,
+          participations: d.participations,
+          sports: d3.sum(countries, country => country.sports),
+          firstYear: d3.min(countries, country => country.firstYear),
+          lastYear: d3.max(countries, country => country.lastYear)
+        };
+      })
+      .sort((a, b) => d3.descending(a.participations, b.participations));
+
     return {
       neverMedaled: neverMedaledData,
       neverSet,
-      topCountries: neverMedaledData.slice(0, 12),
+      topCountries,
+      topContinents,
+      topBars: state.currentMode === "continent" ? topContinents : topCountries,
       byContinent
     };
   }
 
   function drawMap(container, data) {
-    const width = 860;
-    const height = 520;
+    const width = 760;
+    const height = 420;
 
     const svg = container.append("svg")
       .attr("viewBox", `0 0 ${width} ${height}`)
       .attr("class", "never-map-svg");
 
     const projection = d3.geoNaturalEarth1()
-      .fitExtent([[10, 32], [width - 10, height - 10]], state.worldGeo);
+      .fitExtent([[10, 28], [width - 10, height - 10]], state.worldGeo);
 
     const path = d3.geoPath().projection(projection);
 
@@ -793,10 +858,10 @@
       });
   }
 
-  function drawBarChart(container, data) {
-    const width = 720;
-    const rowHeight = 40;
-    const margin = { top: 42, right: 190, bottom: 48, left: 170 };
+  function drawBarChart(container, data, mode) {
+    const width = 620;
+    const rowHeight = mode === "continent" ? 42 : 31;
+    const margin = { top: 36, right: 150, bottom: 42, left: 150 };
     const height = margin.top + margin.bottom + data.length * rowHeight;
 
     const svg = container.append("svg")
@@ -810,7 +875,7 @@
       .range([margin.left, width - margin.right]);
 
     const y = d3.scaleBand()
-      .domain(data.map(d => d.country))
+      .domain(data.map(d => d.name))
       .range([margin.top, height - margin.bottom])
       .padding(0.18);
 
@@ -819,7 +884,9 @@
       .attr("y", 22)
       .attr("text-anchor", "middle")
       .attr("class", "never-panel-title")
-      .text("Most participations without a medal");
+      .text(mode === "continent"
+        ? "Participations without a medal by continent"
+        : "Most participations without a medal");
 
     svg.append("g")
       .selectAll("line")
@@ -836,14 +903,14 @@
       .data(data)
       .join("text")
       .attr("x", margin.left - 10)
-      .attr("y", d => y(d.country) + y.bandwidth() / 2)
+      .attr("y", d => y(d.name) + y.bandwidth() / 2)
       .attr("dy", "0.35em")
       .attr("text-anchor", "end")
       .attr("fill", "white")
       .attr("font-family", "Arial, sans-serif")
-      .attr("font-size", 15)
+      .attr("font-size", mode === "continent" ? 15 : 12)
       .attr("font-weight", 700)
-      .text(d => d.country);
+      .text(d => shortenLabel(d.name, mode === "continent" ? 18 : 20));
 
     const tooltip = getTooltip();
 
@@ -852,19 +919,23 @@
       .data(data)
       .join("rect")
       .attr("x", margin.left)
-      .attr("y", d => y(d.country))
+      .attr("y", d => y(d.name))
       .attr("width", d => Math.max(2, x(d.participations) - margin.left))
       .attr("height", y.bandwidth())
-      .attr("rx", 8)
+      .attr("rx", 7)
       .attr("fill", d => continentColors[d.continent] || "#aeeaf2")
       .attr("opacity", 0.9)
       .on("mousemove", function (event, d) {
         d3.select(this).attr("opacity", 1);
 
+        const detailLine = mode === "continent"
+          ? `Countries: <strong>${d.countries}</strong><br>`
+          : `Continent: <strong>${d.continent}</strong><br>`;
+
         tooltip
           .html(`
-            <strong>${d.country}</strong><br>
-            Continent: <strong>${d.continent}</strong><br>
+            <strong>${d.name}</strong><br>
+            ${detailLine}
             Participations: <strong>${d3.format(",")(d.participations)}</strong><br>
             Sports entered: <strong>${d.sports}</strong><br>
             Years: ${formatYearRange(d.firstYear, d.lastYear)}
@@ -882,14 +953,20 @@
       .selectAll("text")
       .data(data)
       .join("text")
-      .attr("x", d => x(d.participations) + 10)
-      .attr("y", d => y(d.country) + y.bandwidth() / 2)
+      .attr("x", d => x(d.participations) + 8)
+      .attr("y", d => y(d.name) + y.bandwidth() / 2)
       .attr("dy", "0.35em")
       .attr("fill", "white")
       .attr("font-family", "Arial, sans-serif")
-      .attr("font-size", 13)
+      .attr("font-size", mode === "continent" ? 12 : 10)
       .attr("font-weight", 700)
-      .text(d => `${d3.format(",")(d.participations)} participations · ${d.sports} sports`);
+      .text(d => {
+        if (mode === "continent") {
+          return `${d3.format(",")(d.participations)} · ${d.countries} countries`;
+        }
+
+        return `${d3.format(",")(d.participations)} · ${d.sports} sports`;
+      });
 
     const xAxis = d3.axisBottom(x)
       .ticks(4)
@@ -903,7 +980,7 @@
       .call(g => g.selectAll("text")
         .attr("fill", "rgba(255,255,255,0.75)")
         .attr("font-family", "Arial, sans-serif")
-        .attr("font-size", 12));
+        .attr("font-size", 11));
 
     svg.append("text")
       .attr("x", (margin.left + width - margin.right) / 2)
@@ -911,7 +988,7 @@
       .attr("text-anchor", "middle")
       .attr("fill", "rgba(255,255,255,0.72)")
       .attr("font-family", "Arial, sans-serif")
-      .attr("font-size", 12)
+      .attr("font-size", 11)
       .text("Athlete participations");
   }
 
@@ -1049,6 +1126,14 @@
     );
   }
 
+  function shortenLabel(value, maxLength) {
+    const text = String(value || "");
+
+    if (text.length <= maxLength) return text;
+
+    return `${text.slice(0, maxLength - 1)}…`;
+  }
+
   function formatYearRange(firstYear, lastYear) {
     if (!Number.isFinite(firstYear) || !Number.isFinite(lastYear)) {
       return "unknown";
@@ -1076,7 +1161,7 @@
   function showError(message) {
     const root = d3.select(selectors.root);
 
-    root.selectAll("*").remove();
+    root.selectAll(".never-layout, .never-medaled-error").remove();
 
     root
       .append("div")
