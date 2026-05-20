@@ -328,10 +328,8 @@
 <script>
   new fullpage('#website', {
     autoScrolling: true,
-
-    // We replace the default fullPage dots with our race track.
+    scrollOverflow: true,
     navigation: false,
-
     navigationPosition: 'right',
     scrollingSpeed: 700,
     slidesNavigation: true,
@@ -372,6 +370,54 @@
       }
     }
   });
+
+  (function () {
+    let lastMove = 0;
+
+    document.addEventListener("wheel", function (event) {
+      const target = event.target;
+
+      if (
+        target.closest("select, option, button, input, textarea, a, .geo-popup-overlay")
+      ) {
+        return;
+      }
+
+      const activeSection = document.querySelector(".fp-section.active");
+      const activeSlide = activeSection?.querySelector(".fp-slide.active");
+
+      const sectionAnchor = activeSection?.dataset.anchor;
+      const slideAnchor = activeSlide?.dataset.anchor;
+
+      const shouldForceScroll =
+        slideAnchor === "body-types-viz" ||
+        slideAnchor === "geopolitics-viz" ||
+        slideAnchor === "fair-viz" ||
+        target.closest("#bodytype-viz") ||
+        target.closest("#geopolitics-map-viz") ||
+        target.closest("#fair-viz");
+
+      if (!shouldForceScroll || !window.fullpage_api) return;
+
+      const delta = event.deltaY;
+      if (Math.abs(delta) < 10) return;
+
+      const now = Date.now();
+      if (now - lastMove < 750) {
+        event.preventDefault();
+        return;
+      }
+
+      event.preventDefault();
+      lastMove = now;
+
+      if (delta > 0) {
+        window.fullpage_api.moveSectionDown();
+      } else {
+        window.fullpage_api.moveSectionUp();
+      }
+    }, { passive: false, capture: true });
+  })();
 </script>
 
 </html>
