@@ -910,7 +910,7 @@
     return `
       <strong>${detail.medal} → ${detail.sport}</strong><br>
       ${total} medals total<br>
-      <span style="color:#aeeaf2;">Click to open detailed Sankey</span>
+      <span style="color:#aeeaf2;">Click to open detailed view</span>
       <div style="margin-top:8px;">
         ${rows}
       </div>
