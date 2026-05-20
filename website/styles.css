@@ -1014,6 +1014,10 @@ p {
   display: none !important;
 }
 
+.section[data-anchor="footer"] {
+  background: #642400 !important;
+}
+
 .footer-content {
   display: flex;
   align-items: center;
