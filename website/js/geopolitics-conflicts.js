@@ -625,7 +625,6 @@
           data,
           xKey: "year",
           yKey: "value",
-          title: `${countryName}: medals around ${selected.year}`,
           yLabel: "Medals won",
           highlightValue: selected.year,
           tooltipFormatter: d => formatNeighborTooltip(d, "Medals")
