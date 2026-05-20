@@ -171,6 +171,26 @@ p {
   flex-direction: column;
 }
 
+.intro-columns {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.intro-column {
+  flex: 1;
+  max-width: 500px;
+}
+
+.intro-column p {
+  width: 100%;
+  text-align: justify;
+  margin: 0;
+}
+
 /* =============================================
    Gender section
    =========================================== */
@@ -454,6 +474,14 @@ p {
 
   #gender-year {
     width: 180px;
+  }
+}
+
+@media (max-width: 900px) {
+  .intro-columns {
+    flex-direction: column;
+    gap: 30px;
+    width: 90%;
   }
 }
 
