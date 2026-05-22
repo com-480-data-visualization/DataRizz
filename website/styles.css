@@ -1075,6 +1075,44 @@ p {
   padding: 6px 10px 0 10px;
 }
 
+.fair-ranking-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.fair-ranking-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.fair-ranking-card h2 {
+  font-size: 28px;
+  width: 100%;
+  padding-bottom: 18px;
+}
+
+.fair-ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  font-size: 18px;
+}
+
+.fair-ranking-table th,
+.fair-ranking-table td {
+  padding: 8px 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.fair-ranking-table th {
+  color: #f4b400;
+}
+
 /* =============================================
    Footer
    =========================================== */

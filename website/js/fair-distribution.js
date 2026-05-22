@@ -734,24 +734,21 @@
     const data1 = computeFairCounts(state.country1);
     const data2 = computeFairCounts(state.country2);
 
-    const maxActual = d3.max([
+    const maxScale = d3.max([
       ...medalOrder.map(medal => data1.actual[medal] || 0),
       ...medalOrder.map(medal => data2.actual[medal] || 0),
-      1
-    ]);
-
-    const maxFair = d3.max([
       ...medalOrder.map(medal => data1.fair[medal] || 0),
       ...medalOrder.map(medal => data2.fair[medal] || 0),
       1
     ]);
 
     grid.html("");
-    grid.append("div").html(renderCountryCard(state.country1, data1, maxActual, maxFair));
-    grid.append("div").html(renderCountryCard(state.country2, data2, maxActual, maxFair));
+    grid.append("div").html(renderCountryCard(state.country1, data1, maxScale));
+    grid.append("div").html(renderCountryCard(state.country2, data2, maxScale));
+    renderRankingTable();
   }
 
-  function renderCountryCard(country, data, maxActual, maxFair) {
+  function renderCountryCard(country, data, maxScale) {
     const fairUnavailable = data.factor === null;
 
     const allFairZero =
@@ -778,7 +775,7 @@
           <div class="fair-box-title">Actual medals</div>
           ${medalOrder.map(medal => {
             const value = data.actual[medal] || 0;
-            const width = value === 0 ? 0 : Math.max(3, (100 * value) / maxActual);
+            const width = value === 0 ? 0 : Math.max(3, (100 * value) / maxScale);
 
             return `
               <div class="fair-medal-row">
@@ -799,7 +796,7 @@
             const value = data.fair[medal];
             const width = value === null || value === 0
               ? 0
-              : Math.max(3, (100 * value) / maxFair);
+              : Math.max(3, (100 * value) / maxScale);
 
             return `
               <div class="fair-medal-row">
@@ -846,5 +843,75 @@
     if (!root) return;
 
     root.innerHTML = `<div class="fair-error">${message}</div>`;
+  }
+
+  function renderRankingTable() {
+    const root = d3.select("#fair-ranking-viz");
+    if (root.empty()) return;
+
+    const countries = getAvailableCountries(state.season, state.year);
+
+    const rows = countries.map(country => {
+      const data = computeFairCounts(country);
+
+      return {
+        country,
+        actual: data.actual,
+        fair: data.fair
+      };
+    });
+
+    const actualRanking = rows
+      .sort((a, b) =>
+        d3.descending(a.actual.Gold, b.actual.Gold) ||
+        d3.descending(a.actual.Silver, b.actual.Silver) ||
+        d3.descending(a.actual.Bronze, b.actual.Bronze)
+      )
+      .slice(0, 10);
+
+    const fairRanking = rows
+      .sort((a, b) =>
+        d3.descending(a.fair.Gold || 0, b.fair.Gold || 0) ||
+        d3.descending(a.fair.Silver || 0, b.fair.Silver || 0) ||
+        d3.descending(a.fair.Bronze || 0, b.fair.Bronze || 0)
+      )
+      .slice(0, 10);
+
+    root.html(`
+      <div class="fair-ranking-layout">
+        ${rankingTable("Actual medal table", actualRanking, "actual")}
+        ${rankingTable("Fair medal table", fairRanking, "fair")}
+      </div>
+    `);
+  }
+
+  function rankingTable(title, rows, type) {
+    return `
+      <div class="fair-ranking-card">
+        <h2>${title}</h2>
+        <table class="fair-ranking-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Country</th>
+              <th>Gold</th>
+              <th>Silver</th>
+              <th>Bronze</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((row, i) => `
+              <tr>
+                <td>${i + 1}</td>
+                <td>${row.country}</td>
+                <td>${formatFair(row[type].Gold)}</td>
+                <td>${formatFair(row[type].Silver)}</td>
+                <td>${formatFair(row[type].Bronze)}</td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
   }
 })();
