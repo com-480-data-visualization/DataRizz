@@ -17,7 +17,8 @@
     populationAdjustment: 100,
     gdpAdjustment: 100,
     rankingSeason: "Summer",
-    rankingYear: null
+    rankingYear: null,
+    expandedPredictionCountry: null
   };
 
   const medalOrder = ["Gold", "Silver", "Bronze"];
@@ -786,6 +787,15 @@
     grid.append("div").html(renderCountryCard(state.country1, data1, maxScale));
     grid.append("div").html(renderCountryCard(state.country2, data2, maxScale));
     renderRankingTable();
+
+    d3.selectAll(".fair-prediction-toggle").on("click", function () {
+      const country = this.dataset.country;
+
+      state.expandedPredictionCountry =
+        state.expandedPredictionCountry === country ? null : country;
+
+      render();
+    });
   }
 
   function renderCountryCard(country, data, maxScale) {
@@ -805,9 +815,21 @@
 
         ${allFairZero ? `
           <div class="fair-prediction-wrapper">
-            <div class="fair-prediction-banner">
-              How would you predict their performance if they had the same GDP and population as the other countries?
-            </div>
+            ${state.expandedPredictionCountry === country ? `
+              <div class="fair-whatif-panel">
+                <div class="fair-whatif-title">What if conditions were different?</div>
+                <div class="fair-whatif-text">
+                  Adjust the Population and GDP sliders below to explore how changes in resources could affect this country's expected medal performance.
+                </div>
+
+                ${renderWhatIfPrediction(country)}
+              </div>
+            ` : `
+              <button class="fair-prediction-banner fair-prediction-toggle"
+                      data-country="${country}">
+                This country won no medals. Click to simulate a possible medal expectation.
+              </button>
+            `}
           </div>
         ` : ""}
 
@@ -999,6 +1021,58 @@
             `).join("")}
           </tbody>
         </table>
+      </div>
+    `;
+  }
+
+  function renderWhatIfPrediction(country) {
+    const indicators = getCountryIndicators(country);
+    const means = getMeanIndicators();
+
+    const allCountries = getAvailableCountries(state.season, state.year);
+
+    const medalWinningCountries = allCountries.filter(c => {
+      const medals = getMedalCounts(c);
+      return medals.Gold + medals.Silver + medals.Bronze > 0;
+    });
+
+    const average = {
+      Gold: d3.mean(medalWinningCountries, c => getMedalCounts(c).Gold) || 0,
+      Silver: d3.mean(medalWinningCountries, c => getMedalCounts(c).Silver) || 0,
+      Bronze: d3.mean(medalWinningCountries, c => getMedalCounts(c).Bronze) || 0
+    };
+
+    const populationRatio =
+      indicators.population && means.meanPopulation
+        ? indicators.population / means.meanPopulation
+        : 1;
+
+    const gdpRatio =
+      indicators.gdp && means.meanGDP
+        ? indicators.gdp / means.meanGDP
+        : 1;
+
+    const populationEffect = Math.pow(populationRatio, state.populationAdjustment / 100);
+    const gdpEffect = Math.pow(gdpRatio, state.gdpAdjustment / 100);
+
+    const factor = populationEffect * gdpEffect;
+
+    return `
+      <div class="fair-whatif-bars">
+        ${medalOrder.map(medal => {
+          const value = average[medal] * factor;
+
+          return `
+            <div class="fair-medal-row">
+              <div class="fair-medal-label">${medal}</div>
+              <div class="fair-bar-bg">
+                <div class="fair-bar-fill"
+                    style="width:${Math.min(100, value * 12)}%; background:${medalColors[medal]}"></div>
+              </div>
+              <div class="fair-medal-value">${formatFair(value)}</div>
+            </div>
+          `;
+        }).join("")}
       </div>
     `;
   }
