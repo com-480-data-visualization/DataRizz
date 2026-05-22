@@ -1113,6 +1113,43 @@ p {
   color: #f4b400;
 }
 
+.fair-slider-explanation {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  margin: 10px auto 8px;
+  color: rgba(255,255,255,0.8);
+}
+
+.fair-sliders {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  align-items: center;
+  margin: 8px auto 0;
+  flex-wrap: wrap;
+}
+
+.fair-slider-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.fair-slider-control input {
+  width: 220px;
+  accent-color: #f4b400;
+}
+
+.fair-slider-control strong {
+  color: #f4b400;
+  min-width: 52px;
+  text-align: left;
+}
+
 /* =============================================
    Footer
    =========================================== */

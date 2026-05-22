@@ -13,7 +13,9 @@
     season: "Summer",
     year: null,
     country1: null,
-    country2: null
+    country2: null,
+    populationAdjustment: 100,
+    gdpAdjustment: 100
   };
 
   const medalOrder = ["Gold", "Silver", "Bronze"];
@@ -346,6 +348,24 @@
             <span class="bottom">country GDP</span>
           </span>
         </div>
+
+        <p class="fair-slider-explanation">
+          Use the sliders to adjust how much weight population and GDP have in the fair medal calculation.
+        </p>
+
+        <div class="fair-sliders">
+          <label class="fair-slider-control">
+            <span>Population adjustment:</span>
+            <input id="fair-pop-adjustment" type="range" min="0" max="200" value="100" step="10">
+            <strong id="fair-pop-value">100%</strong>
+          </label>
+
+          <label class="fair-slider-control">
+            <span>GDP adjustment:</span>
+            <input id="fair-gdp-adjustment" type="range" min="0" max="200" value="100" step="10">
+            <strong id="fair-gdp-value">100%</strong>
+          </label>
+        </div>
       </div>
     `;
   }
@@ -409,6 +429,18 @@
 
     d3.select("#fair-country-2").on("change", function () {
       state.country2 = this.value;
+      render();
+    });
+
+    d3.select("#fair-pop-adjustment").on("input", function () {
+      state.populationAdjustment = Number(this.value);
+      d3.select("#fair-pop-value").text(`${state.populationAdjustment}%`);
+      render();
+    });
+
+    d3.select("#fair-gdp-adjustment").on("input", function () {
+      state.gdpAdjustment = Number(this.value);
+      d3.select("#fair-gdp-value").text(`${state.gdpAdjustment}%`);
       render();
     });
   }
@@ -703,7 +735,10 @@
       Number.isFinite(meanGDP) &&
       meanGDP > 0
     ) {
-      factor = (meanPopulation / population) * (meanGDP / gdp);
+      const populationFactor = Math.pow(meanPopulation / population, state.populationAdjustment / 100);
+      const gdpFactor = Math.pow(meanGDP / gdp, state.gdpAdjustment / 100);
+
+      factor = populationFactor * gdpFactor;
     }
 
     const fair = {};
