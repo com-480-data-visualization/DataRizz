@@ -15,7 +15,9 @@
     country1: null,
     country2: null,
     populationAdjustment: 100,
-    gdpAdjustment: 100
+    gdpAdjustment: 100,
+    rankingSeason: "Summer",
+    rankingYear: null
   };
 
   const medalOrder = ["Gold", "Silver", "Bronze"];
@@ -389,6 +391,9 @@
       "United States of America",
       "USA"
     ]) || countries.find(country => country !== state.country1) || countries[0] || null;
+
+    state.rankingSeason = state.season;
+    state.rankingYear = state.year;
   }
 
   function findPreferredCountry(countries, preferredNames) {
@@ -884,11 +889,22 @@
     const root = d3.select("#fair-ranking-viz");
     if (root.empty()) return;
 
-    const countries = getAvailableCountries(state.season, state.year);
+    if (!state.rankingYear) {
+      state.rankingSeason = state.season;
+      state.rankingYear = state.year;
+    }
+
+    const years = getAvailableYears(state.rankingSeason);
+    const countries = getAvailableCountries(state.rankingSeason, state.rankingYear);
+
+    const previousSeason = state.season;
+    const previousYear = state.year;
+
+    state.season = state.rankingSeason;
+    state.year = state.rankingYear;
 
     const rows = countries.map(country => {
       const data = computeFairCounts(country);
-
       return {
         country,
         actual: data.actual,
@@ -896,7 +912,10 @@
       };
     });
 
-    const actualRanking = rows
+    state.season = previousSeason;
+    state.year = previousYear;
+
+    const actualRanking = [...rows]
       .sort((a, b) =>
         d3.descending(a.actual.Gold, b.actual.Gold) ||
         d3.descending(a.actual.Silver, b.actual.Silver) ||
@@ -904,7 +923,7 @@
       )
       .slice(0, 10);
 
-    const fairRanking = rows
+    const fairRanking = [...rows]
       .sort((a, b) =>
         d3.descending(a.fair.Gold || 0, b.fair.Gold || 0) ||
         d3.descending(a.fair.Silver || 0, b.fair.Silver || 0) ||
@@ -913,11 +932,45 @@
       .slice(0, 10);
 
     root.html(`
+      <div class="fair-ranking-controls">
+        <label>
+          Season:
+          <select id="fair-ranking-season">
+            ${getAvailableSeasons().map(season => `
+              <option value="${season}" ${season === state.rankingSeason ? "selected" : ""}>${season}</option>
+            `).join("")}
+          </select>
+        </label>
+
+        <label>
+          Year:
+          <select id="fair-ranking-year">
+            ${years.map(year => `
+              <option value="${year}" ${year === state.rankingYear ? "selected" : ""}>${year}</option>
+            `).join("")}
+          </select>
+        </label>
+      </div>
+
       <div class="fair-ranking-layout">
         ${rankingTable("Actual medal table", actualRanking, "actual")}
         ${rankingTable("Fair medal table", fairRanking, "fair")}
       </div>
     `);
+
+    d3.select("#fair-ranking-season").on("change", function () {
+      state.rankingSeason = this.value;
+      const newYears = getAvailableYears(state.rankingSeason);
+      state.rankingYear = newYears.includes(state.rankingYear)
+        ? state.rankingYear
+        : newYears[newYears.length - 1];
+      renderRankingTable();
+    });
+
+    d3.select("#fair-ranking-year").on("change", function () {
+      state.rankingYear = Number(this.value);
+      renderRankingTable();
+    });
   }
 
   function rankingTable(title, rows, type) {
