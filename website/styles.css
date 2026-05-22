@@ -1196,6 +1196,31 @@ p {
   line-height: 1.25;
 }
 
+.fair-local-sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.fair-local-sliders .fair-slider-control {
+  justify-content: space-between;
+}
+
+.fair-local-sliders input {
+  width: 280px;
+}
+
+.fair-whatif-sliders {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fair-whatif-sliders .fair-slider-control {
+  justify-content: space-between;
+}
+
 /* =============================================
    Footer
    =========================================== */

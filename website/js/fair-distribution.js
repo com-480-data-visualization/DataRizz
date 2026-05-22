@@ -351,24 +351,6 @@
             <span class="bottom">country GDP</span>
           </span>
         </div>
-
-        <p class="fair-slider-explanation">
-          Use the sliders to adjust how much weight population and GDP have in the fair medal calculation.
-        </p>
-
-        <div class="fair-sliders">
-          <label class="fair-slider-control">
-            <span>Population adjustment:</span>
-            <input id="fair-pop-adjustment" type="range" min="0" max="200" value="100" step="10">
-            <strong id="fair-pop-value">100%</strong>
-          </label>
-
-          <label class="fair-slider-control">
-            <span>GDP adjustment:</span>
-            <input id="fair-gdp-adjustment" type="range" min="0" max="200" value="100" step="10">
-            <strong id="fair-gdp-value">100%</strong>
-          </label>
-        </div>
       </div>
     `;
   }
@@ -741,8 +723,8 @@
       Number.isFinite(meanGDP) &&
       meanGDP > 0
     ) {
-      const populationFactor = Math.pow(meanPopulation / population, state.populationAdjustment / 100);
-      const gdpFactor = Math.pow(meanGDP / gdp, state.gdpAdjustment / 100);
+      const populationFactor = meanPopulation / population;
+      const gdpFactor = meanGDP / gdp;
 
       factor = populationFactor * gdpFactor;
     }
@@ -764,6 +746,63 @@
     };
   }
 
+  function getDisplayData(country, data) {
+    const totalActual =
+      data.actual.Gold + data.actual.Silver + data.actual.Bronze;
+
+    if (totalActual > 0) {
+      return {
+        ...data,
+        similarCountry: null
+      };
+    }
+
+    const similarCountry = findSimilarGdpMedalCountry(country);
+
+    if (!similarCountry) {
+      return {
+        ...data,
+        similarCountry: null
+      };
+    }
+
+    const similarData = computeFairCounts(similarCountry);
+
+    return {
+      ...data,
+      fair: similarData.fair,
+      similarCountry
+    };
+  }
+
+  function findSimilarGdpMedalCountry(country) {
+    const base = getCountryIndicators(country);
+    if (!base.gdp) return null;
+
+    const countries = getAvailableCountries(state.season, state.year);
+
+    const candidates = countries
+      .filter(candidate => candidate !== country)
+      .map(candidate => {
+        const medals = getMedalCounts(candidate);
+        const totalMedals = medals.Gold + medals.Silver + medals.Bronze;
+
+        if (totalMedals === 0) return null;
+
+        const indicators = getCountryIndicators(candidate);
+        if (!indicators.gdp) return null;
+
+        return {
+          country: candidate,
+          distance: Math.abs(Math.log(indicators.gdp) - Math.log(base.gdp))
+        };
+      })
+      .filter(Boolean)
+      .sort((a, b) => d3.ascending(a.distance, b.distance));
+
+    return candidates[0]?.country || null;
+  }
+
   function render() {
     const grid = d3.select("#fair-grid");
 
@@ -772,8 +811,11 @@
       return;
     }
 
-    const data1 = computeFairCounts(state.country1);
-    const data2 = computeFairCounts(state.country2);
+    const rawData1 = computeFairCounts(state.country1);
+    const rawData2 = computeFairCounts(state.country2);
+
+    const data1 = getDisplayData(state.country1, rawData1);
+    const data2 = getDisplayData(state.country2, rawData2);
 
     const maxScale = d3.max([
       ...medalOrder.map(medal => data1.actual[medal] || 0),
@@ -787,64 +829,34 @@
     grid.append("div").html(renderCountryCard(state.country1, data1, maxScale));
     grid.append("div").html(renderCountryCard(state.country2, data2, maxScale));
     renderRankingTable();
-
-    d3.selectAll(".fair-prediction-toggle").on("click", function () {
-      const country = this.dataset.country;
-
-      state.expandedPredictionCountry =
-        state.expandedPredictionCountry === country ? null : country;
-
-      render();
-    });
   }
 
   function renderCountryCard(country, data, maxScale) {
     const fairUnavailable = data.factor === null;
 
-    const allFairZero =
-      !fairUnavailable &&
-      medalOrder.every(medal => (data.fair[medal] || 0) === 0);
-
     return `
       <div class="fair-country-card">
         <div class="fair-country-title">${country}</div>
+
         <div class="fair-country-subtitle">
           Population: ${formatBig(data.population)} &nbsp;•&nbsp;
           GDP: ${formatBig(data.gdp)}
         </div>
 
-        ${allFairZero ? `
-          <div class="fair-prediction-wrapper">
-            ${state.expandedPredictionCountry === country ? `
-              <div class="fair-whatif-panel">
-                <div class="fair-whatif-title">What if conditions were different?</div>
-                <div class="fair-whatif-text">
-                  Adjust the Population and GDP sliders below to explore how changes in resources could affect this country's expected medal performance.
-                </div>
-
-                ${renderWhatIfPrediction(country)}
-              </div>
-            ` : `
-              <button class="fair-prediction-banner fair-prediction-toggle"
-                      data-country="${country}">
-                This country won no medals. Click to simulate a possible medal expectation.
-              </button>
-            `}
-          </div>
-        ` : ""}
-
         <div class="fair-box">
           <div class="fair-box-title">Actual medals</div>
+
           ${medalOrder.map(medal => {
             const value = data.actual[medal] || 0;
-            const width = value === 0 ? 0 : Math.max(3, (100 * value) / maxScale);
+            const width =
+              value === 0 ? 0 : Math.max(3, (100 * value) / maxScale);
 
             return `
               <div class="fair-medal-row">
                 <div class="fair-medal-label">${medal}</div>
                 <div class="fair-bar-bg">
                   <div class="fair-bar-fill"
-                       style="width:${width}%; background:${medalColors[medal]}"></div>
+                      style="width:${width}%; background:${medalColors[medal]}"></div>
                 </div>
                 <div class="fair-medal-value">${value}</div>
               </div>
@@ -853,28 +865,41 @@
         </div>
 
         <div class="fair-box">
-          <div class="fair-box-title">Fair medals with average population and average GDP</div>
+          <div class="fair-box-title">
+            Fair medals with average population and average GDP
+          </div>
+
+          ${data.similarCountry ? `
+            <div class="fair-warning">
+              No medals for ${country}. Fair values are estimated from ${data.similarCountry},
+              a medal-winning country with similar GDP.
+            </div>
+          ` : ""}
+
           ${medalOrder.map(medal => {
             const value = data.fair[medal];
-            const width = value === null || value === 0
-              ? 0
-              : Math.max(3, (100 * value) / maxScale);
+            const width =
+              value === null || value === 0
+                ? 0
+                : Math.max(3, (100 * value) / maxScale);
 
             return `
               <div class="fair-medal-row">
                 <div class="fair-medal-label">${medal}</div>
                 <div class="fair-bar-bg">
                   <div class="fair-bar-fill"
-                       style="width:${width}%; background:${medalColors[medal]}"></div>
+                      style="width:${width}%; background:${medalColors[medal]}"></div>
                 </div>
-                <div class="fair-medal-value">${formatFair(value)}</div>
+                <div class="fair-medal-value">
+                  ${value === null ? "n/a" : formatFair(value)}
+                </div>
               </div>
             `;
           }).join("")}
 
-          ${fairUnavailable ? `
+          ${fairUnavailable && !data.similarCountry ? `
             <div class="fair-warning">
-              Fair values are unavailable because population or GDP data is missing for this selection.
+              Missing population or GDP data.
             </div>
           ` : ""}
         </div>
@@ -1044,12 +1069,12 @@
 
     const populationRatio =
       indicators.population && means.meanPopulation
-        ? indicators.population / means.meanPopulation
+        ? means.meanPopulation / indicators.population
         : 1;
 
     const gdpRatio =
       indicators.gdp && means.meanGDP
-        ? indicators.gdp / means.meanGDP
+        ? means.meanGDP / indicators.gdp
         : 1;
 
     const populationEffect = Math.pow(populationRatio, state.populationAdjustment / 100);
