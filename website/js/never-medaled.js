@@ -779,6 +779,7 @@
       .attr("y", 20)
       .attr("text-anchor", "middle")
       .attr("class", "never-panel-title")
+      .attr("font-family", "'Elms Sans', sans-serif")
       .text("Countries that have participated without ever winning a medal");
 
     const byCountry = new Map(
