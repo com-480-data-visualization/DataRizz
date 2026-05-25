@@ -601,8 +601,13 @@
     const topSports = getTopSports(medalRows, 10);
     const filteredRows = medalRows.filter(d => topSports.has(d.sport));
 
+    const readableRows =
+      mode === "country"
+        ? groupSmallCountries(filteredRows, 20)
+        : filteredRows;
+
     const sourceToMedal = d3.rollups(
-      filteredRows,
+      readableRows,
       values => d3.sum(values, d => d.value),
       d => d.source,
       d => d.medal
@@ -614,18 +619,22 @@
       each medal-sport flow comes from.
     */
     const medalToSport = d3.rollups(
-      filteredRows,
+      readableRows,
       values => {
         const total = d3.sum(values, d => d.value);
 
         const breakdown = d3.rollups(
           values,
-          v => d3.sum(v, d => d.value),
+          v => ({
+            value: d3.sum(v, d => d.value),
+            countries: Array.from(new Set(v.map(d => d.originalSource || d.source))).sort(d3.ascending)
+          }),
           d => d.source
         )
-          .map(([source, value]) => ({
+          .map(([source, info]) => ({
             source,
-            value
+            value: info.value,
+            countries: info.countries
           }))
           .sort((a, b) => d3.descending(a.value, b.value));
 
@@ -642,7 +651,7 @@
     const medalNames = new Set();
     const sportNames = new Set();
 
-    filteredRows.forEach(row => {
+    readableRows.forEach(row => {
       sourceNames.add(row.source);
       medalNames.add(row.medal);
       sportNames.add(row.sport);
@@ -650,7 +659,11 @@
 
     const orderedSources = mode === "continent"
       ? continentOrder.filter(source => sourceNames.has(source))
-      : Array.from(sourceNames).sort(d3.ascending);
+      : Array.from(sourceNames).sort((a, b) => {
+          if (a === "Other countries") return 1;
+          if (b === "Other countries") return -1;
+          return d3.ascending(a, b);
+        });
 
     const orderedMedals = medalOrder.filter(medal => medalNames.has(medal));
     const orderedSports = Array.from(sportNames).sort(d3.ascending);
@@ -723,6 +736,25 @@
         .slice(0, limit)
         .map(([sport]) => sport)
     );
+  }
+
+  function groupSmallCountries(rows, limit = 20) {
+    const topCountries = new Set(
+      d3.rollups(
+        rows,
+        values => d3.sum(values, d => d.value),
+        d => d.source
+      )
+        .sort((a, b) => d3.descending(a[1], b[1]))
+        .slice(0, limit)
+        .map(([country]) => country)
+    );
+
+    return rows.map(row => ({
+      ...row,
+      originalSource: row.source,
+      source: topCountries.has(row.source) ? row.source : "Other countries"
+    }));
   }
 
   function normalizeMedal(value) {
@@ -811,7 +843,11 @@
       .attr("fill", "rgba(255,255,255,0.75)")
       .attr("font-family", "'Elms Sans', sans-serif")
       .attr("font-size", 14)
-      .text(`Flows show ${graph.mode}s → medal type → top 10 sports · ${graph.medalCount} medals shown`);
+      .text(
+        graph.mode === "country"
+          ? `Flows show top medal-winning countries + other countries → medal type → top 10 sports · ${graph.medalCount} medals shown`
+          : `Flows show continents → medal type → top 10 sports · ${graph.medalCount} medals shown`
+      );
 
     if (!graph.links.length) {
       svg.append("text")
@@ -933,7 +969,12 @@
 
         return `
           <div style="display:flex; justify-content:space-between; gap:18px;">
-            <span>${d.source}</span>
+            <span>
+              ${d.source}
+              ${d.source === "Other countries" && d.countries
+                ? `<br><small>${d.countries.slice(0, 12).join(", ")}${d.countries.length > 12 ? "…" : ""}</small>`
+                : ""}
+            </span>
             <strong>${d.value} (${pct}%)</strong>
           </div>
         `;
@@ -1036,6 +1077,7 @@
       source: nodeIndex.get(d.source),
       target: nodeIndex.get(detail.sport),
       value: d.value,
+      countries: d.countries || [],
       label: `${d.source} → ${detail.sport}: ${d.value} ${detail.medal} medals`
     }));
 
@@ -1090,12 +1132,29 @@
 
         const pct = total ? Math.round((d.value / total) * 100) : 0;
 
-        tooltip
-          .html(`
-            <strong>${d.label}</strong><br>
-            Share of this ${detail.medal.toLowerCase()}-${detail.sport} flow:
-            <strong>${pct}%</strong>
-          `)
+        tooltip.html(`
+          <strong>${d.label}</strong><br>
+
+          Share of this ${detail.medal.toLowerCase()}-${detail.sport} flow:
+          <strong>${pct}%</strong>
+
+          ${
+            d.source.name === "Other countries" && d.countries.length
+              ? `
+              <div style="
+                margin-top:10px;
+                color:#ffd166;
+                max-width:300px;
+                line-height:1.4;
+                font-size:12px;
+              ">
+                <strong>Countries included:</strong><br>
+                ${d.countries.join(", ")}
+              </div>
+              `
+              : ""
+          }
+        `)
           .style("left", `${event.pageX + 14}px`)
           .style("top", `${event.pageY + 14}px`)
           .style("opacity", 1);
@@ -1156,6 +1215,10 @@
       if (mode === "continent") {
         const index = continentOrder.indexOf(node.name);
         return index === -1 ? 999 : index;
+      }
+
+      if (node.name === "Other countries") {
+        return 999;
       }
 
       return 100;
