@@ -361,7 +361,7 @@
     if (boycottYears.has(selected.year)) {
       button
         .classed("visible", true)
-        .text("Click to see how this boycott influenced participation")
+        .text("Click here to see how this boycott influenced participation")
         .on("click", () => {
           const participationData = addNeighborValues(
             computeParticipationAroundYear(selected.year, 16)
