@@ -1221,6 +1221,33 @@ p {
   justify-content: space-between;
 }
 
+.fair-ranking-card {
+  max-height: 520px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.fair-ranking-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.fair-ranking-card::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+}
+
+.fair-ranking-card::-webkit-scrollbar-thumb {
+  background: #f4b400;
+  border-radius: 999px;
+}
+
+.fair-ranking-table thead th {
+  position: sticky;
+  top: 0;
+  background: #111;
+  z-index: 2;
+}
+
 /* =============================================
    Footer
    =========================================== */

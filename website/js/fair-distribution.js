@@ -968,7 +968,7 @@
         d3.descending(a.actual.Silver, b.actual.Silver) ||
         d3.descending(a.actual.Bronze, b.actual.Bronze)
       )
-      .slice(0, 10);
+      .slice(0, 300);
 
     const fairRanking = [...rows]
       .sort((a, b) =>
@@ -976,7 +976,7 @@
         d3.descending(a.fair.Silver || 0, b.fair.Silver || 0) ||
         d3.descending(a.fair.Bronze || 0, b.fair.Bronze || 0)
       )
-      .slice(0, 10);
+      .slice(0, 300);
 
     root.html(`
       <div class="fair-ranking-controls">
