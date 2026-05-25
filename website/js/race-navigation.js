@@ -109,7 +109,7 @@
       checkpoint.style.setProperty("--side-path-width", `${sidePathWidth}px`);
 
       checkpoint.innerHTML = `
-        <span class="race-dot"></span>
+        ${index === 0 ? "" : `<span class="race-dot"></span>`}
         ${sideDots}
         <span class="race-label">${section.label}</span>
       `;
@@ -149,7 +149,10 @@
 
     const progress = getProgressPercent(safeSectionIndex);
 
-    nav.style.setProperty("--race-progress", `${progress}%`);
+    // title page should not fill the line
+    const lineProgress = safeSectionIndex === 0 ? 0 : progress;
+
+    nav.style.setProperty("--race-progress", `${lineProgress}%`);
 
     updateRunner(nav, currentSection, progress, safeSlideIndex);
     updateNavClasses(nav, currentSection, safeSectionIndex, direction);
@@ -213,7 +216,14 @@
 
   function getProgressPercent(index) {
     if (state.sections.length <= 1) return 0;
-    return (index / (state.sections.length - 1)) * 100;
+
+    // title page: keep runner above start line
+    if (index === 0) {
+      return -10;
+    }
+
+    // start from Introduction section
+    return ((index - 1) / (state.sections.length - 2)) * 100;
   }
 
   function clamp(value, min, max) {
