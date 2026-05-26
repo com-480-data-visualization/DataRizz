@@ -453,20 +453,30 @@
     let lastMove = 0;
     let touchStartY = null;
 
+    document.querySelectorAll(".fair-ranking-card").forEach(card => {
+      card.addEventListener("wheel", function (event) {
+        event.stopPropagation();
+      }, { passive: false, capture: true });
+    });
+
     function shouldForceScroll(target) {
       const activeSection = document.querySelector(".fp-section.active");
       const activeSlide = activeSection?.querySelector(".fp-slide.active");
       const slideAnchor = activeSlide?.dataset.anchor;
+
+      if (target.closest(".fair-ranking-card")) return false;
 
       return (
         slideAnchor === "bodytype-viz" ||
         slideAnchor === "body-types-viz" ||
         slideAnchor === "geopolitics-viz" ||
         slideAnchor === "fair-viz" ||
+        slideAnchor === "fair-ranking" ||
         target.closest("#bodytype-viz") ||
         target.closest("#geopolitics-map-viz") ||
         target.closest("#geo-event-list") ||
-        target.closest("#fair-viz")
+        target.closest("#fair-viz") ||
+        target.closest("#fair-ranking-viz")
       );
     }
 
@@ -492,6 +502,11 @@
 
     document.addEventListener("wheel", function (event) {
       const target = event.target;
+
+      if (target.closest(".fair-ranking-scroll")) {
+        event.stopPropagation();
+        return;
+      }
 
       if (target.closest("select, option, button, input, textarea, a, .geo-popup-overlay")) {
         return;

@@ -1027,7 +1027,13 @@
         const alreadyHighlighted = state.highlightedCountry === country;
         state.highlightedCountry = alreadyHighlighted ? null : country;
         if (state.highlightedCountry) {
-          highlightCountryInRanking(state.highlightedCountry);
+          const container = this.closest(".fair-ranking-scroll");
+          const thead = container ? container.querySelector("thead") : null;
+          const theadHeight = thead ? thead.offsetHeight : 0;
+          const sourceOffset = container
+            ? this.offsetTop - container.scrollTop - theadHeight
+            : 0;
+          highlightCountryInRanking(state.highlightedCountry, this, sourceOffset);
         } else {
           clearRankingHighlight();
         }
@@ -1165,7 +1171,7 @@
     `;
   }
 
-  function highlightCountryInRanking(country) {
+  function highlightCountryInRanking(country, sourceRow, sourceOffset) {
     d3.selectAll(".fair-ranking-table tbody tr")
       .each(function () {
         const row = d3.select(this);
@@ -1177,8 +1183,14 @@
           .style("font-weight", isMatch ? "800" : null)
           .attr("data-highlighted", isMatch ? "true" : null);
 
-        if (isMatch) {
-          this.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        if (isMatch && this !== sourceRow) {
+          const container = this.closest(".fair-ranking-scroll");
+          if (container) {
+            const thead = container.querySelector("thead");
+            const theadHeight = thead ? thead.offsetHeight : 0;
+            const targetScrollTop = this.offsetTop - theadHeight - (sourceOffset ?? 0);
+            container.scrollTo({ top: Math.max(0, targetScrollTop), behavior: "smooth" });
+          }
         }
       });
   }

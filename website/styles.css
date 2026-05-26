@@ -1679,8 +1679,8 @@ h4 {
 
   transform: translateY(-50%) scaleX(var(--runner-facing));
   transition:
-    top 0.65s ease,
-    left 0.45s ease,
+    top 0.55s ease,
+    left 0.55s ease,
     transform 0.25s ease;
 
   filter:

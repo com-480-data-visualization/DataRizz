@@ -93,6 +93,7 @@
     if (!footerSection) return;
 
     const runner = nav.querySelector(".race-runner");
+    let wasActive = footerSection.classList.contains("active");
 
     function applyFooterRunner() {
       nav.classList.add("race-is-footer");
@@ -110,9 +111,12 @@
     }
 
     const observer = new MutationObserver(() => {
-      if (footerSection.classList.contains("active")) {
+      const isActive = footerSection.classList.contains("active");
+      if (isActive && !wasActive) {
+        wasActive = true;
         applyFooterRunner();
-      } else {
+      } else if (!isActive && wasActive) {
+        wasActive = false;
         restoreRunner();
       }
     });
