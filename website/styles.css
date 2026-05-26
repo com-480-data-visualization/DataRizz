@@ -1400,14 +1400,77 @@ h4 {
   backdrop-filter: none;
 }
 
-.race-start {
-  margin-left: 7px;
-  margin-bottom: 2px;
+.race-start-btn,
+.race-finish-btn {
+  display: flex;
+  justify-content: center;
+  width: 70px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  color: rgba(255, 255, 255, 0.38);
+  transition: color 0.3s ease, filter 0.3s ease, transform 0.2s ease;
+}
+
+.race-anchor-label {
+  width: 70px;
+  text-align: center;
   font-family: "Carter One", sans-serif;
   font-size: 14px;
   letter-spacing: 0.08em;
   color: #f4b400;
   text-shadow: 0 0 8px rgba(244, 180, 0, 0.45);
+  pointer-events: none;
+}
+
+/* Anchor SVGs */
+.nav-anchor-svg {
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.warm-up-svg {
+  width: 18px;
+  height: auto;
+  transform: scaleX(-1);
+}
+
+.water-bottle-svg {
+  width: 13px;
+  height: auto;
+}
+
+/* START: active on title page, golden when passed */
+#race-nav.race-is-start .race-start-btn {
+  color: white;
+  filter:
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 14px rgba(244, 180, 0, 0.35));
+}
+
+#race-nav:not(.race-is-start) .race-start-btn {
+  color: #f4b400;
+  filter: drop-shadow(0 0 6px rgba(244, 180, 0, 0.5));
+}
+
+/* FINISH: golden by default, white when active */
+#race-nav:not(.race-is-finish) .race-finish-btn {
+  color: #f4b400;
+  filter: drop-shadow(0 0 6px rgba(244, 180, 0, 0.5));
+}
+
+#race-nav.race-is-finish .race-finish-btn {
+  color: white;
+  filter:
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 14px rgba(244, 180, 0, 0.35));
+}
+
+.race-start-btn:hover,
+.race-finish-btn:hover {
+  transform: scale(1.08);
 }
 
 .race-track {
@@ -1415,6 +1478,7 @@ h4 {
   width: 100%;
   height: min(68vh, 620px);
   min-height: 390px;
+  overflow: visible;
 }
 
 /* =============================================
@@ -1424,7 +1488,7 @@ h4 {
 .race-track-line,
 .race-track-progress {
   position: absolute;
-  left: 20px;
+  left: 35px;
   transform: translateX(-50%);
   width: 4px;
   border-radius: 999px;
@@ -1461,7 +1525,7 @@ h4 {
 
 .race-checkpoint {
   position: absolute;
-  left: 20px;
+  left: 35px;
   top: 0;
   transform: translate(-50%, -50%);
   width: 76px;
@@ -1663,27 +1727,6 @@ h4 {
 @keyframes runnerBack {
   from { transform: rotate(18deg); }
   to   { transform: rotate(-18deg); }
-}
-
-/* =============================================
-   Finish
-   =========================================== */
-
-.race-finish-wrap {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.race-finish-label {
-  margin-left: 0;
-  font-family: "Carter One", sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  color: #f4b400;
-  text-shadow: 0 0 8px rgba(244, 180, 0, 0.45);
 }
 
 /* =============================================
