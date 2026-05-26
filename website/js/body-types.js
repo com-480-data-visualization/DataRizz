@@ -4,7 +4,7 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
 (function () {
   "use strict";
 
-  const DATA_PATH = "data/olympics.csv";
+  const DATA_PATH = "data/body_types.csv";
 
   const selectors = {
     root: "#bodytype-viz",

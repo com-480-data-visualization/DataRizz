@@ -18,7 +18,7 @@
 (function () {
   "use strict";
 
-  const DATA_PATH = "data/olympics.csv";
+  const DATA_PATH = "data/delegations.csv";
   const STOP_YEAR = 2016;
 
   const selectors = {

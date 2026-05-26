@@ -11,7 +11,7 @@
 (function () {
   "use strict";
 
-  const DATA_PATH = "data/olympics.csv";
+  const DATA_PATH = "data/never_medaled.csv";
   const WORLD_GEOJSON_PATH =
     "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
 
@@ -772,7 +772,7 @@
       .attr("class", "never-map-svg");
 
     const projection = d3.geoNaturalEarth1()
-      .fitExtent([[20, 20], [width - 10, height - 10]], state.worldGeo);
+      .fitExtent([[20, 20], [width - 10, height - 16]], state.worldGeo);
 
     const path = d3.geoPath().projection(projection);
 

@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const DATA_PATH = "data/olympics.csv";
+  const DATA_PATH = "data/fair_distribution.csv";
 
   const selectors = {
     root: "#fair-viz"
@@ -11,7 +11,7 @@
     rows: [],
     columns: {},
     season: "Summer",
-    year: null,
+    year: null, 
     country1: null,
     country2: null,
     populationAdjustment: 100,
@@ -59,34 +59,15 @@
     const columns = Object.keys(rows[0] || {});
 
     return {
-      year: findColumn(columns, ["Year", "year"]),
-      season: findColumn(columns, ["Season", "season"]),
-      medal: findColumn(columns, ["Medal", "medal"]),
-      event: findColumn(columns, ["Event", "event", "Discipline", "discipline"]),
-      sport: findColumn(columns, ["Sport", "sport"]),
-      team: findColumn(columns, ["country", "Country", "team", "Team", "Region", "region"]),
-      noc: findColumn(columns, ["NOC", "noc"]),
-      population: findColumn(columns, [
-        "Population",
-        "population",
-        "Pop",
-        "pop",
-        "CountryPopulation",
-        "country_population",
-        "population_total"
-      ]),
-      gdp: findColumn(columns, [
-      "gdp_per_capita",
-      "GDP_per_capita",
-      "gdpPerCapita",
-      "GDP",
-      "gdp",
-      "Gdp",
-      "CountryGDP",
-      "country_gdp",
-      "gdp_total",
-      "GDP_total"
-      ])
+      year:       findColumn(columns, ["year", "Year"]),
+      season:     findColumn(columns, ["season", "Season"]),
+      team:       findColumn(columns, ["country", "Country"]),
+      noc:        findColumn(columns, ["noc", "NOC"]),
+      population: findColumn(columns, ["population", "Population"]),
+      gdp:        findColumn(columns, ["gdp_per_capita"]),
+      gold:       findColumn(columns, ["gold"]),
+      silver:     findColumn(columns, ["silver"]),
+      bronze:     findColumn(columns, ["bronze"]),
     };
   }
 
@@ -98,15 +79,11 @@
     const c = state.columns;
 
     const missing = [];
-
-    if (!c.year) missing.push("Year");
-    if (!c.season) missing.push("Season");
-    if (!c.medal) missing.push("Medal");
-    if (!c.team && !c.noc) missing.push("Team/Country or NOC");
-
-    if (missing.length > 0) {
-      throw new Error(`Missing columns: ${missing.join(", ")}`);
-    }
+    if (!c.year)   missing.push("year");
+    if (!c.season) missing.push("season");
+    if (!c.team)   missing.push("country");
+    if (!c.gold)   missing.push("gold");
+    if (missing.length > 0) throw new Error(`Missing columns: ${missing.join(", ")}`);
   }
 
   function injectStyles() {
@@ -548,10 +525,7 @@
   }
 
   function getCountry(row) {
-    const c = state.columns;
-
-    const value = row[c.team] || row[c.noc] || "";
-    return cleanCountryName(value);
+    return String(row[state.columns.team] || "").trim();
   }
 
   function cleanCountryName(value) {
@@ -588,70 +562,23 @@
   }
 
   function getMedalCounts(country) {
-    const rows = getRowsForSeasonYear(state.season, state.year)
-      .filter(row => getCountry(row) === country);
-
-    const counts = {
-      Gold: 0,
-      Silver: 0,
-      Bronze: 0
+    const c = state.columns;
+    const row = getRowsForSeasonYear(state.season, state.year)
+      .find(r => getCountry(r) === country);
+    return {
+      Gold:   row ? (Number(row[c.gold])   || 0) : 0,
+      Silver: row ? (Number(row[c.silver]) || 0) : 0,
+      Bronze: row ? (Number(row[c.bronze]) || 0) : 0,
     };
-
-    const seen = new Set();
-
-    rows.forEach(row => {
-      const medal = normalizeMedal(row[state.columns.medal]);
-      if (!medalOrder.includes(medal)) return;
-
-      /*
-        Deduplicate medals by country + event + medal.
-        This avoids counting every athlete in a team event as a separate medal.
-      */
-      const key = [
-        country,
-        getEvent(row),
-        medal
-      ].join("|||");
-
-      if (seen.has(key)) return;
-
-      seen.add(key);
-      counts[medal] += 1;
-    });
-
-    return counts;
   }
 
   function getCountryIndicators(country) {
     const c = state.columns;
-
-    const rows = getRowsForSeasonYear(state.season, state.year)
-      .filter(row => getCountry(row) === country);
-
-    let population = null;
-    let gdp = null;
-
-    for (const row of rows) {
-      if (c.population) {
-        const pop = toNumber(row[c.population]);
-        if (population === null && Number.isFinite(pop) && pop > 0) {
-          population = pop;
-        }
-      }
-
-      if (c.gdp) {
-        const currentGDP = toNumber(row[c.gdp]);
-        if (gdp === null && Number.isFinite(currentGDP) && currentGDP > 0) {
-          gdp = currentGDP;
-        }
-      }
-
-      if (population !== null && gdp !== null) break;
-    }
-
+    const row = getRowsForSeasonYear(state.season, state.year)
+      .find(r => getCountry(r) === country);
     return {
-      population,
-      gdp
+      population: row ? toNumber(row[c.population]) : null,
+      gdp:        row ? toNumber(row[c.gdp])        : null,
     };
   }
 

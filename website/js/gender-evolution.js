@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  const DATA_PATH = "data/olympics.csv";
+  const DATA_PATH = "data/gender_evolution.json";
   const STOP_YEAR = 2016;
 
   const selectors = {
@@ -89,102 +89,63 @@
 
   async function init() {
     const root = document.querySelector(selectors.root);
-
-    if (!root) {
-      console.warn("Gender visualization container #gender-viz was not found.");
-      return;
-    }
-
-    if (typeof d3 === "undefined") {
-      showError("D3 is not loaded.");
-      return;
-    }
+    if (!root) return;
+    if (typeof d3 === "undefined") { showError("D3 is not loaded."); return; }
 
     try {
-      const rows = await d3.csv(DATA_PATH, d3.autoType);
+      const raw = await d3.json(DATA_PATH);
 
-      buildDataModel(rows);
+      // Rebuild the same Map structure the rest of the code expects
+      state.dataBySeasonYear = new Map(
+        Object.entries(raw).map(([season, years]) => [
+          season,
+          new Map(
+            Object.entries(years).map(([year, yd]) => [
+              year,
+              {
+                totals: yd.totals,
+                men: new Map(
+                  Object.entries(yd.sports).map(([sport, sd]) => [
+                    sport,
+                    new Map(Object.entries(sd.disciplines).map(([disc, counts]) => [disc, counts.men]))
+                  ])
+                ),
+                women: new Map(
+                  Object.entries(yd.sports).map(([sport, sd]) => [
+                    sport,
+                    new Map(Object.entries(sd.disciplines).map(([disc, counts]) => [disc, counts.women]))
+                  ])
+                ),
+                compareSport: new Map(
+                  Object.entries(yd.sports).map(([sport, sd]) => [
+                    sport, { men: sd.men, women: sd.women }
+                  ])
+                ),
+                compareEvent: new Map(
+                  Object.entries(yd.sports).flatMap(([sport, sd]) =>
+                    Object.entries(sd.disciplines).map(([disc, counts]) => [
+                      `${sport}|||${disc}`, counts
+                    ])
+                  )
+                )
+              }
+            ])
+          )
+        ])
+      );
+
+      state.sportColorScale = buildGlobalSportColorScale(state.dataBySeasonYear);
       setupControls();
       setSeason("Summer");
     } catch (error) {
       console.error(error);
-      showError(`Could not load ${DATA_PATH}.`);
+      showError("Could not load gender data.");
     }
   }
 
   /* ============================================================
      Data preparation
      ============================================================ */
-
-  function buildDataModel(rows) {
-    if (!rows || rows.length === 0) {
-      throw new Error("CSV file is empty.");
-    }
-
-    const columns = Object.keys(rows[0]);
-
-    const yearCol = findColumn(columns, ["Year", "year"]);
-    const seasonCol = findColumn(columns, ["Season", "season"]);
-    const sexCol = findColumn(columns, ["Sex", "sex", "Gender", "gender"]);
-    const sportCol = findColumn(columns, ["Sport", "sport"]);
-    const eventCol = findColumn(columns, ["Event", "event", "Discipline", "discipline"]);
-
-    if (!yearCol || !seasonCol || !sexCol || !sportCol) {
-      throw new Error("Missing required columns: Year, Season, Sex/Gender, Sport.");
-    }
-
-    const grouped = new Map();
-
-    rows.forEach(row => {
-      const year = Number(row[yearCol]);
-
-      // Hard stop: ignore years after 2016 for this visualization.
-      if (!Number.isFinite(year) || year > STOP_YEAR) return;
-
-      const season = String(row[seasonCol] || "").trim();
-      const sex = normalizeGender(row[sexCol]);
-      const sport = cleanLabel(row[sportCol]);
-
-      const rawEvent = eventCol ? cleanLabel(row[eventCol]) : sport;
-      const event = normalizeDisciplineName(rawEvent, sport);
-
-      if (!year || !season || !sex || !sport || !event) return;
-
-      if (!grouped.has(season)) {
-        grouped.set(season, new Map());
-      }
-
-      const yearKey = String(year);
-
-      if (!grouped.get(season).has(yearKey)) {
-        grouped.get(season).set(yearKey, {
-          men: new Map(),
-          women: new Map(),
-          totals: { men: 0, women: 0 },
-          compareSport: new Map(),
-          compareEvent: new Map()
-        });
-      }
-
-      const bucket = grouped.get(season).get(yearKey);
-      const genderKey = sex === "M" ? "men" : "women";
-
-      bucket.totals[genderKey] += 1;
-
-      if (!bucket[genderKey].has(sport)) {
-        bucket[genderKey].set(sport, new Map());
-      }
-
-      const sportMap = bucket[genderKey].get(sport);
-      sportMap.set(event, (sportMap.get(event) || 0) + 1);
-
-      incrementCompare(bucket.compareSport, sport, genderKey);
-      incrementCompare(bucket.compareEvent, `${sport}|||${event}`, genderKey);
-    });
-
-    state.dataBySeasonYear = grouped;
-    state.sportColorScale = buildGlobalSportColorScale(grouped);
-  }
 
   function incrementCompare(map, key, genderKey) {
     if (!map.has(key)) {

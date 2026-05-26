@@ -1,0 +1,3787 @@
+year,season,country,noc,gdp_per_capita,population,gold,silver,bronze
+1896,Summer,Australia,AUS,,,2,0,1
+1896,Summer,Austria,AUT,,,2,1,2
+1896,Summer,Denmark,DEN,,,1,2,3
+1896,Summer,France,FRA,,,5,4,2
+1896,Summer,Germany,GER,,,7,5,2
+1896,Summer,Greece,GRE,,,10,17,17
+1896,Summer,Hungary,HUN,,,2,1,3
+1896,Summer,Italy,ITA,,,0,0,0
+1896,Summer,Sweden,SWE,,,0,0,0
+1896,Summer,Switzerland,SUI,,,1,2,0
+1896,Summer,UK,GBR,,,3,3,3
+1896,Summer,USA,USA,,,11,6,2
+1900,Summer,Argentina,ARG,,,0,0,0
+1900,Summer,Australia,AUS,,,3,0,3
+1900,Summer,Austria,AUT,,,0,3,3
+1900,Summer,Belgium,BEL,,,6,7,5
+1900,Summer,Brazil,BRA,,,0,0,0
+1900,Summer,Canada,CAN,,,1,0,1
+1900,Summer,Colombia,COL,,,0,1,0
+1900,Summer,Cuba,CUB,,,1,1,0
+1900,Summer,Czech Republic,BOH,,,0,1,2
+1900,Summer,Denmark,DEN,,,2,3,2
+1900,Summer,France,FRA,,,28,40,34
+1900,Summer,Germany,GER,,,4,3,1
+1900,Summer,Greece,GRE,,,0,0,0
+1900,Summer,Haiti,HAI,,,1,0,0
+1900,Summer,Hungary,HUN,,,1,2,2
+1900,Summer,India,IND,,,0,2,0
+1900,Summer,Iran,IRI,,,0,0,0
+1900,Summer,Italy,ITA,,,3,2,0
+1900,Summer,Luxembourg,LUX,,,1,0,0
+1900,Summer,Mexico,MEX,,,0,0,1
+1900,Summer,Netherlands,NED,,,1,2,4
+1900,Summer,New Zealand,NZL,,,1,0,0
+1900,Summer,Norway,NOR,,,0,2,3
+1900,Summer,Peru,PER,,,0,0,0
+1900,Summer,Romania,ROU,,,0,0,0
+1900,Summer,Russia,RUS,,,0,0,0
+1900,Summer,Spain,ESP,,,1,0,0
+1900,Summer,Sweden,SWE,,,1,0,1
+1900,Summer,Switzerland,SUI,,,6,2,1
+1900,Summer,UK,GBR,,,19,11,12
+1900,Summer,USA,USA,,,21,16,17
+1904,Summer,Australia,AUS,,,0,3,1
+1904,Summer,Austria,AUT,,,2,1,1
+1904,Summer,Canada,CAN,,,4,1,1
+1904,Summer,Cuba,CUB,,,4,0,0
+1904,Summer,France,FRA,,,0,2,0
+1904,Summer,Germany,GER,,,4,5,7
+1904,Summer,Greece,GRE,,,1,0,1
+1904,Summer,Hungary,HUN,,,2,1,1
+1904,Summer,Italy,ITA,,,0,0,0
+1904,Summer,Norway,NOR,,,2,0,0
+1904,Summer,South Africa,RSA,,,0,0,0
+1904,Summer,Switzerland,SUI,,,1,0,2
+1904,Summer,UK,GBR,,,1,1,0
+1904,Summer,USA,USA,,,76,79,75
+1906,Summer,Australia,AUS,,,0,0,3
+1906,Summer,Austria,AUT,,,3,3,3
+1906,Summer,Belgium,BEL,,,2,2,3
+1906,Summer,Canada,CAN,,,1,1,0
+1906,Summer,Czech Republic,BOH,,,0,0,2
+1906,Summer,Denmark,DEN,,,3,2,1
+1906,Summer,Egypt,EGY,,,0,0,0
+1906,Summer,Finland,FIN,,,2,1,1
+1906,Summer,France,FRA,,,15,10,16
+1906,Summer,Germany,GER,,,4,6,4
+1906,Summer,Greece,GRE,,,8,14,13
+1906,Summer,Hungary,HUN,,,2,5,3
+1906,Summer,Italy,ITA,,,7,6,3
+1906,Summer,Netherlands,NED,,,0,1,2
+1906,Summer,Norway,NOR,,,1,1,0
+1906,Summer,Sweden,SWE,,,2,5,7
+1906,Summer,Switzerland,SUI,,,4,3,1
+1906,Summer,Turkey,TUR,,,0,0,0
+1906,Summer,UK,GBR,,,8,12,5
+1906,Summer,USA,USA,,,12,5,6
+1908,Summer,Argentina,ARG,,,0,0,0
+1908,Summer,Australia,ANZ,,,1,2,2
+1908,Summer,Austria,AUT,,,0,0,1
+1908,Summer,Belgium,BEL,,,1,5,2
+1908,Summer,Canada,CAN,,,3,3,10
+1908,Summer,Czech Republic,BOH,,,0,0,2
+1908,Summer,Denmark,DEN,,,0,2,3
+1908,Summer,Finland,FIN,,,1,1,3
+1908,Summer,France,FRA,,,5,5,9
+1908,Summer,Germany,GER,,,3,5,5
+1908,Summer,Greece,GRE,,,0,3,1
+1908,Summer,Hungary,HUN,,,3,4,2
+1908,Summer,Iceland,ISL,,,0,0,0
+1908,Summer,Italy,ITA,,,2,2,0
+1908,Summer,Netherlands,NED,,,0,0,2
+1908,Summer,Norway,NOR,,,2,3,3
+1908,Summer,Russia,RUS,,,1,2,0
+1908,Summer,South Africa,RSA,,,1,1,0
+1908,Summer,Sweden,SWE,,,8,6,11
+1908,Summer,Switzerland,SUI,,,0,0,0
+1908,Summer,UK,GBR,,,56,50,37
+1908,Summer,USA,USA,,,22,12,12
+1912,Summer,Australia,ANZ,,,2,2,3
+1912,Summer,Austria,AUT,,,0,2,2
+1912,Summer,Belgium,BEL,,,2,1,3
+1912,Summer,Canada,CAN,,,3,2,3
+1912,Summer,Chile,CHI,,,0,0,0
+1912,Summer,Czech Republic,BOH,,,0,0,0
+1912,Summer,Denmark,DEN,,,1,6,5
+1912,Summer,Finland,FIN,,,9,8,9
+1912,Summer,France,FRA,,,7,5,3
+1912,Summer,Germany,GER,,,6,13,7
+1912,Summer,Greece,GRE,,,1,0,1
+1912,Summer,Hungary,HUN,,,3,2,3
+1912,Summer,Iceland,ISL,,,0,0,0
+1912,Summer,Italy,ITA,,,5,1,2
+1912,Summer,Japan,JPN,,,0,0,0
+1912,Summer,Luxembourg,LUX,,,0,0,0
+1912,Summer,Netherlands,NED,,,0,0,3
+1912,Summer,Norway,NOR,,,4,1,5
+1912,Summer,Poland,POL,,,0,0,0
+1912,Summer,Portugal,POR,,,0,0,0
+1912,Summer,Russia,RUS,,,0,2,3
+1912,Summer,Serbia,SRB,,,0,0,0
+1912,Summer,South Africa,RSA,,,4,2,0
+1912,Summer,Sweden,SWE,,,24,24,17
+1912,Summer,Switzerland,SUI,,,1,0,0
+1912,Summer,Turkey,TUR,,,0,0,0
+1912,Summer,UK,GBR,,,10,15,16
+1912,Summer,USA,USA,,,26,18,19
+1920,Summer,Argentina,ARG,,,0,0,0
+1920,Summer,Australia,AUS,,,0,2,1
+1920,Summer,Belgium,BEL,,,16,12,14
+1920,Summer,Brazil,BRA,,,1,1,1
+1920,Summer,Canada,CAN,,,3,3,3
+1920,Summer,Chile,CHI,,,0,0,0
+1920,Summer,Czech Republic,TCH,,,0,0,2
+1920,Summer,Denmark,DEN,,,3,9,1
+1920,Summer,Egypt,EGY,,,0,0,0
+1920,Summer,Estonia,EST,,,1,2,0
+1920,Summer,Finland,FIN,,,15,10,9
+1920,Summer,France,FRA,,,9,20,13
+1920,Summer,Greece,GRE,,,0,1,0
+1920,Summer,India,IND,,,0,0,0
+1920,Summer,Italy,ITA,,,14,6,5
+1920,Summer,Japan,JPN,,,0,2,0
+1920,Summer,Luxembourg,LUX,,,0,1,0
+1920,Summer,Monaco,MON,,,0,0,0
+1920,Summer,Netherlands,NED,,,4,2,5
+1920,Summer,New Zealand,NZL,,,0,0,1
+1920,Summer,Norway,NOR,,,10,10,9
+1920,Summer,Portugal,POR,,,0,0,0
+1920,Summer,Serbia,YUG,,,0,0,0
+1920,Summer,South Africa,RSA,,,3,4,3
+1920,Summer,Spain,ESP,,,0,2,0
+1920,Summer,Sweden,SWE,,,19,20,25
+1920,Summer,Switzerland,SUI,,,2,2,7
+1920,Summer,UK,GBR,,,14,16,13
+1920,Summer,USA,USA,,,41,27,27
+1924,Summer,Argentina,ARG,,,1,3,2
+1924,Summer,Australia,AUS,,,3,1,2
+1924,Summer,Austria,AUT,,,0,3,1
+1924,Summer,Belgium,BEL,,,3,7,3
+1924,Summer,Brazil,BRA,,,0,0,0
+1924,Summer,Bulgaria,BUL,,,0,0,0
+1924,Summer,Canada,CAN,,,0,3,1
+1924,Summer,Chile,CHI,,,0,0,0
+1924,Summer,Cuba,CUB,,,0,0,0
+1924,Summer,Czech Republic,TCH,,,1,4,5
+1924,Summer,Denmark,DEN,,,2,6,3
+1924,Summer,Ecuador,ECU,,,0,0,0
+1924,Summer,Egypt,EGY,,,0,0,0
+1924,Summer,Estonia,EST,,,1,1,4
+1924,Summer,Finland,FIN,,,14,13,10
+1924,Summer,France,FRA,,,14,14,12
+1924,Summer,Greece,GRE,,,1,0,0
+1924,Summer,Haiti,HAI,,,0,0,1
+1924,Summer,Hungary,HUN,,,2,4,4
+1924,Summer,India,IND,,,0,0,0
+1924,Summer,Ireland,IRL,,,0,1,1
+1924,Summer,Italy,ITA,,,8,3,5
+1924,Summer,Japan,JPN,,,0,0,1
+1924,Summer,Latvia,LAT,,,0,0,0
+1924,Summer,Lithuania,LTU,,,0,0,0
+1924,Summer,Luxembourg,LUX,,,1,1,0
+1924,Summer,Mexico,MEX,,,0,0,0
+1924,Summer,Monaco,MON,,,0,0,1
+1924,Summer,Netherlands,NED,,,4,1,6
+1924,Summer,New Zealand,NZL,,,0,0,1
+1924,Summer,Norway,NOR,,,5,2,3
+1924,Summer,Philippines,PHI,,,0,0,0
+1924,Summer,Poland,POL,,,0,1,1
+1924,Summer,Portugal,POR,,,0,0,1
+1924,Summer,Romania,ROU,,,0,0,1
+1924,Summer,Russia,RUS,,,0,0,0
+1924,Summer,Serbia,YUG,,,2,0,0
+1924,Summer,South Africa,RSA,,,1,1,1
+1924,Summer,Spain,ESP,,,0,0,0
+1924,Summer,Sweden,SWE,,,4,13,12
+1924,Summer,Switzerland,SUI,,,7,8,10
+1924,Summer,Turkey,TUR,,,0,0,0
+1924,Summer,UK,GBR,,,9,14,12
+1924,Summer,USA,USA,,,45,27,27
+1924,Summer,Uruguay,URU,,,1,0,0
+1924,Winter,Australia,AUS,,,1,0,0
+1924,Winter,Austria,AUT,,,2,1,0
+1924,Winter,Belgium,BEL,,,0,0,1
+1924,Winter,Canada,CAN,,,1,0,0
+1924,Winter,Czech Republic,TCH,,,0,0,0
+1924,Winter,Finland,FIN,,,4,4,3
+1924,Winter,France,FRA,,,0,0,3
+1924,Winter,Hungary,HUN,,,0,0,0
+1924,Winter,India,IND,,,1,0,0
+1924,Winter,Italy,ITA,,,0,0,0
+1924,Winter,Latvia,LAT,,,0,0,0
+1924,Winter,Nepal,NEP,,,1,0,0
+1924,Winter,Norway,NOR,,,4,7,6
+1924,Winter,Poland,POL,,,0,0,0
+1924,Winter,Serbia,YUG,,,0,0,0
+1924,Winter,Sweden,SWE,,,1,1,0
+1924,Winter,Switzerland,SUI,,,2,0,1
+1924,Winter,UK,GBR,,,2,1,2
+1924,Winter,USA,USA,,,1,2,1
+1928,Summer,Argentina,ARG,,,3,3,1
+1928,Summer,Australia,AUS,,,1,2,1
+1928,Summer,Austria,AUT,,,3,0,1
+1928,Summer,Belgium,BEL,,,0,1,2
+1928,Summer,Bulgaria,BUL,,,0,0,0
+1928,Summer,Canada,CAN,,,4,4,7
+1928,Summer,Chile,CHI,,,0,1,0
+1928,Summer,Cuba,CUB,,,0,0,0
+1928,Summer,Czech Republic,TCH,,,2,5,2
+1928,Summer,Denmark,DEN,,,3,2,4
+1928,Summer,Egypt,EGY,,,2,1,1
+1928,Summer,Estonia,EST,,,2,1,2
+1928,Summer,Finland,FIN,,,8,8,9
+1928,Summer,France,FRA,,,7,12,6
+1928,Summer,Germany,GER,,,11,9,19
+1928,Summer,Greece,GRE,,,0,0,0
+1928,Summer,Haiti,HAI,,,0,1,0
+1928,Summer,Hungary,HUN,,,5,5,0
+1928,Summer,India,IND,,,1,0,0
+1928,Summer,Ireland,IRL,,,1,0,0
+1928,Summer,Italy,ITA,,,7,6,7
+1928,Summer,Japan,JPN,,,2,2,1
+1928,Summer,Latvia,LAT,,,0,0,0
+1928,Summer,Lithuania,LTU,,,0,0,0
+1928,Summer,Luxembourg,LUX,,,1,0,0
+1928,Summer,Malta,MLT,,,0,0,0
+1928,Summer,Mexico,MEX,,,0,0,0
+1928,Summer,Monaco,MON,,,0,0,0
+1928,Summer,Netherlands,NED,,,8,10,5
+1928,Summer,New Zealand,NZL,,,1,0,0
+1928,Summer,Norway,NOR,,,1,2,1
+1928,Summer,Panama,PAN,,,0,0,0
+1928,Summer,Philippines,PHI,,,0,0,1
+1928,Summer,Poland,POL,,,2,1,4
+1928,Summer,Portugal,POR,,,0,0,1
+1928,Summer,Romania,ROU,,,0,0,0
+1928,Summer,Serbia,YUG,,,1,1,3
+1928,Summer,South Africa,RSA,,,1,0,2
+1928,Summer,Spain,ESP,,,1,0,0
+1928,Summer,Sweden,SWE,,,7,6,12
+1928,Summer,Switzerland,SUI,,,7,6,4
+1928,Summer,Turkey,TUR,,,0,0,0
+1928,Summer,UK,GBR,,,4,11,7
+1928,Summer,USA,USA,,,22,18,16
+1928,Summer,Uruguay,URU,,,1,0,0
+1928,Summer,Zimbabwe,ZIM,,,0,0,0
+1928,Winter,Argentina,ARG,,,0,0,0
+1928,Winter,Austria,AUT,,,0,3,1
+1928,Winter,Belgium,BEL,,,0,0,1
+1928,Winter,Canada,CAN,,,1,0,0
+1928,Winter,Czech Republic,TCH,,,0,0,1
+1928,Winter,Estonia,EST,,,0,0,0
+1928,Winter,Finland,FIN,,,2,1,1
+1928,Winter,France,FRA,,,1,0,0
+1928,Winter,Germany,GER,,,0,0,1
+1928,Winter,Hungary,HUN,,,0,0,0
+1928,Winter,Italy,ITA,,,0,0,0
+1928,Winter,Japan,JPN,,,0,0,0
+1928,Winter,Latvia,LAT,,,0,0,0
+1928,Winter,Lithuania,LTU,,,0,0,0
+1928,Winter,Luxembourg,LUX,,,0,0,0
+1928,Winter,Mexico,MEX,,,0,0,0
+1928,Winter,Netherlands,NED,,,0,0,0
+1928,Winter,Norway,NOR,,,6,4,5
+1928,Winter,Poland,POL,,,0,0,0
+1928,Winter,Romania,ROU,,,0,0,0
+1928,Winter,Serbia,YUG,,,0,0,0
+1928,Winter,Sweden,SWE,,,2,2,1
+1928,Winter,Switzerland,SUI,,,0,0,1
+1928,Winter,UK,GBR,,,0,0,1
+1928,Winter,USA,USA,,,2,2,2
+1932,Summer,Argentina,ARG,,,3,1,0
+1932,Summer,Australia,AUS,,,3,1,1
+1932,Summer,Austria,AUT,,,1,1,3
+1932,Summer,Belgium,BEL,,,0,0,1
+1932,Summer,Brazil,BRA,,,0,0,0
+1932,Summer,Bulgaria,BUL,,,0,0,0
+1932,Summer,Canada,CAN,,,2,5,9
+1932,Summer,China,CHN,,,0,0,0
+1932,Summer,Colombia,COL,,,0,0,0
+1932,Summer,Cuba,CUB,,,0,0,0
+1932,Summer,Czech Republic,TCH,,,1,3,2
+1932,Summer,Denmark,DEN,,,0,5,3
+1932,Summer,El Salvador,ESA,,,0,0,0
+1932,Summer,Estonia,EST,,,0,0,0
+1932,Summer,Finland,FIN,,,5,8,12
+1932,Summer,France,FRA,,,11,5,4
+1932,Summer,Germany,GER,,,5,12,7
+1932,Summer,Greece,GRE,,,0,0,0
+1932,Summer,Guatemala,GUA,,,0,0,0
+1932,Summer,Haiti,HAI,,,0,0,0
+1932,Summer,Hungary,HUN,,,6,5,5
+1932,Summer,India,IND,,,1,0,0
+1932,Summer,Ireland,IRL,,,2,0,0
+1932,Summer,Italy,ITA,,,12,12,12
+1932,Summer,Japan,JPN,,,7,7,4
+1932,Summer,Latvia,LAT,,,0,1,0
+1932,Summer,Luxembourg,LUX,,,0,0,0
+1932,Summer,Mexico,MEX,,,0,2,0
+1932,Summer,Monaco,MON,,,0,0,0
+1932,Summer,Netherlands,NED,,,2,5,1
+1932,Summer,New Zealand,NZL,,,0,1,0
+1932,Summer,Norway,NOR,,,0,0,0
+1932,Summer,Peru,PER,,,0,0,0
+1932,Summer,Philippines,PHI,,,0,0,3
+1932,Summer,Poland,POL,,,3,2,4
+1932,Summer,Portugal,POR,,,0,0,0
+1932,Summer,Romania,ROU,,,0,0,0
+1932,Summer,Serbia,YUG,,,0,0,0
+1932,Summer,South Africa,RSA,,,2,0,3
+1932,Summer,Spain,ESP,,,0,0,1
+1932,Summer,Sweden,SWE,,,10,5,9
+1932,Summer,Switzerland,SUI,,,0,1,0
+1932,Summer,Turkey,TUR,,,0,0,0
+1932,Summer,UK,GBR,,,5,7,5
+1932,Summer,USA,USA,,,44,36,30
+1932,Summer,Uruguay,URU,,,0,0,1
+1932,Summer,Venezuela,VEN,,,0,0,0
+1932,Winter,Austria,AUT,,,1,1,0
+1932,Winter,Belgium,BEL,,,0,0,0
+1932,Winter,Canada,CAN,,,1,1,5
+1932,Winter,Czech Republic,TCH,,,0,0,0
+1932,Winter,Finland,FIN,,,1,1,1
+1932,Winter,France,FRA,,,1,0,0
+1932,Winter,Germany,GER,,,0,0,2
+1932,Winter,Hungary,HUN,,,0,0,1
+1932,Winter,Italy,ITA,,,0,0,0
+1932,Winter,Japan,JPN,,,0,0,0
+1932,Winter,Norway,NOR,,,3,4,3
+1932,Winter,Poland,POL,,,0,0,0
+1932,Winter,Romania,ROU,,,0,0,0
+1932,Winter,Sweden,SWE,,,1,2,0
+1932,Winter,Switzerland,SUI,,,0,1,0
+1932,Winter,UK,GBR,,,0,0,0
+1932,Winter,USA,USA,,,6,4,2
+1936,Summer,Afghanistan,AFG,,,0,0,0
+1936,Summer,Argentina,ARG,,,2,2,3
+1936,Summer,Australia,AUS,,,0,0,1
+1936,Summer,Austria,AUT,,,5,7,5
+1936,Summer,Belgium,BEL,,,0,0,3
+1936,Summer,Bermuda,BER,,,0,0,0
+1936,Summer,Boliva,BOL,,,0,0,0
+1936,Summer,Brazil,BRA,,,0,0,0
+1936,Summer,Bulgaria,BUL,,,0,0,0
+1936,Summer,Canada,CAN,,,1,3,5
+1936,Summer,Chile,CHI,,,0,0,0
+1936,Summer,China,CHN,,,0,0,0
+1936,Summer,Colombia,COL,,,0,0,0
+1936,Summer,Costa Rica,CRC,,,0,0,0
+1936,Summer,Czech Republic,TCH,,,3,5,1
+1936,Summer,Denmark,DEN,,,0,2,3
+1936,Summer,Egypt,EGY,,,2,1,2
+1936,Summer,Estonia,EST,,,2,2,3
+1936,Summer,Finland,FIN,,,8,6,6
+1936,Summer,France,FRA,,,7,6,6
+1936,Summer,Germany,GER,,,38,31,32
+1936,Summer,Greece,GRE,,,0,0,0
+1936,Summer,Hungary,HUN,,,10,1,5
+1936,Summer,Iceland,ISL,,,0,0,0
+1936,Summer,India,IND,,,1,0,0
+1936,Summer,Italy,ITA,,,9,13,5
+1936,Summer,Japan,JPN,,,6,4,10
+1936,Summer,Latvia,LAT,,,0,1,1
+1936,Summer,Liechtenstein,LIE,,,0,0,0
+1936,Summer,Luxembourg,LUX,,,0,0,0
+1936,Summer,Malta,MLT,,,0,0,0
+1936,Summer,Mexico,MEX,,,0,0,3
+1936,Summer,Monaco,MON,,,0,0,0
+1936,Summer,Netherlands,NED,,,6,4,7
+1936,Summer,New Zealand,NZL,,,1,0,0
+1936,Summer,Norway,NOR,,,1,3,2
+1936,Summer,Peru,PER,,,0,0,0
+1936,Summer,Philippines,PHI,,,0,0,1
+1936,Summer,Poland,POL,,,0,4,5
+1936,Summer,Portugal,POR,,,0,0,1
+1936,Summer,Romania,ROU,,,0,1,0
+1936,Summer,Serbia,YUG,,,0,1,0
+1936,Summer,South Africa,RSA,,,0,1,0
+1936,Summer,Sweden,SWE,,,6,5,10
+1936,Summer,Switzerland,SUI,,,4,9,5
+1936,Summer,Turkey,TUR,,,1,0,1
+1936,Summer,UK,GBR,,,4,7,3
+1936,Summer,USA,USA,,,24,21,12
+1936,Summer,Uruguay,URU,,,0,0,0
+1936,Winter,Australia,AUS,,,0,0,0
+1936,Winter,Austria,AUT,,,1,1,2
+1936,Winter,Belgium,BEL,,,0,0,0
+1936,Winter,Bulgaria,BUL,,,0,0,0
+1936,Winter,Canada,CAN,,,0,1,0
+1936,Winter,Czech Republic,TCH,,,0,0,0
+1936,Winter,Estonia,EST,,,0,0,0
+1936,Winter,Finland,FIN,,,1,2,3
+1936,Winter,France,FRA,,,0,0,1
+1936,Winter,Germany,GER,,,3,3,0
+1936,Winter,Greece,GRE,,,0,0,0
+1936,Winter,Hungary,HUN,,,0,0,1
+1936,Winter,Italy,ITA,,,0,0,0
+1936,Winter,Japan,JPN,,,0,0,0
+1936,Winter,Latvia,LAT,,,0,0,0
+1936,Winter,Liechtenstein,LIE,,,0,0,0
+1936,Winter,Luxembourg,LUX,,,0,0,0
+1936,Winter,Netherlands,NED,,,0,0,0
+1936,Winter,Norway,NOR,,,7,5,3
+1936,Winter,Poland,POL,,,0,0,0
+1936,Winter,Romania,ROU,,,0,0,0
+1936,Winter,Serbia,YUG,,,0,0,0
+1936,Winter,Spain,ESP,,,0,0,0
+1936,Winter,Sweden,SWE,,,2,2,3
+1936,Winter,Switzerland,SUI,,,1,2,0
+1936,Winter,Turkey,TUR,,,0,0,0
+1936,Winter,UK,GBR,,,1,1,1
+1936,Winter,USA,USA,,,1,0,3
+1948,Summer,Afghanistan,AFG,,,0,0,0
+1948,Summer,Argentina,ARG,,,3,3,1
+1948,Summer,Australia,AUS,,,2,6,5
+1948,Summer,Austria,AUT,,,2,2,4
+1948,Summer,Belgium,BEL,,,2,2,3
+1948,Summer,Bermuda,BER,,,0,0,0
+1948,Summer,Brazil,BRA,,,0,0,1
+1948,Summer,Canada,CAN,,,0,2,2
+1948,Summer,Chile,CHI,,,0,0,0
+1948,Summer,China,CHN,,,0,0,0
+1948,Summer,Colombia,COL,,,0,0,0
+1948,Summer,Cuba,CUB,,,0,1,0
+1948,Summer,Czech Republic,TCH,,,6,2,3
+1948,Summer,Denmark,DEN,,,5,8,9
+1948,Summer,Egypt,EGY,,,2,2,1
+1948,Summer,Finland,FIN,,,8,8,6
+1948,Summer,France,FRA,,,11,6,15
+1948,Summer,Greece,GRE,,,0,0,0
+1948,Summer,Guyana,GUY,,,0,0,0
+1948,Summer,Hungary,HUN,,,10,5,12
+1948,Summer,Iceland,ISL,,,0,0,0
+1948,Summer,India,IND,,,1,0,0
+1948,Summer,Iran,IRI,,,0,0,1
+1948,Summer,Iraq,IRQ,,,0,0,0
+1948,Summer,Ireland,IRL,,,0,0,1
+1948,Summer,Italy,ITA,,,9,12,10
+1948,Summer,Jamaica,JAM,,,1,2,0
+1948,Summer,Lebanon,LIB,,,0,0,0
+1948,Summer,Liechtenstein,LIE,,,0,0,0
+1948,Summer,Luxembourg,LUX,,,0,0,0
+1948,Summer,Malta,MLT,,,0,0,0
+1948,Summer,Mexico,MEX,,,2,1,2
+1948,Summer,Monaco,MON,,,0,0,0
+1948,Summer,Myanmar,MYA,,,0,0,0
+1948,Summer,Netherlands,NED,,,5,2,9
+1948,Summer,New Zealand,NZL,,,0,0,0
+1948,Summer,Norway,NOR,,,1,3,3
+1948,Summer,Pakistan,PAK,,,0,0,0
+1948,Summer,Panama,PAN,,,0,0,2
+1948,Summer,Peru,PER,,,1,0,0
+1948,Summer,Philippines,PHI,,,0,0,0
+1948,Summer,Poland,POL,,,1,0,1
+1948,Summer,Portugal,POR,,,0,1,1
+1948,Summer,Puerto Rico,PUR,,,0,0,1
+1948,Summer,Serbia,YUG,,,0,2,0
+1948,Summer,South Africa,RSA,,,2,2,2
+1948,Summer,South Korea,KOR,,,0,0,2
+1948,Summer,Spain,ESP,,,0,1,0
+1948,Summer,Sri Lanka,SRI,,,0,1,0
+1948,Summer,Sweden,SWE,,,17,11,18
+1948,Summer,Switzerland,SUI,,,5,12,5
+1948,Summer,Syria,SYR,,,0,0,0
+1948,Summer,Trinidad,TTO,,,0,1,0
+1948,Summer,Turkey,TUR,,,6,4,2
+1948,Summer,UK,GBR,,,4,16,7
+1948,Summer,USA,USA,,,38,27,19
+1948,Summer,Uruguay,URU,,,0,1,1
+1948,Summer,Venezuela,VEN,,,0,0,0
+1948,Winter,Argentina,ARG,,,0,0,0
+1948,Winter,Austria,AUT,,,1,3,4
+1948,Winter,Belgium,BEL,,,1,1,0
+1948,Winter,Bulgaria,BUL,,,0,0,0
+1948,Winter,Canada,CAN,,,2,0,1
+1948,Winter,Chile,CHI,,,0,0,0
+1948,Winter,Czech Republic,TCH,,,0,1,0
+1948,Winter,Denmark,DEN,,,0,0,0
+1948,Winter,Finland,FIN,,,1,3,2
+1948,Winter,France,FRA,,,2,1,2
+1948,Winter,Greece,GRE,,,0,0,0
+1948,Winter,Hungary,HUN,,,0,1,0
+1948,Winter,Iceland,ISL,,,0,0,0
+1948,Winter,Italy,ITA,,,1,0,0
+1948,Winter,Lebanon,LIB,,,0,0,0
+1948,Winter,Liechtenstein,LIE,,,0,0,0
+1948,Winter,Netherlands,NED,,,0,0,0
+1948,Winter,Norway,NOR,,,4,3,3
+1948,Winter,Poland,POL,,,0,0,0
+1948,Winter,Romania,ROU,,,0,0,0
+1948,Winter,Serbia,YUG,,,0,0,0
+1948,Winter,South Korea,KOR,,,0,0,0
+1948,Winter,Spain,ESP,,,0,0,0
+1948,Winter,Sweden,SWE,,,4,3,3
+1948,Winter,Switzerland,SUI,,,3,4,2
+1948,Winter,Turkey,TUR,,,0,0,0
+1948,Winter,UK,GBR,,,0,0,2
+1948,Winter,USA,USA,,,3,3,2
+1952,Summer,Argentina,ARG,,,1,2,2
+1952,Summer,Australia,AUS,,,6,2,3
+1952,Summer,Austria,AUT,,,0,1,1
+1952,Summer,Bahamas,BAH,,,0,0,0
+1952,Summer,Belgium,BEL,,,2,2,0
+1952,Summer,Bermuda,BER,,,0,0,0
+1952,Summer,Brazil,BRA,,,1,0,2
+1952,Summer,Bulgaria,BUL,,,0,0,1
+1952,Summer,Canada,CAN,,,1,2,0
+1952,Summer,Chile,CHI,,,0,2,0
+1952,Summer,China,HKG,,,0,0,0
+1952,Summer,Cuba,CUB,,,0,0,0
+1952,Summer,Curacao,AHO,,,0,0,0
+1952,Summer,Czech Republic,TCH,,,7,3,3
+1952,Summer,Denmark,DEN,,,2,1,3
+1952,Summer,Egypt,EGY,,,0,0,1
+1952,Summer,Finland,FIN,,,6,3,13
+1952,Summer,France,FRA,,,6,6,6
+1952,Summer,Germany,GER,,,0,7,17
+1952,Summer,Ghana,GHA,,,0,0,0
+1952,Summer,Greece,GRE,,,0,0,0
+1952,Summer,Guatemala,GUA,,,0,0,0
+1952,Summer,Guyana,GUY,,,0,0,0
+1952,Summer,Hungary,HUN,,,16,10,16
+1952,Summer,Iceland,ISL,,,0,0,0
+1952,Summer,India,IND,,,1,0,1
+1952,Summer,Indonesia,INA,,,0,0,0
+1952,Summer,Iran,IRI,,,0,3,4
+1952,Summer,Ireland,IRL,,,0,1,0
+1952,Summer,Israel,ISR,,,0,0,0
+1952,Summer,Italy,ITA,,,8,9,4
+1952,Summer,Jamaica,JAM,,,2,3,0
+1952,Summer,Japan,JPN,,,1,6,1
+1952,Summer,Lebanon,LIB,,,0,1,1
+1952,Summer,Liechtenstein,LIE,,,0,0,0
+1952,Summer,Luxembourg,LUX,,,1,0,0
+1952,Summer,Mexico,MEX,,,0,1,0
+1952,Summer,Monaco,MON,,,0,0,0
+1952,Summer,Myanmar,MYA,,,0,0,0
+1952,Summer,Netherlands,NED,,,0,5,0
+1952,Summer,New Zealand,NZL,,,1,0,2
+1952,Summer,Nigeria,NGR,,,0,0,0
+1952,Summer,Norway,NOR,,,3,2,0
+1952,Summer,Pakistan,PAK,,,0,0,0
+1952,Summer,Panama,PAN,,,0,0,0
+1952,Summer,Philippines,PHI,,,0,0,0
+1952,Summer,Poland,POL,,,1,2,1
+1952,Summer,Portugal,POR,,,0,0,1
+1952,Summer,Puerto Rico,PUR,,,0,0,0
+1952,Summer,Romania,ROU,,,1,1,2
+1952,Summer,Russia,URS,,,22,29,19
+1952,Summer,Serbia,YUG,,,1,2,0
+1952,Summer,South Africa,RSA,,,2,4,4
+1952,Summer,South Korea,KOR,,,0,0,2
+1952,Summer,Spain,ESP,,,0,1,0
+1952,Summer,Sri Lanka,SRI,,,0,0,0
+1952,Summer,Sweden,SWE,,,12,13,10
+1952,Summer,Switzerland,SUI,,,2,6,6
+1952,Summer,Thailand,THA,,,0,0,0
+1952,Summer,Trinidad,TTO,,,0,0,2
+1952,Summer,Turkey,TUR,,,2,0,1
+1952,Summer,UK,GBR,,,1,2,8
+1952,Summer,USA,USA,,,40,19,17
+1952,Summer,Uruguay,URU,,,0,0,2
+1952,Summer,Venezuela,VEN,,,0,0,1
+1952,Summer,Vietnam,VNM,,,0,0,0
+1952,Winter,Argentina,ARG,,,0,0,0
+1952,Winter,Australia,AUS,,,0,0,0
+1952,Winter,Austria,AUT,,,2,4,2
+1952,Winter,Belgium,BEL,,,0,0,0
+1952,Winter,Bulgaria,BUL,,,0,0,0
+1952,Winter,Canada,CAN,,,1,0,1
+1952,Winter,Chile,CHI,,,0,0,0
+1952,Winter,Czech Republic,TCH,,,0,0,0
+1952,Winter,Denmark,DEN,,,0,0,0
+1952,Winter,Finland,FIN,,,3,4,2
+1952,Winter,France,FRA,,,0,0,1
+1952,Winter,Germany,GER,,,3,2,2
+1952,Winter,Greece,GRE,,,0,0,0
+1952,Winter,Hungary,HUN,,,0,0,1
+1952,Winter,Iceland,ISL,,,0,0,0
+1952,Winter,Italy,ITA,,,1,0,1
+1952,Winter,Japan,JPN,,,0,0,0
+1952,Winter,Lebanon,LIB,,,0,0,0
+1952,Winter,Netherlands,NED,,,0,3,0
+1952,Winter,New Zealand,NZL,,,0,0,0
+1952,Winter,Norway,NOR,,,7,3,6
+1952,Winter,Poland,POL,,,0,0,0
+1952,Winter,Portugal,POR,,,0,0,0
+1952,Winter,Romania,ROU,,,0,0,0
+1952,Winter,Serbia,YUG,,,0,0,0
+1952,Winter,Spain,ESP,,,0,0,0
+1952,Winter,Sweden,SWE,,,0,0,4
+1952,Winter,Switzerland,SUI,,,0,0,2
+1952,Winter,UK,GBR,,,1,0,0
+1952,Winter,USA,USA,,,4,6,1
+1956,Summer,Afghanistan,AFG,,,0,0,0
+1956,Summer,Argentina,ARG,,,0,1,1
+1956,Summer,Australia,AUS,,,13,8,14
+1956,Summer,Austria,AUT,,,0,0,2
+1956,Summer,Bahamas,BAH,,,0,0,1
+1956,Summer,Belgium,BEL,,,0,2,0
+1956,Summer,Bermuda,BER,,,0,0,0
+1956,Summer,Brazil,BRA,,,1,0,0
+1956,Summer,Bulgaria,BUL,,,1,3,1
+1956,Summer,Cambodia,CAM,,,0,0,0
+1956,Summer,Canada,CAN,,,2,1,3
+1956,Summer,Chile,CHI,,,0,2,2
+1956,Summer,China,HKG,,,0,0,0
+1956,Summer,Colombia,COL,,,0,0,0
+1956,Summer,Cuba,CUB,,,0,0,0
+1956,Summer,Czech Republic,TCH,,,1,4,1
+1956,Summer,Denmark,DEN,,,1,2,1
+1956,Summer,Egypt,EGY,,,0,0,0
+1956,Summer,Ethiopia,ETH,,,0,0,0
+1956,Summer,Fiji,FIJ,,,0,0,0
+1956,Summer,Finland,FIN,,,3,1,11
+1956,Summer,France,FRA,,,4,4,6
+1956,Summer,Germany,GER,,,6,13,7
+1956,Summer,Greece,GRE,,,0,0,1
+1956,Summer,Guyana,GUY,,,0,0,0
+1956,Summer,Hungary,HUN,,,9,10,7
+1956,Summer,Iceland,ISL,,,0,1,0
+1956,Summer,India,IND,,,1,0,0
+1956,Summer,Indonesia,INA,,,0,0,0
+1956,Summer,Iran,IRI,,,2,2,1
+1956,Summer,Ireland,IRL,,,1,1,3
+1956,Summer,Israel,ISR,,,0,0,0
+1956,Summer,Italy,ITA,,,8,8,9
+1956,Summer,Jamaica,JAM,,,0,0,0
+1956,Summer,Japan,JPN,,,4,10,3
+1956,Summer,Kenya,KEN,,,0,0,0
+1956,Summer,Liberia,LBR,,,0,0,0
+1956,Summer,Luxembourg,LUX,,,0,0,0
+1956,Summer,Malaysia,MAL,,,0,0,0
+1956,Summer,Mexico,MEX,,,1,0,1
+1956,Summer,Myanmar,MYA,,,0,0,0
+1956,Summer,Netherlands,NED,,,0,0,0
+1956,Summer,New Zealand,NZL,,,2,0,0
+1956,Summer,Nigeria,NGR,,,0,0,0
+1956,Summer,Norway,NOR,,,1,0,2
+1956,Summer,Pakistan,PAK,,,0,1,0
+1956,Summer,Peru,PER,,,0,0,0
+1956,Summer,Philippines,PHI,,,0,0,0
+1956,Summer,Poland,POL,,,1,4,4
+1956,Summer,Portugal,POR,,,0,0,0
+1956,Summer,Puerto Rico,PUR,,,0,0,0
+1956,Summer,Romania,ROU,,,5,3,5
+1956,Summer,Russia,URS,,,37,29,32
+1956,Summer,Serbia,YUG,,,0,3,0
+1956,Summer,South Africa,RSA,,,0,0,4
+1956,Summer,South Korea,KOR,,,0,1,1
+1956,Summer,Spain,ESP,,,0,0,0
+1956,Summer,Sri Lanka,SRI,,,0,0,0
+1956,Summer,Sweden,SWE,,,8,5,6
+1956,Summer,Switzerland,SUI,,,0,0,1
+1956,Summer,Taiwan,TPE,,,0,0,0
+1956,Summer,Thailand,THA,,,0,0,0
+1956,Summer,Trinidad,TTO,,,0,0,0
+1956,Summer,Turkey,TUR,,,3,2,2
+1956,Summer,UK,GBR,,,6,7,11
+1956,Summer,USA,USA,,,32,25,17
+1956,Summer,Uganda,UGA,,,0,0,0
+1956,Summer,Uruguay,URU,,,0,0,1
+1956,Summer,Venezuela,VEN,,,0,0,0
+1956,Summer,Vietnam,VNM,,,0,0,0
+1956,Winter,Australia,AUS,,,0,0,0
+1956,Winter,Austria,AUT,,,4,3,4
+1956,Winter,Belgium,BEL,,,0,0,0
+1956,Winter,Boliva,BOL,,,0,0,0
+1956,Winter,Bulgaria,BUL,,,0,0,0
+1956,Winter,Canada,CAN,,,0,1,2
+1956,Winter,Chile,CHI,,,0,0,0
+1956,Winter,Czech Republic,TCH,,,0,0,0
+1956,Winter,Finland,FIN,,,3,3,1
+1956,Winter,France,FRA,,,0,0,0
+1956,Winter,Germany,GER,,,1,0,1
+1956,Winter,Greece,GRE,,,0,0,0
+1956,Winter,Hungary,HUN,,,0,0,1
+1956,Winter,Iceland,ISL,,,0,0,0
+1956,Winter,Iran,IRI,,,0,0,0
+1956,Winter,Italy,ITA,,,1,2,0
+1956,Winter,Japan,JPN,,,0,1,0
+1956,Winter,Lebanon,LIB,,,0,0,0
+1956,Winter,Liechtenstein,LIE,,,0,0,0
+1956,Winter,Netherlands,NED,,,0,0,0
+1956,Winter,Norway,NOR,,,2,1,1
+1956,Winter,Poland,POL,,,0,0,1
+1956,Winter,Romania,ROU,,,0,0,0
+1956,Winter,Russia,URS,,,6,3,6
+1956,Winter,Serbia,YUG,,,0,0,0
+1956,Winter,South Korea,KOR,,,0,0,0
+1956,Winter,Spain,ESP,,,0,0,0
+1956,Winter,Sweden,SWE,,,2,4,4
+1956,Winter,Switzerland,SUI,,,3,2,1
+1956,Winter,Turkey,TUR,,,0,0,0
+1956,Winter,UK,GBR,,,0,0,0
+1956,Winter,USA,USA,,,2,3,2
+1960,Summer,Afghanistan,AFG,,8996967.0,0,0,0
+1960,Summer,Argentina,ARG,778.251706763404,20481781.0,0,1,1
+1960,Summer,Australia,AUS,1813.43109917039,10276477.0,8,8,6
+1960,Summer,Austria,AUT,939.914814681174,7047539.0,1,1,0
+1960,Summer,Bahamas,BAH,1459.25382495907,109532.0,0,0,0
+1960,Summer,Belgium,BEL,1290.28607216192,9153489.0,0,2,2
+1960,Summer,Bermuda,BER,1715.31463229719,44400.0,0,0,0
+1960,Summer,Brazil,BRA,235.266009502589,72179235.0,0,0,2
+1960,Summer,Bulgaria,BUL,,7867374.0,1,3,3
+1960,Summer,Canada,CAN,2264.94849658191,17909009.0,0,1,0
+1960,Summer,Chile,CHI,516.487539077836,8132988.0,0,0,0
+1960,Summer,China,HKG,426.773807917233,3075605.0,0,0,0
+1960,Summer,Colombia,COL,258.304433616071,16057714.0,0,0,0
+1960,Summer,Cuba,CUB,,7141241.0,0,0,0
+1960,Summer,Curacao,AHO,,124826.0,0,0,0
+1960,Summer,Czech Republic,TCH,,,3,2,3
+1960,Summer,Denmark,DEN,1389.0213943225,4579603.0,2,3,1
+1960,Summer,Ethiopia,ETH,75.3396090705961,22151284.0,1,0,0
+1960,Summer,Fiji,FIJ,277.431535497766,393480.0,0,0,0
+1960,Summer,Finland,FIN,1191.85508873415,4429634.0,1,1,3
+1960,Summer,France,FRA,1306.79629911648,46621688.0,0,2,3
+1960,Summer,Germany,GER,1162.12266831735,72814900.0,12,19,11
+1960,Summer,Ghana,GHA,174.858856531804,6635229.0,0,1,0
+1960,Summer,Greece,GRE,513.085862390915,8331725.0,1,0,0
+1960,Summer,Guyana,GUY,299.074645785091,571813.0,0,0,0
+1960,Summer,Haiti,HAI,70.8024454423715,3866162.0,0,0,0
+1960,Summer,Hungary,HUN,,9983967.0,6,8,7
+1960,Summer,Iceland,ISL,1486.46439009414,175574.0,0,0,0
+1960,Summer,India,IND,84.9328084793106,450547675.0,0,1,0
+1960,Summer,Indonesia,INA,,87751066.0,0,0,0
+1960,Summer,Iran,IRI,195.57752721271,21906909.0,0,1,3
+1960,Summer,Iraq,IRQ,218.917802531101,7289753.0,0,0,1
+1960,Summer,Ireland,IRL,706.551022345168,2828600.0,0,0,0
+1960,Summer,Israel,ISR,1452.48664030437,2114020.0,0,0,0
+1960,Summer,Italy,ITA,836.905850281885,50199700.0,13,10,13
+1960,Summer,Japan,JPN,508.702779291773,93216000.0,4,7,7
+1960,Summer,Kenya,KEN,102.824417465582,8120082.0,0,0,0
+1960,Summer,Lebanon,LIB,,1804935.0,0,0,0
+1960,Summer,Liberia,LBR,167.171498224694,1118655.0,0,0,0
+1960,Summer,Liechtenstein,LIE,,16501.0,0,0,0
+1960,Summer,Luxembourg,LUX,2261.17741836594,313970.0,0,0,0
+1960,Summer,Malaysia,MAL,240.847414554537,8156342.0,0,0,0
+1960,Summer,Malta,MLT,,326550.0,0,0,0
+1960,Summer,Mexico,MEX,355.075199563018,37771861.0,0,0,1
+1960,Summer,Monaco,MON,,22461.0,0,0,0
+1960,Summer,Morocco,MAR,174.784133911133,12328532.0,0,1,0
+1960,Summer,Myanmar,MYA,25.0847757223623,21736947.0,0,0,0
+1960,Summer,Netherlands,NED,1156.38597727767,11486631.0,0,1,2
+1960,Summer,New Zealand,NZL,2334.1337214332,2371800.0,2,0,1
+1960,Summer,Nigeria,NGR,93.1370090424417,45138460.0,0,0,0
+1960,Summer,Norway,NOR,1451.2850779894,3581239.0,1,0,0
+1960,Summer,Pakistan,PAK,82.0241000071912,44988690.0,1,0,1
+1960,Summer,Panama,PAN,477.037935000289,1133005.0,0,0,0
+1960,Summer,Peru,PER,252.796782675034,10155011.0,0,0,0
+1960,Summer,Philippines,PHI,269.465146474794,26269741.0,0,0,0
+1960,Summer,Poland,POL,,29637450.0,4,6,11
+1960,Summer,Portugal,POR,376.976430250874,8857716.0,0,1,0
+1960,Summer,Puerto Rico,PUR,717.514843087362,2358000.0,0,0,0
+1960,Summer,Romania,ROU,,18406905.0,3,1,6
+1960,Summer,Russia,URS,,119897000.0,43,29,31
+1960,Summer,San Marino,SMR,,15440.0,0,0,0
+1960,Summer,Serbia,YUG,,6608000.0,1,1,0
+1960,Summer,South Africa,RSA,532.147504330332,17099836.0,0,1,2
+1960,Summer,South Korea,KOR,158.844150776359,25012374.0,0,0,0
+1960,Summer,Spain,ESP,407.96302786933,30455000.0,0,0,1
+1960,Summer,Sri Lanka,SRI,145.928701305768,9874476.0,0,0,0
+1960,Summer,Sudan,SUD,99.7131195068359,7544498.0,0,0,0
+1960,Summer,Sweden,SWE,2128.36441205712,7484656.0,1,2,3
+1960,Summer,Switzerland,SUI,1954.3113206427,5327827.0,0,3,3
+1960,Summer,Syria,UAR,183.525069735278,4573514.0,0,1,1
+1960,Summer,Taiwan,TPE,,,0,1,0
+1960,Summer,Thailand,THA,102.814571454958,27397208.0,0,0,0
+1960,Summer,Trinidad,WIF,633.975608394336,847973.0,0,0,2
+1960,Summer,Tunisia,TUN,,4178235.0,0,0,0
+1960,Summer,Turkey,TUR,267.091207552765,27472339.0,7,2,0
+1960,Summer,UK,GBR,1397.5948032844,52400000.0,2,6,12
+1960,Summer,USA,USA,2999.86487154495,180671000.0,34,21,16
+1960,Summer,Uganda,UGA,55.3784976132181,6767092.0,0,0,0
+1960,Summer,Uruguay,URU,491.031760304596,2538648.0,0,0,0
+1960,Summer,Venezuela,VEN,939.197766577539,8141839.0,0,0,1
+1960,Summer,Vietnam,VNM,,,0,0,0
+1960,Summer,Zimbabwe,RHO,276.560896360952,3776679.0,0,0,0
+1960,Winter,Argentina,ARG,778.251706763404,20481781.0,0,0,0
+1960,Winter,Australia,AUS,1813.43109917039,10276477.0,0,0,0
+1960,Winter,Austria,AUT,939.914814681174,7047539.0,1,2,3
+1960,Winter,Bulgaria,BUL,,7867374.0,0,0,0
+1960,Winter,Canada,CAN,2264.94849658191,17909009.0,2,1,1
+1960,Winter,Chile,CHI,516.487539077836,8132988.0,0,0,0
+1960,Winter,Czech Republic,TCH,,,0,1,0
+1960,Winter,Denmark,DEN,1389.0213943225,4579603.0,0,0,0
+1960,Winter,Finland,FIN,1191.85508873415,4429634.0,2,3,3
+1960,Winter,France,FRA,1306.79629911648,46621688.0,1,0,2
+1960,Winter,Germany,GER,1162.12266831735,72814900.0,4,3,1
+1960,Winter,Hungary,HUN,,9983967.0,0,0,0
+1960,Winter,Iceland,ISL,1486.46439009414,175574.0,0,0,0
+1960,Winter,Italy,ITA,836.905850281885,50199700.0,0,0,1
+1960,Winter,Japan,JPN,508.702779291773,93216000.0,0,0,0
+1960,Winter,Lebanon,LIB,,1804935.0,0,0,0
+1960,Winter,Liechtenstein,LIE,,16501.0,0,0,0
+1960,Winter,Netherlands,NED,1156.38597727767,11486631.0,0,1,1
+1960,Winter,New Zealand,NZL,2334.1337214332,2371800.0,0,0,0
+1960,Winter,Norway,NOR,1451.2850779894,3581239.0,3,3,0
+1960,Winter,Poland,POL,,29637450.0,0,1,1
+1960,Winter,Russia,URS,,119897000.0,7,5,9
+1960,Winter,South Africa,RSA,532.147504330332,17099836.0,0,0,0
+1960,Winter,South Korea,KOR,158.844150776359,25012374.0,0,0,0
+1960,Winter,Spain,ESP,407.96302786933,30455000.0,0,0,0
+1960,Winter,Sweden,SWE,2128.36441205712,7484656.0,3,2,2
+1960,Winter,Switzerland,SUI,1954.3113206427,5327827.0,2,0,0
+1960,Winter,Turkey,TUR,267.091207552765,27472339.0,0,0,0
+1960,Winter,UK,GBR,1397.5948032844,52400000.0,0,0,0
+1960,Winter,USA,USA,2999.86487154495,180671000.0,3,4,3
+1964,Summer,Afghanistan,AFG,,9744772.0,0,0,0
+1964,Summer,Algeria,ALG,238.863801545015,12221675.0,0,0,0
+1964,Summer,Argentina,ARG,1176.20086190313,21824427.0,0,1,0
+1964,Summer,Australia,AUS,2134.48946124608,11167000.0,6,2,10
+1964,Summer,Austria,AUT,1275.45715281679,7223801.0,0,0,0
+1964,Summer,Bahamas,BAH,1883.44386022276,133705.0,1,0,0
+1964,Summer,Belgium,BEL,1724.01894179056,9378113.0,2,0,1
+1964,Summer,Bermuda,BER,1986.64081017022,48900.0,0,0,0
+1964,Summer,Boliva,BOL,135.228463817406,3957759.0,0,0,0
+1964,Summer,Brazil,BRA,257.259726897671,81064572.0,0,0,1
+1964,Summer,Bulgaria,BUL,,8144340.0,3,5,2
+1964,Summer,Cambodia,CAM,,6331443.0,0,0,0
+1964,Summer,Cameroon,CMR,139.228109587718,5643039.0,0,0,0
+1964,Summer,Canada,CAN,2561.63849088572,19325000.0,1,2,1
+1964,Summer,Chad,CHA,118.594106789032,3246527.0,0,0,0
+1964,Summer,Chile,CHI,685.970202891974,8821855.0,0,0,0
+1964,Summer,China,HKG,629.591525784494,3504600.0,0,0,0
+1964,Summer,Colombia,COL,338.675935298365,18175187.0,0,0,0
+1964,Summer,Costa Rica,CRC,353.710896791701,1539942.0,0,0,0
+1964,Summer,Cuba,CUB,,7793258.0,0,1,0
+1964,Summer,Curacao,AHO,,133148.0,0,0,0
+1964,Summer,Czech Republic,TCH,,,5,6,3
+1964,Summer,Denmark,DEN,2049.39724281483,4722072.0,2,1,3
+1964,Summer,Dominican Republic,DOM,277.29715816349,3757123.0,0,0,0
+1964,Summer,Egypt,EGY,157.716536507206,29644875.0,0,0,0
+1964,Summer,Ethiopia,ETH,83.8368648270969,24397010.0,1,0,0
+1964,Summer,Finland,FIN,1725.60483489826,4548543.0,3,0,2
+1964,Summer,France,FRA,1891.12061521027,49230585.0,1,8,6
+1964,Summer,Germany,GER,1637.45522773672,75318337.0,10,22,18
+1964,Summer,Ghana,GHA,224.968154393354,7524470.0,0,0,1
+1964,Summer,Greece,GRE,772.805500770312,8510429.0,0,0,0
+1964,Summer,Guyana,GUY,313.261161893769,637835.0,0,0,0
+1964,Summer,Hungary,HUN,,10119835.0,10,7,5
+1964,Summer,Iceland,ISL,2414.00707361378,188983.0,0,0,0
+1964,Summer,India,IND,117.856430772855,488848139.0,1,0,0
+1964,Summer,Iran,IRI,221.731727810865,24307855.0,0,0,2
+1964,Summer,Iraq,IRQ,269.423092996101,8122199.0,0,0,0
+1964,Summer,Ireland,IRL,994.607331611746,2866550.0,0,0,1
+1964,Summer,Israel,ISR,1625.9979202214,2475000.0,0,0,0
+1964,Summer,Italy,ITA,1271.80119301518,51675350.0,10,10,7
+1964,Summer,Ivory Coast,CIV,215.506240264261,4071411.0,0,0,0
+1964,Summer,Jamaica,JAM,514.416511313452,1730739.0,0,0,0
+1964,Summer,Japan,JPN,902.867721515126,96903000.0,16,5,8
+1964,Summer,Kenya,KEN,111.300544823892,9222692.0,0,0,1
+1964,Summer,Lebanon,LIB,,2041231.0,0,0,0
+1964,Summer,Liberia,LBR,173.926490274043,1217905.0,0,0,0
+1964,Summer,Liechtenstein,LIE,,18170.0,0,0,0
+1964,Summer,Luxembourg,LUX,2779.18439746326,327750.0,0,0,0
+1964,Summer,Madagascar,MAD,141.534669132002,5625164.0,0,0,0
+1964,Summer,Malaysia,MAS,302.933952345239,9253827.0,0,0,0
+1964,Summer,Mali,MLI,,5503750.0,0,0,0
+1964,Summer,Mexico,MEX,480.704214437745,42771077.0,0,0,1
+1964,Summer,Monaco,MON,,23236.0,0,0,0
+1964,Summer,Mongolia,MGL,,1074518.0,0,0,0
+1964,Summer,Morocco,MAR,216.263046264648,13857656.0,0,0,0
+1964,Summer,Myanmar,MYA,17.3322006236435,23717785.0,0,0,0
+1964,Summer,Nepal,NEP,45.320757315163,10783958.0,0,0,0
+1964,Summer,Netherlands,NED,1668.33086114697,12127120.0,2,4,4
+1964,Summer,New Zealand,NZL,2839.31554692453,2585400.0,3,0,2
+1964,Summer,Niger,NIG,148.080269139855,3802802.0,0,0,0
+1964,Summer,Nigeria,NGR,113.297345671875,49066762.0,0,0,1
+1964,Summer,Norway,NOR,1950.69324222931,3694339.0,0,0,0
+1964,Summer,Pakistan,PAK,102.45976384531,49627623.0,0,1,0
+1964,Summer,Panama,PAN,611.100612960754,1276331.0,0,0,0
+1964,Summer,Peru,PER,380.965457465866,11383364.0,0,0,0
+1964,Summer,Philippines,PHI,188.153783582113,29958687.0,0,1,0
+1964,Summer,Poland,POL,,31139450.0,7,6,10
+1964,Summer,Portugal,POR,490.207385856289,9035365.0,0,0,0
+1964,Summer,Puerto Rico,PUR,1006.43444609497,2554066.0,0,0,0
+1964,Summer,Republic of Congo,CGO,158.061964516344,1125354.0,0,0,0
+1964,Summer,Romania,ROU,,18919126.0,2,4,6
+1964,Summer,Russia,URS,,125345000.0,30,30,33
+1964,Summer,Senegal,SEN,317.850426568454,3580241.0,0,0,0
+1964,Summer,Serbia,YUG,,6765000.0,2,1,2
+1964,Summer,South Korea,KOR,124.24136735879,27984155.0,0,2,1
+1964,Summer,Spain,ESP,694.952086797899,31609195.0,0,0,0
+1964,Summer,Sri Lanka,SRI,122.941808998544,10849977.0,0,0,0
+1964,Summer,Sweden,SWE,2961.02884624727,7661354.0,2,2,4
+1964,Summer,Switzerland,SUI,2734.93009044177,5789228.0,1,2,1
+1964,Summer,Taiwan,TPE,,,0,0,0
+1964,Summer,Tanzania,TAN,346.301818847656,11295675.0,0,0,0
+1964,Summer,Thailand,THA,128.642226903734,30881136.0,0,0,0
+1964,Summer,Trinidad,TTO,779.766014894579,902620.0,0,1,2
+1964,Summer,Tunisia,TUN,228.484793689273,4461111.0,0,1,1
+1964,Summer,Turkey,TUR,354.365541117168,30244258.0,2,3,1
+1964,Summer,UK,GBR,1748.2881176141,54000000.0,4,12,2
+1964,Summer,USA,USA,3565.31443016356,191889000.0,36,26,28
+1964,Summer,Uganda,UGA,68.6259930194368,7719108.0,0,0,0
+1964,Summer,Uruguay,URU,744.654270146069,2665383.0,0,0,1
+1964,Summer,Venezuela,VEN,873.604754880876,9369101.0,0,0,0
+1964,Summer,Vietnam,VNM,,,0,0,0
+1964,Summer,Zambia,ZAM,229.979245632097,3463211.0,0,0,0
+1964,Summer,Zimbabwe,ZIM,281.888369368235,4322854.0,0,0,0
+1964,Winter,Argentina,ARG,1176.20086190313,21824427.0,0,0,0
+1964,Winter,Australia,AUS,2134.48946124608,11167000.0,0,0,0
+1964,Winter,Austria,AUT,1275.45715281679,7223801.0,4,5,3
+1964,Winter,Belgium,BEL,1724.01894179056,9378113.0,0,0,0
+1964,Winter,Bulgaria,BUL,,8144340.0,0,0,0
+1964,Winter,Canada,CAN,2561.63849088572,19325000.0,1,1,1
+1964,Winter,Chile,CHI,685.970202891974,8821855.0,0,0,0
+1964,Winter,Czech Republic,TCH,,,0,0,1
+1964,Winter,Denmark,DEN,2049.39724281483,4722072.0,0,0,0
+1964,Winter,Finland,FIN,1725.60483489826,4548543.0,3,4,3
+1964,Winter,France,FRA,1891.12061521027,49230585.0,3,4,0
+1964,Winter,Germany,GER,1637.45522773672,75318337.0,3,3,3
+1964,Winter,Greece,GRE,772.805500770312,8510429.0,0,0,0
+1964,Winter,Hungary,HUN,,10119835.0,0,0,0
+1964,Winter,Iceland,ISL,2414.00707361378,188983.0,0,0,0
+1964,Winter,India,IND,117.856430772855,488848139.0,0,0,0
+1964,Winter,Iran,IRI,221.731727810865,24307855.0,0,0,0
+1964,Winter,Italy,ITA,1271.80119301518,51675350.0,0,1,3
+1964,Winter,Japan,JPN,902.867721515126,96903000.0,0,0,0
+1964,Winter,Lebanon,LIB,,2041231.0,0,0,0
+1964,Winter,Liechtenstein,LIE,,18170.0,0,0,0
+1964,Winter,Mongolia,MGL,,1074518.0,0,0,0
+1964,Winter,Netherlands,NED,1668.33086114697,12127120.0,1,1,0
+1964,Winter,North Korea,PRK,,12282417.0,0,1,0
+1964,Winter,Norway,NOR,1950.69324222931,3694339.0,3,6,6
+1964,Winter,Poland,POL,,31139450.0,0,0,0
+1964,Winter,Romania,ROU,,18919126.0,0,0,0
+1964,Winter,Russia,URS,,125345000.0,11,7,6
+1964,Winter,Serbia,YUG,,6765000.0,0,0,0
+1964,Winter,South Korea,KOR,124.24136735879,27984155.0,0,0,0
+1964,Winter,Spain,ESP,694.952086797899,31609195.0,0,0,0
+1964,Winter,Sweden,SWE,2961.02884624727,7661354.0,3,3,1
+1964,Winter,Switzerland,SUI,2734.93009044177,5789228.0,0,0,0
+1964,Winter,Turkey,TUR,354.365541117168,30244258.0,0,0,0
+1964,Winter,UK,GBR,1748.2881176141,54000000.0,1,0,0
+1964,Winter,USA,USA,3565.31443016356,191889000.0,1,2,4
+1968,Summer,Afghanistan,AFG,,10637064.0,0,0,0
+1968,Summer,Algeria,ALG,292.436036368561,13663581.0,0,0,0
+1968,Summer,Argentina,ARG,1141.95211617341,23168268.0,0,0,2
+1968,Summer,Australia,AUS,2728.23426114901,12009000.0,5,7,5
+1968,Summer,Austria,AUT,1685.66211669148,7415403.0,0,2,2
+1968,Summer,Bahamas,BAH,2668.01498039262,158648.0,0,0,0
+1968,Summer,Barbados,BAR,505.889066146294,237241.0,0,0,0
+1968,Summer,Belgium,BEL,2251.31575906782,9618756.0,0,1,1
+1968,Summer,Belize,BIZ,392.282566057727,116065.0,0,0,0
+1968,Summer,Bermuda,BER,2975.95428934212,53000.0,0,0,0
+1968,Summer,Boliva,BOL,195.471270062333,4297522.0,0,0,0
+1968,Summer,Brazil,BRA,373.925432639683,90387079.0,0,1,2
+1968,Summer,Bulgaria,BUL,,8369603.0,2,4,3
+1968,Summer,Cameroon,CMR,170.782666507465,6201410.0,0,1,0
+1968,Summer,Canada,CAN,3473.23722551871,20744000.0,1,3,1
+1968,Summer,Central African Republic,CAF,95.6398392122972,1744198.0,0,0,0
+1968,Summer,Chad,CHA,126.87277490154,3499370.0,0,0,0
+1968,Summer,Chile,CHI,765.847401648627,9468851.0,0,0,0
+1968,Summer,China,HKG,714.48296958061,3802700.0,0,0,0
+1968,Summer,Colombia,COL,301.526502784249,20393704.0,0,0,0
+1968,Summer,Costa Rica,CRC,444.805256869954,1747690.0,0,0,0
+1968,Summer,Cuba,CUB,,8413549.0,0,4,0
+1968,Summer,Curacao,AHO,,140298.0,0,0,0
+1968,Summer,Czech Republic,TCH,,,7,2,4
+1968,Summer,Democratic Republic of the Congo,COD,205.645995783134,18913874.0,0,0,0
+1968,Summer,Denmark,DEN,2776.13544525805,4864883.0,1,4,3
+1968,Summer,Dominican Republic,DOM,259.574438400563,4247559.0,0,0,0
+1968,Summer,Ecuador,ECU,445.227989157148,5725462.0,0,0,0
+1968,Summer,Egypt,EGY,179.774096694265,32881852.0,0,0,0
+1968,Summer,El Salvador,ESA,290.096510171735,3481624.0,0,0,0
+1968,Summer,Ethiopia,ETH,99.4743651000667,26944386.0,1,1,0
+1968,Summer,Fiji,FIJ,327.357416510141,498944.0,0,0,0
+1968,Summer,Finland,FIN,1927.29380452918,4626469.0,1,2,1
+1968,Summer,France,FRA,2518.15825593491,51175507.0,7,3,5
+1968,Summer,Germany,FRG,2025.08159465853,77294314.0,14,20,17
+1968,Summer,Ghana,GHA,196.668571830464,8321773.0,0,0,0
+1968,Summer,Greece,GRE,1138.38219032671,8740765.0,0,0,1
+1968,Summer,Guatemala,GUA,314.666876118943,5184095.0,0,0,0
+1968,Summer,Guinea,GUI,,4013050.0,0,0,0
+1968,Summer,Guyana,GUY,339.786441079035,686144.0,0,0,0
+1968,Summer,Honduras,HON,314.474382938748,2560723.0,0,0,0
+1968,Summer,Hungary,HUN,476.434350138292,10255815.0,10,10,12
+1968,Summer,Iceland,ISL,2473.42372591393,201488.0,0,0,0
+1968,Summer,India,IND,101.556802521195,531513834.0,0,0,1
+1968,Summer,Indonesia,INA,64.6547730642556,108779926.0,0,0,0
+1968,Summer,Iran,IRI,314.285456656503,27032576.0,2,1,2
+1968,Summer,Iraq,IRQ,318.832552563525,9260687.0,0,0,0
+1968,Summer,Ireland,IRL,1158.85549787929,2915550.0,0,0,0
+1968,Summer,Israel,ISR,1947.35209699825,2803000.0,0,0,0
+1968,Summer,Italy,ITA,1718.49646427147,53235750.0,3,4,9
+1968,Summer,Ivory Coast,CIV,256.768714344803,4713134.0,0,0,0
+1968,Summer,Jamaica,JAM,591.045817173244,1825873.0,0,1,0
+1968,Summer,Japan,JPN,1553.27139379996,101011000.0,11,7,7
+1968,Summer,Kenya,KEN,128.654646882243,10539909.0,3,4,2
+1968,Summer,Kuwait,KUW,3871.94559219275,632911.0,0,0,0
+1968,Summer,Lebanon,LIB,,2210769.0,0,0,0
+1968,Summer,Libya,LBA,1971.86632548697,1958909.0,0,0,0
+1968,Summer,Liechtenstein,LIE,,20237.0,0,0,0
+1968,Summer,Luxembourg,LUX,3202.50594852825,335850.0,0,0,0
+1968,Summer,Madagascar,MAD,163.588485295319,6234468.0,0,0,0
+1968,Summer,Malaysia,MAS,342.444763417284,10297983.0,0,0,0
+1968,Summer,Mali,MLI,56.5137530466331,5780836.0,0,0,0
+1968,Summer,Malta,MLT,,307900.0,0,0,0
+1968,Summer,Mexico,MEX,615.922912128842,48431971.0,3,3,3
+1968,Summer,Monaco,MON,,23295.0,0,0,0
+1968,Summer,Mongolia,MGL,,1207104.0,0,1,3
+1968,Summer,Morocco,MAR,227.120864868164,15307267.0,0,0,0
+1968,Summer,Myanmar,MYA,21.5453410007264,26015239.0,0,0,0
+1968,Summer,Netherlands,NED,2364.3594192663,12729721.0,3,3,1
+1968,Summer,New Zealand,NZL,1902.42182426883,2748100.0,1,0,2
+1968,Summer,Nicaragua,NCA,304.441965331491,2264623.0,0,0,0
+1968,Summer,Niger,NIG,145.610145933803,4263925.0,0,0,0
+1968,Summer,Nigeria,NGR,97.3372081255964,53506201.0,0,0,0
+1968,Summer,Norway,NOR,2679.71300438189,3816486.0,1,1,0
+1968,Summer,Pakistan,PAK,141.558306459346,55102690.0,1,0,0
+1968,Summer,Panama,PAN,778.476641666323,1434676.0,0,0,0
+1968,Summer,Paraguay,PAR,226.80197812329,2351926.0,0,0,0
+1968,Summer,Peru,PER,447.99179719095,12735491.0,0,0,0
+1968,Summer,Philippines,PHI,242.232067627814,33795203.0,0,0,0
+1968,Summer,Poland,POL,,32294655.0,5,2,11
+1968,Summer,Portugal,POR,751.947085624465,8836650.0,0,0,0
+1968,Summer,Puerto Rico,PUR,1480.69317642251,2662064.0,0,0,0
+1968,Summer,Romania,ROU,,19799831.0,4,6,5
+1968,Summer,Russia,URS,,128928000.0,29,32,30
+1968,Summer,San Marino,SMR,,18668.0,0,0,0
+1968,Summer,Senegal,SEN,311.196146846683,4014107.0,0,0,0
+1968,Summer,Serbia,YUG,,6915000.0,3,3,2
+1968,Summer,Sierra Leone,SLE,126.308899122773,2644011.0,0,0,0
+1968,Summer,South Korea,KOR,199.982134957643,30838302.0,0,1,1
+1968,Summer,Spain,ESP,978.292373768035,33113134.0,0,0,0
+1968,Summer,Sri Lanka,SRI,153.48764748655,11937607.0,0,0,0
+1968,Summer,Sudan,SUD,117.824935913086,9639846.0,0,0,0
+1968,Summer,Suriname,SUR,680.595348207639,356551.0,0,0,0
+1968,Summer,Sweden,SWE,3953.08297234501,7912273.0,2,1,1
+1968,Summer,Switzerland,SUI,3413.49358157003,6067714.0,0,1,4
+1968,Summer,Syria,SYR,293.330341001656,5935850.0,0,0,0
+1968,Summer,Taiwan,TPE,,,0,0,1
+1968,Summer,Tanzania,TAN,399.301635742188,12725519.0,0,0,0
+1968,Summer,Thailand,THA,178.839752885801,34791418.0,0,0,0
+1968,Summer,Trinidad,TTO,783.173633599792,930792.0,0,0,0
+1968,Summer,Tunisia,TUN,248.91225549272,4845220.0,1,0,1
+1968,Summer,Turkey,TUR,501.12130904111,33256465.0,2,0,0
+1968,Summer,UK,GBR,1951.75859587532,55211700.0,5,5,3
+1968,Summer,USA,USA,4684.58840293763,200706000.0,45,28,34
+1968,Summer,Uganda,UGA,106.851228104531,8841156.0,0,1,1
+1968,Summer,Uruguay,URU,578.548868536136,2774761.0,0,0,0
+1968,Summer,Venezuela,VEN,938.015078662499,10702281.0,1,0,0
+1968,Summer,Vietnam,VNM,,,0,0,0
+1968,Summer,"Virgin Islands, US",ISV,,55700.0,0,0,0
+1968,Summer,Zambia,ZAM,387.087288652294,3918872.0,0,0,0
+1968,Winter,Argentina,ARG,1141.95211617341,23168268.0,0,0,0
+1968,Winter,Australia,AUS,2728.23426114901,12009000.0,0,0,0
+1968,Winter,Austria,AUT,1685.66211669148,7415403.0,3,4,4
+1968,Winter,Bulgaria,BUL,,8369603.0,0,0,0
+1968,Winter,Canada,CAN,3473.23722551871,20744000.0,1,1,1
+1968,Winter,Chile,CHI,765.847401648627,9468851.0,0,0,0
+1968,Winter,Czech Republic,TCH,,,1,2,1
+1968,Winter,Denmark,DEN,2776.13544525805,4864883.0,0,0,0
+1968,Winter,Finland,FIN,1927.29380452918,4626469.0,1,2,2
+1968,Winter,France,FRA,2518.15825593491,51175507.0,4,3,2
+1968,Winter,Germany,FRG,2025.08159465853,77294314.0,3,4,5
+1968,Winter,Greece,GRE,1138.38219032671,8740765.0,0,0,0
+1968,Winter,Hungary,HUN,476.434350138292,10255815.0,0,0,0
+1968,Winter,Iceland,ISL,2473.42372591393,201488.0,0,0,0
+1968,Winter,India,IND,101.556802521195,531513834.0,0,0,0
+1968,Winter,Iran,IRI,314.285456656503,27032576.0,0,0,0
+1968,Winter,Italy,ITA,1718.49646427147,53235750.0,4,0,0
+1968,Winter,Japan,JPN,1553.27139379996,101011000.0,0,0,0
+1968,Winter,Lebanon,LIB,,2210769.0,0,0,0
+1968,Winter,Liechtenstein,LIE,,20237.0,0,0,0
+1968,Winter,Mongolia,MGL,,1207104.0,0,0,0
+1968,Winter,Morocco,MAR,227.120864868164,15307267.0,0,0,0
+1968,Winter,Netherlands,NED,2364.3594192663,12729721.0,3,3,3
+1968,Winter,New Zealand,NZL,1902.42182426883,2748100.0,0,0,0
+1968,Winter,Norway,NOR,2679.71300438189,3816486.0,6,6,2
+1968,Winter,Poland,POL,,32294655.0,0,0,0
+1968,Winter,Romania,ROU,,19799831.0,0,0,1
+1968,Winter,Russia,URS,,128928000.0,5,5,3
+1968,Winter,Serbia,YUG,,6915000.0,0,0,0
+1968,Winter,South Korea,KOR,199.982134957643,30838302.0,0,0,0
+1968,Winter,Spain,ESP,978.292373768035,33113134.0,0,0,0
+1968,Winter,Sweden,SWE,3953.08297234501,7912273.0,3,2,3
+1968,Winter,Switzerland,SUI,3413.49358157003,6067714.0,0,2,4
+1968,Winter,Turkey,TUR,501.12130904111,33256465.0,0,0,0
+1968,Winter,UK,GBR,1951.75859587532,55211700.0,0,0,0
+1968,Winter,USA,USA,4684.58840293763,200706000.0,1,3,1
+1972,Summer,Afghanistan,AFG,,11791222.0,0,0,0
+1972,Summer,Albania,ALB,,2243126.0,0,0,0
+1972,Summer,Algeria,ALG,469.030996510511,15285992.0,0,0,0
+1972,Summer,Argentina,ARG,1409.37097316211,24653172.0,0,1,0
+1972,Summer,Australia,AUS,3955.22430403017,13177000.0,8,7,2
+1972,Summer,Austria,AUT,2912.59577111524,7544201.0,0,1,2
+1972,Summer,Bahamas,BAH,3013.95016704496,177863.0,0,0,0
+1972,Summer,Barbados,BAR,856.071973120587,241523.0,0,0,0
+1972,Summer,Belgium,BEL,3831.63189999433,9711115.0,0,2,0
+1972,Summer,Belize,BIZ,529.356647508447,127152.0,0,0,0
+1972,Summer,Benin,BEN,127.927157014331,3043563.0,0,0,0
+1972,Summer,Bermuda,BER,4458.08003333144,54200.0,0,0,0
+1972,Summer,Boliva,BOL,261.949887081198,4682392.0,0,0,0
+1972,Summer,Brazil,BRA,583.492034946156,99859388.0,0,0,2
+1972,Summer,Bulgaria,BUL,,8576200.0,6,10,5
+1972,Summer,Burkina Faso,BUR,99.6335814933813,5825174.0,0,0,0
+1972,Summer,Cambodia,CAM,,7302114.0,0,0,0
+1972,Summer,Cameroon,CMR,220.108720960652,6867170.0,0,0,0
+1972,Summer,Canada,CAN,5106.73708049128,22218463.0,0,2,3
+1972,Summer,Chad,CHA,150.369805704401,3815253.0,0,0,0
+1972,Summer,Chile,CHI,1185.04994801594,10103675.0,0,0,0
+1972,Summer,China,HKG,1384.7342645141,4123600.0,0,0,0
+1972,Summer,Colombia,COL,397.41211740514,22516429.0,0,1,2
+1972,Summer,Costa Rica,CRC,638.851011611456,1944170.0,0,0,0
+1972,Summer,Cuba,CUB,891.631749208781,9025347.0,3,1,4
+1972,Summer,Curacao,AHO,,147710.0,0,0,0
+1972,Summer,Czech Republic,TCH,,,2,4,2
+1972,Summer,Denmark,DEN,4653.95587889115,4991596.0,1,0,0
+1972,Summer,Dominican Republic,DOM,427.224846368664,4755464.0,0,0,0
+1972,Summer,Ecuador,ECU,487.972047217986,6429377.0,0,0,0
+1972,Summer,Egypt,EGY,256.482815640115,36102670.0,0,0,0
+1972,Summer,El Salvador,ESA,328.509448039035,3867310.0,0,0,0
+1972,Summer,Ethiopia,ETH,119.839997124757,30140799.0,0,0,2
+1972,Summer,Fiji,FIJ,575.217482137037,542843.0,0,0,0
+1972,Summer,Finland,FIN,3177.9287929756,4639657.0,3,1,4
+1972,Summer,France,FRA,3809.09946046394,52793151.0,2,4,7
+1972,Summer,Gabon,GAB,693.294831412979,611705.0,0,0,0
+1972,Summer,Germany,GDR,3823.94032602696,78688452.0,33,34,39
+1972,Summer,Ghana,GHA,223.80286383233,9229640.0,0,0,1
+1972,Summer,Greece,GRE,1873.25412773592,8888628.0,0,2,0
+1972,Summer,Guatemala,GUA,369.762757413424,5723759.0,0,0,0
+1972,Summer,Guyana,GUY,395.474264576572,721949.0,0,0,0
+1972,Summer,Haiti,HAI,77.2765182599349,4837334.0,0,0,0
+1972,Summer,Hungary,HUN,709.652502602719,10398489.0,6,13,16
+1972,Summer,Iceland,ISL,4155.18509800672,209137.0,0,0,0
+1972,Summer,India,IND,125.270705961882,581087255.0,0,0,1
+1972,Summer,Indonesia,INA,90.1147549138956,121017316.0,0,0,0
+1972,Summer,Iran,IRI,554.748034126016,30075295.0,0,2,1
+1972,Summer,Ireland,IRL,2080.46514718169,3036850.0,0,0,0
+1972,Summer,Israel,ISR,2929.65614313336,3148000.0,0,0,0
+1972,Summer,Italy,ITA,2677.29372999774,54381345.0,5,3,10
+1972,Summer,Ivory Coast,CIV,312.942348100524,5576026.0,0,0,0
+1972,Summer,Jamaica,JAM,970.802906405502,1935089.0,0,0,1
+1972,Summer,Japan,JPN,3031.43860570759,107188000.0,13,8,8
+1972,Summer,Kenya,KEN,172.642044778441,12146070.0,2,3,4
+1972,Summer,Kuwait,KUW,4835.69104574325,851918.0,0,0,0
+1972,Summer,Lebanon,LIB,,2417837.0,0,1,0
+1972,Summer,Lesotho,LES,73.9566189783241,1077102.0,0,0,0
+1972,Summer,Liberia,LBR,238.610979665126,1474567.0,0,0,0
+1972,Summer,Liechtenstein,LIE,5645.23266418851,22161.0,0,0,0
+1972,Summer,Luxembourg,LUX,5486.72062789089,346600.0,0,0,0
+1972,Summer,Madagascar,MAD,189.640262028465,6946619.0,0,0,0
+1972,Summer,Malawi,MAW,,4958556.0,0,0,0
+1972,Summer,Malaysia,MAS,472.363509449959,11324277.0,0,0,0
+1972,Summer,Mali,MLI,75.0521043387011,6147464.0,0,0,0
+1972,Summer,Malta,MLT,975.720378043786,302450.0,0,0,0
+1972,Summer,Mexico,MEX,836.569673446138,54689944.0,0,1,0
+1972,Summer,Monaco,MON,16187.4306500397,24049.0,0,0,0
+1972,Summer,Mongolia,MGL,,1356673.0,0,1,0
+1972,Summer,Morocco,MAR,317.074066162109,16696890.0,0,0,0
+1972,Summer,Myanmar,MYA,23.2941302744944,28570093.0,0,0,0
+1972,Summer,Nepal,NEP,78.842912842237,12583142.0,0,0,0
+1972,Summer,Netherlands,NED,4110.49164551948,13328593.0,3,1,1
+1972,Summer,New Zealand,NZL,3294.64894268304,2903900.0,1,1,1
+1972,Summer,Nicaragua,NCA,341.380772391976,2558705.0,0,0,0
+1972,Summer,Niger,NIG,151.437947747318,4768225.0,0,0,1
+1972,Summer,Nigeria,NGR,209.454776294345,58665813.0,0,0,1
+1972,Summer,North Korea,PRK,,15207765.0,1,1,3
+1972,Summer,Norway,NOR,4413.57569168528,3933004.0,2,1,1
+1972,Summer,Pakistan,PAK,148.073976270617,61381982.0,0,1,0
+1972,Summer,Panama,PAN,1046.06341222824,1607797.0,0,0,0
+1972,Summer,Paraguay,PAR,307.630516228445,2597149.0,0,0,0
+1972,Summer,Peru,PER,646.679686654992,14221954.0,0,0,0
+1972,Summer,Philippines,PHI,230.097611314044,37923400.0,0,0,0
+1972,Summer,Poland,POL,,33055650.0,7,5,9
+1972,Summer,Portugal,POR,1302.2662677393,8630430.0,0,0,0
+1972,Summer,Puerto Rico,PUR,2246.4767135113,2817256.0,0,0,0
+1972,Summer,Republic of Congo,CGO,276.271849546575,1406510.0,0,0,0
+1972,Summer,Romania,ROU,,20657957.0,3,6,7
+1972,Summer,Russia,URS,,131909000.0,50,27,22
+1972,Summer,San Marino,SMR,,19490.0,0,0,0
+1972,Summer,Saudi Arabia,KSA,2474.38683208975,6392973.0,0,0,0
+1972,Summer,Senegal,SEN,341.835352336553,4522886.0,0,0,0
+1972,Summer,Serbia,YUG,,7053000.0,2,1,2
+1972,Summer,Somalia,SOM,,3479792.0,0,0,0
+1972,Summer,South Korea,KOR,328.021411521648,33505406.0,0,1,0
+1972,Summer,Spain,ESP,1707.58800052655,34604469.0,0,0,1
+1972,Summer,Sri Lanka,SRI,199.38289288123,13002234.0,0,0,0
+1972,Summer,Sudan,SUD,154.511581420898,10974626.0,0,0,0
+1972,Summer,Suriname,SUR,784.951674957789,367907.0,0,0,0
+1972,Summer,Swaziland,SWZ,,,0,0,0
+1972,Summer,Sweden,SWE,6018.39052977191,8122300.0,4,6,6
+1972,Summer,Switzerland,SUI,5884.77524107186,6260956.0,0,3,0
+1972,Summer,Syria,SYR,448.237758556479,6800148.0,0,0,0
+1972,Summer,Taiwan,TPE,,,0,0,0
+1972,Summer,Tanzania,TAN,246.546295166016,14428340.0,0,0,0
+1972,Summer,Thailand,THA,215.582022917854,39058594.0,0,0,0
+1972,Summer,Togo,TOG,198.7610542599,2247578.0,0,0,0
+1972,Summer,Trinidad,TTO,1067.46412567566,968136.0,0,0,0
+1972,Summer,Tunisia,TUN,414.626612581104,5291335.0,0,1,0
+1972,Summer,Turkey,TUR,537.337529232528,36587267.0,0,1,0
+1972,Summer,UK,GBR,3030.43251411977,56086065.0,4,5,9
+1972,Summer,USA,USA,6094.01798986165,209896000.0,33,31,30
+1972,Summer,Uganda,UGA,136.964736487473,9929644.0,1,1,0
+1972,Summer,Uruguay,URU,775.937251050835,2821458.0,0,0,0
+1972,Summer,Venezuela,VEN,1155.26236263344,12097696.0,0,0,0
+1972,Summer,Vietnam,VNM,,,0,0,0
+1972,Summer,"Virgin Islands, US",ISV,,76319.0,0,0,0
+1972,Summer,Zambia,ZAM,409.781146356948,4466170.0,0,0,0
+1972,Winter,Argentina,ARG,1409.37097316211,24653172.0,0,0,0
+1972,Winter,Australia,AUS,3955.22430403017,13177000.0,0,0,0
+1972,Winter,Austria,AUT,2912.59577111524,7544201.0,1,2,2
+1972,Winter,Belgium,BEL,3831.63189999433,9711115.0,0,0,0
+1972,Winter,Bulgaria,BUL,,8576200.0,0,0,0
+1972,Winter,Canada,CAN,5106.73708049128,22218463.0,0,1,0
+1972,Winter,Czech Republic,TCH,,,1,0,2
+1972,Winter,Finland,FIN,3177.9287929756,4639657.0,0,4,1
+1972,Winter,France,FRA,3809.09946046394,52793151.0,0,1,2
+1972,Winter,Germany,FRG,3823.94032602696,78688452.0,7,4,8
+1972,Winter,Greece,GRE,1873.25412773592,8888628.0,0,0,0
+1972,Winter,Hungary,HUN,709.652502602719,10398489.0,0,0,0
+1972,Winter,Iran,IRI,554.748034126016,30075295.0,0,0,0
+1972,Winter,Italy,ITA,2677.29372999774,54381345.0,2,2,1
+1972,Winter,Japan,JPN,3031.43860570759,107188000.0,1,1,1
+1972,Winter,Lebanon,LIB,,2417837.0,0,0,0
+1972,Winter,Liechtenstein,LIE,5645.23266418851,22161.0,0,0,0
+1972,Winter,Mongolia,MGL,,1356673.0,0,0,0
+1972,Winter,Netherlands,NED,4110.49164551948,13328593.0,4,3,2
+1972,Winter,New Zealand,NZL,3294.64894268304,2903900.0,0,0,0
+1972,Winter,North Korea,PRK,,15207765.0,0,0,0
+1972,Winter,Norway,NOR,4413.57569168528,3933004.0,2,5,5
+1972,Winter,Philippines,PHI,230.097611314044,37923400.0,0,0,0
+1972,Winter,Poland,POL,,33055650.0,1,0,0
+1972,Winter,Romania,ROU,,20657957.0,0,0,0
+1972,Winter,Russia,URS,,131909000.0,8,5,3
+1972,Winter,Serbia,YUG,,7053000.0,0,0,0
+1972,Winter,South Korea,KOR,328.021411521648,33505406.0,0,0,0
+1972,Winter,Spain,ESP,1707.58800052655,34604469.0,1,0,0
+1972,Winter,Sweden,SWE,6018.39052977191,8122300.0,1,1,2
+1972,Winter,Switzerland,SUI,5884.77524107186,6260956.0,4,3,3
+1972,Winter,Taiwan,TPE,,,0,0,0
+1972,Winter,UK,GBR,3030.43251411977,56086065.0,0,0,0
+1972,Winter,USA,USA,6094.01798986165,209896000.0,3,2,3
+1976,Summer,Andorra,AND,7721.28858646797,31782.0,0,0,0
+1976,Summer,Antigua,ANT,,62353.0,0,0,0
+1976,Summer,Argentina,ARG,1946.91990388248,26264681.0,0,0,0
+1976,Summer,Australia,AUS,7497.28175413577,14033000.0,0,1,4
+1976,Summer,Austria,AUT,5656.1451383787,7565525.0,0,0,1
+1976,Summer,Bahamas,BAH,2993.45923795227,192903.0,0,0,0
+1976,Summer,Barbados,BAR,1733.64540764741,247584.0,0,0,0
+1976,Summer,Belgium,BEL,7243.04734119583,9818227.0,0,3,3
+1976,Summer,Belize,BIZ,729.488780751524,135143.0,0,0,0
+1976,Summer,Bermuda,BER,7259.91355008457,53200.0,0,0,1
+1976,Summer,Boliva,BOL,519.734821066353,5113458.0,0,0,0
+1976,Summer,Brazil,BRA,1389.74952306555,109790943.0,0,0,2
+1976,Summer,Bulgaria,BUL,,8758599.0,6,9,7
+1976,Summer,Cameroon,CMR,381.429915266252,7664398.0,0,0,0
+1976,Summer,Canada,CAN,8838.94710677652,23449808.0,0,5,6
+1976,Summer,Cayman Islands,CAY,,13023.0,0,0,0
+1976,Summer,Chile,CHI,970.957314866348,10756876.0,0,0,0
+1976,Summer,China,HKG,2850.0146101832,4518000.0,0,0,0
+1976,Summer,Colombia,COL,643.007914496566,24608102.0,0,0,0
+1976,Summer,Costa Rica,CRC,1123.28179124262,2148681.0,0,0,0
+1976,Summer,Cuba,CUB,1440.73046137146,9554186.0,6,4,3
+1976,Summer,Curacao,AHO,,149399.0,0,0,0
+1976,Summer,Czech Republic,TCH,,,2,2,4
+1976,Summer,Denmark,DEN,8773.3396162771,5072596.0,1,0,2
+1976,Summer,Dominican Republic,DOM,762.778347016951,5275767.0,0,0,0
+1976,Summer,Ecuador,ECU,1241.91098461141,7187794.0,0,0,0
+1976,Summer,Egypt,EGY,334.609918474469,39422731.0,0,0,0
+1976,Summer,Fiji,FIJ,1186.16648457757,587561.0,0,0,0
+1976,Summer,Finland,FIN,6740.29145314637,4725664.0,4,2,0
+1976,Summer,France,FRA,6792.3099035538,54220033.0,2,3,4
+1976,Summer,Germany,GDR,6659.16546576017,78336950.0,50,37,42
+1976,Summer,Greece,GRE,3343.38819444676,9188150.0,0,0,0
+1976,Summer,Guatemala,GUA,697.064609693019,6269983.0,0,0,0
+1976,Summer,Haiti,HAI,169.091888071558,5191637.0,0,0,0
+1976,Summer,Honduras,HON,482.416373927479,3251145.0,0,0,0
+1976,Summer,Hungary,HUN,1248.79851313891,10598677.0,4,5,13
+1976,Summer,Iceland,ISL,7848.3489698757,220154.0,0,0,0
+1976,Summer,India,IND,164.119999587322,637630085.0,0,0,0
+1976,Summer,Indonesia,INA,275.713167824796,133966940.0,0,0,0
+1976,Summer,Iran,IRI,1953.51969678549,33733975.0,0,1,1
+1976,Summer,Ireland,IRL,2919.58308695615,3238050.0,0,0,0
+1976,Summer,Israel,ISR,4516.37405887818,3533000.0,0,0,0
+1976,Summer,Italy,ITA,4042.39482463789,55718260.0,2,7,4
+1976,Summer,Ivory Coast,CIV,660.538618229175,6713949.0,0,0,0
+1976,Summer,Jamaica,JAM,1449.977882067,2055371.0,1,1,0
+1976,Summer,Japan,JPN,5310.43140904992,112775000.0,9,6,10
+1976,Summer,Kuwait,KUW,11141.1981409668,1085866.0,0,0,0
+1976,Summer,Lebanon,LIB,,2596409.0,0,0,0
+1976,Summer,Liechtenstein,LIE,11326.3488431219,23933.0,0,0,0
+1976,Summer,Luxembourg,LUX,9490.6903118849,360731.0,0,0,0
+1976,Summer,Malaysia,MAS,940.437734141673,12468688.0,0,0,0
+1976,Summer,Mexico,MEX,1465.49877862474,61242189.0,1,0,1
+1976,Summer,Monaco,MON,28396.3794040315,25523.0,0,0,0
+1976,Summer,Mongolia,MGL,,1520868.0,0,1,0
+1976,Summer,Morocco,MAR,543.368469238281,18198836.0,0,0,0
+1976,Summer,Nepal,NEP,102.470373251774,13719466.0,0,0,0
+1976,Summer,Netherlands,NED,7937.35246713998,13774037.0,0,2,3
+1976,Summer,New Zealand,NZL,4373.84099791231,3110500.0,2,1,1
+1976,Summer,Nicaragua,NCA,632.573778388006,2894967.0,0,0,0
+1976,Summer,North Korea,PRK,,16554744.0,1,1,0
+1976,Summer,Norway,NOR,8927.20162734477,4026152.0,1,1,0
+1976,Summer,Pakistan,PAK,183.859733422347,68834324.0,0,0,1
+1976,Summer,Panama,PAN,1456.50009707727,1791389.0,0,0,0
+1976,Summer,Papua New Guinea,PNG,525.433235600649,3219825.0,0,0,0
+1976,Summer,Paraguay,PAR,615.825049934218,2861868.0,0,0,0
+1976,Summer,Peru,PER,1026.41438542928,15838568.0,0,0,0
+1976,Summer,Philippines,PHI,448.620084504484,42446659.0,0,0,0
+1976,Summer,Poland,POL,,34356300.0,7,6,13
+1976,Summer,Portugal,POR,2173.28393425975,9355810.0,0,2,0
+1976,Summer,Puerto Rico,PUR,2946.46195251152,3043854.0,0,0,1
+1976,Summer,Romania,ROU,,21551634.0,4,9,14
+1976,Summer,Russia,URS,,135147000.0,49,41,35
+1976,Summer,San Marino,SMR,,20086.0,0,0,0
+1976,Summer,Saudi Arabia,KSA,13312.5119926546,7802928.0,0,0,0
+1976,Summer,Senegal,SEN,540.594007051938,5057375.0,0,0,0
+1976,Summer,Serbia,YUG,,7214000.0,2,3,3
+1976,Summer,South Korea,KOR,847.205737881176,35848523.0,1,1,4
+1976,Summer,Spain,ESP,3276.97023260494,36137812.0,0,2,0
+1976,Summer,Suriname,SUR,1301.86536317022,357949.0,0,0,0
+1976,Summer,Sweden,SWE,10852.5192441428,8222286.0,4,1,0
+1976,Summer,Switzerland,SUI,10864.971231108,6302504.0,1,1,2
+1976,Summer,Thailand,THA,405.408734060752,43377270.0,0,0,1
+1976,Summer,Trinidad,TTO,2344.93028321949,1025104.0,1,0,0
+1976,Summer,Tunisia,TUN,751.741946408618,5786482.0,0,0,0
+1976,Summer,Turkey,TUR,1227.92409658199,40189561.0,0,0,0
+1976,Summer,UK,GBR,4138.16778761535,56211968.0,3,5,5
+1976,Summer,USA,USA,8592.25353727612,218035000.0,34,35,25
+1976,Summer,Uruguay,URU,1268.30303240921,2841371.0,0,0,0
+1976,Summer,Venezuela,VEN,2309.19293494983,13572210.0,0,1,0
+1976,Summer,"Virgin Islands, US",ISV,,96166.0,0,0,0
+1976,Winter,Andorra,AND,7721.28858646797,31782.0,0,0,0
+1976,Winter,Argentina,ARG,1946.91990388248,26264681.0,0,0,0
+1976,Winter,Australia,AUS,7497.28175413577,14033000.0,0,0,0
+1976,Winter,Austria,AUT,5656.1451383787,7565525.0,2,2,2
+1976,Winter,Belgium,BEL,7243.04734119583,9818227.0,0,0,0
+1976,Winter,Bulgaria,BUL,,8758599.0,0,0,0
+1976,Winter,Canada,CAN,8838.94710677652,23449808.0,1,1,1
+1976,Winter,Chile,CHI,970.957314866348,10756876.0,0,0,0
+1976,Winter,Czech Republic,TCH,,,0,1,0
+1976,Winter,Finland,FIN,6740.29145314637,4725664.0,2,4,1
+1976,Winter,France,FRA,6792.3099035538,54220033.0,0,0,1
+1976,Winter,Germany,FRG,6659.16546576017,78336950.0,9,10,10
+1976,Winter,Greece,GRE,3343.38819444676,9188150.0,0,0,0
+1976,Winter,Hungary,HUN,1248.79851313891,10598677.0,0,0,0
+1976,Winter,Iceland,ISL,7848.3489698757,220154.0,0,0,0
+1976,Winter,Iran,IRI,1953.51969678549,33733975.0,0,0,0
+1976,Winter,Italy,ITA,4042.39482463789,55718260.0,1,2,1
+1976,Winter,Japan,JPN,5310.43140904992,112775000.0,0,0,0
+1976,Winter,Lebanon,LIB,,2596409.0,0,0,0
+1976,Winter,Liechtenstein,LIE,11326.3488431219,23933.0,0,0,2
+1976,Winter,Netherlands,NED,7937.35246713998,13774037.0,1,2,3
+1976,Winter,New Zealand,NZL,4373.84099791231,3110500.0,0,0,0
+1976,Winter,Norway,NOR,8927.20162734477,4026152.0,3,3,1
+1976,Winter,Poland,POL,,34356300.0,0,0,0
+1976,Winter,Romania,ROU,,21551634.0,0,0,0
+1976,Winter,Russia,URS,,135147000.0,13,6,8
+1976,Winter,San Marino,SMR,,20086.0,0,0,0
+1976,Winter,Serbia,YUG,,7214000.0,0,0,0
+1976,Winter,South Korea,KOR,847.205737881176,35848523.0,0,0,0
+1976,Winter,Spain,ESP,3276.97023260494,36137812.0,0,0,0
+1976,Winter,Sweden,SWE,10852.5192441428,8222286.0,0,0,2
+1976,Winter,Switzerland,SUI,10864.971231108,6302504.0,1,3,1
+1976,Winter,Taiwan,TPE,,,0,0,0
+1976,Winter,Turkey,TUR,1227.92409658199,40189561.0,0,0,0
+1976,Winter,UK,GBR,4138.16778761535,56211968.0,1,0,0
+1976,Winter,USA,USA,8592.25353727612,218035000.0,3,3,4
+1980,Summer,Afghanistan,AFG,,13356500.0,0,0,0
+1980,Summer,Algeria,ALG,2275.77971158899,19221659.0,0,0,0
+1980,Summer,Andorra,AND,12474.9252919904,36063.0,0,0,0
+1980,Summer,Angola,ANG,729.111965489822,8341290.0,0,0,0
+1980,Summer,Australia,AUS,10223.2886675105,14692000.0,2,2,5
+1980,Summer,Austria,AUT,10826.9718274995,7549433.0,1,2,1
+1980,Summer,Belgium,BEL,12864.0025661396,9859242.0,1,0,0
+1980,Summer,Benin,BEN,358.003054209903,3717161.0,0,0,0
+1980,Summer,Botswana,BOT,1131.63379014463,897860.0,0,0,0
+1980,Summer,Brazil,BRA,1958.57159232662,120694012.0,2,0,2
+1980,Summer,Bulgaria,BUL,2238.80295786574,8861535.0,8,16,17
+1980,Summer,Cameroon,CMR,784.116227118122,8621409.0,0,0,0
+1980,Summer,Colombia,COL,1279.50116658241,26900508.0,0,0,0
+1980,Summer,Costa Rica,CRC,2020.99067534283,2389973.0,0,0,0
+1980,Summer,Cuba,CUB,2030.93362280165,9849457.0,8,7,5
+1980,Summer,Cyprus,CYP,4232.02294921875,685408.0,0,0,0
+1980,Summer,Czech Republic,TCH,,,2,3,9
+1980,Summer,Denmark,DEN,13822.1578405912,5123027.0,2,1,2
+1980,Summer,Dominican Republic,DOM,1180.18089253045,5803929.0,0,0,0
+1980,Summer,Ecuador,ECU,2189.78417657382,7989178.0,0,0,0
+1980,Summer,Ethiopia,ETH,203.685394440965,35141703.0,2,0,2
+1980,Summer,Finland,FIN,11224.9380036353,4779535.0,3,1,4
+1980,Summer,France,FRA,12565.1639377144,55161510.0,6,5,3
+1980,Summer,Germany,GDR,12182.7800196802,78288576.0,47,37,42
+1980,Summer,Greece,GRE,5811.69069600941,9642505.0,1,0,2
+1980,Summer,Guatemala,GUA,1141.80549814991,6890346.0,0,0,0
+1980,Summer,Guinea,GUI,1930.99184257949,4871446.0,0,0,0
+1980,Summer,Guyana,GUY,778.958814102357,780153.0,0,0,1
+1980,Summer,Hungary,HUN,2158.22181355246,10711122.0,7,10,15
+1980,Summer,Iceland,ISL,15339.9112964156,228138.0,0,0,0
+1980,Summer,India,IND,271.080945953678,698952837.0,1,0,0
+1980,Summer,Iraq,IRQ,3867.64500744262,13653348.0,0,0,0
+1980,Summer,Ireland,IRL,6372.43777545453,3412800.0,0,1,1
+1980,Summer,Italy,ITA,8476.41045000836,56433883.0,8,3,4
+1980,Summer,Jamaica,JAM,1248.74484727418,2162839.0,0,0,3
+1980,Summer,Jordan,JOR,1750.09801076564,2377997.0,0,0,0
+1980,Summer,Kuwait,KUW,19031.9051902,1368680.0,0,0,0
+1980,Summer,Laos,LAO,,3258149.0,0,0,0
+1980,Summer,Lebanon,LIB,,2588928.0,0,0,1
+1980,Summer,Lesotho,LES,306.815565970065,1340258.0,0,0,0
+1980,Summer,Libya,LBA,11959.5222690783,3219462.0,0,0,0
+1980,Summer,Luxembourg,LUX,16531.1148988397,364150.0,0,0,0
+1980,Summer,Madagascar,MAD,577.592700958515,8716549.0,0,0,0
+1980,Summer,Mali,MLI,359.12056332085,7090124.0,0,0,0
+1980,Summer,Malta,MLT,3948.26572689504,316645.0,0,0,0
+1980,Summer,Mexico,MEX,3054.62162291784,67761367.0,0,1,3
+1980,Summer,Mongolia,MGL,1235.14422497627,1689622.0,0,2,2
+1980,Summer,Mozambique,MOZ,,11630194.0,0,0,0
+1980,Summer,Myanmar,MYA,31.2462392881093,34224316.0,0,0,0
+1980,Summer,Nepal,NEP,125.114347478097,15016408.0,0,0,0
+1980,Summer,Netherlands,NED,13812.1600098191,14149800.0,0,1,2
+1980,Summer,New Zealand,NZL,7467.16803773805,3112900.0,0,0,0
+1980,Summer,Nicaragua,NCA,659.297143121648,3265520.0,0,0,0
+1980,Summer,Nigeria,NGR,870.359934682057,73423646.0,0,0,0
+1980,Summer,North Korea,PRK,,17472144.0,0,3,2
+1980,Summer,Peru,PER,1044.69165468575,17547612.0,0,0,0
+1980,Summer,Poland,POL,,35574150.0,3,14,15
+1980,Summer,Portugal,POR,3368.36666940279,9766312.0,0,0,0
+1980,Summer,Puerto Rico,PUR,4502.8384279476,3206000.0,0,0,0
+1980,Summer,Republic of Congo,CGO,932.646715470458,1777932.0,0,0,0
+1980,Summer,Romania,ROU,,22207282.0,6,6,13
+1980,Summer,Russia,URS,,139010000.0,80,69,46
+1980,Summer,San Marino,SMR,,21453.0,0,0,0
+1980,Summer,Senegal,SEN,771.533969550579,5583157.0,0,0,0
+1980,Summer,Serbia,YUG,,7362000.0,2,3,4
+1980,Summer,Seychelles,SEY,2478.36470343969,63261.0,0,0,0
+1980,Summer,Sierra Leone,SLE,336.386279506102,3388494.0,0,0,0
+1980,Summer,Spain,ESP,6204.14321544225,37491165.0,1,3,2
+1980,Summer,Sri Lanka,SRI,271.055290073685,15035840.0,0,0,0
+1980,Summer,Sweden,SWE,17073.0446711494,8310531.0,3,3,6
+1980,Summer,Switzerland,SUI,19393.8805480097,6319408.0,2,0,0
+1980,Summer,Syria,SYR,1458.23976434095,8930776.0,0,0,0
+1980,Summer,Tanzania,TAN,611.211791992188,18538263.0,0,2,0
+1980,Summer,Trinidad,TTO,5559.05209507101,1084743.0,0,0,0
+1980,Summer,UK,GBR,10032.062080015,56314216.0,5,7,9
+1980,Summer,Uganda,UGA,93.7506991135184,12442333.0,0,1,0
+1980,Summer,Venezuela,VEN,3874.40470623155,15182616.0,0,1,0
+1980,Summer,Vietnam,VIE,,54281841.0,0,0,0
+1980,Summer,Zambia,ZAM,669.419722015371,5851818.0,0,0,0
+1980,Summer,Zimbabwe,ZIM,949.011610530352,7408630.0,1,0,0
+1980,Winter,Andorra,AND,12474.9252919904,36063.0,0,0,0
+1980,Winter,Argentina,ARG,2747.5022751674,27896532.0,0,0,0
+1980,Winter,Australia,AUS,10223.2886675105,14692000.0,0,0,0
+1980,Winter,Austria,AUT,10826.9718274995,7549433.0,3,2,2
+1980,Winter,Belgium,BEL,12864.0025661396,9859242.0,0,0,0
+1980,Winter,Boliva,BOL,787.907344889279,5579932.0,0,0,0
+1980,Winter,Bulgaria,BUL,2238.80295786574,8861535.0,0,0,1
+1980,Winter,Canada,CAN,11208.2027394178,24515667.0,0,1,1
+1980,Winter,China,CHN,195.149479992051,981235000.0,0,0,0
+1980,Winter,Costa Rica,CRC,2020.99067534283,2389973.0,0,0,0
+1980,Winter,Cyprus,CYP,4232.02294921875,685408.0,0,0,0
+1980,Winter,Czech Republic,TCH,,,0,0,1
+1980,Winter,Finland,FIN,11224.9380036353,4779535.0,1,5,3
+1980,Winter,France,FRA,12565.1639377144,55161510.0,0,0,1
+1980,Winter,Germany,FRG,12182.7800196802,78288576.0,9,9,10
+1980,Winter,Greece,GRE,5811.69069600941,9642505.0,0,0,0
+1980,Winter,Hungary,HUN,2158.22181355246,10711122.0,0,1,0
+1980,Winter,Iceland,ISL,15339.9112964156,228138.0,0,0,0
+1980,Winter,Italy,ITA,8476.41045000836,56433883.0,0,2,0
+1980,Winter,Japan,JPN,9668.74626395709,116807000.0,0,1,0
+1980,Winter,Lebanon,LIB,,2588928.0,0,0,0
+1980,Winter,Liechtenstein,LIE,20958.7395302666,25881.0,2,2,0
+1980,Winter,Mongolia,MGL,1235.14422497627,1689622.0,0,0,0
+1980,Winter,Netherlands,NED,13812.1600098191,14149800.0,1,2,1
+1980,Winter,New Zealand,NZL,7467.16803773805,3112900.0,0,0,0
+1980,Winter,Norway,NOR,15772.2409073814,4085620.0,1,3,6
+1980,Winter,Poland,POL,,35574150.0,0,0,0
+1980,Winter,Romania,ROU,,22207282.0,0,0,0
+1980,Winter,Russia,URS,,139010000.0,10,6,6
+1980,Winter,Serbia,YUG,,7362000.0,0,0,0
+1980,Winter,South Korea,KOR,1745.57662116658,38123775.0,0,0,0
+1980,Winter,Spain,ESP,6204.14321544225,37491165.0,0,0,0
+1980,Winter,Sweden,SWE,17073.0446711494,8310531.0,3,0,1
+1980,Winter,Switzerland,SUI,19393.8805480097,6319408.0,1,1,3
+1980,Winter,UK,GBR,10032.062080015,56314216.0,1,0,0
+1980,Winter,USA,USA,12574.7915062163,227225000.0,6,4,2
+1984,Summer,Algeria,ALG,2524.38071403143,21763578.0,0,0,2
+1984,Summer,Andorra,AND,7808.13002713549,42706.0,0,0,0
+1984,Summer,Antigua,ANT,3270.7810304062,61784.0,0,0,0
+1984,Summer,Argentina,ARG,3915.03492645691,29737097.0,0,0,0
+1984,Summer,Australia,AUS,12436.2969052038,15544000.0,4,8,12
+1984,Summer,Austria,AUT,8955.84829191534,7561434.0,1,1,1
+1984,Summer,Bahamas,BAH,8201.70133768379,229913.0,0,0,0
+1984,Summer,Bahrain,BRN,36061.3815259405,218176.0,0,0,0
+1984,Summer,Bangladesh,BAN,193.435020976238,88416529.0,0,0,0
+1984,Summer,Barbados,BAR,5283.57944099441,255493.0,0,0,0
+1984,Summer,Belgium,BEL,8457.26880316374,9855372.0,1,1,2
+1984,Summer,Belize,BIZ,1814.18859813551,160341.0,0,0,0
+1984,Summer,Benin,BEN,238.574457355381,4156819.0,0,0,0
+1984,Summer,Bermuda,BER,17866.9174355163,56423.0,0,0,0
+1984,Summer,Bhutan,BHU,325.545257021725,451471.0,0,0,0
+1984,Summer,Boliva,BOL,982.109656770748,6054126.0,0,0,0
+1984,Summer,Botswana,BOT,1145.02903810762,1031439.0,0,0,0
+1984,Summer,Brazil,BRA,1419.73154606978,132383569.0,1,5,2
+1984,Summer,Cameroon,CMR,771.702146026357,9757849.0,0,0,1
+1984,Summer,Canada,CAN,13930.4745502555,25607053.0,10,18,16
+1984,Summer,Cayman Islands,CAY,,18662.0,0,0,0
+1984,Summer,Central African Republic,CAF,248.313551025498,2478382.0,0,0,0
+1984,Summer,Chad,CHA,182.175880946335,4957561.0,0,0,0
+1984,Summer,Chile,CHI,1636.22476246476,12078137.0,0,0,0
+1984,Summer,China,CHN,251.192686463827,1036825000.0,15,8,9
+1984,Summer,Colombia,COL,1335.52821812362,29331230.0,0,1,0
+1984,Summer,Costa Rica,CRC,1372.20149843952,2664220.0,0,0,0
+1984,Summer,Curacao,AHO,,151940.0,0,0,0
+1984,Summer,Cyprus,CYP,4258.74365234375,697715.0,0,0,0
+1984,Summer,Democratic Republic of the Congo,COD,259.801889543739,29119663.0,0,0,0
+1984,Summer,Denmark,DEN,11516.6821578436,5111619.0,0,3,3
+1984,Summer,Djibouti,DJI,,406018.0,0,0,0
+1984,Summer,Dominican Republic,DOM,1843.52460788928,6331760.0,0,0,1
+1984,Summer,Ecuador,ECU,1863.68213493779,8843463.0,0,0,0
+1984,Summer,Egypt,EGY,689.807675510205,47968643.0,0,1,0
+1984,Summer,El Salvador,ESA,763.168218110743,4871041.0,0,0,0
+1984,Summer,Equatorial Guinea,GEQ,137.903678570149,331554.0,0,0,0
+1984,Summer,Fiji,FIJ,1666.86572541062,700478.0,0,0,0
+1984,Summer,Finland,FIN,10830.2185222663,4881803.0,4,2,6
+1984,Summer,France,FRA,9311.89426452129,56337675.0,5,7,16
+1984,Summer,Gabon,GAB,4272.88216871705,805117.0,0,0,0
+1984,Summer,Gambia,GAM,214.794357389928,725688.0,0,0,0
+1984,Summer,Germany,FRG,9347.29068412377,77858685.0,17,19,23
+1984,Summer,Ghana,GHA,329.998888863111,12405659.0,0,0,0
+1984,Summer,Greece,GRE,4785.07463033775,9895801.0,0,1,1
+1984,Summer,Grenada,GRN,1523.94092798531,98472.0,0,0,0
+1984,Summer,Guatemala,GUA,1241.04242582773,7669863.0,0,0,0
+1984,Summer,Guinea,GUI,3361.5282015455,5326369.0,0,0,0
+1984,Summer,Guyana,GUY,565.33443558244,775217.0,0,0,0
+1984,Summer,Haiti,HAI,299.247186216373,6194686.0,0,0,0
+1984,Summer,Honduras,HON,959.534269081039,4154864.0,0,0,0
+1984,Summer,Iceland,ISL,12377.5860216394,239511.0,0,0,1
+1984,Summer,India,IND,281.049867840717,766833411.0,0,0,0
+1984,Summer,Indonesia,INA,519.774063103241,161523353.0,0,0,0
+1984,Summer,Iraq,IRQ,3065.7178266236,15190396.0,0,0,0
+1984,Summer,Ireland,IRL,5692.02738597285,3532423.0,0,1,0
+1984,Summer,Israel,ISR,7368.50379730819,4159000.0,0,0,0
+1984,Summer,Italy,ITA,7757.55374836822,56576718.0,14,6,12
+1984,Summer,Ivory Coast,CIV,708.940252199945,9530103.0,0,1,0
+1984,Summer,Jamaica,JAM,1048.13405395534,2306367.0,0,1,2
+1984,Summer,Japan,JPN,11207.4523524293,120083000.0,10,7,14
+1984,Summer,Jordan,JOR,1871.09074979987,2784457.0,0,0,0
+1984,Summer,Kenya,KEN,334.40283575753,19146403.0,1,0,2
+1984,Summer,Kuwait,KUW,11918.6168925905,1652150.0,0,0,0
+1984,Summer,Lebanon,LIB,,2638056.0,0,0,0
+1984,Summer,Lesotho,LES,210.998495414288,1489685.0,0,0,0
+1984,Summer,Liberia,LBR,390.407957992226,2111667.0,0,0,0
+1984,Summer,Liechtenstein,LIE,18898.3678693391,27028.0,0,0,0
+1984,Summer,Luxembourg,LUX,12126.9391987909,365998.0,0,0,0
+1984,Summer,Madagascar,MAD,385.408181010621,9780869.0,0,0,0
+1984,Summer,Malawi,MAW,239.74828969103,6964613.0,0,0,0
+1984,Summer,Malaysia,MAS,2299.80870816235,15192300.0,0,0,0
+1984,Summer,Mali,MLI,169.067780598011,7694857.0,0,0,0
+1984,Summer,Malta,MLT,3332.82018387922,330593.0,0,0,0
+1984,Summer,Mauritania,MTN,649.681186509673,1730737.0,0,0,0
+1984,Summer,Mauritius,MRI,1041.83252378016,1012221.0,0,0,0
+1984,Summer,Mexico,MEX,2506.30742754755,74352631.0,2,3,1
+1984,Summer,Monaco,MON,36582.3672009832,28511.0,0,0,0
+1984,Summer,Morocco,MAR,681.909729003906,22002641.0,2,0,0
+1984,Summer,Mozambique,MOZ,,12636120.0,0,0,0
+1984,Summer,Myanmar,MYA,36.3255768443636,37241530.0,0,0,0
+1984,Summer,Nepal,NEP,151.078187115939,16477488.0,0,0,0
+1984,Summer,Netherlands,NED,9991.84377655651,14424211.0,5,2,6
+1984,Summer,New Zealand,NZL,6713.76013104154,3227100.0,8,1,2
+1984,Summer,Nicaragua,NCA,861.428649767358,3642978.0,0,0,0
+1984,Summer,Niger,NIG,211.468807340699,6719310.0,0,0,0
+1984,Summer,Nigeria,NGR,890.434106332302,81448757.0,0,1,1
+1984,Summer,Norway,NOR,14989.4857665906,4140099.0,0,1,2
+1984,Summer,Oman,OMA,7070.07295804885,1431066.0,0,0,0
+1984,Summer,Pakistan,PAK,327.345625152291,89213708.0,1,0,0
+1984,Summer,Panama,PAN,2874.94832112227,2170330.0,0,0,0
+1984,Summer,Papua New Guinea,PNG,749.637059926778,3975950.0,0,0,0
+1984,Summer,Paraguay,PAR,1319.23446766653,3571275.0,0,0,0
+1984,Summer,Peru,PER,917.896274683145,19319746.0,0,1,0
+1984,Summer,Philippines,PHI,665.042349344043,52827047.0,0,0,0
+1984,Summer,Portugal,POR,2522.74747620658,9996232.0,1,0,2
+1984,Summer,Puerto Rico,PUR,5730.11700890201,3344190.0,0,1,1
+1984,Summer,Qatar,QAT,19272.2616094603,341272.0,0,0,0
+1984,Summer,Republic of Congo,CGO,1097.04958637388,1996994.0,0,0,0
+1984,Summer,Romania,ROU,,22640547.0,19,16,17
+1984,Summer,Rwanda,RWA,259.906684530767,5902847.0,0,0,0
+1984,Summer,Samoa,SAM,654.697560664036,159243.0,0,0,0
+1984,Summer,San Marino,SMR,,22546.0,0,0,0
+1984,Summer,Saudi Arabia,KSA,15541.1312184609,12418836.0,0,0,0
+1984,Summer,Senegal,SEN,536.231765402514,6277420.0,0,0,0
+1984,Summer,Serbia,YUG,,7489000.0,7,4,7
+1984,Summer,Seychelles,SEY,2487.64499220084,64717.0,0,0,0
+1984,Summer,Sierra Leone,SLE,305.576232491583,3707513.0,0,0,0
+1984,Summer,Solomon Islands,SOL,664.696440482807,262691.0,0,0,0
+1984,Summer,Somalia,SOM,,6614713.0,0,0,0
+1984,Summer,South Korea,KOR,2468.68667303898,40405956.0,6,6,7
+1984,Summer,Spain,ESP,4486.78173863382,38330364.0,1,2,2
+1984,Summer,Sri Lanka,SRI,391.369617569858,15948501.0,0,0,0
+1984,Summer,Sudan,SUD,429.993377685547,16657956.0,0,0,0
+1984,Summer,Suriname,SUR,2260.63794993629,364722.0,0,0,0
+1984,Summer,Swaziland,SWZ,,,0,0,0
+1984,Summer,Sweden,SWE,13080.0302290066,8336605.0,2,11,6
+1984,Summer,Switzerland,SUI,16991.2458841517,6441865.0,0,4,4
+1984,Summer,Syria,SYR,1706.21944810524,10293048.0,0,1,0
+1984,Summer,Taiwan,TPE,,,0,0,1
+1984,Summer,Tanzania,TAN,609.331420898438,20981775.0,0,0,0
+1984,Summer,Thailand,THA,846.934168430884,51094870.0,0,1,0
+1984,Summer,Togo,TOG,304.296330488676,3140840.0,0,0,0
+1984,Summer,Tonga,TGA,655.66235882708,93793.0,0,0,0
+1984,Summer,Trinidad,TTO,6613.11947420709,1155083.0,0,0,0
+1984,Summer,Tunisia,TUN,1143.2812867658,7135265.0,0,0,0
+1984,Summer,Turkey,TUR,1209.05149383313,48114158.0,0,0,3
+1984,Summer,UK,GBR,8179.19444064991,56422072.0,5,11,21
+1984,Summer,USA,USA,17121.2254849995,235825000.0,82,61,30
+1984,Summer,Uganda,UGA,247.516937638636,14082870.0,0,0,0
+1984,Summer,United Arab Emirates,UAE,32012.3141540273,1293970.0,0,0,0
+1984,Summer,Uruguay,URU,1615.40647277136,2992250.0,0,0,0
+1984,Summer,Venezuela,VEN,3519.80146489308,16876703.0,0,0,3
+1984,Summer,"Virgin Islands, British",IVB,,13317.0,0,0,0
+1984,Summer,"Virgin Islands, US",ISV,,100600.0,0,0,0
+1984,Summer,Yemen,YAR,,,0,0,0
+1984,Summer,Zambia,ZAM,413.269974271735,6701547.0,0,0,1
+1984,Summer,Zimbabwe,ZIM,757.359025240321,8562259.0,0,0,0
+1984,Winter,Andorra,AND,7808.13002713549,42706.0,0,0,0
+1984,Winter,Argentina,ARG,3915.03492645691,29737097.0,0,0,0
+1984,Winter,Australia,AUS,12436.2969052038,15544000.0,0,0,0
+1984,Winter,Austria,AUT,8955.84829191534,7561434.0,0,0,1
+1984,Winter,Belgium,BEL,8457.26880316374,9855372.0,0,0,0
+1984,Winter,Boliva,BOL,982.109656770748,6054126.0,0,0,0
+1984,Winter,Bulgaria,BUL,1963.57267618274,8960679.0,0,0,0
+1984,Winter,Canada,CAN,13930.4745502555,25607053.0,2,1,1
+1984,Winter,Chile,CHI,1636.22476246476,12078137.0,0,0,0
+1984,Winter,China,CHN,251.192686463827,1036825000.0,0,0,0
+1984,Winter,Costa Rica,CRC,1372.20149843952,2664220.0,0,0,0
+1984,Winter,Cyprus,CYP,4258.74365234375,697715.0,0,0,0
+1984,Winter,Czech Republic,TCH,,,0,2,4
+1984,Winter,Egypt,EGY,689.807675510205,47968643.0,0,0,0
+1984,Winter,Finland,FIN,10830.2185222663,4881803.0,4,3,6
+1984,Winter,France,FRA,9311.89426452129,56337675.0,0,1,2
+1984,Winter,Germany,FRG,9347.29068412377,77858685.0,11,10,7
+1984,Winter,Greece,GRE,4785.07463033775,9895801.0,0,0,0
+1984,Winter,Hungary,HUN,1991.23894795513,10668095.0,0,0,0
+1984,Winter,Iceland,ISL,12377.5860216394,239511.0,0,0,0
+1984,Winter,Italy,ITA,7757.55374836822,56576718.0,2,0,0
+1984,Winter,Japan,JPN,11207.4523524293,120083000.0,0,1,0
+1984,Winter,Lebanon,LIB,,2638056.0,0,0,0
+1984,Winter,Liechtenstein,LIE,18898.3678693391,27028.0,0,0,2
+1984,Winter,Mexico,MEX,2506.30742754755,74352631.0,0,0,0
+1984,Winter,Monaco,MON,36582.3672009832,28511.0,0,0,0
+1984,Winter,Mongolia,MGL,1119.71388466075,1871089.0,0,0,0
+1984,Winter,Morocco,MAR,681.909729003906,22002641.0,0,0,0
+1984,Winter,Netherlands,NED,9991.84377655651,14424211.0,0,0,0
+1984,Winter,New Zealand,NZL,6713.76013104154,3227100.0,0,0,0
+1984,Winter,North Korea,PRK,,18590142.0,0,0,0
+1984,Winter,Norway,NOR,14989.4857665906,4140099.0,3,2,4
+1984,Winter,Poland,POL,,36904134.0,0,0,0
+1984,Winter,Puerto Rico,PUR,5730.11700890201,3344190.0,0,0,0
+1984,Winter,Romania,ROU,,22640547.0,0,0,0
+1984,Winter,Russia,URS,,142745000.0,6,10,9
+1984,Winter,San Marino,SMR,,22546.0,0,0,0
+1984,Winter,Senegal,SEN,536.231765402514,6277420.0,0,0,0
+1984,Winter,Serbia,YUG,,7489000.0,0,1,0
+1984,Winter,South Korea,KOR,2468.68667303898,40405956.0,0,0,0
+1984,Winter,Spain,ESP,4486.78173863382,38330364.0,0,0,0
+1984,Winter,Sweden,SWE,13080.0302290066,8336605.0,4,2,2
+1984,Winter,Switzerland,SUI,16991.2458841517,6441865.0,2,2,1
+1984,Winter,Taiwan,TPE,,,0,0,0
+1984,Winter,Turkey,TUR,1209.05149383313,48114158.0,0,0,0
+1984,Winter,UK,GBR,8179.19444064991,56422072.0,1,0,0
+1984,Winter,USA,USA,17121.2254849995,235825000.0,4,4,0
+1984,Winter,"Virgin Islands, British",IVB,,13317.0,0,0,0
+1988,Summer,Afghanistan,AFG,,11618008.0,0,0,0
+1988,Summer,Algeria,ALG,2450.87242078961,24443472.0,0,0,0
+1988,Summer,American Samoa,ASA,,44346.0,0,0,0
+1988,Summer,Andorra,AND,14599.0355178798,50433.0,0,0,0
+1988,Summer,Angola,ANG,807.43962838624,11068051.0,0,0,0
+1988,Summer,Antigua,ANT,6466.15683473424,61758.0,0,0,0
+1988,Summer,Argentina,ARG,3992.70330179156,31668939.0,0,1,1
+1988,Summer,Aruba,ARU,10056.2613927414,61072.0,0,0,0
+1988,Summer,Australia,AUS,14303.093047615,16532200.0,3,6,5
+1988,Summer,Austria,AUT,17509.7658683817,7585317.0,1,0,0
+1988,Summer,Bahamas,BAH,10575.797153666,247451.0,0,0,0
+1988,Summer,Bahrain,BRN,18824.7637309359,244405.0,0,0,0
+1988,Summer,Bangladesh,BAN,247.901465967332,98186350.0,0,0,0
+1988,Summer,Barbados,BAR,7032.65370811416,258970.0,0,0,0
+1988,Summer,Belgium,BEL,16391.093827791,9901664.0,0,0,2
+1988,Summer,Belize,BIZ,2405.81116565818,179023.0,0,0,0
+1988,Summer,Benin,BEN,326.179757700303,4672844.0,0,0,0
+1988,Summer,Bermuda,BER,24958.1127004004,58347.0,0,0,0
+1988,Summer,Bhutan,BHU,488.877757351253,509532.0,0,0,0
+1988,Summer,Boliva,BOL,672.607268146683,6580318.0,0,0,0
+1988,Summer,Botswana,BOT,2140.51439180359,1200073.0,0,0,0
+1988,Summer,Brazil,BRA,2140.65027561164,143627505.0,1,2,3
+1988,Summer,Bulgaria,BUL,2511.39306259489,8981446.0,10,12,13
+1988,Summer,Burkina Faso,BUR,301.129214663833,8356313.0,0,0,0
+1988,Summer,Cameroon,CMR,1145.16555992416,11075423.0,0,0,0
+1988,Summer,Canada,CAN,19012.5723278349,26791747.0,3,2,5
+1988,Summer,Cayman Islands,CAY,,22775.0,0,0,0
+1988,Summer,Central African Republic,CAF,466.070596898859,2693974.0,0,0,0
+1988,Summer,Chad,CHA,263.544647841815,5589624.0,0,0,0
+1988,Summer,Chile,CHI,2013.53987790886,12847712.0,0,1,0
+1988,Summer,China,HKG,10609.7456394545,5627600.0,5,11,12
+1988,Summer,Colombia,COL,1259.6174112078,31822527.0,0,0,1
+1988,Summer,Cook Islands,COK,,,0,0,0
+1988,Summer,Costa Rica,CRC,1554.74048522018,2960932.0,0,1,0
+1988,Summer,Curacao,AHO,,149254.0,0,1,0
+1988,Summer,Cyprus,CYP,7645.6298828125,736476.0,0,0,0
+1988,Summer,Czech Republic,TCH,,,3,3,2
+1988,Summer,Democratic Republic of the Congo,COD,257.725151748806,32443784.0,0,0,0
+1988,Summer,Denmark,DEN,22524.5792595476,5129516.0,2,1,1
+1988,Summer,Djibouti,DJI,816.874614065329,528993.0,0,0,1
+1988,Summer,Dominican Republic,DOM,783.913142122635,6863438.0,0,0,0
+1988,Summer,Ecuador,ECU,1303.77906073184,9755576.0,0,0,0
+1988,Summer,Egypt,EGY,633.839369496566,53399243.0,0,0,0
+1988,Summer,El Salvador,ESA,806.392353256927,5133273.0,0,0,0
+1988,Summer,Equatorial Guinea,GEQ,228.669232827247,394973.0,0,0,0
+1988,Summer,Fiji,FIJ,1463.04720165947,722924.0,0,0,0
+1988,Summer,Finland,FIN,22043.7701596288,4946481.0,1,1,2
+1988,Summer,France,FRA,17549.6440487161,57627106.0,6,4,6
+1988,Summer,Gabon,GAB,4118.60473032795,898472.0,0,0,0
+1988,Summer,Gambia,GAM,274.874465999589,873440.0,0,0,0
+1988,Summer,Germany,GDR,17996.9783507619,78144619.0,48,49,45
+1988,Summer,Ghana,GHA,355.121844932881,13947047.0,0,0,0
+1988,Summer,Greece,GRE,7492.35204811251,10036983.0,0,0,1
+1988,Summer,Grenada,GRN,2404.25523562379,98126.0,0,0,0
+1988,Summer,Guam,GUM,,124674.0,0,0,0
+1988,Summer,Guatemala,GUA,919.070773138882,8566331.0,0,0,0
+1988,Summer,Guinea,GUI,574.001127225182,5982484.0,0,0,0
+1988,Summer,Guyana,GUY,544.715209244099,750641.0,0,0,0
+1988,Summer,Haiti,HAI,397.365336276412,6758222.0,0,0,0
+1988,Summer,Honduras,HON,1039.29410284648,4677023.0,0,0,0
+1988,Summer,Hungary,HUN,2812.23754602897,10596487.0,11,6,6
+1988,Summer,Iceland,ISL,25306.6926061001,249740.0,0,0,0
+1988,Summer,India,IND,358.484539641693,837468938.0,0,0,0
+1988,Summer,Indonesia,INA,476.662483405818,174975953.0,0,1,0
+1988,Summer,Iran,IRI,2234.46235141335,53077312.0,0,1,0
+1988,Summer,Iraq,IRQ,3707.20841763297,16612319.0,0,0,0
+1988,Summer,Ireland,IRL,10715.8702780539,3524949.0,0,0,0
+1988,Summer,Israel,ISR,11852.9826452892,4442000.0,0,0,0
+1988,Summer,Italy,ITA,15780.9495122174,56629288.0,6,4,4
+1988,Summer,Ivory Coast,CIV,909.534182158689,11094740.0,0,0,0
+1988,Summer,Jamaica,JAM,1632.01481656159,2389415.0,0,2,0
+1988,Summer,Japan,JPN,25499.8811728107,122578000.0,4,3,7
+1988,Summer,Jordan,JOR,1965.98031813995,3256552.0,0,0,0
+1988,Summer,Kenya,KEN,391.238771204282,22153685.0,5,2,2
+1988,Summer,Kuwait,KUW,9692.34754600725,2034850.0,0,0,0
+1988,Summer,Laos,LAO,147.070942942331,4020817.0,0,0,0
+1988,Summer,Lebanon,LIB,959.153901867443,2684682.0,0,0,0
+1988,Summer,Lesotho,LES,270.36712009929,1630993.0,0,0,0
+1988,Summer,Liberia,LBR,424.325719336919,2134105.0,0,0,0
+1988,Summer,Libya,LBA,5736.28243992278,4220451.0,0,0,0
+1988,Summer,Liechtenstein,LIE,41568.5441182755,28135.0,0,0,0
+1988,Summer,Luxembourg,LUX,25219.3542781732,373450.0,0,0,0
+1988,Summer,Malawi,MAW,229.421843922728,8636686.0,0,0,0
+1988,Summer,Malaysia,MAS,2099.95467656701,17022470.0,0,0,0
+1988,Summer,Maldives,MDV,799.082501719284,209787.0,0,0,0
+1988,Summer,Mali,MLI,307.019371606958,8171525.0,0,0,0
+1988,Summer,Malta,MLT,5814.44775940093,347325.0,0,0,0
+1988,Summer,Mauritania,MTN,762.423918016846,1930427.0,0,0,0
+1988,Summer,Mauritius,MRI,2073.59238787189,1043239.0,0,0,0
+1988,Summer,Mexico,MEX,2278.81222720992,80788725.0,0,0,2
+1988,Summer,Monaco,MON,67180.5763713568,29232.0,0,0,0
+1988,Summer,Mongolia,MGL,1543.33555521093,2089709.0,0,0,1
+1988,Summer,Morocco,MAR,1086.03527832031,23903592.0,1,0,2
+1988,Summer,Mozambique,MOZ,,12758003.0,0,0,0
+1988,Summer,Myanmar,MYA,39.9236088878004,40085653.0,0,0,0
+1988,Summer,Nepal,NEP,187.084777621975,18020755.0,0,0,0
+1988,Summer,Netherlands,NED,17770.6162376388,14760094.0,2,2,5
+1988,Summer,New Zealand,NZL,13759.1556295922,3283400.0,3,2,8
+1988,Summer,Niger,NIG,292.587878484489,7548429.0,0,0,0
+1988,Summer,Nigeria,NGR,539.539468397166,90395278.0,0,0,0
+1988,Summer,Norway,NOR,24207.281468963,4209488.0,2,3,0
+1988,Summer,Oman,OMA,5279.10411437183,1678119.0,0,0,0
+1988,Summer,Pakistan,PAK,353.85454278549,101389603.0,0,0,1
+1988,Summer,Panama,PAN,2508.78229277879,2368556.0,0,0,0
+1988,Summer,Papua New Guinea,PNG,984.993556016427,4399320.0,0,0,0
+1988,Summer,Paraguay,PAR,1113.89406863138,4001678.0,0,0,0
+1988,Summer,Peru,PER,733.299784874657,21153462.0,0,1,0
+1988,Summer,Philippines,PHI,722.343718454247,58794999.0,0,0,1
+1988,Summer,Poland,POL,,37824487.0,2,5,9
+1988,Summer,Portugal,POR,5623.69699982123,10019610.0,1,0,0
+1988,Summer,Puerto Rico,PUR,7595.44465611829,3473898.0,0,0,0
+1988,Summer,Qatar,QAT,14682.0218472004,443611.0,0,0,0
+1988,Summer,Republic of Congo,CGO,984.376285838246,2231462.0,0,0,0
+1988,Summer,Romania,ROU,1753.19285632198,23057662.0,7,11,6
+1988,Summer,Russia,URS,3778.01977539063,146857000.0,54,31,46
+1988,Summer,Rwanda,RWA,343.781325819105,7088194.0,0,0,0
+1988,Summer,Saint Vincent,VIN,,,0,0,0
+1988,Summer,Samoa,SAM,790.134992313838,161369.0,0,0,0
+1988,Summer,San Marino,SMR,,23548.0,0,0,0
+1988,Summer,Saudi Arabia,KSA,9165.49615323397,15070082.0,0,0,0
+1988,Summer,Senegal,SEN,880.487755138196,7086624.0,0,1,0
+1988,Summer,Serbia,YUG,,7572000.0,3,4,5
+1988,Summer,Sierra Leone,SLE,268.160979625957,4156636.0,0,0,0
+1988,Summer,Solomon Islands,SOL,567.022935580171,294976.0,0,0,0
+1988,Summer,Somalia,SOM,,7005226.0,0,0,0
+1988,Summer,South Korea,KOR,4888.68509195605,42031247.0,12,10,11
+1988,Summer,Spain,ESP,9696.1928538538,38766939.0,1,1,2
+1988,Summer,Sri Lanka,SRI,434.015552780537,16878186.0,0,0,0
+1988,Summer,Sudan,SUD,553.07861328125,18867559.0,0,0,0
+1988,Summer,Suriname,SUR,2886.42980207694,388877.0,1,0,0
+1988,Summer,Swaziland,SWZ,,,0,0,0
+1988,Summer,Sweden,SWE,24499.1240758517,8436489.0,0,4,7
+1988,Summer,Switzerland,SUI,32690.4302734561,6593386.0,0,2,2
+1988,Summer,Syria,SYR,897.70876335774,11719064.0,0,0,0
+1988,Summer,Taiwan,TPE,,,0,0,0
+1988,Summer,Tanzania,TAN,307.50634765625,23670807.0,0,0,0
+1988,Summer,Thailand,THA,1164.20096229495,54891520.0,0,0,1
+1988,Summer,Togo,TOG,516.536238879357,3577469.0,0,0,0
+1988,Summer,Tonga,TGA,1077.6835915018,94592.0,0,0,0
+1988,Summer,Trinidad,TTO,3655.81977035897,1204150.0,0,0,0
+1988,Summer,Tunisia,TUN,1266.07583258953,7880333.0,0,0,0
+1988,Summer,Turkey,TUR,1685.69479240535,52053764.0,1,1,0
+1988,Summer,UK,GBR,15987.1680775688,56928327.0,5,10,9
+1988,Summer,USA,USA,21417.0119305191,244499000.0,36,31,27
+1988,Summer,Uganda,UGA,395.187660960924,16180129.0,0,0,0
+1988,Summer,United Arab Emirates,UAE,21569.7068852997,1627068.0,0,0,0
+1988,Summer,Uruguay,URU,2677.19777690993,3068714.0,0,0,0
+1988,Summer,Vanuatu,VAN,1125.00616977712,139319.0,0,0,0
+1988,Summer,Venezuela,VEN,3191.47633742656,18698850.0,0,0,0
+1988,Summer,Vietnam,VIE,404.559305078888,65120432.0,0,0,0
+1988,Summer,"Virgin Islands, British",IVB,,16155.0,0,0,0
+1988,Summer,"Virgin Islands, US",ISV,,100952.0,0,1,0
+1988,Summer,Yemen,YAR,,,0,0,0
+1988,Summer,Zambia,ZAM,504.486020154114,7598270.0,0,0,0
+1988,Summer,Zimbabwe,ZIM,815.89246404532,9849129.0,0,0,0
+1988,Winter,Andorra,AND,14599.0355178798,50433.0,0,0,0
+1988,Winter,Argentina,ARG,3992.70330179156,31668939.0,0,0,0
+1988,Winter,Australia,AUS,14303.093047615,16532200.0,0,0,0
+1988,Winter,Austria,AUT,17509.7658683817,7585317.0,3,5,2
+1988,Winter,Belgium,BEL,16391.093827791,9901664.0,0,0,0
+1988,Winter,Boliva,BOL,672.607268146683,6580318.0,0,0,0
+1988,Winter,Bulgaria,BUL,2511.39306259489,8981446.0,0,0,0
+1988,Winter,Canada,CAN,19012.5723278349,26791747.0,0,2,3
+1988,Winter,Chile,CHI,2013.53987790886,12847712.0,0,0,0
+1988,Winter,China,CHN,284.023573149686,1101630000.0,0,0,0
+1988,Winter,Costa Rica,CRC,1554.74048522018,2960932.0,0,0,0
+1988,Winter,Curacao,AHO,,149254.0,0,0,0
+1988,Winter,Cyprus,CYP,7645.6298828125,736476.0,0,0,0
+1988,Winter,Czech Republic,TCH,,,0,1,2
+1988,Winter,Denmark,DEN,22524.5792595476,5129516.0,0,0,0
+1988,Winter,Fiji,FIJ,1463.04720165947,722924.0,0,0,0
+1988,Winter,Finland,FIN,22043.7701596288,4946481.0,4,1,2
+1988,Winter,France,FRA,17549.6440487161,57627106.0,1,0,1
+1988,Winter,Germany,GDR,17996.9783507619,78144619.0,11,14,8
+1988,Winter,Greece,GRE,7492.35204811251,10036983.0,0,0,0
+1988,Winter,Guam,GUM,,124674.0,0,0,0
+1988,Winter,Guatemala,GUA,919.070773138882,8566331.0,0,0,0
+1988,Winter,Hungary,HUN,2812.23754602897,10596487.0,0,0,0
+1988,Winter,Iceland,ISL,25306.6926061001,249740.0,0,0,0
+1988,Winter,India,IND,358.484539641693,837468938.0,0,0,0
+1988,Winter,Italy,ITA,15780.9495122174,56629288.0,2,1,2
+1988,Winter,Jamaica,JAM,1632.01481656159,2389415.0,0,0,0
+1988,Winter,Japan,JPN,25499.8811728107,122578000.0,0,0,1
+1988,Winter,Lebanon,LIB,959.153901867443,2684682.0,0,0,0
+1988,Winter,Liechtenstein,LIE,41568.5441182755,28135.0,0,0,1
+1988,Winter,Luxembourg,LUX,25219.3542781732,373450.0,0,0,0
+1988,Winter,Mexico,MEX,2278.81222720992,80788725.0,0,0,0
+1988,Winter,Monaco,MON,67180.5763713568,29232.0,0,0,0
+1988,Winter,Mongolia,MGL,1543.33555521093,2089709.0,0,0,0
+1988,Winter,Morocco,MAR,1086.03527832031,23903592.0,0,0,0
+1988,Winter,Netherlands,NED,17770.6162376388,14760094.0,3,2,2
+1988,Winter,New Zealand,NZL,13759.1556295922,3283400.0,0,0,0
+1988,Winter,North Korea,PRK,,19708316.0,0,0,0
+1988,Winter,Norway,NOR,24207.281468963,4209488.0,0,3,2
+1988,Winter,Philippines,PHI,722.343718454247,58794999.0,0,0,0
+1988,Winter,Poland,POL,,37824487.0,0,0,0
+1988,Winter,Portugal,POR,5623.69699982123,10019610.0,0,0,0
+1988,Winter,Puerto Rico,PUR,7595.44465611829,3473898.0,0,0,0
+1988,Winter,Romania,ROU,1753.19285632198,23057662.0,0,0,0
+1988,Winter,Russia,URS,3778.01977539063,146857000.0,11,9,9
+1988,Winter,San Marino,SMR,,23548.0,0,0,0
+1988,Winter,Serbia,YUG,,7572000.0,0,2,1
+1988,Winter,South Korea,KOR,4888.68509195605,42031247.0,0,0,0
+1988,Winter,Spain,ESP,9696.1928538538,38766939.0,0,0,0
+1988,Winter,Sweden,SWE,24499.1240758517,8436489.0,4,0,2
+1988,Winter,Switzerland,SUI,32690.4302734561,6593386.0,5,5,5
+1988,Winter,Taiwan,TPE,,,0,0,0
+1988,Winter,Turkey,TUR,1685.69479240535,52053764.0,0,0,0
+1988,Winter,UK,GBR,15987.1680775688,56928327.0,0,0,0
+1988,Winter,USA,USA,21417.0119305191,244499000.0,2,1,3
+1988,Winter,"Virgin Islands, US",ISV,,100952.0,0,0,0
+1992,Summer,Albania,ALB,200.852219772323,3247039.0,0,0,0
+1992,Summer,Algeria,ALG,1802.69300801289,27028330.0,1,0,1
+1992,Summer,American Samoa,ASA,,49900.0,0,0,0
+1992,Summer,Andorra,AND,20099.5352208543,58882.0,0,0,0
+1992,Summer,Angola,ANG,668.706017459877,12657361.0,0,0,0
+1992,Summer,Antigua,ANT,8153.73786307269,64459.0,0,0,0
+1992,Summer,Argentina,ARG,6789.99611136495,33529320.0,0,0,1
+1992,Summer,Aruba,ARU,13892.6051427736,68240.0,0,0,0
+1992,Summer,Australia,AUS,18650.3675476612,17495000.0,7,9,11
+1992,Summer,Austria,AUT,24782.7118767063,7840709.0,0,2,0
+1992,Summer,Bahamas,BAH,10873.4047501635,266028.0,0,0,1
+1992,Summer,Bahrain,BRN,23450.8964055243,273888.0,0,0,0
+1992,Summer,Bangladesh,BAN,273.465072520272,107983708.0,0,0,0
+1992,Summer,Barbados,BAR,7519.20143544898,262890.0,0,0,0
+1992,Summer,Belgium,BEL,23372.619171015,10045158.0,0,1,2
+1992,Summer,Belize,BIZ,3642.9480634402,194324.0,0,0,0
+1992,Summer,Benin,BEN,301.77329696287,5331805.0,0,0,0
+1992,Summer,Bermuda,BER,28761.9634632835,58595.0,0,0,0
+1992,Summer,Bhutan,BHU,415.791522568451,534525.0,0,0,0
+1992,Summer,Boliva,BOL,759.57113496365,7160917.0,0,0,0
+1992,Summer,Bosnia and Herzegovina,BIH,1118.17569934079,4233673.0,0,0,0
+1992,Summer,Botswana,BOT,3004.61263362306,1363541.0,0,0,0
+1992,Summer,Brazil,BRA,2127.29083011489,154259382.0,2,1,0
+1992,Summer,Bulgaria,BUL,1007.34454544881,8540164.0,3,7,6
+1992,Summer,Burkina Faso,BUR,348.592443894547,9297110.0,0,0,0
+1992,Summer,Cameroon,CMR,1005.44897647465,12499499.0,0,0,0
+1992,Summer,Canada,CAN,20950.3305287651,28371264.0,7,4,7
+1992,Summer,Cayman Islands,CAY,,27784.0,0,0,0
+1992,Summer,Central African Republic,CAF,461.587303490896,2959236.0,0,0,0
+1992,Summer,Chad,CHA,290.648286132566,6356741.0,0,0,0
+1992,Summer,Chile,CHI,3351.84108855522,13719818.0,0,0,0
+1992,Summer,China,CHN,367.822651903542,1164970000.0,16,22,15
+1992,Summer,Colombia,COL,1730.39091795329,34422568.0,0,0,1
+1992,Summer,Cook Islands,COK,,,0,0,0
+1992,Summer,Costa Rica,CRC,2612.38756453737,3286525.0,0,0,0
+1992,Summer,Croatia,CRO,2321.15204123035,4575818.0,0,1,2
+1992,Summer,Cuba,CUB,2047.67900346421,10736386.0,14,6,11
+1992,Summer,Curacao,AHO,,143912.0,0,0,0
+1992,Summer,Cyprus,CYP,11310.072265625,800610.0,0,0,0
+1992,Summer,Czech Republic,TCH,3396.70972430469,,4,2,1
+1992,Summer,Democratic Republic of the Congo,COD,209.726548794417,37333917.0,0,0,0
+1992,Summer,Denmark,DEN,29579.4913648682,5171370.0,1,1,4
+1992,Summer,Djibouti,DJI,763.659214503152,615050.0,0,0,0
+1992,Summer,Dominican Republic,DOM,1558.29782071075,7408339.0,0,0,0
+1992,Summer,Ecuador,ECU,1655.44613192632,10716131.0,0,0,0
+1992,Summer,Egypt,EGY,680.79923864551,58666812.0,0,0,0
+1992,Summer,El Salvador,ESA,1040.78164082019,5416327.0,0,0,0
+1992,Summer,Equatorial Guinea,GEQ,263.733547088944,447269.0,0,0,0
+1992,Summer,Estonia,EST,,1533091.0,1,0,1
+1992,Summer,Ethiopia,ETH,207.406400863847,51423591.0,1,0,2
+1992,Summer,Fiji,FIJ,1951.25592930351,744470.0,0,0,0
+1992,Summer,Finland,FIN,22320.1124695857,5041992.0,1,2,2
+1992,Summer,France,FRA,23615.0168565483,58851216.0,8,5,16
+1992,Summer,Gabon,GAB,5385.68811745078,1002573.0,0,0,0
+1992,Summer,Gambia,GAM,623.485927783598,1027476.0,0,0,0
+1992,Summer,Germany,GER,26559.8543879632,80624598.0,33,21,28
+1992,Summer,Ghana,GHA,396.426407640517,15653345.0,0,0,1
+1992,Summer,Greece,GRE,11021.012224607,10399061.0,2,0,0
+1992,Summer,Grenada,GRN,3052.70018744163,97161.0,0,0,0
+1992,Summer,Guam,GUM,,136693.0,0,0,0
+1992,Summer,Guatemala,GUA,1096.45976992698,9544055.0,0,0,0
+1992,Summer,Guinea,GUI,692.647802662806,6716032.0,0,0,0
+1992,Summer,Guyana,GUY,498.156636569954,748596.0,0,0,0
+1992,Summer,Haiti,HAI,316.276513134354,7319491.0,0,0,0
+1992,Summer,Honduras,HON,782.111518709432,5244677.0,0,0,0
+1992,Summer,Hungary,HUN,3747.32966394956,10369341.0,11,12,7
+1992,Summer,Iceland,ISL,28072.4041083276,261057.0,0,0,0
+1992,Summer,India,IND,319.182472626315,909307018.0,0,0,0
+1992,Summer,Individual Olympic Athletes,IOA,,,0,1,2
+1992,Summer,Indonesia,INA,673.67103954742,187739786.0,2,2,1
+1992,Summer,Iran,IRI,1957.48507794252,58780376.0,0,1,2
+1992,Summer,Iraq,IRQ,30.2539012636825,18402740.0,0,0,0
+1992,Summer,Ireland,IRL,15714.3847487231,3558430.0,1,1,0
+1992,Summer,Israel,ISR,15509.9913638817,5123000.0,0,1,1
+1992,Summer,Italy,ITA,23297.0460325456,56797087.0,6,5,8
+1992,Summer,Ivory Coast,CIV,844.902223806738,12812428.0,0,0,0
+1992,Summer,Jamaica,JAM,1458.10146892635,2461047.0,0,3,1
+1992,Summer,Japan,JPN,31992.7902119161,124425000.0,3,8,11
+1992,Summer,Jordan,JOR,1286.6347360596,3977667.0,0,0,0
+1992,Summer,Kenya,KEN,336.68139978696,25326080.0,2,4,2
+1992,Summer,Kuwait,KUW,12146.19505586,,0,0,0
+1992,Summer,Laos,LAO,247.345286150532,4500346.0,0,0,0
+1992,Summer,Latvia,LAT,,2614338.0,0,2,1
+1992,Summer,Lebanon,LIB,1559.38100628446,3076133.0,0,0,0
+1992,Summer,Lesotho,LES,443.624297195576,1782284.0,0,0,0
+1992,Summer,Libya,LBA,7302.68908679226,4650896.0,0,0,0
+1992,Summer,Liechtenstein,LIE,55057.1110625654,29552.0,0,0,0
+1992,Summer,Lithuania,LTU,,3700114.0,1,0,1
+1992,Summer,Luxembourg,LUX,39570.8615665986,392175.0,0,0,0
+1992,Summer,Madagascar,MAD,290.2120463948,12301338.0,0,0,0
+1992,Summer,Malawi,MAW,258.393430877557,9685974.0,0,0,0
+1992,Summer,Malaysia,MAS,3141.43321987651,19002660.0,0,0,1
+1992,Summer,Maldives,MDV,1194.2325242813,236271.0,0,0,0
+1992,Summer,Mali,MLI,385.278654489301,8850334.0,0,0,0
+1992,Summer,Malta,MLT,8220.33403924666,367618.0,0,0,0
+1992,Summer,Mauritania,MTN,1036.47437808576,2142645.0,0,0,0
+1992,Summer,Mauritius,MRI,3013.23706337167,1084441.0,0,0,0
+1992,Summer,Mexico,MEX,4220.56643677057,87075136.0,0,1,0
+1992,Summer,Monaco,MON,88614.926367223,29859.0,0,0,0
+1992,Summer,Mongolia,MGL,607.813424662797,2243495.0,0,0,2
+1992,Summer,Morocco,MAR,1327.02954101563,25711410.0,1,1,1
+1992,Summer,Mozambique,MOZ,205.585216062094,13805999.0,0,0,0
+1992,Summer,Myanmar,MYA,58.8896739558883,42401686.0,0,0,0
+1992,Summer,Namibia,NAM,2346.86242963741,1516951.0,0,2,0
+1992,Summer,Nepal,NEP,165.02959412726,19938322.0,0,0,0
+1992,Summer,Netherlands,NED,23939.2173482108,15184166.0,2,6,7
+1992,Summer,New Zealand,NZL,11793.1392416214,3531700.0,1,4,5
+1992,Summer,Nicaragua,NCA,411.473330661786,4364514.0,0,0,0
+1992,Summer,Niger,NIG,384.029657304316,8566773.0,0,0,0
+1992,Summer,Nigeria,NGR,508.515905682785,100161708.0,0,3,1
+1992,Summer,North Korea,PRK,,20937407.0,4,0,5
+1992,Summer,Norway,NOR,30523.9850558974,4286401.0,2,4,1
+1992,Summer,Oman,OMA,7317.78815838166,1983272.0,0,0,0
+1992,Summer,Pakistan,PAK,395.67720859593,113911126.0,0,0,1
+1992,Summer,Panama,PAN,3139.89952899581,2575949.0,0,0,0
+1992,Summer,Papua New Guinea,PNG,1050.7071689258,4836216.0,0,0,0
+1992,Summer,Paraguay,PAR,1682.67444777611,4445019.0,0,0,0
+1992,Summer,Peru,PER,1567.40910765128,22966822.0,0,1,0
+1992,Summer,Philippines,PHI,916.515694532029,65020124.0,0,0,1
+1992,Summer,Poland,POL,2459.02068468253,38363667.0,3,6,10
+1992,Summer,Portugal,POR,10810.5665079626,9952494.0,0,0,0
+1992,Summer,Puerto Rico,PUR,9659.33889995916,3585176.0,0,0,1
+1992,Summer,Qatar,QAT,16280.2938815273,495403.0,0,0,1
+1992,Summer,Republic of Congo,CGO,1164.22442980292,2489945.0,0,0,0
+1992,Summer,Romania,ROU,1102.10378473246,22794284.0,4,6,8
+1992,Summer,Russia,EUN,3098.802734375,148538197.0,45,38,29
+1992,Summer,Rwanda,RWA,264.083914517464,6702239.0,0,0,0
+1992,Summer,Saint Vincent,VIN,,,0,0,0
+1992,Summer,Samoa,SAM,776.740824409711,165490.0,0,0,0
+1992,Summer,San Marino,SMR,,24830.0,0,0,0
+1992,Summer,Saudi Arabia,KSA,11730.2687665244,17282686.0,0,0,0
+1992,Summer,Senegal,SEN,951.204960087807,7990090.0,0,0,0
+1992,Summer,Seychelles,SEY,6520.48950519188,70763.0,0,0,0
+1992,Summer,Sierra Leone,SLE,163.197571684381,4347727.0,0,0,0
+1992,Summer,Slovenia,SLO,7151.15243829224,1996498.0,0,0,2
+1992,Summer,Solomon Islands,SOL,763.857968549522,330004.0,0,0,0
+1992,Summer,South Africa,RSA,3462.39400202835,38672611.0,0,2,0
+1992,Summer,South Korea,KOR,8387.16308258471,43747962.0,12,5,11
+1992,Summer,Spain,ESP,16100.6799428032,39157685.0,13,7,2
+1992,Summer,Sri Lanka,SRI,579.655117618283,17736827.0,0,0,0
+1992,Summer,Sudan,SUD,252.610092163086,21696240.0,0,0,0
+1992,Summer,Suriname,SUR,968.895253466926,420658.0,0,0,1
+1992,Summer,Swaziland,SWZ,,,0,0,0
+1992,Summer,Sweden,SWE,32753.4287003642,8668067.0,1,7,4
+1992,Summer,Switzerland,SUI,40713.6881521435,6875364.0,1,0,0
+1992,Summer,Syria,SYR,990.138251191708,13187669.0,0,0,0
+1992,Summer,Taiwan,TPE,,,0,1,0
+1992,Summer,Tanzania,TAN,250.329925537109,26961204.0,0,0,0
+1992,Summer,Thailand,THA,1971.60879910694,57811025.0,0,0,1
+1992,Summer,Togo,TOG,564.71733648074,3945902.0,0,0,0
+1992,Summer,Tonga,TGA,1370.36142598699,95398.0,0,0,0
+1992,Summer,Trinidad,TTO,4277.47436935604,1236685.0,0,0,0
+1992,Summer,Tunisia,TUN,1784.81850188268,8613855.0,0,0,0
+1992,Summer,Turkey,TUR,2743.65320297936,55748946.0,2,2,2
+1992,Summer,UK,GBR,20487.1707852878,57580402.0,5,3,12
+1992,Summer,USA,USA,25418.9907763319,256514000.0,37,34,37
+1992,Summer,Uganda,UGA,152.113542415537,18561668.0,0,0,0
+1992,Summer,United Arab Emirates,UAE,25648.2727760844,2052892.0,0,0,0
+1992,Summer,Uruguay,URU,4101.71054155291,3154459.0,0,0,0
+1992,Summer,Vanuatu,VAN,1343.68942861831,155176.0,0,0,0
+1992,Summer,Venezuela,VEN,2907.30334439434,20557694.0,0,0,0
+1992,Summer,Vietnam,VIE,144.549392371677,70883488.0,0,0,0
+1992,Summer,"Virgin Islands, British",IVB,,18443.0,0,0,0
+1992,Summer,"Virgin Islands, US",ISV,,105712.0,0,0,0
+1992,Summer,Yemen,YEM,,,0,0,0
+1992,Summer,Zambia,ZAM,389.254665832226,8451346.0,0,0,0
+1992,Summer,Zimbabwe,ZIM,631.149149280088,10900511.0,0,0,0
+1992,Winter,Algeria,ALG,1802.69300801289,27028330.0,0,0,0
+1992,Winter,Andorra,AND,20099.5352208543,58882.0,0,0,0
+1992,Winter,Argentina,ARG,6789.99611136495,33529320.0,0,0,0
+1992,Winter,Australia,AUS,18650.3675476612,17495000.0,0,0,0
+1992,Winter,Austria,AUT,24782.7118767063,7840709.0,6,7,8
+1992,Winter,Belgium,BEL,23372.619171015,10045158.0,0,0,0
+1992,Winter,Bermuda,BER,28761.9634632835,58595.0,0,0,0
+1992,Winter,Boliva,BOL,759.57113496365,7160917.0,0,0,0
+1992,Winter,Brazil,BRA,2127.29083011489,154259382.0,0,0,0
+1992,Winter,Bulgaria,BUL,1007.34454544881,8540164.0,0,0,0
+1992,Winter,Canada,CAN,20950.3305287651,28371264.0,2,3,2
+1992,Winter,Chile,CHI,3351.84108855522,13719818.0,0,0,0
+1992,Winter,China,CHN,367.822651903542,1164970000.0,0,3,0
+1992,Winter,Costa Rica,CRC,2612.38756453737,3286525.0,0,0,0
+1992,Winter,Croatia,CRO,2321.15204123035,4575818.0,0,0,0
+1992,Winter,Curacao,AHO,,143912.0,0,0,0
+1992,Winter,Cyprus,CYP,11310.072265625,800610.0,0,0,0
+1992,Winter,Czech Republic,TCH,3396.70972430469,,0,0,3
+1992,Winter,Denmark,DEN,29579.4913648682,5171370.0,0,0,0
+1992,Winter,Estonia,EST,,1533091.0,0,0,0
+1992,Winter,Finland,FIN,22320.1124695857,5041992.0,3,1,3
+1992,Winter,France,FRA,23615.0168565483,58851216.0,3,5,1
+1992,Winter,Germany,GER,26559.8543879632,80624598.0,10,10,6
+1992,Winter,Greece,GRE,11021.012224607,10399061.0,0,0,0
+1992,Winter,Honduras,HON,782.111518709432,5244677.0,0,0,0
+1992,Winter,Hungary,HUN,3747.32966394956,10369341.0,0,0,0
+1992,Winter,Iceland,ISL,28072.4041083276,261057.0,0,0,0
+1992,Winter,India,IND,319.182472626315,909307018.0,0,0,0
+1992,Winter,Ireland,IRL,15714.3847487231,3558430.0,0,0,0
+1992,Winter,Italy,ITA,23297.0460325456,56797087.0,4,6,4
+1992,Winter,Jamaica,JAM,1458.10146892635,2461047.0,0,0,0
+1992,Winter,Japan,JPN,31992.7902119161,124425000.0,1,2,4
+1992,Winter,Latvia,LAT,,2614338.0,0,0,0
+1992,Winter,Lebanon,LIB,1559.38100628446,3076133.0,0,0,0
+1992,Winter,Liechtenstein,LIE,55057.1110625654,29552.0,0,0,0
+1992,Winter,Lithuania,LTU,,3700114.0,0,0,0
+1992,Winter,Luxembourg,LUX,39570.8615665986,392175.0,0,2,0
+1992,Winter,Mexico,MEX,4220.56643677057,87075136.0,0,0,0
+1992,Winter,Monaco,MON,88614.926367223,29859.0,0,0,0
+1992,Winter,Mongolia,MGL,607.813424662797,2243495.0,0,0,0
+1992,Winter,Morocco,MAR,1327.02954101563,25711410.0,0,0,0
+1992,Winter,Netherlands,NED,23939.2173482108,15184166.0,1,1,2
+1992,Winter,New Zealand,NZL,11793.1392416214,3531700.0,0,1,0
+1992,Winter,North Korea,PRK,,20937407.0,0,0,1
+1992,Winter,Norway,NOR,30523.9850558974,4286401.0,7,5,5
+1992,Winter,Philippines,PHI,916.515694532029,65020124.0,0,0,0
+1992,Winter,Poland,POL,2459.02068468253,38363667.0,0,0,0
+1992,Winter,Puerto Rico,PUR,9659.33889995916,3585176.0,0,0,0
+1992,Winter,Romania,ROU,1102.10378473246,22794284.0,0,0,0
+1992,Winter,Russia,EUN,3098.802734375,148538197.0,9,6,8
+1992,Winter,San Marino,SMR,,24830.0,0,0,0
+1992,Winter,Senegal,SEN,951.204960087807,7990090.0,0,0,0
+1992,Winter,Serbia,YUG,,7646424.0,0,0,0
+1992,Winter,Slovenia,SLO,7151.15243829224,1996498.0,0,0,0
+1992,Winter,South Korea,KOR,8387.16308258471,43747962.0,2,1,1
+1992,Winter,Spain,ESP,16100.6799428032,39157685.0,0,0,1
+1992,Winter,Swaziland,SWZ,,,0,0,0
+1992,Winter,Sweden,SWE,32753.4287003642,8668067.0,1,0,3
+1992,Winter,Switzerland,SUI,40713.6881521435,6875364.0,1,0,2
+1992,Winter,Taiwan,TPE,,,0,0,0
+1992,Winter,Turkey,TUR,2743.65320297936,55748946.0,0,0,0
+1992,Winter,UK,GBR,20487.1707852878,57580402.0,0,0,0
+1992,Winter,USA,USA,25418.9907763319,256514000.0,5,4,2
+1992,Winter,"Virgin Islands, US",ISV,,105712.0,0,0,0
+1994,Winter,American Samoa,ASA,,52099.0,0,0,0
+1994,Winter,Andorra,AND,15748.5307503373,62676.0,0,0,0
+1994,Winter,Argentina,ARG,7437.56242327594,34402669.0,0,0,0
+1994,Winter,Armenia,ARM,390.879964297655,3283664.0,0,0,0
+1994,Winter,Australia,AUS,18155.6282000179,17855000.0,0,0,1
+1994,Winter,Austria,AUT,25546.2460525087,7936118.0,2,3,4
+1994,Winter,Belarus,BLR,1460.00791360458,10227000.0,0,2,0
+1994,Winter,Belgium,BEL,24208.5547931447,10115603.0,0,0,0
+1994,Winter,Bermuda,BER,31543.0634861641,59320.0,0,0,0
+1994,Winter,Bosnia and Herzegovina,BIH,337.090896023259,3936527.0,0,0,0
+1994,Winter,Brazil,BRA,3298.71491891786,159432717.0,0,0,0
+1994,Winter,Bulgaria,BUL,1149.89464008734,8443591.0,0,0,0
+1994,Winter,Canada,CAN,19997.6237373354,29000663.0,3,6,4
+1994,Winter,Chile,CHI,4012.10159912285,14166346.0,0,0,0
+1994,Winter,China,CHN,475.677874448369,1191835000.0,0,1,2
+1994,Winter,Croatia,CRO,3237.92646315285,4652024.0,0,0,0
+1994,Winter,Cyprus,CYP,11617.6923828125,837104.0,0,0,0
+1994,Winter,Czech Republic,CZE,4663.28665345469,10333587.0,0,0,0
+1994,Winter,Denmark,DEN,29967.8303903163,5206180.0,0,0,0
+1994,Winter,Estonia,EST,2819.12612100926,1462514.0,0,0,0
+1994,Winter,Fiji,FIJ,2297.18005884304,765607.0,0,0,0
+1994,Winter,Finland,FIN,20278.29109854,5088333.0,0,1,5
+1994,Winter,France,FRA,23359.8985104774,59327200.0,0,1,4
+1994,Winter,Georgia,GEO,519.815578814965,4836076.0,0,0,0
+1994,Winter,Germany,GER,27201.9593555204,81438348.0,9,7,8
+1994,Winter,Greece,GRE,10937.0223808611,10512922.0,0,0,0
+1994,Winter,Hungary,HUN,4187.0311799663,10343355.0,0,0,0
+1994,Winter,Iceland,ISL,24858.2031335605,266021.0,0,0,0
+1994,Winter,Israel,ISR,16806.8353081322,5399000.0,0,0,0
+1994,Winter,Italy,ITA,19382.2002150155,56843400.0,7,5,8
+1994,Winter,Jamaica,JAM,2202.85831038471,2509042.0,0,0,0
+1994,Winter,Japan,JPN,39933.5150564874,125178000.0,1,2,2
+1994,Winter,Kazakhstan,KAZ,1246.83633018218,16145766.0,1,2,0
+1994,Winter,Kyrgyzstan,KGZ,372.481759948941,4515100.0,0,0,0
+1994,Winter,Latvia,LAT,,2520742.0,0,0,0
+1994,Winter,Liechtenstein,LIE,63935.9902445462,30415.0,0,0,0
+1994,Winter,Lithuania,LTU,,3657144.0,0,0,0
+1994,Winter,Luxembourg,LUX,43933.235442736,402925.0,0,0,0
+1994,Winter,Mexico,MEX,6202.36588372862,90156396.0,0,0,0
+1994,Winter,Moldova,MDA,573.798647201304,2964277.0,0,0,0
+1994,Winter,Monaco,MON,86703.8130529474,30436.0,0,0,0
+1994,Winter,Mongolia,MGL,422.864349383041,2280475.0,0,0,0
+1994,Winter,Netherlands,NED,24682.5866742863,15382838.0,0,1,3
+1994,Winter,New Zealand,NZL,15280.3127842922,3620000.0,0,0,0
+1994,Winter,Norway,NOR,29315.8092337732,4336613.0,8,10,5
+1994,Winter,Poland,POL,2874.83163555069,38542652.0,0,0,0
+1994,Winter,Portugal,POR,9977.31990905771,9991525.0,0,0,0
+1994,Winter,Puerto Rico,PUR,10876.4188239898,3649237.0,0,0,0
+1994,Winter,Romania,ROU,1323.03237766927,22730211.0,0,0,0
+1994,Winter,Russia,RUS,2662.10400390625,148407912.0,11,8,4
+1994,Winter,San Marino,SMR,,25588.0,0,0,0
+1994,Winter,Senegal,SEN,583.782776032181,8461066.0,0,0,0
+1994,Winter,Slovakia,SVK,3820.96427542658,5346331.0,0,0,0
+1994,Winter,Slovenia,SLO,8243.89895545106,1989443.0,0,0,3
+1994,Winter,South Africa,RSA,3488.59711541763,40564061.0,0,0,0
+1994,Winter,South Korea,KOR,10733.9888860657,44641540.0,4,1,1
+1994,Winter,Spain,ESP,13405.704414883,39549108.0,0,0,0
+1994,Winter,Sweden,SWE,26045.5196995275,8780745.0,2,1,0
+1994,Winter,Switzerland,SUI,43091.7770970073,6993795.0,3,4,2
+1994,Winter,Taiwan,TPE,,,0,0,0
+1994,Winter,Trinidad,TTO,3839.96290233114,1249527.0,0,0,0
+1994,Winter,Turkey,TUR,2176.2801813809,57564209.0,0,0,0
+1994,Winter,UK,GBR,19709.2380983653,57865745.0,0,0,2
+1994,Winter,USA,USA,27694.853416234,263126000.0,6,5,2
+1994,Winter,Ukraine,UKR,1009.09405517578,51921400.0,1,0,1
+1994,Winter,Uzbekistan,UZB,574.229079896619,22377000.0,1,0,0
+1994,Winter,"Virgin Islands, US",ISV,,107318.0,0,0,0
+1996,Summer,Afghanistan,AFG,,18853444.0,0,0,0
+1996,Summer,Albania,ALB,1020.97618050188,3168033.0,0,0,0
+1996,Summer,Algeria,ALG,1616.83198721285,29266415.0,2,0,1
+1996,Summer,American Samoa,ASA,,54209.0,0,0,0
+1996,Summer,Andorra,AND,19130.1597151312,64363.0,0,0,0
+1996,Summer,Angola,ANG,531.115366543271,14400722.0,0,0,0
+1996,Summer,Antigua,ANT,9756.08717951992,70176.0,0,0,0
+1996,Summer,Argentina,ARG,7663.21271287469,35246376.0,0,2,1
+1996,Summer,Armenia,ARM,487.068624404558,3168213.0,1,1,0
+1996,Summer,Aruba,ARU,16620.9545555513,83211.0,0,0,0
+1996,Summer,Australia,AUS,22055.838490507,18311000.0,9,9,23
+1996,Summer,Austria,AUT,29645.9451251491,7959017.0,0,1,2
+1996,Summer,Azerbaijan,AZE,409.185543774103,7763000.0,0,1,0
+1996,Summer,Bahamas,BAH,11783.797197226,283980.0,0,1,0
+1996,Summer,Bahrain,BRN,25692.2357348562,304620.0,0,0,0
+1996,Summer,Bangladesh,BAN,371.917937677345,117649927.0,0,0,0
+1996,Summer,Barbados,BAR,9011.77884838722,267047.0,0,0,0
+1996,Summer,Belarus,BLR,1427.26896385327,10160000.0,1,6,8
+1996,Summer,Belgium,BEL,27489.5551770488,10156637.0,2,2,2
+1996,Summer,Belize,BIZ,4043.26517997242,213660.0,0,0,0
+1996,Summer,Benin,BEN,369.394384135736,6094272.0,0,0,0
+1996,Summer,Bermuda,BER,45063.6149332085,60129.0,0,0,0
+1996,Summer,Bhutan,BHU,552.873891403681,541471.0,0,0,0
+1996,Summer,Boliva,BOL,922.113259069714,7779268.0,0,0,0
+1996,Summer,Bosnia and Herzegovina,BIH,718.933797141505,3764419.0,0,0,0
+1996,Summer,Botswana,BOT,3156.26865681161,1504724.0,0,0,0
+1996,Summer,Brazil,BRA,5179.13052009976,164614682.0,3,3,9
+1996,Summer,Brunei,BRU,25692.2357348562,304620.0,0,0,0
+1996,Summer,Bulgaria,BUL,1470.19259250682,8362826.0,3,7,5
+1996,Summer,Burkina Faso,BUR,242.733171352672,10372734.0,0,0,0
+1996,Summer,Burundi,BDI,143.156741187159,6060110.0,1,0,0
+1996,Summer,Cambodia,CAM,324.655870983004,10982919.0,0,0,0
+1996,Summer,Cameroon,CMR,826.965322327363,13970812.0,0,0,0
+1996,Summer,Canada,CAN,21296.9723536904,29610218.0,3,11,8
+1996,Summer,Cape Verde,CPV,,,0,0,0
+1996,Summer,Cayman Islands,CAY,,34065.0,0,0,0
+1996,Summer,Central African Republic,CAF,293.306575328658,3308235.0,0,0,0
+1996,Summer,Chad,CHA,216.912541056484,7250974.0,0,0,0
+1996,Summer,Chile,CHI,5333.50438729711,14587367.0,0,0,0
+1996,Summer,China,CHN,713.337387811657,1217550000.0,17,22,12
+1996,Summer,Colombia,COL,2664.64056059983,37076387.0,0,0,0
+1996,Summer,Comoros,COM,786.380773511866,488625.0,0,0,0
+1996,Summer,Cook Islands,COK,,,0,0,0
+1996,Summer,Costa Rica,CRC,3226.96395598625,3632361.0,1,0,0
+1996,Summer,Croatia,CRO,5299.6410536193,4557097.0,1,1,0
+1996,Summer,Cuba,CUB,2282.18809324202,10939285.0,9,8,8
+1996,Summer,Curacao,AHO,,146306.0,0,0,0
+1996,Summer,Cyprus,CYP,15139.220703125,873426.0,0,0,0
+1996,Summer,Czech Republic,CZE,6573.19643136362,10315241.0,4,3,4
+1996,Summer,Democratic Republic of the Congo,COD,127.416132828292,42757239.0,0,0,0
+1996,Summer,Denmark,DEN,35621.9878051732,5263074.0,4,1,1
+1996,Summer,Djibouti,DJI,761.943659476655,643649.0,0,0,0
+1996,Summer,Dominica,DMA,4210.99532034556,70933.0,0,0,0
+1996,Summer,Dominican Republic,DOM,2270.86558687203,7952766.0,0,0,0
+1996,Summer,Ecuador,ECU,2135.8479374308,11703169.0,1,0,0
+1996,Summer,Egypt,EGY,1008.97637629447,63601632.0,0,0,0
+1996,Summer,El Salvador,ESA,1651.31016800895,5689943.0,0,0,0
+1996,Summer,Equatorial Guinea,GEQ,391.686868235732,515844.0,0,0,0
+1996,Summer,Estonia,EST,3380.92630243199,1415594.0,0,0,0
+1996,Summer,Ethiopia,ETH,147.327458851964,58883531.0,2,0,1
+1996,Summer,Fiji,FIJ,2648.32766264,784389.0,0,0,0
+1996,Summer,Finland,FIN,25756.6777073618,5124573.0,1,2,1
+1996,Summer,France,FRA,26757.6351494145,59753095.0,15,7,15
+1996,Summer,Gabon,GAB,4942.67870027615,1112944.0,0,0,0
+1996,Summer,Gambia,GAM,651.784945724837,1164091.0,0,0,0
+1996,Summer,Georgia,GEO,689.034634153312,4491699.0,0,0,2
+1996,Summer,Germany,GER,30599.7891048363,81914831.0,20,18,27
+1996,Summer,Ghana,GHA,389.271267898831,17462504.0,0,0,0
+1996,Summer,Greece,GRE,13432.5262183244,10608800.0,4,4,0
+1996,Summer,Grenada,GRN,3508.294236637,101003.0,0,0,0
+1996,Summer,Guam,GUM,,148061.0,0,0,0
+1996,Summer,Guatemala,GUA,1481.05986750672,10536942.0,0,0,0
+1996,Summer,Guinea,GUI,726.025442583799,7463782.0,0,0,0
+1996,Summer,Guinea-Bissau,GBS,614.729892454585,1110835.0,0,0,0
+1996,Summer,Guyana,GUY,927.523847211669,760801.0,0,0,0
+1996,Summer,Haiti,HAI,377.229465025972,7887312.0,0,0,0
+1996,Summer,Honduras,HON,812.817047602244,5874814.0,0,0,0
+1996,Summer,Hungary,HUN,4542.0120380978,10311238.0,7,4,10
+1996,Summer,Iceland,ISL,28583.5208959793,268916.0,0,0,0
+1996,Summer,India,IND,401.046754673579,982365248.0,0,0,1
+1996,Summer,Indonesia,INA,1118.92133024129,199901231.0,1,1,2
+1996,Summer,Iran,IRI,1914.78121294313,62294919.0,1,1,1
+1996,Summer,Iraq,IRQ,485.258492784825,20783073.0,0,0,0
+1996,Summer,Ireland,IRL,20835.8977130847,3637510.0,3,0,1
+1996,Summer,Israel,ISR,20224.2789080629,5692000.0,0,0,1
+1996,Summer,Italy,ITA,23122.9337219116,56860281.0,13,10,12
+1996,Summer,Ivory Coast,CIV,1170.23622049666,14665125.0,0,0,0
+1996,Summer,Jamaica,JAM,2928.89692611996,2558631.0,1,3,2
+1996,Summer,Japan,JPN,39150.0396308089,125757000.0,3,6,5
+1996,Summer,Jordan,JOR,1410.17424189419,4732848.0,0,0,0
+1996,Summer,Kazakhstan,KAZ,1281.39152895397,15578227.0,3,4,4
+1996,Summer,Kenya,KEN,440.527078880876,28589456.0,1,4,3
+1996,Summer,Kuwait,KUW,18201.0958607918,1626858.0,0,0,0
+1996,Summer,Kyrgyzstan,KGZ,394.856879614212,4628400.0,0,0,0
+1996,Summer,Laos,LAO,371.341879197673,4951189.0,0,0,0
+1996,Summer,Latvia,LAT,2360.1714816213,2457222.0,0,1,0
+1996,Summer,Lebanon,LIB,3393.05090749359,3610663.0,0,0,0
+1996,Summer,Lesotho,LES,479.671394625707,1934294.0,0,0,0
+1996,Summer,Liberia,LBR,71.4065248720036,2160480.0,0,0,0
+1996,Summer,Libya,LBA,5591.02027544558,5036173.0,0,0,0
+1996,Summer,Liechtenstein,LIE,80688.7182490376,31354.0,0,0,0
+1996,Summer,Lithuania,LTU,2340.67545970008,3601613.0,0,0,1
+1996,Summer,Luxembourg,LUX,50444.3591236175,414225.0,0,0,0
+1996,Summer,Macedonia,MKD,2306.53366957635,1989441.0,0,0,0
+1996,Summer,Madagascar,MAD,339.877283663608,13902697.0,0,0,0
+1996,Summer,Malawi,MAW,320.662735559137,10022783.0,0,0,0
+1996,Summer,Malaysia,MAS,4837.16897250768,21017619.0,0,1,1
+1996,Summer,Maldives,MDV,1716.74281753716,259178.0,0,0,0
+1996,Summer,Mali,MLI,359.662096047648,9837575.0,0,0,0
+1996,Summer,Malta,MLT,10061.850192141,379905.0,0,0,0
+1996,Summer,Mauritania,MTN,904.120879798142,2372900.0,0,0,0
+1996,Summer,Mauritius,MRI,3951.94494649336,1133996.0,0,0,0
+1996,Summer,Mexico,MEX,4674.36792733681,93147045.0,0,0,1
+1996,Summer,Moldova,MDA,575.145455139019,2946401.0,0,1,1
+1996,Summer,Monaco,MON,98561.0137425657,31001.0,0,0,0
+1996,Summer,Mongolia,MGL,595.5810149554,2316571.0,0,0,1
+1996,Summer,Morocco,MAR,1596.83239746094,27383472.0,0,0,2
+1996,Summer,Mozambique,MOZ,244.362651012498,15960445.0,0,0,1
+1996,Summer,Myanmar,MYA,141.897267580367,44452203.0,0,0,0
+1996,Summer,Namibia,NAM,2423.3982907313,1663378.0,0,2,0
+1996,Summer,Nauru,NRU,3678.56242894634,10677.0,0,0,0
+1996,Summer,Nepal,NEP,198.821907435345,22090352.0,0,0,0
+1996,Summer,Netherlands,NED,29063.6236532536,15530498.0,4,5,10
+1996,Summer,New Zealand,NZL,18794.436039393,3732000.0,3,2,1
+1996,Summer,Nicaragua,NCA,910.861645917295,4741571.0,0,0,0
+1996,Summer,Niger,NIG,239.494513213973,9826600.0,0,0,0
+1996,Summer,Nigeria,NGR,1632.72469370276,110668784.0,2,1,3
+1996,Summer,North Korea,PRK,,22113428.0,2,1,2
+1996,Summer,Norway,NOR,37321.9741993473,4381336.0,2,2,3
+1996,Summer,Oman,OMA,8068.00076784612,2236652.0,0,0,0
+1996,Summer,Pakistan,PAK,456.996961832943,127349293.0,0,0,0
+1996,Summer,Palestine,PLE,,,0,0,0
+1996,Summer,Panama,PAN,3308.18430390528,2796291.0,0,0,0
+1996,Summer,Papua New Guinea,PNG,1071.04185150251,5314258.0,0,0,0
+1996,Summer,Paraguay,PAR,2088.17109102236,4887638.0,0,0,0
+1996,Summer,Peru,PER,2226.91682429265,24753825.0,0,0,0
+1996,Summer,Philippines,PHI,1311.09249403865,71401743.0,0,1,0
+1996,Summer,Poland,POL,4163.51195431959,38624370.0,7,5,5
+1996,Summer,Portugal,POR,12185.0914010629,10063945.0,1,0,1
+1996,Summer,Puerto Rico,PUR,12173.163688986,3724655.0,0,0,1
+1996,Summer,Qatar,QAT,17124.7920861356,522531.0,0,0,0
+1996,Summer,Republic of Congo,CGO,898.794050151577,2785815.0,0,0,0
+1996,Summer,Romania,ROU,1633.01064354117,22619004.0,4,7,8
+1996,Summer,Russia,RUS,2643.92919921875,148160129.0,26,21,16
+1996,Summer,Rwanda,RWA,206.04911417485,6013112.0,0,0,0
+1996,Summer,Saint Kitts,SKN,7788.42839854571,42472.0,0,0,0
+1996,Summer,Saint Lucia,LCA,,,0,0,0
+1996,Summer,Saint Vincent,VIN,,,0,0,0
+1996,Summer,Samoa,SAM,1419.35849045228,171165.0,0,0,0
+1996,Summer,San Marino,SMR,,26253.0,0,0,0
+1996,Summer,Sao Tome and Principe,STP,987.048712395264,133799.0,0,0,0
+1996,Summer,Saudi Arabia,KSA,11471.5045960191,19033843.0,0,0,0
+1996,Summer,Senegal,SEN,723.469950081149,8912872.0,0,0,0
+1996,Summer,Serbia,SCG,3053.90516860949,7617794.0,1,1,2
+1996,Summer,Seychelles,SEY,7004.33603896356,76417.0,0,0,0
+1996,Summer,Sierra Leone,SLE,224.258711163044,4312660.0,0,0,0
+1996,Summer,Slovakia,SVK,5247.70081044708,5373361.0,1,1,1
+1996,Summer,Slovenia,SLO,10796.7399446283,1988628.0,0,2,0
+1996,Summer,Solomon Islands,SOL,1289.33036923435,369517.0,0,0,0
+1996,Summer,Somalia,SOM,,7682683.0,0,0,0
+1996,Summer,South Africa,RSA,3617.55336002932,42241007.0,3,1,1
+1996,Summer,South Korea,KOR,13864.9376534518,45524681.0,7,15,5
+1996,Summer,Spain,ESP,16100.6215831114,39889852.0,5,6,6
+1996,Summer,Sri Lanka,SRI,776.192371057587,18367290.0,0,0,0
+1996,Summer,Sudan,SUD,294.826965332031,24782384.0,0,0,0
+1996,Summer,Suriname,SUR,1962.88495820295,448207.0,0,0,0
+1996,Summer,Swaziland,SWZ,,,0,0,0
+1996,Summer,Sweden,SWE,33022.2444768661,8840998.0,2,4,2
+1996,Summer,Switzerland,SUI,48092.6433036512,7071850.0,4,3,0
+1996,Summer,Syria,SYR,918.195857362788,14754148.0,1,0,0
+1996,Summer,Taiwan,TPE,,,0,1,0
+1996,Summer,Tajikistan,TJK,172.035088688368,5851354.0,0,0,0
+1996,Summer,Tanzania,TAN,313.658386230469,30444523.0,0,0,0
+1996,Summer,Thailand,THA,3054.65690806473,60130190.0,1,0,1
+1996,Summer,Togo,TOG,452.068436882428,4348808.0,0,0,0
+1996,Summer,Tonga,TGA,2214.91474789811,96267.0,0,1,0
+1996,Summer,Trinidad,TTO,4427.27832448289,1257547.0,0,0,2
+1996,Summer,Tunisia,TUN,2107.40815649257,9267335.0,0,0,1
+1996,Summer,Turkey,TUR,4041.36210281686,59423278.0,4,1,1
+1996,Summer,Turkmenistan,TKM,557.894220051334,4287337.0,0,0,0
+1996,Summer,UK,GBR,24503.3829602903,58166950.0,1,8,6
+1996,Summer,USA,USA,29967.7127181749,269394000.0,44,32,25
+1996,Summer,Uganda,UGA,284.698259285733,21032817.0,0,0,1
+1996,Summer,Ukraine,UKR,869.846069335938,51057800.0,9,2,12
+1996,Summer,United Arab Emirates,UAE,28323.1650870532,2539121.0,0,0,0
+1996,Summer,Uruguay,URU,6398.43575184095,3247383.0,0,0,0
+1996,Summer,Uzbekistan,UZB,597.33228695111,23225000.0,0,1,1
+1996,Summer,Vanuatu,VAN,1529.27573115021,171721.0,0,0,0
+1996,Summer,Venezuela,VEN,3112.825848106,22385650.0,0,0,0
+1996,Summer,Vietnam,VIE,337.051231790277,76068739.0,0,0,0
+1996,Summer,"Virgin Islands, British",IVB,,19508.0,0,0,0
+1996,Summer,"Virgin Islands, US",ISV,,108095.0,0,0,0
+1996,Summer,Yemen,YEM,,,0,0,0
+1996,Summer,Zambia,ZAM,399.511304742449,9339740.0,0,1,0
+1996,Summer,Zimbabwe,ZIM,766.913775859535,11541215.0,0,0,0
+1998,Winter,Andorra,AND,18536.5084282698,64140.0,0,0,0
+1998,Winter,Argentina,ARG,8218.99212764682,36063451.0,0,0,0
+1998,Winter,Armenia,ARM,590.239947333459,3108691.0,0,0,0
+1998,Winter,Australia,AUS,21516.0403147759,18711000.0,0,0,1
+1998,Winter,Austria,AUT,27212.4642905708,7976789.0,3,5,9
+1998,Winter,Azerbaijan,AZE,561.906807871869,7913000.0,0,0,0
+1998,Winter,Belarus,BLR,1511.32531567314,10069000.0,0,0,2
+1998,Winter,Belgium,BEL,25338.4432934904,10203008.0,0,0,1
+1998,Winter,Bermuda,BER,51629.2814855126,60943.0,0,0,0
+1998,Winter,Bosnia and Herzegovina,BIH,1006.70479669823,3734338.0,0,0,0
+1998,Winter,Brazil,BRA,5105.89246192003,169785253.0,0,0,0
+1998,Winter,Bulgaria,BUL,1820.44866449942,8256786.0,1,0,0
+1998,Winter,Canada,CAN,21024.5850687045,30155173.0,6,5,4
+1998,Winter,Chile,CHI,5419.82417297191,14977736.0,0,0,0
+1998,Winter,China,CHN,835.095348597432,1241935000.0,0,6,2
+1998,Winter,Croatia,CRO,5712.58985659548,4532135.0,0,0,0
+1998,Winter,Cyprus,CYP,15092.828125,908710.0,0,0,0
+1998,Winter,Czech Republic,CZE,6526.59635780951,10294373.0,1,1,1
+1998,Winter,Denmark,DEN,33346.4884298957,5304219.0,0,1,0
+1998,Winter,Estonia,EST,4093.39247738765,1386156.0,0,0,0
+1998,Winter,Finland,FIN,25999.9861694953,5153498.0,2,4,6
+1998,Winter,France,FRA,24869.4030795939,60186284.0,2,1,5
+1998,Winter,Georgia,GEO,851.515542450841,4243607.0,0,0,0
+1998,Winter,Germany,GER,27395.9440608051,82047195.0,12,9,8
+1998,Winter,Greece,GRE,13022.9648774809,10720509.0,0,0,0
+1998,Winter,Hungary,HUN,4751.7732430202,10266570.0,0,0,0
+1998,Winter,Iceland,ISL,31519.1647473126,274047.0,0,0,0
+1998,Winter,India,IND,413.630864056851,1019483586.0,0,0,0
+1998,Winter,Iran,IRI,1709.19334096046,63971836.0,0,0,0
+1998,Winter,Ireland,IRL,24294.8547674007,3712696.0,0,0,0
+1998,Winter,Israel,ISR,20188.8141481667,5971000.0,0,0,0
+1998,Winter,Italy,ITA,22365.1837644545,56906744.0,2,6,2
+1998,Winter,Jamaica,JAM,3419.49352868739,2608874.0,0,0,0
+1998,Winter,Japan,JPN,32423.7556133801,126400000.0,5,1,4
+1998,Winter,Kazakhstan,KAZ,1414.59289652597,15071640.0,0,0,2
+1998,Winter,Kenya,KEN,487.883239905452,30250488.0,0,0,0
+1998,Winter,Kyrgyzstan,KGZ,345.137046084246,4769000.0,0,0,0
+1998,Winter,Latvia,LAT,2893.79998716563,2410019.0,0,0,0
+1998,Winter,Liechtenstein,LIE,78302.9905905848,32306.0,0,0,0
+1998,Winter,Lithuania,LTU,3180.64498555255,3549331.0,0,0,0
+1998,Winter,Luxembourg,LUX,47445.3810812051,424700.0,0,0,0
+1998,Winter,Macedonia,MKD,1875.81662735988,2012052.0,0,0,0
+1998,Winter,Moldova,MDA,578.734627562193,2934339.0,0,0,0
+1998,Winter,Monaco,MON,90947.2051224438,31554.0,0,0,0
+1998,Winter,Mongolia,MGL,483.878066074871,2355667.0,0,0,0
+1998,Winter,Netherlands,NED,27924.281808994,15707209.0,5,4,2
+1998,Winter,New Zealand,NZL,14738.4455703918,3815000.0,0,0,0
+1998,Winter,North Korea,PRK,,22536754.0,0,0,0
+1998,Winter,Norway,NOR,34803.4634058738,4431464.0,8,9,5
+1998,Winter,Poland,POL,4533.5356551781,38663481.0,0,0,0
+1998,Winter,Portugal,POR,12199.206385024,10160196.0,0,0,0
+1998,Winter,Puerto Rico,PUR,14304.4049868015,3781101.0,0,0,0
+1998,Winter,Romania,ROU,1852.5549693339,22507344.0,0,0,0
+1998,Winter,Russia,RUS,1834.86181640625,147670784.0,9,6,3
+1998,Winter,Serbia,SCG,2775.47372982047,7567745.0,0,0,0
+1998,Winter,Slovakia,SVK,5560.916177503,5390516.0,0,0,0
+1998,Winter,Slovenia,SLO,11131.5666628231,1981629.0,0,0,0
+1998,Winter,South Africa,RSA,3309.60933087472,43682259.0,0,0,0
+1998,Winter,South Korea,KOR,8583.43557499234,46286503.0,3,1,2
+1998,Winter,Spain,ESP,15382.3348573373,40223509.0,0,0,0
+1998,Winter,Sweden,SWE,30605.3669074811,8850974.0,0,2,1
+1998,Winter,Switzerland,SUI,42680.5867322391,7110001.0,2,2,3
+1998,Winter,Taiwan,TPE,,,0,0,0
+1998,Winter,Trinidad,TTO,4612.70900312686,1261699.0,0,0,0
+1998,Winter,Turkey,TUR,4331.02761275037,61329665.0,0,0,0
+1998,Winter,UK,GBR,28396.3523548013,58487141.0,0,0,1
+1998,Winter,USA,USA,32853.6769523009,275854000.0,6,3,4
+1998,Winter,Ukraine,UKR,831.336791992188,50144500.0,0,1,0
+1998,Winter,Uruguay,URU,7836.89183322307,3291053.0,0,0,0
+1998,Winter,Uzbekistan,UZB,621.048904301242,24051000.0,0,0,0
+1998,Winter,Venezuela,VEN,3869.98258848894,23288567.0,0,0,0
+1998,Winter,"Virgin Islands, US",ISV,,108537.0,0,0,0
+2000,Summer,Albania,ALB,1160.42047054038,3089027.0,0,0,0
+2000,Summer,Algeria,ALG,1772.92869122761,31042238.0,1,1,3
+2000,Summer,American Samoa,ASA,,57816.0,0,0,0
+2000,Summer,Andorra,AND,21810.2503808666,65390.0,0,0,0
+2000,Summer,Angola,ANG,563.733795571487,16395477.0,0,0,0
+2000,Summer,Antigua,ANT,12027.4949768222,76007.0,0,0,0
+2000,Summer,Argentina,ARG,7637.01489203628,36870796.0,0,2,2
+2000,Summer,Armenia,ARM,593.450581742282,3069597.0,0,0,1
+2000,Summer,Aruba,ARU,20681.0230269625,90866.0,0,0,0
+2000,Summer,Australia,AUS,21908.9968019784,19153000.0,16,25,17
+2000,Summer,Austria,AUT,24487.2974685956,8011566.0,2,1,0
+2000,Summer,Azerbaijan,AZE,655.097249579917,8048600.0,2,0,1
+2000,Summer,Bahamas,BAH,24940.0775086078,298045.0,2,0,1
+2000,Summer,Bahrain,BRN,20130.2572346624,333166.0,0,0,0
+2000,Summer,Bangladesh,BAN,396.670730249751,127657862.0,0,0,0
+2000,Summer,Barbados,BAR,11674.6736471764,271511.0,0,0,1
+2000,Summer,Belarus,BLR,1276.2880341,9979610.0,3,3,11
+2000,Summer,Belgium,BEL,23098.8865077401,10251250.0,0,2,3
+2000,Summer,Belize,BIZ,4726.50675459616,247310.0,0,0,0
+2000,Summer,Benin,BEN,487.424141384242,6865946.0,0,0,0
+2000,Summer,Bermuda,BER,56542.9569455727,61833.0,0,0,0
+2000,Summer,Bhutan,BHU,771.924911410619,591014.0,0,0,0
+2000,Summer,Boliva,BOL,975.777060358751,8418270.0,0,0,0
+2000,Summer,Bosnia and Herzegovina,BIH,1338.48059636261,3751176.0,0,0,0
+2000,Summer,Botswana,BOT,3450.81180622992,1643333.0,0,0,0
+2000,Summer,Brazil,BRA,3766.54786339835,174790339.0,0,6,6
+2000,Summer,Brunei,BRU,20130.2572346624,333166.0,0,0,0
+2000,Summer,Bulgaria,BUL,1621.26210738992,8170172.0,5,6,2
+2000,Summer,Burkina Faso,BUR,248.908526921752,11607951.0,0,0,0
+2000,Summer,Burundi,BDI,134.537861752389,6378871.0,0,0,0
+2000,Summer,Cambodia,CAM,296.426687526334,12155241.0,0,0,0
+2000,Summer,Cameroon,CMR,708.565731625965,15513944.0,1,0,0
+2000,Summer,Canada,CAN,24271.0020563821,30685730.0,3,3,8
+2000,Summer,Cape Verde,CPV,,,0,0,0
+2000,Summer,Cayman Islands,CAY,,42305.0,0,0,0
+2000,Summer,Central African Republic,CAF,239.154133726071,3640421.0,0,0,0
+2000,Summer,Chad,CHA,163.121663683369,8355654.0,0,0,0
+2000,Summer,Chile,CHI,5052.99245766325,15342350.0,0,0,1
+2000,Summer,China,CHN,969.199513696287,1262645000.0,28,16,14
+2000,Summer,Colombia,COL,2555.00751039968,39629965.0,1,0,0
+2000,Summer,Comoros,COM,633.309032776244,542358.0,0,0,0
+2000,Summer,Cook Islands,COK,,,0,0,0
+2000,Summer,Costa Rica,CRC,3812.75388284924,3962369.0,0,0,2
+2000,Summer,Croatia,CRO,4953.65158789022,4468302.0,1,0,1
+2000,Summer,Cuba,CUB,2751.3817714814,11126423.0,11,11,7
+2000,Summer,Curacao,AHO,15841.2612359949,133860.0,0,0,0
+2000,Summer,Cyprus,CYP,14388.3525390625,943288.0,0,0,0
+2000,Summer,Czech Republic,CZE,6062.92152842793,10255063.0,2,3,3
+2000,Summer,Democratic Republic of the Congo,COD,377.925421481395,47105830.0,0,0,0
+2000,Summer,Denmark,DEN,30722.0251837567,5339616.0,2,3,1
+2000,Summer,Djibouti,DJI,737.612183644052,717577.0,0,0,0
+2000,Summer,Dominica,DMA,4867.39896323759,69650.0,0,0,0
+2000,Summer,Dominican Republic,DOM,2831.45883638033,8471317.0,0,0,0
+2000,Summer,Ecuador,ECU,1382.23421759909,12681123.0,0,0,0
+2000,Summer,Egypt,EGY,1366.09274372613,68831561.0,0,0,0
+2000,Summer,El Salvador,ESA,1982.87093542615,5887930.0,0,0,0
+2000,Summer,Equatorial Guinea,GEQ,1487.3165506701,606180.0,0,0,0
+2000,Summer,Eritrea,ERI,314.357396753501,2292413.0,0,0,0
+2000,Summer,Estonia,EST,4070.60902410208,1396985.0,1,0,2
+2000,Summer,Ethiopia,ETH,122.269202606069,66224809.0,4,1,3
+2000,Summer,Fiji,FIJ,1995.72071163264,811011.0,0,0,0
+2000,Summer,Finland,FIN,24335.9225082659,5176209.0,2,1,1
+2000,Summer,France,FRA,22340.5939516217,60912500.0,13,14,11
+2000,Summer,Gabon,GAB,3982.906200928,1228359.0,0,0,0
+2000,Summer,Gambia,GAM,538.054072348854,1317708.0,0,0,0
+2000,Summer,Georgia,GEO,749.908534993961,4077131.0,0,0,6
+2000,Summer,Germany,GER,23925.8559901991,82211508.0,13,17,26
+2000,Summer,Ghana,GHA,253.746936203344,19278850.0,0,0,0
+2000,Summer,Greece,GRE,11638.2010697215,10805808.0,4,6,3
+2000,Summer,Grenada,GRN,4839.82811114248,102837.0,0,0,0
+2000,Summer,Guam,GUM,,155323.0,0,0,0
+2000,Summer,Guatemala,GUA,1648.96578971559,11589761.0,0,0,0
+2000,Summer,Guinea,GUI,518.157066924026,8240735.0,0,0,0
+2000,Summer,Guinea-Bissau,GBS,316.945495037639,1201305.0,0,0,0
+2000,Summer,Guyana,GUY,931.796651718955,746718.0,0,0,0
+2000,Summer,Haiti,HAI,820.600046761464,8463802.0,0,0,0
+2000,Summer,Honduras,HON,1092.56400746252,6574510.0,0,0,0
+2000,Summer,Hungary,HUN,4629.91760812548,10210971.0,8,6,3
+2000,Summer,Iceland,ISL,32503.578963236,281205.0,0,0,1
+2000,Summer,India,IND,442.750218937263,1056575548.0,0,0,1
+2000,Summer,Individual Olympic Athletes,IOA,,,0,0,0
+2000,Summer,Indonesia,INA,763.711124950924,211513822.0,1,3,2
+2000,Summer,Iran,IRI,1650.01385833785,65623397.0,3,0,1
+2000,Summer,Iraq,IRQ,1980.18916038782,23497589.0,0,0,0
+2000,Summer,Ireland,IRL,26334.5672050501,3805174.0,0,1,0
+2000,Summer,Israel,ISR,21706.5194056329,6289000.0,0,0,1
+2000,Summer,Italy,ITA,20190.0035636084,56942108.0,13,8,13
+2000,Summer,Ivory Coast,CIV,936.636541348798,16454660.0,0,0,0
+2000,Summer,Jamaica,JAM,3453.09252800226,2654698.0,0,6,3
+2000,Summer,Japan,JPN,39169.3595701504,126843000.0,5,8,5
+2000,Summer,Jordan,JOR,1570.61002940477,5122495.0,0,0,0
+2000,Summer,Kazakhstan,KAZ,1180.0444563226,14883626.0,3,4,0
+2000,Summer,Kenya,KEN,414.626365130846,31964557.0,2,3,2
+2000,Summer,Kuwait,KUW,19296.3471698729,2045123.0,0,0,1
+2000,Summer,Kyrgyzstan,KGZ,279.621738464365,4898400.0,0,0,1
+2000,Summer,Laos,LAO,318.749852236965,5323701.0,0,0,0
+2000,Summer,Latvia,LAT,3278.17896440803,2367550.0,1,1,1
+2000,Summer,Lebanon,LIB,3986.83513941026,3842774.0,0,0,0
+2000,Summer,Lesotho,LES,442.779545779081,2032805.0,0,0,0
+2000,Summer,Liberia,LBR,298.485340578945,2848447.0,0,0,0
+2000,Summer,Libya,LBA,7214.10040377084,5357893.0,0,0,0
+2000,Summer,Liechtenstein,LIE,76087.911114202,33184.0,0,0,0
+2000,Summer,Lithuania,LTU,3300.63634928559,3499536.0,2,0,3
+2000,Summer,Luxembourg,LUX,48659.5988753233,436300.0,0,0,0
+2000,Summer,Macedonia,MKD,1861.89899780644,2034823.0,0,0,1
+2000,Summer,Madagascar,MAD,280.282905559649,15766806.0,0,0,0
+2000,Summer,Malawi,MAW,224.22415918428,11148751.0,0,0,0
+2000,Summer,Malaysia,MAS,4083.52874483605,23194252.0,0,0,0
+2000,Summer,Maldives,MDV,2213.81235053178,279396.0,0,0,0
+2000,Summer,Mali,MLI,304.652870194271,10946448.0,0,0,0
+2000,Summer,Malta,MLT,10348.4858902403,390087.0,0,0,0
+2000,Summer,Mauritania,MTN,680.911061879778,2630217.0,0,0,0
+2000,Summer,Mauritius,MRI,3981.98343249582,1186873.0,0,0,0
+2000,Summer,Mexico,MEX,7524.0271380091,98899845.0,1,2,3
+2000,Summer,Micronesia,FSM,,,0,0,0
+2000,Summer,Moldova,MDA,440.538683980372,2923783.0,0,1,1
+2000,Summer,Monaco,MON,81789.0206522549,32148.0,0,0,0
+2000,Summer,Mongolia,MGL,476.02755082717,2397417.0,0,0,0
+2000,Summer,Morocco,MAR,1499.107421875,28793672.0,0,1,4
+2000,Summer,Mozambique,MOZ,327.12623979157,17711925.0,1,0,0
+2000,Summer,Myanmar,MYA,196.619580625284,46719698.0,0,0,0
+2000,Summer,Namibia,NAM,2156.67590512714,1794583.0,0,0,0
+2000,Summer,Nauru,NRU,2648.60152860938,10335.0,0,0,0
+2000,Summer,Nepal,NEP,223.830289183078,23941099.0,0,0,0
+2000,Summer,Netherlands,NED,26225.1697734149,15925513.0,12,9,4
+2000,Summer,New Zealand,NZL,13641.1027183822,3857700.0,1,0,3
+2000,Summer,Nicaragua,NCA,1017.3124434882,5069310.0,0,0,0
+2000,Summer,Niger,NIG,194.771959898935,11331561.0,0,0,0
+2000,Summer,Nigeria,NGR,547.318298903379,122283853.0,1,2,0
+2000,Summer,North Korea,PRK,,22929078.0,0,1,3
+2000,Summer,Norway,NOR,38178.2368777076,4490967.0,4,3,3
+2000,Summer,Oman,OMA,9753.84755185404,2267973.0,0,0,0
+2000,Summer,Pakistan,PAK,642.338346499898,142343583.0,0,0,0
+2000,Summer,Palau,PLW,7798.07504193852,19104.0,0,0,0
+2000,Summer,Palestine,PLE,,,0,0,0
+2000,Summer,Panama,PAN,3975.09310275544,3030333.0,0,0,0
+2000,Summer,Papua New Guinea,PNG,635.957919047725,5847590.0,0,0,0
+2000,Summer,Paraguay,PAR,1736.11729210765,5323202.0,0,0,0
+2000,Summer,Peru,PER,1945.41338451698,26459944.0,0,0,0
+2000,Summer,Philippines,PHI,1050.79273107952,77991757.0,0,0,0
+2000,Summer,Poland,POL,4520.64100449111,38258629.0,6,5,3
+2000,Summer,Portugal,POR,11526.3720667968,10289898.0,0,0,2
+2000,Summer,Puerto Rico,PUR,16192.1269719638,3810605.0,0,0,0
+2000,Summer,Qatar,QAT,27535.182940934,592467.0,0,0,1
+2000,Summer,Republic of Congo,CGO,1024.30159109181,3127420.0,0,0,0
+2000,Summer,Romania,ROU,1659.92904910528,22442971.0,11,6,9
+2000,Summer,Russia,RUS,1771.59411621094,146596869.0,32,28,29
+2000,Summer,Rwanda,RWA,251.86926386091,7933688.0,0,0,0
+2000,Summer,Saint Kitts,SKN,9319.65545093525,44083.0,0,0,0
+2000,Summer,Saint Lucia,LCA,,,0,0,0
+2000,Summer,Saint Vincent,VIN,,,0,0,0
+2000,Summer,Samoa,SAM,1424.75240002471,174454.0,0,0,0
+2000,Summer,San Marino,SMR,37600.7077379601,27460.0,0,0,0
+2000,Summer,Sao Tome and Principe,STP,529.089383412262,142264.0,0,0,0
+2000,Summer,Saudi Arabia,KSA,11714.5623675159,20663840.0,0,1,1
+2000,Summer,Senegal,SEN,603.233162455158,9797731.0,0,0,0
+2000,Summer,Serbia,SCG,974.725469278615,7516346.0,1,1,1
+2000,Summer,Seychelles,SEY,8063.65500575169,81131.0,0,0,0
+2000,Summer,Sierra Leone,SLE,143.743743239644,4584570.0,0,0,0
+2000,Summer,Slovakia,SVK,5421.6448441887,5388720.0,1,3,1
+2000,Summer,Slovenia,SLO,10135.7219109212,1988925.0,2,0,0
+2000,Summer,Solomon Islands,SOL,953.17190137706,412665.0,0,0,0
+2000,Summer,Somalia,SOM,,8872250.0,0,0,0
+2000,Summer,South Africa,RSA,3217.84693448467,44967713.0,0,2,3
+2000,Summer,South Korea,KOR,12710.2995795579,47008111.0,8,10,10
+2000,Summer,Spain,ESP,14743.2671031455,40567864.0,3,3,5
+2000,Summer,Sri Lanka,SRI,860.199884304769,18777606.0,0,1,0
+2000,Summer,Sudan,SUD,362.116882324219,27275019.0,0,0,0
+2000,Summer,Suriname,SUR,1988.22172925433,470944.0,0,0,0
+2000,Summer,Swaziland,SWZ,,,0,0,0
+2000,Summer,Sweden,SWE,29632.5890811623,8872109.0,4,5,3
+2000,Summer,Switzerland,SUI,38865.021939688,7184250.0,1,6,2
+2000,Summer,Syria,SYR,1138.1884854278,16410847.0,0,0,0
+2000,Summer,Taiwan,TPE,,,0,1,4
+2000,Summer,Tajikistan,TJK,136.925716400723,6216329.0,0,0,0
+2000,Summer,Tanzania,TAN,401.698150634766,33499177.0,0,0,0
+2000,Summer,Thailand,THA,2005.97694514234,62952639.0,1,0,2
+2000,Summer,Togo,TOG,409.889802792768,4924406.0,0,0,0
+2000,Summer,Tonga,TGA,1995.07667546271,97962.0,0,0,0
+2000,Summer,Trinidad,TTO,6178.58975559687,1267159.0,0,1,1
+2000,Summer,Tunisia,TUN,2199.04465936314,9708347.0,0,0,0
+2000,Summer,Turkey,TUR,4199.3798635759,63240196.0,3,0,2
+2000,Summer,Turkmenistan,TKM,633.835487638011,4516128.0,0,0,0
+2000,Summer,UK,GBR,28383.8761094996,58892514.0,11,10,7
+2000,Summer,USA,USA,36329.9560727102,282162411.0,36,24,31
+2000,Summer,Uganda,UGA,258.050338731086,23650159.0,0,0,0
+2000,Summer,Ukraine,UKR,653.294311523438,49176500.0,3,10,10
+2000,Summer,United Arab Emirates,UAE,29865.502347066,3134067.0,0,0,0
+2000,Summer,Uruguay,URU,6987.70098766257,3319734.0,0,1,0
+2000,Summer,Uzbekistan,UZB,555.149231099186,24650400.0,1,1,2
+2000,Summer,Vanuatu,VAN,1460.23817692229,184964.0,0,0,0
+2000,Summer,Venezuela,VEN,4776.2816763938,24192449.0,0,0,0
+2000,Summer,Vietnam,VIE,404.029784055118,79910411.0,0,1,0
+2000,Summer,"Virgin Islands, British",IVB,,20313.0,0,0,0
+2000,Summer,"Virgin Islands, US",ISV,,108642.0,0,0,0
+2000,Summer,Yemen,YEM,,,0,0,0
+2000,Summer,Zambia,ZAM,359.429500988221,10415942.0,0,0,0
+2000,Summer,Zimbabwe,ZIM,562.833757496076,11881482.0,0,0,0
+2002,Winter,Andorra,AND,26528.1300628236,70048.0,0,0,0
+2002,Winter,Argentina,ARG,2569.69963519124,37681743.0,0,0,0
+2002,Winter,Armenia,ARM,742.651118319819,3033976.0,0,0,0
+2002,Winter,Australia,AUS,20335.0960191023,19651400.0,2,0,0
+2002,Winter,Austria,AUT,26334.862215032,8081957.0,3,4,10
+2002,Winter,Azerbaijan,AZE,763.108895463487,8171950.0,0,0,0
+2002,Winter,Belarus,BLR,1479.38066337175,9865548.0,0,0,1
+2002,Winter,Belgium,BEL,25006.191397109,10332785.0,0,0,0
+2002,Winter,Bermuda,BER,63358.5658652763,62912.0,0,0,0
+2002,Winter,Bosnia and Herzegovina,BIH,1606.5467454132,3759389.0,0,0,0
+2002,Winter,Brazil,BRA,2855.94017137049,179537523.0,0,0,0
+2002,Winter,Bulgaria,BUL,2092.98288625558,7837161.0,0,1,2
+2002,Winter,Cameroon,CMR,789.623811072554,16357605.0,0,0,0
+2002,Winter,Canada,CAN,24256.0192337185,31360079.0,7,3,7
+2002,Winter,Chile,CHI,4430.84741157984,15684413.0,0,0,0
+2002,Winter,China,CHN,1163.55957673426,1280400000.0,2,2,4
+2002,Winter,Costa Rica,CRC,4067.71851429092,4100922.0,0,0,0
+2002,Winter,Croatia,CRO,6219.58164143945,4302174.0,3,1,0
+2002,Winter,Cyprus,CYP,16093.2158203125,976968.0,0,0,0
+2002,Winter,Czech Republic,CZE,8101.26018588111,10196916.0,1,2,0
+2002,Winter,Denmark,DEN,33257.1622586509,5375931.0,0,0,0
+2002,Winter,Estonia,EST,5343.18310760735,1379350.0,1,1,1
+2002,Winter,Fiji,FIJ,2136.56794118683,815257.0,0,0,0
+2002,Winter,Finland,FIN,26989.389260959,5200598.0,4,2,1
+2002,Winter,France,FRA,24144.5727019529,61805266.0,4,5,2
+2002,Winter,Georgia,GEO,853.526171868939,3978515.0,0,0,0
+2002,Winter,Germany,GER,25486.5942008748,82488495.0,12,16,8
+2002,Winter,Greece,GRE,13782.195640943,10902022.0,0,0,0
+2002,Winter,Hungary,HUN,6658.04494326809,10158608.0,0,0,0
+2002,Winter,Iceland,ISL,32749.379004627,287523.0,0,0,0
+2002,Winter,India,IND,469.149928973927,1093317187.0,0,0,0
+2002,Winter,Iran,IRI,1891.25756091033,67284801.0,0,0,0
+2002,Winter,Ireland,IRL,32705.4345565698,3931947.0,0,0,0
+2002,Winter,Israel,ISR,19076.4584298321,6570000.0,0,0,0
+2002,Winter,Italy,ITA,22451.3964379368,57059007.0,4,4,5
+2002,Winter,Jamaica,JAM,3680.64551727724,2692843.0,0,0,0
+2002,Winter,Japan,JPN,32820.7936433254,127445000.0,0,1,1
+2002,Winter,Kazakhstan,KAZ,1573.55219932325,14858948.0,0,0,0
+2002,Winter,Kenya,KEN,402.936385605382,33751746.0,0,0,0
+2002,Winter,Kyrgyzstan,KGZ,321.726775366804,4990700.0,0,0,0
+2002,Winter,Latvia,LAT,4003.60935783538,2310173.0,0,0,0
+2002,Winter,Lebanon,LIB,4290.85283803266,4182205.0,0,0,0
+2002,Winter,Liechtenstein,LIE,79795.1785891101,33885.0,0,0,0
+2002,Winter,Lithuania,LTU,4148.13091485015,3443067.0,0,0,0
+2002,Winter,Macedonia,MKD,1989.13537265159,2048930.0,0,0,0
+2002,Winter,Mexico,MEX,7983.03398381759,101684764.0,0,0,0
+2002,Winter,Moldova,MDA,570.799866188293,2910504.0,0,0,0
+2002,Winter,Monaco,MON,90051.4459877468,32804.0,0,0,0
+2002,Winter,Mongolia,MGL,570.249213248399,2443261.0,0,0,0
+2002,Winter,Nepal,NEP,238.89140296106,24725625.0,0,0,0
+2002,Winter,Netherlands,NED,29446.5330872868,16148929.0,3,5,0
+2002,Winter,New Zealand,NZL,16874.1874918196,3948500.0,0,0,0
+2002,Winter,Norway,NOR,43170.557174499,4538159.0,12,5,7
+2002,Winter,Poland,POL,5223.45178967082,38230364.0,0,1,1
+2002,Winter,Romania,ROU,2119.85509684554,21730496.0,0,0,0
+2002,Winter,Russia,RUS,2377.52954101563,145306497.0,5,4,4
+2002,Winter,San Marino,SMR,41790.8432718184,28175.0,0,0,0
+2002,Winter,Serbia,SCG,2390.73459447107,7496522.0,0,0,0
+2002,Winter,Slovakia,SVK,6554.62808369461,5376912.0,0,0,0
+2002,Winter,Slovenia,SLO,11639.1297780477,1994530.0,0,0,1
+2002,Winter,South Africa,RSA,2688.23676032806,46150913.0,0,0,0
+2002,Winter,South Korea,KOR,13642.9424537101,47644736.0,2,2,0
+2002,Winter,Spain,ESP,17111.0685058941,41431558.0,0,0,0
+2002,Winter,Sweden,SWE,29957.7776664916,8924958.0,0,2,5
+2002,Winter,Switzerland,SUI,42458.7384679187,7284753.0,3,2,6
+2002,Winter,Taiwan,TPE,,,0,0,0
+2002,Winter,Tajikistan,TJK,186.951638285222,6426861.0,0,0,0
+2002,Winter,Thailand,THA,2089.75183111554,64069093.0,0,0,0
+2002,Winter,Trinidad,TTO,6762.93080808096,1277210.0,0,0,0
+2002,Winter,Turkey,TUR,3591.08628982587,65145357.0,0,0,0
+2002,Winter,UK,GBR,30158.7017807858,59370479.0,1,0,1
+2002,Winter,USA,USA,37997.7596573051,287625193.0,10,13,11
+2002,Winter,Ukraine,UKR,903.011901855469,48202470.0,0,0,0
+2002,Winter,Uzbekistan,UZB,381.409296889283,25271850.0,0,0,0
+2002,Winter,Venezuela,VEN,3652.09896501865,25100407.0,0,0,0
+2002,Winter,"Virgin Islands, US",ISV,30062.0225050457,108509.0,0,0,0
+2004,Summer,Afghanistan,AFG,221.763653873013,24726689.0,0,0,0
+2004,Summer,Albania,ALB,2446.90949947798,3026939.0,0,0,0
+2004,Summer,Algeria,ALG,2816.99384960555,32692153.0,0,0,0
+2004,Summer,American Samoa,ASA,8958.42866697173,59684.0,0,0,0
+2004,Summer,Andorra,AND,39021.1107100919,76250.0,0,0,0
+2004,Summer,Angola,ANG,1451.47117872493,18758138.0,0,0,0
+2004,Summer,Antigua,ANT,13037.8895772257,80347.0,0,0,0
+2004,Summer,Argentina,ARG,4242.02099089422,38491970.0,2,0,4
+2004,Summer,Armenia,ARM,1130.08791444158,3000715.0,0,0,0
+2004,Summer,Aruba,ARU,23700.6319899197,98744.0,0,0,0
+2004,Summer,Australia,AUS,30886.0500949401,20127400.0,17,16,17
+2004,Summer,Austria,AUT,36614.2506533707,8171966.0,2,4,1
+2004,Summer,Azerbaijan,AZE,1045.0136328106,8306500.0,1,0,4
+2004,Summer,Bahamas,BAH,26650.2934234303,318893.0,1,0,1
+2004,Summer,Bahrain,BRN,24423.0946995548,359434.0,0,0,0
+2004,Summer,Bangladesh,BAN,455.614016909798,136986429.0,0,0,0
+2004,Summer,Barbados,BAR,12886.3665272467,275283.0,0,0,0
+2004,Summer,Belarus,BLR,2378.33700470129,9730146.0,2,5,6
+2004,Summer,Belgium,BEL,35429.4077933344,10421137.0,1,0,2
+2004,Summer,Belize,BIZ,5153.71308265363,276516.0,0,0,0
+2004,Summer,Benin,BEN,758.695803786371,7750003.0,0,0,0
+2004,Summer,Bermuda,BER,71692.1589001679,63740.0,0,0,0
+2004,Summer,Bhutan,BHU,1130.35934606796,638809.0,0,0,0
+2004,Summer,Boliva,BOL,953.191893246277,9069044.0,0,0,0
+2004,Summer,Bosnia and Herzegovina,BIH,2452.6860917386,3764194.0,0,0,0
+2004,Summer,Botswana,BOT,4956.69287735214,1765533.0,0,0,0
+2004,Summer,Brazil,BRA,3663.82262497811,184006479.0,5,2,3
+2004,Summer,Brunei,BRU,24423.0946995548,359434.0,0,0,0
+2004,Summer,Bulgaria,BUL,3389.68743360274,7716860.0,2,1,9
+2004,Summer,Burkina Faso,BUR,403.81283743461,13030576.0,0,0,0
+2004,Summer,Burundi,BDI,125.194965184533,7131688.0,0,0,0
+2004,Summer,Cambodia,CAM,444.199067529081,13066475.0,0,0,0
+2004,Summer,Cameroon,CMR,1133.39326749673,17259322.0,1,0,0
+2004,Summer,Canada,CAN,32145.5412620217,31940655.0,3,6,3
+2004,Summer,Cape Verde,CPV,,,0,0,0
+2004,Summer,Cayman Islands,CAY,,47899.0,0,0,0
+2004,Summer,Central African Republic,CAF,303.461321152782,3959883.0,0,0,0
+2004,Summer,Chad,CHA,445.850767157087,9734761.0,0,0,0
+2004,Summer,Chile,CHI,6120.59152055344,16014972.0,2,0,1
+2004,Summer,China,CHN,1530.92726215723,1296075000.0,32,18,14
+2004,Summer,Colombia,COL,2818.57195413044,42075953.0,0,0,2
+2004,Summer,Comoros,COM,1072.28409029621,597230.0,0,0,0
+2004,Summer,Cook Islands,COK,,,0,0,0
+2004,Summer,Costa Rica,CRC,4431.0117207843,4225156.0,0,0,0
+2004,Summer,Croatia,CRO,9718.97322801967,4304600.0,1,2,2
+2004,Summer,Cuba,CUB,3399.21962893402,11250369.0,9,7,11
+2004,Summer,Curacao,AHO,16671.3403391655,134192.0,0,0,0
+2004,Summer,Cyprus,CYP,23792.619140625,1010410.0,0,0,0
+2004,Summer,Czech Republic,CZE,11782.5546676117,10197101.0,1,3,5
+2004,Summer,Democratic Republic of the Congo,COD,180.664764963633,53068869.0,0,0,0
+2004,Summer,Denmark,DEN,46625.050098011,5404523.0,2,1,5
+2004,Summer,Dominica,DMA,5778.83306546506,70387.0,0,0,0
+2004,Summer,Dominican Republic,DOM,2451.69161616569,8974444.0,1,0,0
+2004,Summer,Ecuador,ECU,2586.20914663347,13596390.0,0,0,0
+2004,Summer,Egypt,EGY,991.255689145253,74172073.0,1,1,3
+2004,Summer,El Salvador,ESA,2285.68907438892,6023801.0,0,0,0
+2004,Summer,Equatorial Guinea,GEQ,4901.30127408119,716949.0,0,0,0
+2004,Summer,Eritrea,ERI,426.840947887032,2719809.0,0,0,1
+2004,Summer,Estonia,EST,8916.0728274602,1362550.0,0,1,2
+2004,Summer,Ethiopia,ETH,133.169812538096,74239508.0,2,3,2
+2004,Summer,Fiji,FIJ,3097.19096651759,817864.0,0,0,0
+2004,Summer,Finland,FIN,37768.1334202029,5228172.0,0,2,0
+2004,Summer,France,FRA,33644.9282220364,62704901.0,11,9,13
+2004,Summer,Gabon,GAB,5465.79193590708,1353788.0,0,0,0
+2004,Summer,Gambia,GAM,593.285346326581,1496524.0,0,0,0
+2004,Summer,Georgia,GEO,1305.04748557208,3927340.0,2,2,0
+2004,Summer,Germany,GER,34566.7359143735,82516260.0,13,16,20
+2004,Summer,Ghana,GHA,406.132105329565,21272328.0,0,0,0
+2004,Summer,Greece,GRE,21449.2552764245,10955141.0,6,6,4
+2004,Summer,Grenada,GRN,5480.26117644588,104346.0,0,0,0
+2004,Summer,Guam,GUM,23618.8266894573,158094.0,0,0,0
+2004,Summer,Guatemala,GUA,1840.91184884,12682108.0,0,0,0
+2004,Summer,Guinea,GUI,584.897740538081,8925729.0,0,0,0
+2004,Summer,Guinea-Bissau,GBS,431.376557669634,1313492.0,0,0,0
+2004,Summer,Guyana,GUY,1033.31030902188,745737.0,0,0,0
+2004,Summer,Haiti,HAI,683.185298155273,9047082.0,0,0,0
+2004,Summer,Honduras,HON,1215.13995412761,7282953.0,0,0,0
+2004,Summer,Hungary,HUN,10291.2694721409,10107146.0,8,6,3
+2004,Summer,Iceland,ISL,47809.6073050042,292074.0,0,0,0
+2004,Summer,India,IND,624.258826510066,1129623466.0,0,1,0
+2004,Summer,Indonesia,INA,1126.84004447173,223285666.0,1,1,2
+2004,Summer,Iran,IRI,2672.4226651404,68951279.0,2,2,2
+2004,Summer,Iraq,IRQ,1328.37157628292,26313838.0,0,0,0
+2004,Summer,Ireland,IRL,47754.2023194244,4070262.0,0,0,0
+2004,Summer,Israel,ISR,20568.0694088834,6809000.0,1,0,1
+2004,Summer,Italy,ITA,31348.1901841445,57685327.0,10,11,11
+2004,Summer,Ivory Coast,CIV,1199.82524528546,17970493.0,0,0,0
+2004,Summer,Jamaica,JAM,3807.56293124552,2725017.0,2,1,2
+2004,Summer,Japan,JPN,38298.9801712303,127761000.0,16,9,12
+2004,Summer,Jordan,JOR,1940.08641342805,5580241.0,0,0,0
+2004,Summer,Kazakhstan,KAZ,2722.47407755402,15012984.0,1,4,3
+2004,Summer,Kenya,KEN,463.662781300121,35635267.0,1,4,2
+2004,Summer,Kiribati,KIR,1083.2688987175,90498.0,0,0,0
+2004,Summer,Kuwait,KUW,27552.2827399787,2200498.0,0,0,0
+2004,Summer,Kyrgyzstan,KGZ,433.233873286,5104700.0,0,0,0
+2004,Summer,Laos,LAO,409.296298284117,5662199.0,0,0,0
+2004,Summer,Latvia,LAT,6109.73265186817,2263122.0,0,4,0
+2004,Summer,Lebanon,LIB,4600.68371412993,4569377.0,0,0,0
+2004,Summer,Lesotho,LES,766.685820928242,2005953.0,0,0,0
+2004,Summer,Liberia,LBR,284.140223992458,3135654.0,0,0,0
+2004,Summer,Libya,LBA,5773.76333234281,5710163.0,0,0,0
+2004,Summer,Liechtenstein,LIE,100280.831356705,34444.0,0,0,0
+2004,Summer,Lithuania,LTU,6734.57487061946,3377075.0,1,2,0
+2004,Summer,Luxembourg,LUX,76544.9170868473,458095.0,0,0,0
+2004,Summer,Macedonia,MKD,2818.5814561242,2057044.0,0,0,0
+2004,Summer,Madagascar,MAD,272.20074858856,17802992.0,0,0,0
+2004,Summer,Malawi,MAW,404.674248445428,12301837.0,0,0,0
+2004,Summer,Malaysia,MAS,4939.24851854427,25190647.0,0,0,0
+2004,Summer,Maldives,MDV,4070.2609459446,311265.0,0,0,0
+2004,Summer,Mali,MLI,495.006294680645,12369078.0,0,0,0
+2004,Summer,Malta,MLT,15212.1313438497,401268.0,0,0,0
+2004,Summer,Mauritania,MTN,823.554457141893,2939246.0,0,0,0
+2004,Summer,Mauritius,MRI,5460.60800184198,1221003.0,0,0,0
+2004,Summer,Mexico,MEX,7849.66759649565,104514934.0,0,3,1
+2004,Summer,Micronesia,FSM,,,0,0,0
+2004,Summer,Moldova,MDA,897.178494749468,2895147.0,0,0,0
+2004,Summer,Monaco,MON,125160.228087598,33499.0,0,0,0
+2004,Summer,Mongolia,MGL,794.154552001815,2496394.0,0,0,1
+2004,Summer,Morocco,MAR,2183.55541992188,30115196.0,2,1,0
+2004,Summer,Mozambique,MOZ,400.056973161545,19910549.0,0,0,0
+2004,Summer,Myanmar,MYA,224.508811413327,48564489.0,0,0,0
+2004,Summer,Namibia,NAM,3403.15496192955,1907737.0,0,0,0
+2004,Summer,Nauru,NRU,3040.51349889,9906.0,0,0,0
+2004,Summer,Nepal,NEP,279.587750044428,25419337.0,0,0,0
+2004,Summer,Netherlands,NED,40611.3414353091,16281779.0,4,9,9
+2004,Summer,New Zealand,NZL,25420.234882944,4087500.0,3,2,0
+2004,Summer,Nicaragua,NCA,1098.62118662335,5364930.0,0,0,0
+2004,Summer,Niger,NIG,283.468281798296,13125914.0,0,0,0
+2004,Summer,Nigeria,NGR,962.48104194733,135320420.0,0,0,2
+2004,Summer,North Korea,PRK,,23732740.0,0,4,1
+2004,Summer,Norway,NOR,57768.6980958462,4591910.0,5,0,1
+2004,Summer,Oman,OMA,11800.8507411171,2445524.0,0,0,0
+2004,Summer,Pakistan,PAK,771.902247348954,156664698.0,0,0,0
+2004,Summer,Palau,PLW,8393.73052541231,19861.0,0,0,0
+2004,Summer,Palestine,PLE,,,0,0,0
+2004,Summer,Panama,PAN,4644.56581177581,3269356.0,0,0,0
+2004,Summer,Papua New Guinea,PNG,620.596147680561,6354247.0,0,0,0
+2004,Summer,Paraguay,PAR,1786.21533938543,5730556.0,0,1,0
+2004,Summer,Peru,PER,2397.25147277714,27624226.0,0,0,0
+2004,Summer,Philippines,PHI,1099.63013023758,84710544.0,0,0,0
+2004,Summer,Poland,POL,6711.72715262967,38182222.0,3,2,5
+2004,Summer,Portugal,POR,18064.1580932987,10483861.0,0,2,1
+2004,Summer,Puerto Rico,PUR,20988.9923326534,3826878.0,0,0,0
+2004,Summer,Qatar,QAT,41035.5008380177,753332.0,0,0,0
+2004,Summer,Republic of Congo,CGO,1306.10136324599,3510468.0,0,0,0
+2004,Summer,Romania,ROU,3494.99056448955,21451748.0,8,5,6
+2004,Summer,Russia,RUS,4102.36474609375,144067316.0,28,26,36
+2004,Summer,Rwanda,RWA,269.540446333402,8680516.0,0,0,0
+2004,Summer,Saint Kitts,SKN,10944.6183741768,46323.0,0,0,0
+2004,Summer,Saint Lucia,LCA,,,0,0,0
+2004,Summer,Saint Vincent,VIN,,,0,0,0
+2004,Summer,Samoa,SAM,2189.26042607992,178597.0,0,0,0
+2004,Summer,San Marino,SMR,58232.0176184948,28942.0,0,0,0
+2004,Summer,Sao Tome and Principe,STP,726.560882130444,153736.0,0,0,0
+2004,Summer,Saudi Arabia,KSA,13154.4978989446,23132686.0,0,0,0
+2004,Summer,Senegal,SEN,918.102079522155,10810086.0,0,0,0
+2004,Summer,Serbia,SCG,3597.08798057009,7463157.0,0,2,0
+2004,Summer,Seychelles,SEY,10827.671636033,82475.0,0,0,0
+2004,Summer,Sierra Leone,SLE,417.749983329227,5433995.0,0,0,0
+2004,Summer,Slovakia,SVK,10650.1290097126,5372280.0,2,2,2
+2004,Summer,Slovenia,SLO,17103.8297783905,1997012.0,0,1,3
+2004,Summer,Solomon Islands,SOL,986.070953503889,458549.0,0,0,0
+2004,Summer,Somalia,SOM,,10130251.0,0,0,0
+2004,Summer,South Africa,RSA,5221.46333731721,47291610.0,1,3,2
+2004,Summer,South Korea,KOR,17121.6301633201,48082519.0,9,12,9
+2004,Summer,Spain,ESP,24925.0267844576,42921895.0,3,11,6
+2004,Summer,Sri Lanka,SRI,1028.62068132555,19387153.0,0,0,0
+2004,Summer,Sudan,SUD,705.113342285156,30214189.0,0,0,0
+2004,Summer,Suriname,SUR,2887.7721728844,493680.0,0,0,0
+2004,Summer,Swaziland,SWZ,,,0,0,0
+2004,Summer,Sweden,SWE,42758.0048564929,8993531.0,4,2,1
+2004,Summer,Switzerland,SUI,54659.4571488233,7389625.0,1,1,3
+2004,Summer,Syria,SYR,1368.1148230028,17827827.0,0,0,1
+2004,Summer,Taiwan,TPE,,,2,2,1
+2004,Summer,Tajikistan,TJK,305.745158587502,6662391.0,0,0,0
+2004,Summer,Tanzania,TAN,450.385284423828,37379766.0,0,0,0
+2004,Summer,Thailand,THA,2641.56268717857,64995303.0,3,1,4
+2004,Summer,Timor-Leste,TLS,474.420726695663,971889.0,0,0,0
+2004,Summer,Togo,TOG,560.266308533382,5467770.0,0,0,0
+2004,Summer,Tonga,TGA,2195.44890047673,100214.0,0,0,0
+2004,Summer,Trinidad,TTO,9871.03419820086,1290115.0,0,0,1
+2004,Summer,Tunisia,TUN,3067.41936376975,10022278.0,0,0,0
+2004,Summer,Turkey,TUR,5979.6054216148,67010930.0,3,3,5
+2004,Summer,Turkmenistan,TKM,1379.23009682692,4703396.0,0,0,0
+2004,Summer,UK,GBR,40504.4118103928,59987905.0,9,9,12
+2004,Summer,USA,USA,41724.6316287624,292805298.0,36,39,26
+2004,Summer,Uganda,UGA,292.38185796262,26821300.0,0,0,0
+2004,Summer,Ukraine,UKR,1401.01806640625,47451626.0,8,5,9
+2004,Summer,United Arab Emirates,UAE,33376.7152295209,4068577.0,1,0,0
+2004,Summer,Uruguay,URU,4168.66065438387,3321486.0,0,0,0
+2004,Summer,Uzbekistan,UZB,462.171492867885,25864350.0,2,1,2
+2004,Summer,Vanuatu,VAN,1774.31867585894,204123.0,0,0,0
+2004,Summer,Venezuela,VEN,4269.08970872392,25996594.0,0,0,2
+2004,Summer,Vietnam,VIE,565.452284586212,83062819.0,0,0,0
+2004,Summer,"Virgin Islands, British",IVB,,22329.0,0,0,0
+2004,Summer,"Virgin Islands, US",ISV,35006.3614404514,108466.0,0,0,0
+2004,Summer,Yemen,YEM,,,0,0,0
+2004,Summer,Zambia,ZAM,548.685974566277,11550641.0,0,0,0
+2004,Summer,Zimbabwe,ZIM,469.719298949304,12019911.0,1,1,1
+2006,Winter,Albania,ALB,3057.77257038113,2992547.0,0,0,0
+2006,Winter,Algeria,ALG,3660.66104745322,33641007.0,0,0,0
+2006,Winter,Andorra,AND,43467.1963063068,80995.0,0,0,0
+2006,Winter,Argentina,ARG,5869.38028970204,39289876.0,0,0,0
+2006,Winter,Armenia,ARM,2041.65267068997,2958301.0,0,0,0
+2006,Winter,Australia,AUS,36658.8243476122,20697900.0,1,0,1
+2006,Winter,Austria,AUT,40382.2078298575,8268641.0,9,7,7
+2006,Winter,Azerbaijan,AZE,2472.95725732287,8484550.0,0,0,0
+2006,Winter,Belarus,BLR,3848.22350300163,9604924.0,0,1,0
+2006,Winter,Belgium,BEL,38705.1067959147,10547958.0,0,0,0
+2006,Winter,Bermuda,BER,97781.4558996721,64523.0,0,0,0
+2006,Winter,Bosnia and Herzegovina,BIH,3166.12865344833,3765422.0,0,0,0
+2006,Winter,Brazil,BRA,5934.14561857454,188167353.0,0,0,0
+2006,Winter,Bulgaria,BUL,4523.1465578805,7601022.0,0,1,0
+2006,Winter,Canada,CAN,40504.0370977806,32571174.0,7,10,7
+2006,Winter,Chile,CHI,9318.65655296121,16354507.0,0,0,0
+2006,Winter,China,CHN,2129.25696999613,1311020000.0,2,4,5
+2006,Winter,Costa Rica,CRC,5256.59640859159,4345421.0,0,0,0
+2006,Winter,Croatia,CRO,11501.2099669894,4311159.0,1,2,0
+2006,Winter,Cyprus,CYP,26729.28125,1045508.0,0,0,0
+2006,Winter,Czech Republic,CZE,15259.0788162004,10238905.0,1,2,1
+2006,Winter,Denmark,DEN,52119.1787984282,5437272.0,0,0,0
+2006,Winter,Estonia,EST,12641.4800976473,1346810.0,3,0,0
+2006,Winter,Ethiopia,ETH,189.345737521418,78489205.0,0,0,0
+2006,Winter,Finland,FIN,41214.0187765069,5266268.0,0,6,3
+2006,Winter,France,FRA,36431.5658906555,63621376.0,3,2,4
+2006,Winter,Georgia,GEO,1996.02013272284,3880347.0,0,0,0
+2006,Winter,Germany,GER,36980.3349948954,82376451.0,11,12,6
+2006,Winter,Greece,GRE,24416.0232970275,11020362.0,0,0,0
+2006,Winter,Hungary,HUN,11478.4891640501,10071370.0,0,0,0
+2006,Winter,Iceland,ISL,58172.1426656622,303782.0,0,0,0
+2006,Winter,India,IND,801.668353659022,1165486291.0,0,0,0
+2006,Winter,Iran,IRI,3618.91601364428,70554756.0,0,0,0
+2006,Winter,Ireland,IRL,54329.1618599624,4273591.0,0,0,0
+2006,Winter,Israel,ISR,22527.2619795719,7053700.0,0,0,0
+2006,Winter,Italy,ITA,33537.1286994269,58143979.0,5,0,6
+2006,Winter,Japan,JPN,35991.546002862,127854000.0,1,0,0
+2006,Winter,Kazakhstan,KAZ,5030.13494711519,15308085.0,0,0,0
+2006,Winter,Kenya,KEN,699.80237063381,37649039.0,0,0,0
+2006,Winter,Kyrgyzstan,KGZ,543.113512472219,5218400.0,0,0,0
+2006,Winter,Latvia,LAT,9211.7374468148,2218357.0,0,0,1
+2006,Winter,Lebanon,LIB,4635.2514117486,4759760.0,0,0,0
+2006,Winter,Liechtenstein,LIE,114167.939211301,34975.0,0,0,0
+2006,Winter,Lithuania,LTU,9210.10118229413,3269909.0,0,0,0
+2006,Winter,Luxembourg,LUX,90788.8004876145,472637.0,0,0,0
+2006,Winter,Macedonia,MKD,3440.4411057968,2063132.0,0,0,0
+2006,Winter,Madagascar,MAD,324.146874882604,18880265.0,0,0,0
+2006,Winter,Moldova,MDA,1183.02481442894,2880095.0,0,0,0
+2006,Winter,Monaco,MON,143083.461107202,34189.0,0,0,0
+2006,Winter,Mongolia,MGL,1329.89179579053,2558854.0,0,0,0
+2006,Winter,Nepal,NEP,340.431796437968,26066687.0,0,0,0
+2006,Winter,Netherlands,NED,45123.5432406426,16346101.0,3,2,4
+2006,Winter,New Zealand,NZL,26654.5932018985,4184600.0,0,0,0
+2006,Winter,North Korea,PRK,,24054866.0,0,0,0
+2006,Winter,Norway,NOR,74434.4996835671,4660677.0,2,8,9
+2006,Winter,Poland,POL,9068.85528307627,38141267.0,0,1,1
+2006,Winter,Portugal,POR,19839.4540499032,10522288.0,0,0,0
+2006,Winter,Romania,ROU,5757.53127301178,21193760.0,0,0,0
+2006,Winter,Russia,RUS,6920.19970703125,143049637.0,8,6,8
+2006,Winter,San Marino,SMR,63270.7780755157,29694.0,0,0,0
+2006,Winter,Senegal,SEN,1017.20196747987,11382272.0,0,0,0
+2006,Winter,Serbia,SCG,4492.7136699046,7411569.0,0,0,0
+2006,Winter,Slovakia,SVK,13167.8954730379,5373054.0,0,1,0
+2006,Winter,Slovenia,SLO,19563.005059144,2006868.0,0,0,0
+2006,Winter,South Africa,RSA,6077.38293388876,48489464.0,0,0,0
+2006,Winter,South Korea,KOR,22609.7059431449,48438292.0,6,3,2
+2006,Winter,Spain,ESP,28421.686527407,44397319.0,0,0,0
+2006,Winter,Sweden,SWE,46531.3762240485,9080505.0,7,2,5
+2006,Winter,Switzerland,SUI,59011.0324592016,7483934.0,5,4,5
+2006,Winter,Taiwan,TPE,,,0,0,0
+2006,Winter,Tajikistan,TJK,401.018403316427,6922590.0,0,0,0
+2006,Winter,Thailand,THA,3331.32043511773,65812540.0,0,0,0
+2006,Winter,Turkey,TUR,7990.08251407245,68756809.0,0,0,0
+2006,Winter,UK,GBR,44695.161023424,60846820.0,0,1,0
+2006,Winter,USA,USA,46302.0008800056,298379912.0,9,9,7
+2006,Winter,Ukraine,UKR,2366.494140625,46787786.0,0,0,2
+2006,Winter,Uzbekistan,UZB,649.118167003925,26488250.0,0,0,0
+2006,Winter,Venezuela,VEN,6739.38065342218,26850190.0,0,0,0
+2008,Summer,Afghanistan,AFG,381.73323802844,27722281.0,0,0,1
+2008,Summer,Albania,ALB,4498.50486763601,2947314.0,0,0,0
+2008,Summer,Algeria,ALG,5180.91881514686,34730604.0,0,1,1
+2008,Summer,American Samoa,ASA,10030.8089130902,57490.0,0,0,0
+2008,Summer,Andorra,AND,49132.4925840057,83860.0,0,0,0
+2008,Summer,Angola,ANG,4578.15526451517,21695636.0,0,0,0
+2008,Summer,Antigua,ANT,18786.6743142216,85394.0,0,0,0
+2008,Summer,Argentina,ARG,8944.1102657357,40080159.0,2,0,4
+2008,Summer,Armenia,ARM,3777.66859313767,2907615.0,0,0,6
+2008,Summer,Aruba,ARU,28171.9094008501,101362.0,0,0,0
+2008,Summer,Australia,AUS,49811.2067218988,21249200.0,14,15,17
+2008,Summer,Austria,AUT,51581.3982361071,8321496.0,0,1,2
+2008,Summer,Azerbaijan,AZE,5574.46810432575,8763400.0,1,2,4
+2008,Summer,Bahamas,BAH,29392.3824416397,343680.0,0,1,1
+2008,Summer,Bahrain,BRN,42156.5685838672,379418.0,0,0,0
+2008,Summer,Bangladesh,BAN,613.06204104124,144304164.0,0,0,0
+2008,Summer,Barbados,BAR,17565.6929970592,279946.0,0,0,0
+2008,Summer,Belarus,BLR,6376.17569162063,9527985.0,4,5,9
+2008,Summer,Belgium,BEL,48303.397956286,10709973.0,1,1,0
+2008,Summer,Belize,BIZ,5711.81458859709,306822.0,0,0,0
+2008,Summer,Benin,BEN,1060.60254502099,8696915.0,0,0,0
+2008,Summer,Bermuda,BER,110268.562401264,65273.0,0,0,0
+2008,Summer,Bhutan,BHU,1919.59774896395,671611.0,0,0,0
+2008,Summer,Boliva,BOL,1692.67248455876,9721457.0,0,0,0
+2008,Summer,Bosnia and Herzegovina,BIH,4841.69311934649,3754261.0,0,0,0
+2008,Summer,Botswana,BOT,5503.07395314313,1915636.0,0,0,0
+2008,Summer,Brazil,BRA,8908.33338467948,192030362.0,3,4,9
+2008,Summer,Bulgaria,BUL,7271.30338858025,7492561.0,1,1,3
+2008,Summer,Burkina Faso,BUR,619.437533256264,14689725.0,0,0,0
+2008,Summer,Burundi,BDI,189.502074570768,8126104.0,0,0,0
+2008,Summer,Cambodia,CAM,866.283999789749,13883835.0,0,0,0
+2008,Summer,Cameroon,CMR,1492.14269801453,19252674.0,1,0,0
+2008,Summer,Canada,CAN,46710.2526864484,33247118.0,3,9,7
+2008,Summer,Cape Verde,CPV,,,0,0,0
+2008,Summer,Cayman Islands,CAY,89655.1185574521,53835.0,0,0,0
+2008,Summer,Central African Republic,CAF,437.24827472489,4273368.0,0,0,0
+2008,Summer,Chad,CHA,1166.36883453841,11183589.0,0,0,0
+2008,Summer,Chile,CHI,10683.2188772511,16708255.0,0,1,0
+2008,Summer,China,CHN,3523.44302065213,1324655000.0,51,21,28
+2008,Summer,Colombia,COL,5541.83629665898,44254972.0,0,1,1
+2008,Summer,Comoros,COM,1455.02768595586,657227.0,0,0,0
+2008,Summer,Cook Islands,COK,,,0,0,0
+2008,Summer,Costa Rica,CRC,6937.24261596055,4463123.0,0,0,0
+2008,Summer,Croatia,CRO,15888.0606949392,4309705.0,0,2,3
+2008,Summer,Cuba,CUB,4986.12436479175,11236975.0,2,11,11
+2008,Summer,Curacao,AHO,19423.3352430175,145880.0,0,0,0
+2008,Summer,Cyprus,CYP,35397.296875,1081568.0,0,0,0
+2008,Summer,Czech Republic,CZE,22774.7045076205,10384603.0,3,3,0
+2008,Summer,Democratic Republic of the Congo,COD,352.900363371995,60411195.0,0,0,0
+2008,Summer,Denmark,DEN,64616.6657583663,5493621.0,2,2,3
+2008,Summer,Djibouti,DJI,1119.15233346969,816361.0,0,0,0
+2008,Summer,Dominica,DMA,6971.32633839289,70829.0,0,0,0
+2008,Summer,Dominican Republic,DOM,5023.58513403515,9458079.0,1,1,0
+2008,Summer,Ecuador,ECU,4194.75750661981,14535740.0,0,1,0
+2008,Summer,Egypt,EGY,1896.21594269779,79636081.0,0,0,1
+2008,Summer,El Salvador,ESA,2983.24829577976,6131767.0,0,0,0
+2008,Summer,Equatorial Guinea,GEQ,18210.5552970599,860839.0,0,0,0
+2008,Summer,Eritrea,ERI,490.066956003333,3062782.0,0,0,0
+2008,Summer,Estonia,EST,18205.9064113446,1337090.0,1,1,0
+2008,Summer,Ethiopia,ETH,316.410475118075,82916236.0,4,1,2
+2008,Summer,Fiji,FIJ,3899.92231512129,845356.0,0,0,0
+2008,Summer,Finland,FIN,53769.4726240385,5313399.0,1,1,2
+2008,Summer,France,FRA,45464.8181385158,64374979.0,7,16,18
+2008,Summer,Gabon,GAB,9688.64519690633,1518538.0,0,0,0
+2008,Summer,Gambia,GAM,859.127671411226,1689288.0,0,0,0
+2008,Summer,Georgia,GEO,3324.7537205015,3848449.0,3,0,3
+2008,Summer,Germany,GER,46379.1647953479,82110097.0,16,10,15
+2008,Summer,Ghana,GHA,1182.65761256016,23563832.0,0,0,0
+2008,Summer,Greece,GRE,31695.8331092209,11077841.0,0,2,2
+2008,Summer,Grenada,GRN,7448.2040563865,105457.0,0,0,0
+2008,Summer,Guam,GUM,28112.2316573422,159037.0,0,0,0
+2008,Summer,Guatemala,GUA,2763.05988172926,13739299.0,0,0,0
+2008,Summer,Guinea,GUI,703.532825784369,9738796.0,0,0,0
+2008,Summer,Guinea-Bissau,GBS,640.210331101753,1446936.0,0,0,0
+2008,Summer,Guyana,GUY,4008.9628671603,746815.0,0,0,0
+2008,Summer,Haiti,HAI,1094.66058421644,9646570.0,0,0,0
+2008,Summer,Honduras,HON,1732.49062702803,7980955.0,0,0,0
+2008,Summer,Hungary,HUN,15762.6322515113,10038188.0,3,5,2
+2008,Summer,Iceland,ISL,57489.3399795216,317414.0,0,1,0
+2008,Summer,India,IND,992.519584923828,1200669762.0,1,0,2
+2008,Summer,Indonesia,INA,2124.55483920618,235469755.0,1,1,3
+2008,Summer,Iran,IRI,5377.4115072957,72120608.0,1,0,1
+2008,Summer,Iraq,IRQ,4542.96609046032,28385739.0,0,0,0
+2008,Summer,Ireland,IRL,61353.1065629523,4489544.0,0,1,2
+2008,Summer,Israel,ISR,30269.217773489,7308800.0,0,0,1
+2008,Summer,Italy,ITA,40828.5795580937,58826731.0,8,9,10
+2008,Summer,Ivory Coast,CIV,1583.97066701372,19605568.0,0,0,0
+2008,Summer,Jamaica,JAM,5029.80095281745,2781869.0,5,2,2
+2008,Summer,Japan,JPN,39876.3039685725,128063000.0,9,7,9
+2008,Summer,Jordan,JOR,3241.6524135556,6556473.0,0,0,0
+2008,Summer,Kazakhstan,KAZ,8123.54705891736,15776938.0,2,4,7
+2008,Summer,Kenya,KEN,915.54435473604,39791984.0,6,4,5
+2008,Summer,Kiribati,KIR,1410.62246914058,98760.0,0,0,0
+2008,Summer,Kuwait,KUW,55585.1889344442,2656010.0,0,0,0
+2008,Summer,Kyrgyzstan,KGZ,966.388569370494,5318700.0,0,1,1
+2008,Summer,Laos,LAO,885.747376088762,6046630.0,0,0,0
+2008,Summer,Latvia,LAT,15677.6080864506,2177322.0,1,1,1
+2008,Summer,Lebanon,LIB,5912.04532820842,4764745.0,0,0,0
+2008,Summer,Lesotho,LES,898.482517882593,1987130.0,0,0,0
+2008,Summer,Liberia,LBR,451.713856283285,3607863.0,0,0,0
+2008,Summer,Libya,LBA,13906.1407818125,6058740.0,0,0,0
+2008,Summer,Liechtenstein,LIE,143249.227302093,35469.0,0,0,0
+2008,Summer,Lithuania,LTU,14955.5345462921,3198231.0,0,2,3
+2008,Summer,Luxembourg,LUX,120422.137934157,488650.0,0,0,0
+2008,Summer,Macedonia,MKD,5026.4202989873,2067309.0,0,0,0
+2008,Summer,Madagascar,MAD,512.579800058444,19996476.0,0,0,0
+2008,Summer,Malawi,MAW,554.048820396119,13727899.0,0,0,0
+2008,Summer,Malaysia,MAS,8371.82156086005,27236003.0,0,1,0
+2008,Summer,Maldives,MDV,6757.43280929292,343448.0,0,0,0
+2008,Summer,Mali,MLI,767.19483895009,14113578.0,0,0,0
+2008,Summer,Malta,MLT,22315.3104212988,409379.0,0,0,0
+2008,Summer,Marshall Islands,MHL,2817.60522775322,56166.0,0,0,0
+2008,Summer,Mauritania,MTN,1635.5630623124,3296237.0,0,0,0
+2008,Summer,Mauritius,MRI,8140.50808595895,1244121.0,0,0,1
+2008,Summer,Mexico,MEX,10523.7685403244,110815272.0,2,0,1
+2008,Summer,Micronesia,FSM,,,0,0,0
+2008,Summer,Moldova,MDA,2110.55305353857,2867964.0,0,0,1
+2008,Summer,Monaco,MON,204263.797114294,34860.0,0,0,0
+2008,Summer,Mongolia,MGL,2127.42678594737,2631899.0,2,2,0
+2008,Summer,Montenegro,MNE,7359.95118960869,616969.0,0,0,0
+2008,Summer,Morocco,MAR,3183.20043945313,31536807.0,0,1,1
+2008,Summer,Mozambique,MOZ,592.159111184122,22276596.0,0,0,0
+2008,Summer,Myanmar,MYA,658.442487229705,49929642.0,0,0,0
+2008,Summer,Namibia,NAM,4204.78555422749,2043382.0,0,0,0
+2008,Summer,Nauru,NRU,3756.84531228766,9880.0,0,0,0
+2008,Summer,Nepal,NEP,464.817391891529,26666581.0,0,0,0
+2008,Summer,Netherlands,NED,58246.7026905874,16445593.0,7,5,4
+2008,Summer,New Zealand,NZL,31324.7397977102,4259800.0,3,2,4
+2008,Summer,Nicaragua,NCA,1523.68437086409,5667436.0,0,0,0
+2008,Summer,Niger,NIG,475.044955398162,15250913.0,0,0,0
+2008,Summer,Nigeria,NGR,2154.10543545364,150269622.0,0,1,3
+2008,Summer,North Korea,PRK,,24310143.0,2,1,3
+2008,Summer,Norway,NOR,97503.5407803783,4768212.0,3,5,1
+2008,Summer,Oman,OMA,26576.779241509,2750956.0,0,0,0
+2008,Summer,Pakistan,PAK,1067.04324565284,171648984.0,0,0,0
+2008,Summer,Palau,PLW,10577.501907762,18708.0,0,0,0
+2008,Summer,Palestine,PLE,,,0,0,0
+2008,Summer,Panama,PAN,7347.59049046839,3516204.0,1,0,0
+2008,Summer,Papua New Guinea,PNG,1624.79319935188,6976200.0,0,0,0
+2008,Summer,Paraguay,PAR,4384.95469437803,6081296.0,0,0,0
+2008,Summer,Peru,PER,4197.58444634142,28562321.0,0,0,0
+2008,Summer,Philippines,PHI,1959.29233534978,90901967.0,0,0,0
+2008,Summer,Poland,POL,14048.5604672654,38125759.0,3,6,1
+2008,Summer,Portugal,POR,24949.0413566739,10558177.0,1,1,0
+2008,Summer,Puerto Rico,PUR,24898.3345857045,3760866.0,0,0,0
+2008,Summer,Qatar,QAT,80781.4039187792,1436670.0,0,0,0
+2008,Summer,Republic of Congo,CGO,2832.09177777643,4011487.0,0,0,0
+2008,Summer,Romania,ROU,10435.1561230787,20537875.0,4,1,3
+2008,Summer,Russia,RUS,11635.2841796875,142742366.0,23,21,28
+2008,Summer,Rwanda,RWA,528.326391755502,9524532.0,0,0,0
+2008,Summer,Saint Kitts,SKN,16604.9448615905,48178.0,0,0,0
+2008,Summer,Saint Lucia,LCA,,,0,0,0
+2008,Summer,Saint Vincent,VIN,,,0,0,0
+2008,Summer,Samoa,SAM,3373.60639884263,183270.0,0,0,0
+2008,Summer,San Marino,SMR,75902.1320521765,30434.0,0,0,0
+2008,Summer,Sao Tome and Principe,STP,1081.8684584729,171122.0,0,0,0
+2008,Summer,Saudi Arabia,KSA,22320.4888964331,25888535.0,0,0,0
+2008,Summer,Senegal,SEN,1398.79218010021,12004700.0,0,0,0
+2008,Summer,Serbia,SRB,7376.73517910716,7350222.0,0,1,2
+2008,Summer,Seychelles,SEY,11265.4376270005,86956.0,0,0,0
+2008,Summer,Sierra Leone,SLE,705.359014080005,6133599.0,0,0,0
+2008,Summer,Slovakia,SVK,18744.3192278346,5379233.0,3,2,1
+2008,Summer,Slovenia,SLO,27461.9764165315,2021316.0,1,2,2
+2008,Summer,Solomon Islands,SOL,1525.84666261203,503366.0,0,0,0
+2008,Summer,Somalia,SOM,,11397188.0,0,0,0
+2008,Summer,South Africa,RSA,6184.75474328399,49779472.0,0,1,0
+2008,Summer,South Korea,KOR,22252.3125108061,49054708.0,13,10,8
+2008,Summer,Spain,ESP,35603.248328071,45954106.0,5,10,3
+2008,Summer,Sri Lanka,SRI,1973.58476901287,19983984.0,0,0,0
+2008,Summer,Sudan,SUD,1527.58239746094,33060844.0,0,1,0
+2008,Summer,Suriname,SUR,6576.08546307249,517122.0,0,0,0
+2008,Summer,Swaziland,SWZ,,,0,0,0
+2008,Summer,Sweden,SWE,55817.1759726485,9219637.0,0,4,1
+2008,Summer,Switzerland,SUI,74175.1927898555,7647675.0,2,1,4
+2008,Summer,Syria,SYR,2429.12477087189,20664037.0,0,0,0
+2008,Summer,Taiwan,TPE,,,0,0,4
+2008,Summer,Tajikistan,TJK,703.327375898643,7209924.0,0,1,1
+2008,Summer,Tanzania,TAN,675.977233886719,41853944.0,0,0,0
+2008,Summer,Thailand,THA,4309.13509292986,66530980.0,2,2,0
+2008,Summer,Timor-Leste,TLS,628.153191495026,1055428.0,0,0,0
+2008,Summer,Togo,TOG,718.948386717473,6083417.0,0,0,1
+2008,Summer,Tonga,TGA,3218.45303993196,103384.0,0,0,0
+2008,Summer,Trinidad,TTO,21298.9945258063,1314449.0,1,1,0
+2008,Summer,Tunisia,TUN,4255.05008019523,10414425.0,1,0,0
+2008,Summer,Turkey,TUR,10913.4079047769,70418612.0,1,3,3
+2008,Summer,Turkmenistan,TKM,3605.50395120549,4935765.0,0,0,0
+2008,Summer,UK,GBR,47652.4030691881,61806995.0,19,13,16
+2008,Summer,USA,USA,48570.0459804586,304093966.0,36,39,35
+2008,Summer,Uganda,UGA,472.842681495852,30431734.0,0,0,0
+2008,Summer,Ukraine,UKR,4017.806640625,46258189.0,7,5,15
+2008,Summer,United Arab Emirates,UAE,50054.1700681803,7089486.0,0,0,0
+2008,Summer,Uruguay,URU,9423.96562595893,3340221.0,0,0,0
+2008,Summer,Uzbekistan,UZB,1074.72928796701,27302800.0,1,2,3
+2008,Summer,Vanuatu,VAN,2603.60883136724,224700.0,0,0,0
+2008,Summer,Venezuela,VEN,11262.4514256759,27635827.0,0,0,1
+2008,Summer,Vietnam,VIE,1163.83195772873,86243424.0,0,1,0
+2008,Summer,"Virgin Islands, British",IVB,,26096.0,0,0,0
+2008,Summer,"Virgin Islands, US",ISV,39152.3750657306,108397.0,0,0,0
+2008,Summer,Yemen,YEM,,,0,0,0
+2008,Summer,Zambia,ZAM,1375.50211006997,12848531.0,0,0,0
+2008,Summer,Zimbabwe,ZIM,340.917447588572,12379553.0,1,3,0
+2010,Winter,Albania,ALB,4149.14469936847,2913021.0,0,0,0
+2010,Winter,Algeria,ALG,4912.78585503672,35977451.0,0,0,0
+2010,Winter,Andorra,AND,42746.830391567,84454.0,0,0,0
+2010,Winter,Argentina,ARG,10260.1313108254,40788453.0,0,0,0
+2010,Winter,Armenia,ARM,3041.34450723339,2877314.0,0,0,0
+2010,Winter,Australia,AUS,52313.8939041213,22031750.0,2,1,0
+2010,Winter,Austria,AUT,46611.1393420232,8363404.0,4,6,6
+2010,Winter,Azerbaijan,AZE,5843.5337683582,9054332.0,0,0,0
+2010,Winter,Belarus,BLR,6034.67885177216,9490583.0,1,1,1
+2010,Winter,Belgium,BEL,44197.393671162,10895586.0,0,0,0
+2010,Winter,Bermuda,BER,104111.824244802,65124.0,0,0,0
+2010,Winter,Bosnia and Herzegovina,BIH,4506.47828548389,3705478.0,0,0,0
+2010,Winter,Brazil,BRA,11403.2840038694,195713637.0,0,0,0
+2010,Winter,Bulgaria,BUL,6853.94805511171,7395599.0,0,0,0
+2010,Winter,Canada,CAN,47560.6666009406,34004889.0,14,7,5
+2010,Winter,Cayman Islands,CAY,76837.6710064442,56672.0,0,0,0
+2010,Winter,Chile,CHI,12632.8704724192,17062531.0,0,0,0
+2010,Winter,China,CHN,4629.24551710077,1337705000.0,5,2,4
+2010,Winter,Colombia,COL,6398.2958447102,45222699.0,0,0,0
+2010,Winter,Croatia,CRO,13729.7654965022,4295427.0,0,2,1
+2010,Winter,Cyprus,CYP,31105.02734375,1112617.0,0,0,0
+2010,Winter,Czech Republic,CZE,20160.4355077059,10474410.0,2,0,4
+2010,Winter,Denmark,DEN,58104.5445594981,5547683.0,0,0,0
+2010,Winter,Estonia,EST,14663.7041018705,1331475.0,0,1,0
+2010,Winter,Ethiopia,ETH,330.619412798644,87639962.0,0,0,0
+2010,Winter,Finland,FIN,46506.2919016566,5363352.0,0,1,4
+2010,Winter,France,FRA,40694.8211697025,65027505.0,2,3,6
+2010,Winter,Georgia,GEO,3281.72930937343,3786695.0,0,0,0
+2010,Winter,Germany,GER,42396.9665976293,81776930.0,10,13,7
+2010,Winter,Ghana,GHA,1263.89251760539,24779614.0,0,0,0
+2010,Winter,Greece,GRE,26653.0488008626,11121341.0,0,0,0
+2010,Winter,Hungary,HUN,13189.8433874768,10000023.0,0,0,0
+2010,Winter,Iceland,ISL,43776.4677400475,318041.0,0,0,0
+2010,Winter,India,IND,1347.51939071367,1234281163.0,0,0,0
+2010,Winter,Iran,IRI,6291.19443655454,73762519.0,0,0,0
+2010,Winter,Ireland,IRL,48623.9666422487,4560155.0,0,0,0
+2010,Winter,Israel,ISR,31439.0887027614,7623600.0,0,0,0
+2010,Winter,Italy,ITA,35856.8625485539,59277417.0,1,1,3
+2010,Winter,Jamaica,JAM,4809.977380312,2810464.0,0,0,0
+2010,Winter,Japan,JPN,44968.1562349739,128070000.0,0,3,2
+2010,Winter,Kazakhstan,KAZ,8793.07589980782,16321872.0,0,1,0
+2010,Winter,Kyrgyzstan,KGZ,876.954476440354,5447900.0,0,0,0
+2010,Winter,Latvia,LAT,11188.4191700977,2097555.0,0,2,0
+2010,Winter,Lebanon,LIB,7625.81051551165,4953064.0,0,0,0
+2010,Winter,Liechtenstein,LIE,141089.812849014,35996.0,0,0,0
+2010,Winter,Lithuania,LTU,11829.122609457,3097282.0,0,0,0
+2010,Winter,Macedonia,MKD,4833.36586759968,2070737.0,0,0,0
+2010,Winter,Mexico,MEX,9728.80078377082,114092961.0,0,0,0
+2010,Winter,Moldova,MDA,2436.79935102421,2861487.0,0,0,0
+2010,Winter,Monaco,MON,161853.920622244,35609.0,0,0,0
+2010,Winter,Mongolia,MGL,2625.21881402433,2719902.0,0,0,0
+2010,Winter,Montenegro,MNE,6678.63930800758,619428.0,0,0,0
+2010,Winter,Morocco,MAR,3067.9853515625,32343384.0,0,0,0
+2010,Winter,Nepal,NEP,585.278491984574,27013207.0,0,0,0
+2010,Winter,Netherlands,NED,51305.7338533973,16615394.0,4,1,3
+2010,Winter,New Zealand,NZL,33761.9009639947,4350700.0,0,0,0
+2010,Winter,North Korea,PRK,,24548840.0,0,0,0
+2010,Winter,Norway,NOR,88163.2085931423,4889252.0,9,8,6
+2010,Winter,Pakistan,PAK,987.304571124485,179424643.0,0,0,0
+2010,Winter,Peru,PER,5072.11494019615,29027680.0,0,0,0
+2010,Winter,Poland,POL,12567.7317676382,38042794.0,1,3,2
+2010,Winter,Portugal,POR,22551.935098809,10573100.0,0,0,0
+2010,Winter,Romania,ROU,8399.5374234284,20246871.0,0,0,0
+2010,Winter,Russia,RUS,10674.990234375,142849468.0,3,5,7
+2010,Winter,San Marino,SMR,56543.1898204098,31221.0,0,0,0
+2010,Winter,Senegal,SEN,1275.88357492357,12678143.0,0,0,0
+2010,Winter,Serbia,SRB,5970.92660940072,7291436.0,0,0,0
+2010,Winter,Slovakia,SVK,16899.448680529,5391428.0,1,1,1
+2010,Winter,Slovenia,SLO,23329.8417691156,2048583.0,0,2,1
+2010,Winter,South Africa,RSA,7973.47195771517,51216967.0,0,0,0
+2010,Winter,South Korea,KOR,24071.2620526362,49554112.0,6,6,2
+2010,Winter,Spain,ESP,30658.7422282912,46576897.0,0,0,0
+2010,Winter,Sweden,SWE,52542.5759090299,9378126.0,5,2,4
+2010,Winter,Switzerland,SUI,76531.3729407691,7824909.0,6,0,3
+2010,Winter,Taiwan,TPE,,,0,0,0
+2010,Winter,Tajikistan,TJK,737.338883219356,7527397.0,0,0,0
+2010,Winter,Turkey,TUR,10698.9699409757,72326992.0,0,0,0
+2010,Winter,UK,GBR,39778.3220528565,62766365.0,1,0,0
+2010,Winter,USA,USA,48642.6100179312,309327143.0,9,15,13
+2010,Winter,Ukraine,UKR,3039.63232421875,45870741.0,0,0,0
+2010,Winter,Uzbekistan,UZB,1753.20730243278,28562400.0,0,0,0
+2012,Summer,Afghanistan,AFG,651.417134470046,31161378.0,0,0,1
+2012,Summer,Albania,ALB,4280.93316338873,2900401.0,0,0,0
+2012,Summer,Algeria,ALG,6033.64884689543,37383899.0,1,0,0
+2012,Summer,American Samoa,ASA,11745.4899153958,55669.0,0,0,0
+2012,Summer,Andorra,AND,41500.5499988288,82427.0,0,0,0
+2012,Summer,Angola,ANG,5702.45306277434,25107925.0,0,0,0
+2012,Summer,Antigua,ANT,15639.8078114787,90407.0,0,0,0
+2012,Summer,Argentina,ARG,12949.717486654,41733271.0,1,1,2
+2012,Summer,Armenia,ARM,3511.56399687426,2884239.0,0,1,2
+2012,Summer,Aruba,ARU,25119.6655449838,102565.0,0,0,0
+2012,Summer,Australia,AUS,68301.4402512587,22733465.0,7,16,12
+2012,Summer,Austria,AUT,48250.4059142637,8429991.0,0,0,0
+2012,Summer,Azerbaijan,AZE,7495.86527658099,9295784.0,2,2,6
+2012,Summer,Bahamas,BAH,28552.0242683151,363581.0,1,0,0
+2012,Summer,Bahrain,BRN,46968.5971164922,398997.0,0,0,1
+2012,Summer,Bangladesh,BAN,859.680536375497,151005733.0,0,0,0
+2012,Summer,Barbados,BAR,20804.1150004694,283698.0,0,0,0
+2012,Summer,Belarus,BLR,6953.21591683101,9464495.0,2,5,5
+2012,Summer,Belgium,BEL,44874.1709182123,11106932.0,0,1,2
+2012,Summer,Belize,BIZ,5732.66519942347,338001.0,0,0,0
+2012,Summer,Benin,BEN,1071.5258366283,9729254.0,0,0,0
+2012,Summer,Bermuda,BER,100213.493385287,64798.0,0,0,0
+2012,Summer,Bhutan,BHU,2751.2128864294,701582.0,0,0,0
+2012,Summer,Boliva,BOL,2575.59857098084,10377677.0,0,0,0
+2012,Summer,Bosnia and Herzegovina,BIH,4693.78899115381,3604972.0,0,0,0
+2012,Summer,Botswana,BOT,6595.53845015424,2039551.0,0,1,0
+2012,Summer,Brazil,BRA,12521.7238454434,199287292.0,3,5,9
+2012,Summer,Brunei,BRU,46968.5971164922,398997.0,0,0,0
+2012,Summer,Bulgaria,BUL,7431.95789508871,7305888.0,0,1,1
+2012,Summer,Burkina Faso,BUR,731.470138867833,16571252.0,0,0,0
+2012,Summer,Burundi,BDI,231.098787811507,9245992.0,0,0,0
+2012,Summer,Cambodia,CAM,1192.80263041673,14780454.0,0,0,0
+2012,Summer,Cameroon,CMR,1449.09874362279,21485267.0,0,0,0
+2012,Summer,Canada,CAN,52670.3447335415,34714222.0,1,5,12
+2012,Summer,Cape Verde,CPV,,,0,0,0
+2012,Summer,Cayman Islands,CAY,75101.5906883232,58963.0,0,0,0
+2012,Summer,Central African Republic,CAF,544.395849142785,4436411.0,0,0,0
+2012,Summer,Chad,CHA,1354.34344701937,12784748.0,0,0,0
+2012,Summer,Chile,CHI,15241.9069981119,17400359.0,0,0,0
+2012,Summer,China,CHN,6405.0574241349,1350695000.0,38,27,24
+2012,Summer,Colombia,COL,8108.59838244229,46075721.0,1,3,4
+2012,Summer,Comoros,COM,1490.31511351281,723865.0,0,0,0
+2012,Summer,Cook Islands,COK,,,0,0,0
+2012,Summer,Costa Rica,CRC,10126.9991024177,4688003.0,0,0,0
+2012,Summer,Croatia,CRO,13507.7805260991,4267558.0,3,1,2
+2012,Summer,Cuba,CUB,6470.83673392653,11257112.0,5,3,6
+2012,Summer,Cyprus,CYP,28991.935546875,1135046.0,0,1,0
+2012,Summer,Czech Republic,CZE,20014.0354015165,10510785.0,4,3,3
+2012,Summer,Democratic Republic of the Congo,COD,409.931424783784,69020749.0,0,0,0
+2012,Summer,Denmark,DEN,58443.7747103968,5591572.0,2,4,3
+2012,Summer,Djibouti,DJI,1400.19357858954,868136.0,0,0,0
+2012,Summer,Dominica,DMA,7528.51001990155,70954.0,0,0,0
+2012,Summer,Dominican Republic,DOM,6013.81965002603,9930916.0,1,1,0
+2012,Summer,Ecuador,ECU,5634.08393191094,15474099.0,0,0,0
+2012,Summer,Egypt,EGY,2996.0677072015,86422240.0,0,2,0
+2012,Summer,El Salvador,ESA,3497.91256915509,6237922.0,0,0,0
+2012,Summer,Equatorial Guinea,GEQ,17308.5723924575,1031191.0,0,0,0
+2012,Summer,Eritrea,ERI,,,0,0,0
+2012,Summer,Estonia,EST,17568.2137969714,1322696.0,0,1,1
+2012,Summer,Ethiopia,ETH,452.101031885754,92726982.0,3,1,3
+2012,Summer,Fiji,FIJ,4341.40338748749,865065.0,0,0,0
+2012,Summer,Finland,FIN,47551.6740841369,5413971.0,0,1,2
+2012,Summer,France,FRA,40863.5814412333,65659814.0,11,11,13
+2012,Summer,Gabon,GAB,9296.96587941088,1749677.0,0,1,0
+2012,Summer,Gambia,GAM,692.579361628102,1905020.0,0,0,0
+2012,Summer,Georgia,GEO,4530.69533409431,3728874.0,1,3,3
+2012,Summer,Germany,GER,44718.0159214069,80425823.0,11,19,14
+2012,Summer,Ghana,GHA,1543.77524235764,25996454.0,0,0,0
+2012,Summer,Greece,GRE,21624.346052551,11045011.0,0,0,2
+2012,Summer,Grenada,GRN,7092.71985352677,107452.0,1,0,0
+2012,Summer,Guam,GUM,31653.7506538168,159990.0,0,0,0
+2012,Summer,Guatemala,GUA,3286.61959336267,14781942.0,0,1,0
+2012,Summer,Guinea,GUI,699.353377212197,10652032.0,0,0,0
+2012,Summer,Guinea-Bissau,GBS,635.461653303881,1604981.0,0,0,0
+2012,Summer,Guyana,GUY,5444.39751913913,755388.0,0,0,0
+2012,Summer,Haiti,HAI,1361.39396587374,10250922.0,0,0,0
+2012,Summer,Honduras,HON,2126.03474686503,8640692.0,0,0,0
+2012,Summer,Hungary,HUN,12950.1594488143,9920362.0,8,4,6
+2012,Summer,Iceland,ISL,46594.9869146614,320716.0,0,0,0
+2012,Summer,India,IND,1429.32199520032,1265780243.0,0,2,4
+2012,Summer,Individual Olympic Athletes,IOA,,,0,0,0
+2012,Summer,Indonesia,INA,3632.27254030331,248451714.0,0,1,1
+2012,Summer,Iran,IRI,8114.08099831877,75539881.0,4,5,3
+2012,Summer,Iraq,IRQ,6477.59618450955,31890012.0,0,0,0
+2012,Summer,Ireland,IRL,49335.8408099555,4599533.0,1,1,3
+2012,Summer,Israel,ISR,33321.4300881602,7910500.0,0,0,0
+2012,Summer,Italy,ITA,34854.3949441965,59539717.0,8,9,11
+2012,Summer,Ivory Coast,CIV,1546.9460184731,21547188.0,0,0,0
+2012,Summer,Jamaica,JAM,5340.83333232158,2842128.0,4,4,4
+2012,Summer,Japan,JPN,49145.2804308193,127629000.0,7,14,17
+2012,Summer,Jordan,JOR,4169.50470054618,8089963.0,0,0,0
+2012,Summer,Kazakhstan,KAZ,12018.7966527993,16792090.0,7,1,5
+2012,Summer,Kenya,KEN,1285.00536171512,44343469.0,2,4,5
+2012,Summer,Kiribati,KIR,1843.55336349889,106359.0,0,0,0
+2012,Summer,Kuwait,KUW,52155.2225833921,3348852.0,0,0,1
+2012,Summer,Kyrgyzstan,KGZ,1168.62244675446,5607200.0,0,0,0
+2012,Summer,Laos,LAO,1563.5650771337,6444527.0,0,0,0
+2012,Summer,Latvia,LAT,13329.3499931271,2034319.0,1,0,1
+2012,Summer,Lebanon,LIB,8406.98405608118,5537620.0,0,0,0
+2012,Summer,Lesotho,LES,1217.93071228944,2014988.0,0,0,0
+2012,Summer,Liberia,LBR,638.368751462083,4135662.0,0,0,0
+2012,Summer,Libya,LBA,14975.8902795144,6285751.0,0,0,0
+2012,Summer,Liechtenstein,LIE,148842.035144342,36615.0,0,0,0
+2012,Summer,Lithuania,LTU,14288.1853493139,2987773.0,2,1,2
+2012,Summer,Luxembourg,LUX,112584.676270958,530946.0,0,0,0
+2012,Summer,Macedonia,MKD,5049.8265386157,2074275.0,0,0,0
+2012,Summer,Madagascar,MAD,493.511162904211,22346641.0,0,0,0
+2012,Summer,Malawi,MAW,558.46208832772,15396010.0,0,0,0
+2012,Summer,Malaysia,MAS,10600.5744240026,29068189.0,0,1,1
+2012,Summer,Maldives,MDV,7461.29703686309,397231.0,0,0,0
+2012,Summer,Mali,MLI,872.506092465564,15979492.0,0,0,0
+2012,Summer,Malta,MLT,22878.3130866521,420028.0,0,0,0
+2012,Summer,Marshall Islands,MHL,3514.26515490383,56712.0,0,0,0
+2012,Summer,Mauritania,MTN,1859.11733247641,3706555.0,0,0,0
+2012,Summer,Mauritius,MRI,9421.52514098225,1255882.0,0,0,0
+2012,Summer,Mexico,MEX,10744.1335242686,117274156.0,1,3,3
+2012,Summer,Micronesia,FSM,,,0,0,0
+2012,Summer,Moldova,MDA,3044.8084324815,2859458.0,0,0,2
+2012,Summer,Monaco,MON,165444.651378771,36459.0,0,0,0
+2012,Summer,Mongolia,MGL,4328.89001905655,2824698.0,0,2,3
+2012,Summer,Montenegro,MNE,6552.48071710904,620601.0,0,1,0
+2012,Summer,Morocco,MAR,3164.17724609375,33241898.0,0,0,1
+2012,Summer,Mozambique,MOZ,685.685748199513,24862673.0,0,0,0
+2012,Summer,Myanmar,MYA,1202.6658960055,51413703.0,0,0,0
+2012,Summer,Namibia,NAM,5942.64680978673,2194777.0,0,0,0
+2012,Summer,Nauru,NRU,9842.77032731856,10136.0,0,0,0
+2012,Summer,Nepal,NEP,788.202937148377,26989160.0,0,0,0
+2012,Summer,Netherlands,NED,50473.9442002689,16754962.0,6,6,8
+2012,Summer,New Zealand,NZL,40053.6991536369,4408100.0,6,2,5
+2012,Summer,Nicaragua,NCA,1784.69836017555,5982530.0,0,0,0
+2012,Summer,Niger,NIG,528.510104469655,17795209.0,0,0,0
+2012,Summer,Nigeria,NGR,2633.19734671361,167228803.0,0,0,0
+2012,Summer,North Korea,PRK,,24800638.0,4,0,2
+2012,Summer,Norway,NOR,102175.919298374,5018573.0,2,1,1
+2012,Summer,Oman,OMA,24642.2978768596,3498031.0,0,0,0
+2012,Summer,Pakistan,PAK,1204.36475491585,187280125.0,0,0,0
+2012,Summer,Palau,PLW,12137.1732239921,17635.0,0,0,0
+2012,Summer,Palestine,PLE,,,0,0,0
+2012,Summer,Panama,PAN,11064.8063662003,3770635.0,0,0,0
+2012,Summer,Papua New Guinea,PNG,2635.0873631547,7631003.0,0,0,0
+2012,Summer,Paraguay,PAR,5642.16991672846,6421510.0,0,0,0
+2012,Summer,Peru,PER,6519.37852981527,29506790.0,0,0,0
+2012,Summer,Philippines,PHI,2614.61644401308,97212639.0,0,0,0
+2012,Summer,Poland,POL,13087.420943321,38063164.0,2,2,6
+2012,Summer,Portugal,POR,20593.4274224109,10514844.0,0,1,0
+2012,Summer,Puerto Rico,PUR,27742.024476618,3634488.0,0,1,1
+2012,Summer,Qatar,QAT,108470.387023229,2196078.0,0,0,2
+2012,Summer,Republic of Congo,CGO,3732.32737320389,4510197.0,0,0,0
+2012,Summer,Romania,ROU,8929.95366231474,20058035.0,2,5,2
+2012,Summer,Russia,RUS,15401.8515625,143201721.0,24,26,32
+2012,Summer,Rwanda,RWA,706.817269168561,10549668.0,0,0,0
+2012,Summer,Saint Kitts,SKN,17532.0559008608,49881.0,0,0,0
+2012,Summer,Saint Lucia,LCA,,,0,0,0
+2012,Summer,Saint Vincent,VIN,,,0,0,0
+2012,Summer,Samoa,SAM,3934.60320799981,189089.0,0,0,0
+2012,Summer,San Marino,SMR,47945.8991734281,32103.0,0,0,0
+2012,Summer,Sao Tome and Principe,STP,1192.0202911189,188394.0,0,0,0
+2012,Summer,Saudi Arabia,KSA,28733.4375513452,29154906.0,0,0,1
+2012,Summer,Senegal,SEN,1326.83798848379,13401990.0,0,0,0
+2012,Summer,Serbia,SRB,6263.04086072815,7199077.0,1,1,2
+2012,Summer,Seychelles,SEY,12337.1554669388,88303.0,0,0,0
+2012,Summer,Sierra Leone,SLE,937.504428180231,6712586.0,0,0,0
+2012,Summer,Slovakia,SVK,17516.9691054078,5407579.0,0,1,3
+2012,Summer,Slovenia,SLO,22442.1417859955,2057159.0,1,1,2
+2012,Summer,Solomon Islands,SOL,2066.25738638356,556066.0,0,0,0
+2012,Summer,Somalia,SOM,,12715487.0,0,0,0
+2012,Summer,South Africa,RSA,8076.97678479741,52832659.0,3,2,1
+2012,Summer,South Korea,KOR,26600.5477433903,50199853.0,13,8,7
+2012,Summer,Spain,ESP,28456.4438151477,46773055.0,3,10,4
+2012,Summer,Sri Lanka,SRI,3327.77613691283,20425000.0,0,0,0
+2012,Summer,Sudan,SUD,1019.22210693359,36193781.0,0,0,0
+2012,Summer,Suriname,SUR,8851.24050668908,541247.0,0,0,0
+2012,Summer,Swaziland,SWZ,,,0,0,0
+2012,Summer,Sweden,SWE,57749.5615420853,9519374.0,1,4,3
+2012,Summer,Switzerland,SUI,85836.2076767359,7996861.0,2,2,0
+2012,Summer,Syria,SYR,1897.66115018696,20438861.0,0,0,0
+2012,Summer,Taiwan,TPE,,,0,1,1
+2012,Summer,Tajikistan,TJK,952.452819695469,7874838.0,0,0,1
+2012,Summer,Tanzania,TAN,861.969909667969,47053033.0,0,0,0
+2012,Summer,Thailand,THA,5725.52802835463,67835969.0,0,2,1
+2012,Summer,Timor-Leste,TLS,1022.61906675901,1133002.0,0,0,0
+2012,Summer,Togo,TOG,762.39162379069,6773807.0,0,0,0
+2012,Summer,Tonga,TGA,4384.17058724217,102736.0,0,0,0
+2012,Summer,Trinidad,TTO,20332.1389531925,1344814.0,1,1,2
+2012,Summer,Tunisia,TUN,4297.26782454273,10846993.0,1,1,1
+2012,Summer,Turkey,TUR,11776.7593362033,74651046.0,2,2,1
+2012,Summer,Turkmenistan,TKM,6053.8748468749,5267906.0,0,0,0
+2012,Summer,UK,GBR,42688.3263728372,63700215.0,29,17,19
+2012,Summer,USA,USA,51708.4011556577,313877662.0,46,28,29
+2012,Summer,Uganda,UGA,795.222867553127,34558700.0,1,0,0
+2012,Summer,Ukraine,UKR,3951.34228515625,45593342.0,6,5,9
+2012,Summer,United Arab Emirates,UAE,53141.6124340099,9141598.0,0,0,0
+2012,Summer,Uruguay,URU,16259.5940814256,3378975.0,0,0,0
+2012,Summer,Uzbekistan,UZB,2307.34649117185,29774500.0,1,0,2
+2012,Summer,Vanuatu,VAN,3004.78416664293,249505.0,0,0,0
+2012,Summer,Venezuela,VEN,12607.2361246243,29360827.0,1,0,0
+2012,Summer,Vietnam,VIE,2185.11767654291,89801926.0,0,0,0
+2012,Summer,"Virgin Islands, British",IVB,,28654.0,0,0,0
+2012,Summer,"Virgin Islands, US",ISV,37795.3192590675,108188.0,0,0,0
+2012,Summer,Yemen,YEM,,,0,0,0
+2012,Summer,Zambia,ZAM,1710.05061343728,14465148.0,0,0,0
+2012,Summer,Zimbabwe,ZIM,1239.22709745709,13115149.0,0,0,0
+2014,Winter,Albania,ALB,4793.59751131525,2889104.0,0,0,0
+2014,Winter,Andorra,AND,44369.6712976777,79213.0,0,0,0
+2014,Winter,Argentina,ARG,12233.1444119186,42669500.0,0,0,0
+2014,Winter,Armenia,ARM,3852.11800610384,2912403.0,0,0,0
+2014,Winter,Australia,AUS,62817.2061751737,23475686.0,0,2,1
+2014,Winter,Austria,AUT,51314.9722616322,8546356.0,4,8,5
+2014,Winter,Azerbaijan,AZE,7890.84028062087,9535079.0,0,0,0
+2014,Winter,Belarus,BLR,8341.31809294883,9474511.0,5,0,1
+2014,Winter,Belgium,BEL,47995.7786961339,11209057.0,0,0,0
+2014,Winter,Bermuda,BER,100961.576602811,65138.0,0,0,0
+2014,Winter,Bosnia and Herzegovina,BIH,5206.06573475132,3482106.0,0,0,0
+2014,Winter,Brazil,BRA,12274.9941630213,202763744.0,0,0,0
+2014,Winter,Bulgaria,BUL,8069.60005667684,7223938.0,0,0,0
+2014,Winter,Canada,CAN,50960.8431174661,35437435.0,10,10,5
+2014,Winter,Cayman Islands,CAY,75845.3055572577,60848.0,0,0,0
+2014,Winter,Chile,CHI,14529.6767206336,17758969.0,0,0,0
+2014,Winter,China,CHN,7781.06597484974,1364270000.0,3,4,2
+2014,Winter,Croatia,CRO,14186.7295493276,4238389.0,0,1,0
+2014,Winter,Cyprus,CYP,26993.103515625,1152297.0,0,0,0
+2014,Winter,Czech Republic,CZE,20038.4163180257,10525347.0,2,4,2
+2014,Winter,Denmark,DEN,62520.4509747011,5643475.0,0,0,0
+2014,Winter,Dominica,DMA,8131.74876096735,71091.0,0,0,0
+2014,Winter,Estonia,EST,20581.7898991695,1314545.0,0,0,0
+2014,Winter,Finland,FIN,50073.7760815871,5461512.0,1,3,1
+2014,Winter,France,FRA,43148.0459288416,66312067.0,4,4,7
+2014,Winter,Georgia,GEO,4830.33486170249,3719414.0,0,0,0
+2014,Winter,Germany,GER,48959.5991203133,80982500.0,8,6,5
+2014,Winter,Greece,GRE,21474.7257123892,10892413.0,0,0,0
+2014,Winter,Hungary,HUN,14352.501883174,9866468.0,0,0,0
+2014,Winter,Iceland,ISL,55140.364935793,327386.0,0,0,0
+2014,Winter,India,IND,1553.88396075118,1295600768.0,0,0,0
+2014,Winter,Individual Olympic Athletes,IOA,,,0,0,0
+2014,Winter,Iran,IRI,5672.06372896319,77465769.0,0,0,0
+2014,Winter,Ireland,IRL,57214.5379785709,4657740.0,0,0,0
+2014,Winter,Israel,ISR,38343.3046626235,8215700.0,0,0,0
+2014,Winter,Italy,ITA,36028.3494022349,60789140.0,0,2,6
+2014,Winter,Jamaica,JAM,4975.11325459872,2875137.0,0,0,0
+2014,Winter,Japan,JPN,38475.3952461838,127276000.0,1,4,3
+2014,Winter,Kazakhstan,KAZ,12427.7094576939,17288285.0,0,0,1
+2014,Winter,Kyrgyzstan,KGZ,1264.52668823891,5835500.0,0,0,0
+2014,Winter,Latvia,LAT,15185.814581236,1993782.0,0,2,2
+2014,Winter,Lebanon,LIB,7577.6413302369,6261046.0,0,0,0
+2014,Winter,Liechtenstein,LIE,178735.153020908,37219.0,0,0,0
+2014,Winter,Lithuania,LTU,16446.1647181663,2932367.0,0,0,0
+2014,Winter,Luxembourg,LUX,123678.702143275,556319.0,0,0,0
+2014,Winter,Macedonia,MKD,5925.38592218015,2077780.0,0,0,0
+2014,Winter,Malta,MLT,27424.5765646694,434558.0,0,0,0
+2014,Winter,Mexico,MEX,11391.3773497683,120355137.0,0,0,0
+2014,Winter,Moldova,MDA,3289.95758568777,2856950.0,0,0,0
+2014,Winter,Monaco,MON,195693.570738894,37320.0,0,0,0
+2014,Winter,Mongolia,MGL,4126.23975800524,2940111.0,0,0,0
+2014,Winter,Montenegro,MNE,7342.17339453427,621810.0,0,0,0
+2014,Winter,Morocco,MAR,3435.40698242188,34192358.0,0,0,0
+2014,Winter,Nepal,NEP,821.455224911731,26905982.0,0,0,0
+2014,Winter,Netherlands,NED,53457.2234864322,16865008.0,8,7,9
+2014,Winter,New Zealand,NZL,44618.266973847,4516500.0,0,0,0
+2014,Winter,Norway,NOR,97666.6951838749,5137232.0,11,5,10
+2014,Winter,Pakistan,PAK,1266.61340849959,195305012.0,0,0,0
+2014,Winter,Paraguay,PAR,6652.25478942461,6599524.0,0,0,0
+2014,Winter,Peru,PER,6667.13410360861,30090372.0,0,0,0
+2014,Winter,Philippines,PHI,2866.83803761407,100513137.0,0,0,0
+2014,Winter,Poland,POL,14262.2841914116,38011735.0,4,1,1
+2014,Winter,Portugal,POR,22120.6850127107,10401062.0,0,0,0
+2014,Winter,Romania,ROU,10031.7710755404,19908979.0,0,0,0
+2014,Winter,Russia,RUS,14055.47265625,143819667.0,13,11,9
+2014,Winter,San Marino,SMR,51260.4938347125,32941.0,0,0,0
+2014,Winter,Serbia,SRB,6886.67809068704,7130576.0,0,0,0
+2014,Winter,Slovakia,SVK,18770.9289896545,5418649.0,1,0,0
+2014,Winter,Slovenia,SLO,24013.0682060959,2061980.0,2,2,4
+2014,Winter,South Korea,KOR,30667.0912467447,50746659.0,3,3,2
+2014,Winter,Spain,ESP,29707.765509467,46480882.0,0,0,0
+2014,Winter,Sweden,SWE,59583.4584491714,9696110.0,2,7,6
+2014,Winter,Switzerland,SUI,88724.9909402638,8188649.0,6,3,2
+2014,Winter,Taiwan,TPE,,,0,0,0
+2014,Winter,Tajikistan,TJK,1081.54402932039,8252828.0,0,0,0
+2014,Winter,Thailand,THA,5801.1978916205,68438748.0,0,0,0
+2014,Winter,Timor-Leste,TLS,1224.74956308733,1174333.0,0,0,0
+2014,Winter,Togo,TOG,855.584809246574,7137997.0,0,0,0
+2014,Winter,Tonga,TGA,4136.59013792529,101023.0,0,0,0
+2014,Winter,Turkey,TUR,12209.3862327674,77229262.0,0,0,0
+2014,Winter,UK,GBR,47746.2421759562,64602298.0,1,1,2
+2014,Winter,USA,USA,54973.4207515712,318386329.0,9,7,12
+2014,Winter,Ukraine,UKR,3054.908203125,45272155.0,1,0,1
+2014,Winter,Uzbekistan,UZB,2674.9628382103,30757700.0,0,0,0
+2014,Winter,Venezuela,VEN,7096.22047105512,30042973.0,0,0,0
+2014,Winter,"Virgin Islands, British",IVB,,28985.0,0,0,0
+2014,Winter,"Virgin Islands, US",ISV,33045.3643795999,107882.0,0,0,0
+2014,Winter,Zimbabwe,ZIM,1372.91526173161,13586710.0,0,0,0
+2016,Summer,Afghanistan,AFG,522.082215583898,35383028.0,0,0,0
+2016,Summer,Albania,ALB,4457.63412207495,2876101.0,0,0,0
+2016,Summer,Algeria,ALG,4424.98529027556,40551398.0,0,2,0
+2016,Summer,American Samoa,ASA,12843.3342903627,55739.0,0,0,0
+2016,Summer,Andorra,AND,40129.8385811474,77295.0,0,0,0
+2016,Summer,Angola,ANG,2051.81462126253,28842482.0,0,0,0
+2016,Summer,Antigua,ANT,16556.8551801588,94520.0,0,0,0
+2016,Summer,Argentina,ARG,12699.9623137756,43590368.0,3,1,0
+2016,Summer,Armenia,ARM,3524.42476874707,2936147.0,1,3,0
+2016,Summer,Aruba,ARU,27441.5502144601,104865.0,0,0,0
+2016,Summer,Australia,AUS,50084.4440606385,24190907.0,8,11,10
+2016,Summer,Austria,AUT,45061.4993920192,8736668.0,0,0,1
+2016,Summer,Azerbaijan,AZE,3880.6852276838,9757812.0,1,7,10
+2016,Summer,Bahamas,BAH,30616.5363157284,377923.0,1,0,1
+2016,Summer,Bahrain,BRN,26663.2972950602,419791.0,1,1,0
+2016,Summer,Bangladesh,BAN,1649.28380858601,157977151.0,0,0,0
+2016,Summer,Barbados,BAR,20295.5672072046,285798.0,0,0,0
+2016,Summer,Belarus,BLR,5039.77560949445,9501534.0,1,4,4
+2016,Summer,Belgium,BEL,41854.5498296444,11331422.0,2,2,2
+2016,Summer,Belize,BIZ,6140.86713919469,368399.0,0,0,0
+2016,Summer,Benin,BEN,1010.5338961993,10872072.0,0,0,0
+2016,Summer,Bermuda,BER,108747.356144305,64554.0,0,0,0
+2016,Summer,Bhutan,BHU,3152.30905106786,736706.0,0,0,0
+2016,Summer,Boliva,BOL,3035.87347732132,11031822.0,0,0,0
+2016,Summer,Bosnia and Herzegovina,BIH,4928.5665903114,3386263.0,0,0,0
+2016,Summer,Botswana,BOT,6749.05994339013,2159925.0,0,0,0
+2016,Summer,Brazil,BRA,8836.28546025694,206163056.0,7,6,6
+2016,Summer,Brunei,BRU,26663.2972950602,419791.0,0,0,0
+2016,Summer,Bulgaria,BUL,7822.49923292968,7127822.0,0,1,2
+2016,Summer,Burkina Faso,BUR,663.742364842886,18646350.0,0,0,0
+2016,Summer,Burundi,BDI,232.937812100153,10488002.0,0,1,0
+2016,Summer,Cambodia,CAM,1675.19555711109,15766290.0,0,0,0
+2016,Summer,Cameroon,CMR,1441.7201725688,23926549.0,0,0,0
+2016,Summer,Canada,CAN,42314.0615817218,36109487.0,4,3,15
+2016,Summer,Cape Verde,CPV,,,0,0,0
+2016,Summer,Cayman Islands,CAY,77802.2535658023,62564.0,0,0,0
+2016,Summer,Central African Republic,CAF,387.176203444318,4537683.0,0,0,0
+2016,Summer,Chad,CHA,861.831767630746,14561658.0,0,0,0
+2016,Summer,Chile,CHI,13649.8520452803,18209072.0,0,0,0
+2016,Summer,China,CHN,8254.86859320357,1378665000.0,26,18,26
+2016,Summer,Colombia,COL,5959.84250367574,48175048.0,3,2,3
+2016,Summer,Comoros,COM,1365.48403444497,795597.0,0,0,0
+2016,Summer,Cook Islands,COK,,,0,0,0
+2016,Summer,Costa Rica,CRC,12091.0301606154,4899336.0,0,0,0
+2016,Summer,Croatia,CRO,12820.1653893008,4174349.0,5,3,2
+2016,Summer,Cuba,CUB,8110.55874283616,11335108.0,5,2,4
+2016,Summer,Cyprus,CYP,24280.056640625,1170189.0,0,0,0
+2016,Summer,Czech Republic,CZE,18753.9686718096,10566332.0,1,2,7
+2016,Summer,Democratic Republic of the Congo,COD,459.765036590388,78789130.0,0,0,0
+2016,Summer,Denmark,DEN,54500.9260410217,5728010.0,2,6,7
+2016,Summer,Djibouti,DJI,2510.4300076241,929117.0,0,0,0
+2016,Summer,Dominica,DMA,8802.56172041363,71307.0,0,0,0
+2016,Summer,Dominican Republic,DOM,7160.44200982307,10397738.0,0,0,1
+2016,Summer,Ecuador,ECU,5917.63771271481,16491116.0,0,0,0
+2016,Summer,Egypt,EGY,3270.6287768197,94447071.0,0,0,3
+2016,Summer,El Salvador,ESA,3901.34014965811,6356137.0,0,0,0
+2016,Summer,Equatorial Guinea,GEQ,7453.19797948517,1215181.0,0,0,0
+2016,Summer,Eritrea,ERI,,,0,0,0
+2016,Summer,Estonia,EST,18666.3736521706,1315790.0,0,0,1
+2016,Summer,Ethiopia,ETH,641.651523286233,103603461.0,1,2,5
+2016,Summer,Fiji,FIJ,5363.79026679243,872406.0,1,0,0
+2016,Summer,Finland,FIN,43451.2562442158,5495303.0,0,0,1
+2016,Summer,France,FRA,37024.2157133669,66724104.0,10,18,14
+2016,Summer,Gabon,GAB,6677.07003901644,2007882.0,0,0,0
+2016,Summer,Gambia,GAM,650.056501323611,2149134.0,0,0,0
+2016,Summer,Georgia,GEO,4143.40125686315,3727505.0,2,1,4
+2016,Summer,Germany,GER,42948.9381932694,82348669.0,17,10,15
+2016,Summer,Ghana,GHA,1912.47991339951,28481947.0,0,0,0
+2016,Summer,Greece,GRE,17919.2426377048,10775971.0,3,1,2
+2016,Summer,Grenada,GRN,9221.23461079424,110263.0,0,1,0
+2016,Summer,Guam,GUM,35930.6594898711,162948.0,0,0,0
+2016,Summer,Guatemala,GUA,4060.13784737643,15827690.0,0,0,0
+2016,Summer,Guinea,GUI,711.996509782316,11738434.0,0,0,0
+2016,Summer,Guinea-Bissau,GBS,679.665386626818,1782434.0,0,0,0
+2016,Summer,Guyana,GUY,5870.87823759835,771363.0,0,0,0
+2016,Summer,Haiti,HAI,1318.40268167953,10839976.0,0,0,0
+2016,Summer,Honduras,HON,2307.34468351082,9270794.0,0,0,0
+2016,Summer,Hungary,HUN,13215.8605277789,9814023.0,8,3,4
+2016,Summer,Iceland,ISL,62854.0906407932,335439.0,0,0,0
+2016,Summer,India,IND,1707.50892912243,1324517250.0,0,1,1
+2016,Summer,Individual Olympic Athletes,IOA,,,1,0,1
+2016,Summer,Indonesia,INA,3521.46943457574,261556386.0,1,2,0
+2016,Summer,Iran,IRI,5710.59947089104,79563991.0,3,1,4
+2016,Summer,Iraq,IRQ,4334.42096404188,36610632.0,0,0,0
+2016,Summer,Ireland,IRL,64129.5571542383,4755335.0,0,2,0
+2016,Summer,Israel,ISR,37671.5389138798,8546000.0,0,0,2
+2016,Summer,Italy,ITA,31391.5692898108,60627498.0,8,12,8
+2016,Summer,Ivory Coast,CIV,1862.59597081287,23822726.0,1,0,1
+2016,Summer,Jamaica,JAM,5302.29553353854,2906242.0,6,3,2
+2016,Summer,Japan,JPN,39375.4731620781,126994511.0,12,8,21
+2016,Summer,Jordan,JOR,3986.71677010853,9554286.0,1,0,0
+2016,Summer,Kazakhstan,KAZ,7475.56688689424,17794055.0,3,5,10
+2016,Summer,Kenya,KEN,1554.12610314423,49051531.0,6,6,1
+2016,Summer,Kiribati,KIR,1742.66799324117,112529.0,0,0,0
+2016,Summer,Kosovo,KOS,3759.44959067104,1777557.0,1,0,0
+2016,Summer,Kyrgyzstan,KGZ,1103.27489428412,6079500.0,0,0,0
+2016,Summer,Laos,LAO,2303.22156035363,6845848.0,0,0,0
+2016,Summer,Latvia,LAT,13838.5266823272,1959537.0,0,0,0
+2016,Summer,Lebanon,LIB,8089.012088155,6714281.0,0,0,0
+2016,Summer,Lesotho,LES,992.491840678465,2075041.0,0,0,0
+2016,Summer,Liberia,LBR,714.613063145659,4586788.0,0,0,0
+2016,Summer,Libya,LBA,7525.80299308216,6492160.0,0,0,0
+2016,Summer,Liechtenstein,LIE,165375.491396259,37655.0,0,0,0
+2016,Summer,Lithuania,LTU,14934.2702840428,2868231.0,0,1,3
+2016,Summer,Luxembourg,LUX,106899.293549552,582014.0,0,0,0
+2016,Summer,Macedonia,MKD,5598.48622617967,2080746.0,0,0,0
+2016,Summer,Madagascar,MAD,453.970714522463,24894370.0,0,0,0
+2016,Summer,Malawi,MAW,450.506105510719,17205253.0,0,0,0
+2016,Summer,Malaysia,MAS,9476.53409809923,30684652.0,0,4,1
+2016,Summer,Maldives,MDV,9947.80744731739,475505.0,0,0,0
+2016,Summer,Mali,MLI,872.468587171653,17965448.0,0,0,0
+2016,Summer,Malta,MLT,26459.0770929988,455356.0,0,0,0
+2016,Summer,Marshall Islands,MHL,4229.80988911945,57723.0,0,0,0
+2016,Summer,Mauritania,MTN,1565.76575722696,4163532.0,0,0,0
+2016,Summer,Mauritius,MRI,10095.1225574156,1263473.0,0,0,0
+2016,Summer,Mexico,MEX,9097.92397674769,123333379.0,0,3,2
+2016,Summer,Micronesia,FSM,,,0,0,0
+2016,Summer,Moldova,MDA,2847.08794770479,2802170.0,0,0,0
+2016,Summer,Monaco,MON,173604.753555915,38070.0,0,0,0
+2016,Summer,Mongolia,MGL,3619.90026383792,3056358.0,0,1,1
+2016,Summer,Montenegro,MNE,6968.01539365317,622303.0,0,0,0
+2016,Summer,Morocco,MAR,3140.85546875,35126274.0,0,0,1
+2016,Summer,Mozambique,MOZ,441.489734819071,27829930.0,0,0,0
+2016,Summer,Myanmar,MYA,1229.19713491328,53045199.0,0,0,0
+2016,Summer,Namibia,NAM,4395.68776162376,2358044.0,0,0,0
+2016,Summer,Nauru,NRU,8748.15632605428,10474.0,0,0,0
+2016,Summer,Nepal,NEP,877.256454696737,27263430.0,0,0,0
+2016,Summer,Netherlands,NED,46808.5291492503,17030314.0,8,7,4
+2016,Summer,New Zealand,NZL,40113.7195382428,4714100.0,4,9,5
+2016,Summer,Nicaragua,NCA,2131.68704828322,6303970.0,0,0,0
+2016,Summer,Niger,NIG,502.706475406446,20788789.0,0,1,0
+2016,Summer,Nigeria,NGR,2070.4127339595,185960244.0,0,0,1
+2016,Summer,North Korea,PRK,,25307665.0,2,3,2
+2016,Summer,Norway,NOR,70867.3609970749,5234519.0,0,0,4
+2016,Summer,Oman,OMA,17110.1897460545,4479217.0,0,0,0
+2016,Summer,Pakistan,PAK,1424.69161195897,203631356.0,0,0,0
+2016,Summer,Palau,PLW,17150.4759377239,17718.0,0,0,0
+2016,Summer,Palestine,PLE,,,0,0,0
+2016,Summer,Panama,PAN,14832.3611652459,4037073.0,0,0,0
+2016,Summer,Papua New Guinea,PNG,2316.39479758492,8271766.0,0,0,0
+2016,Summer,Paraguay,PAR,5775.15963399596,6777878.0,0,0,0
+2016,Summer,Peru,PER,6217.03599995447,30926036.0,0,0,0
+2016,Summer,Philippines,PHI,2985.19564024046,103663812.0,0,1,0
+2016,Summer,Poland,POL,12464.0110508476,37970087.0,2,3,6
+2016,Summer,Portugal,POR,19980.2808866516,10325452.0,0,0,1
+2016,Summer,Puerto Rico,PUR,29978.0889268918,3406672.0,1,0,0
+2016,Summer,Qatar,QAT,61253.6217997091,2654379.0,0,1,0
+2016,Summer,Republic of Congo,CGO,2093.10728558843,4980996.0,0,0,0
+2016,Summer,Romania,ROU,9404.54005870715,19702267.0,1,1,2
+2016,Summer,Russia,RUS,8663.158203125,144342397.0,19,17,20
+2016,Summer,Rwanda,RWA,729.519133812945,11668829.0,0,0,0
+2016,Summer,Saint Kitts,SKN,21387.5415511103,51629.0,0,0,0
+2016,Summer,Saint Lucia,LCA,,,0,0,0
+2016,Summer,Saint Vincent,VIN,,,0,0,0
+2016,Summer,Samoa,SAM,4147.07097674888,194540.0,0,0,0
+2016,Summer,San Marino,SMR,44359.4797662688,33503.0,0,0,0
+2016,Summer,Sao Tome and Principe,STP,1434.87018050521,203221.0,0,0,0
+2016,Summer,Saudi Arabia,KSA,22267.7217050387,32443443.0,0,0,0
+2016,Summer,Senegal,SEN,1266.43957151587,14993514.0,0,0,0
+2016,Summer,Serbia,SRB,5982.37030126471,7058322.0,2,4,2
+2016,Summer,Seychelles,SEY,16566.9946042294,94677.0,0,0,0
+2016,Summer,Sierra Leone,SLE,844.416411175476,7328846.0,0,0,0
+2016,Summer,Slovakia,SVK,16636.0769133073,5430798.0,2,2,0
+2016,Summer,Slovenia,SLO,21447.8377796036,2065042.0,1,2,1
+2016,Summer,Solomon Islands,SOL,2082.62383124213,619438.0,0,0,0
+2016,Summer,Somalia,SOM,,14185635.0,0,0,0
+2016,Summer,South Africa,RSA,5651.20585165749,56207649.0,2,6,2
+2016,Summer,South Korea,KOR,30832.0628072516,51217803.0,9,3,9
+2016,Summer,South Sudan,SSD,,10832520.0,0,0,0
+2016,Summer,Spain,ESP,26755.6061149398,46484062.0,7,4,6
+2016,Summer,Sri Lanka,SRI,4149.19190775593,21203000.0,0,0,0
+2016,Summer,Sudan,SUD,1033.21594238281,39847433.0,0,0,0
+2016,Summer,Suriname,SUR,5644.2061057532,564883.0,0,0,0
+2016,Summer,Swaziland,SWZ,,,0,0,0
+2016,Summer,Sweden,SWE,51703.5088332851,9923085.0,2,6,3
+2016,Summer,Switzerland,SUI,82153.0745447889,8373338.0,3,2,2
+2016,Summer,Syria,SYR,656.3490586313,17465567.0,0,0,0
+2016,Summer,Taiwan,TPE,,,1,0,2
+2016,Summer,Tajikistan,TJK,788.710481734485,8663575.0,1,0,0
+2016,Summer,Tanzania,TAN,953.0107421875,53049231.0,0,0,0
+2016,Summer,Thailand,THA,5833.57715617098,68971313.0,2,2,2
+2016,Summer,Timor-Leste,TLS,1335.54391073349,1219289.0,0,0,0
+2016,Summer,Togo,TOG,772.581357620609,7509952.0,0,0,0
+2016,Summer,Tonga,TGA,3987.98626206287,101143.0,0,0,0
+2016,Summer,Trinidad,TTO,17449.1538801956,1377563.0,0,0,1
+2016,Summer,Tunisia,TUN,3847.80354448809,11303942.0,0,0,3
+2016,Summer,Turkey,TUR,10984.3643169061,79827868.0,1,3,4
+2016,Summer,Turkmenistan,TKM,5686.98040962764,5662371.0,0,0,0
+2016,Summer,UK,GBR,41257.9085545556,65611593.0,27,23,17
+2016,Summer,USA,USA,57638.1018367192,323071755.0,46,37,38
+2016,Summer,Uganda,UGA,752.696571725656,39649173.0,0,0,0
+2016,Summer,Ukraine,UKR,2158.46118164063,45004673.0,2,5,4
+2016,Summer,United Arab Emirates,UAE,42721.0999383185,9360975.0,0,0,1
+2016,Summer,Uruguay,URU,17009.7584207276,3424139.0,0,0,0
+2016,Summer,Uzbekistan,UZB,2753.37951427589,31847900.0,4,2,7
+2016,Summer,Vanuatu,VAN,2956.12644801489,278326.0,0,0,0
+2016,Summer,Venezuela,VEN,3670.15737848208,29851249.0,0,1,2
+2016,Summer,Vietnam,VIE,2735.0604380416,93640435.0,1,1,0
+2016,Summer,"Virgin Islands, British",IVB,,29355.0,0,0,0
+2016,Summer,"Virgin Islands, US",ISV,35324.9748874586,107516.0,0,0,0
+2016,Summer,Yemen,YEM,,,0,0,0
+2016,Summer,Zambia,ZAM,1239.08527877713,16363449.0,0,0,0
+2016,Summer,Zimbabwe,ZIM,1408.13945253431,14030338.0,0,0,0

@@ -15,7 +15,7 @@
 (function () {
   "use strict";
 
-  const DATA_PATH = "data/olympics.csv";
+  const DATA_PATH = "data/geopolitics.csv";
   const WORLD_GEOJSON_PATH =
     "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
 
