@@ -514,7 +514,7 @@
     const root = d3.select(selectors.mapRoot);
     root.selectAll("*").remove();
 
-    const width = 980;
+    const width = 900;
     const height = 520;
 
     const svg = root
@@ -686,7 +686,7 @@
     const root = d3.select(selectors.eventList);
     root.selectAll("*").remove();
 
-    root.append("h3").text("Some interesting years:");
+    root.append("h3").text("Some interesting years:").style("width", "100%");
 
     root.append("p")
       .attr("class", "geo-highlight-event")

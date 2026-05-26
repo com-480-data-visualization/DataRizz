@@ -312,7 +312,7 @@
     style.textContent = `
       #never-medaled-viz {
         width: 100%;
-        max-width: 1280px;
+        max-width: 1440px;
         margin: 0 auto;
         color: white;
       }
@@ -348,8 +348,9 @@
       .never-layout {
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
+        gap: 34px;
         align-items: start;
-        margin-top: 50px;
+        margin-top: 12px;
       }
 
       .never-map-panel,
@@ -763,7 +764,7 @@
   }
 
   function drawMap(container, data) {
-    const width = 800;
+    const width = 900;
     const height = 520;
 
     const svg = container.append("svg")
