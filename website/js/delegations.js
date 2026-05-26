@@ -989,42 +989,31 @@
     const overlay = d3.select("body")
       .append("div")
       .attr("class", "medal-detail-overlay")
-      .style("position", "fixed")
-      .style("inset", "0")
-      .style("z-index", "99999")
-      .style("background", "rgba(0, 0, 0, 0.96)")
-      .style("color", "white")
-      .style("display", "flex")
-      .style("flex-direction", "column")
-      .style("align-items", "center")
-      .style("justify-content", "center")
-      .style("padding", "34px")
-      .style("box-sizing", "border-box");
 
-    const header = overlay.append("div")
-      .style("width", "min(1200px, 96vw)")
-      .style("display", "flex")
-      .style("align-items", "center")
-      .style("justify-content", "space-between")
-      .style("margin-bottom", "18px");
+    const box = overlay.append("div")
+      .attr("class", "medal-detail-box")
 
-    header.append("div")
-      .html(`
-        <div style="font-family:'Elms Sans', sans-serif; font-size:28px; font-weight:800;">
-          ${detail.medal} medals in ${detail.sport}
-        </div>
-        <div style="font-family:'Elms Sans', sans-serif; font-size:15px; color:rgba(255,255,255,0.72); margin-top:4px;">
-          ${detail.season} Olympics, ${detail.year} · grouped by ${detail.mode}
-        </div>
-      `);
+    const header = box.append("div")
+      .attr("class", "medal-detail-header");
+
+    const titleBlock = header.append("div")
+      .attr("class", "medal-detail-title-block");
+      
+    titleBlock.append("div")
+      .attr("class", "medal-detail-title")
+      .text(`${detail.medal} medals in ${detail.sport}`)
+
+    titleBlock.append("div")
+      .attr("class", "medal-detail-note")
+      .text(`${detail.season} Olympics, ${detail.year} · grouped by ${detail.mode}`);
 
     header.append("button")
       .attr("class", "medal-popup-close")
       .text("Close")
       .on("click", () => overlay.remove());
 
-    const chart = overlay.append("div")
-      .style("width", "min(1200px, 96vw)");
+    const chart = box.append("div")
+      .attr("class", "medal-detail-chart")
 
     drawDetailSankey(chart, detail);
 
@@ -1250,6 +1239,7 @@
     return text.length <= maxLength ? text : text.slice(0, maxLength - 1) + "…";
   }
 
+  //TODO: delete ?
   function getTooltip() {
     let tooltip = d3.select("body").select(".medal-tooltip");
 
