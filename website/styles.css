@@ -674,6 +674,7 @@ h4 {
   color: #f4b400;
 }
 
+/* TODO: delete ? */
 .geo-tooltip {
   position: fixed;
   pointer-events: none;
@@ -690,6 +691,7 @@ h4 {
   transition: opacity 0.12s ease;
 }
 
+.medal-detail-overlay,
 .geo-popup-overlay {
   position: fixed;
   inset: 0;
@@ -702,6 +704,7 @@ h4 {
   box-sizing: border-box;
 }
 
+.medal-detail-box,
 .geo-popup-box {
   width: min(980px, 94vw);
   max-height: 88vh;
@@ -713,6 +716,7 @@ h4 {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
 }
 
+.medal-detail-header,
 .geo-popup-header {
   display: flex;
   justify-content: space-between;
@@ -721,10 +725,12 @@ h4 {
   margin-bottom: 12px;
 }
 
+.medal-detail-title-block,
 .geo-popup-title-block {
   text-align: left;
 }
 
+.medal-detail-title,
 .geo-popup-title {
   color: white;
   font-family: "Elms Sans", sans-serif;
@@ -733,15 +739,17 @@ h4 {
   text-align: left;
 }
 
+.medal-detail-note,
 .geo-popup-note {
   margin-top: 6px;
   color: #ffd166;
   font-family: "Elms Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.35;
   text-align: left;
 }
 
+.medal-popup-close,
 .geo-popup-close {
   background: #ffd166;
   color: #111;
@@ -753,6 +761,7 @@ h4 {
   cursor: pointer;
 }
 
+.medal-popup-close:hover,
 .geo-popup-close:hover {
   filter: brightness(1.06);
 }
@@ -912,21 +921,6 @@ h4 {
   max-width: 280px;
   z-index: 9999;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-}
-
-.medal-popup-close {
-  background: #ffd166;
-  color: #111;
-  border: 2px solid white;
-  border-radius: 10px;
-  padding: 8px 14px;
-  font-size: 15px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.medal-popup-close:hover {
-  filter: brightness(1.06);
 }
 
 /* =============================================

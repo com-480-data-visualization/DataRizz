@@ -382,7 +382,6 @@
                 data: participationData,
                 xKey: "year",
                 yKey: "value",
-                title: `Participation around ${selected.year}`,
                 yLabel: "Participating countries",
                 highlightValue: selected.year,
                 tooltipFormatter: d => formatNeighborTooltip(d, "Participating countries")
@@ -741,7 +740,7 @@
     svg.append("text")
       .attr("x", margin.left)
       .attr("y", 24)
-      .attr("font-family", "Arial, sans-serif")
+      .attr("font-family", "Elms Sans, sans-serif")
       .attr("font-size", 18)
       .attr("font-weight", 700)
       .attr("fill", "white")
@@ -752,7 +751,7 @@
         .attr("x", width / 2)
         .attr("y", height / 2)
         .attr("text-anchor", "middle")
-        .attr("font-family", "Arial, sans-serif")
+        .attr("font-family", "Elms Sans, sans-serif")
         .attr("font-size", 22)
         .attr("fill", "white")
         .text("No data available");
@@ -818,7 +817,7 @@
       .call(d3.axisBottom(x).tickSizeOuter(0))
       .call(g => g.selectAll("text")
         .attr("fill", "white")
-        .attr("font-family", "Arial, sans-serif")
+        .attr("font-family", "Elms Sans, sans-serif")
         .attr("font-size", 12)
         .attr("transform", "rotate(-28)")
         .attr("text-anchor", "end"))
@@ -829,7 +828,7 @@
       .call(d3.axisLeft(y).ticks(5))
       .call(g => g.selectAll("text")
         .attr("fill", "white")
-        .attr("font-family", "Arial, sans-serif")
+        .attr("font-family", "Elms Sans, sans-serif")
         .attr("font-size", 12))
       .call(g => g.selectAll("path,line").attr("stroke", "white"));
 
@@ -837,7 +836,7 @@
       .attr("x", margin.left)
       .attr("y", 42)
       .attr("fill", "rgba(255,255,255,0.72)")
-      .attr("font-family", "Arial, sans-serif")
+      .attr("font-family", "Elms Sans, sans-serif")
       .attr("font-size", 12)
       .text(yLabel);
   }
