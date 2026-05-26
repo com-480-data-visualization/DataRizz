@@ -221,7 +221,7 @@
       .fair-medal-row {
         display: grid;
         grid-template-columns: 72px 1fr 50px;
-        align-items: center;
+        align-items: start;
         gap: 12px;
         margin: 11px 0;
       }
@@ -230,6 +230,7 @@
         font-size: 14px;
         font-weight: 800;
         color: white;
+        padding-top: 2px;
       }
 
       .fair-medal-value {
@@ -237,19 +238,28 @@
         font-weight: 800;
         color: white;
         text-align: right;
+        padding-top: 2px;
       }
 
-      .fair-bar-bg {
-        height: 14px;
-        background: rgba(255,255,255,0.15);
-        border-radius: 999px;
+      .fair-medal-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+        align-items: center;
+      }
+
+      .fair-medal-icon {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .fair-medal-half-wrap {
+        width: 8px;
+        height: 16px;
         overflow: hidden;
-      }
-
-      .fair-bar-fill {
-        height: 100%;
-        border-radius: 999px;
-        min-width: 0;
+        flex-shrink: 0;
       }
 
       .fair-note {
@@ -265,6 +275,12 @@
         font-size: 12px;
         text-align: center;
         margin-top: 8px;
+      }
+
+      .fair-warning--lg {
+        font-size: 14px;
+        margin-top: 12px;
+        line-height: 1.5;
       }
 
       .fair-error {
@@ -832,6 +848,22 @@
     renderRankingTable();
   }
 
+  function renderMedalIcons(value, color) {
+    const rounded = Math.round((value || 0) * 2) / 2;
+    const fullCount = Math.floor(rounded);
+    const hasHalf = rounded % 1 === 0.5;
+
+    const full = Array(fullCount).fill(0).map(() =>
+      `<div class="fair-medal-icon" style="background:${color}"></div>`
+    ).join("");
+
+    const half = hasHalf
+      ? `<div class="fair-medal-half-wrap"><div class="fair-medal-icon" style="background:${color}"></div></div>`
+      : "";
+
+    return `<div class="fair-medal-icons">${full}${half}</div>`;
+  }
+
   function renderCountryCard(country, data, maxScale) {
     const fairUnavailable = data.factor === null;
 
@@ -847,18 +879,17 @@
         <div class="fair-box">
           <div class="fair-box-title">Actual medals</div>
 
-          ${medalOrder.map(medal => {
+          ${data.similarCountry ? `
+            <div class="fair-warning fair-warning--lg">
+              No medals for ${country}. Fair values are estimated from ${data.similarCountry},
+              a medal-winning country with similar GDP.
+            </div>
+          ` : medalOrder.map(medal => {
             const value = data.actual[medal] || 0;
-            const width =
-              value === 0 ? 0 : Math.max(3, (100 * value) / maxScale);
-
             return `
               <div class="fair-medal-row">
                 <div class="fair-medal-label">${medal}</div>
-                <div class="fair-bar-bg">
-                  <div class="fair-bar-fill"
-                      style="width:${width}%; background:${medalColors[medal]}"></div>
-                </div>
+                ${renderMedalIcons(value, medalColors[medal])}
                 <div class="fair-medal-value">${value}</div>
               </div>
             `;
@@ -870,27 +901,12 @@
             Fair medals with average population and average GDP
           </div>
 
-          ${data.similarCountry ? `
-            <div class="fair-warning">
-              No medals for ${country}. Fair values are estimated from ${data.similarCountry},
-              a medal-winning country with similar GDP.
-            </div>
-          ` : ""}
-
           ${medalOrder.map(medal => {
             const value = data.fair[medal];
-            const width =
-              value === null || value === 0
-                ? 0
-                : Math.max(3, (100 * value) / maxScale);
-
             return `
               <div class="fair-medal-row">
                 <div class="fair-medal-label">${medal}</div>
-                <div class="fair-bar-bg">
-                  <div class="fair-bar-fill"
-                      style="width:${width}%; background:${medalColors[medal]}"></div>
-                </div>
+                ${value === null ? `<div class="fair-medal-icons"></div>` : renderMedalIcons(value, medalColors[medal])}
                 <div class="fair-medal-value">
                   ${value === null ? "n/a" : formatFair(value)}
                 </div>
