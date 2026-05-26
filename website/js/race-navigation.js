@@ -2,7 +2,7 @@
   "use strict";
 
   const sectionLabels = {
-    title: "Start",
+    title: "Warm-up",
     introduction: "Starting Blocks",
     gender: "Gender",
     delegations: "Medals",
@@ -208,15 +208,13 @@
     const runner = nav.querySelector(".race-runner");
     if (!runner) return;
 
-    runner.style.top = `${progress}%`;
-
-    let runnerX = config.mainRunnerX;
-
     if (currentSection.hasSlides && slideIndex > 0) {
-        runnerX = `${config.firstSideRunnerX + (slideIndex - 1) * config.sideStep}px`;
+      runner.style.top = `calc(${progress}% - 30px)`;
+      runner.style.setProperty("--runner-x", `${config.firstSideRunnerX + (slideIndex - 1) * config.sideStep}px`);
+    } else {
+      runner.style.top = `${progress}%`;
+      runner.style.setProperty("--runner-x", config.mainRunnerX);
     }
-
-    runner.style.setProperty("--runner-x", runnerX);
   }
 
   function updateNavClasses(nav, currentSection, sectionIndex, direction) {

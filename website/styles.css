@@ -1614,9 +1614,9 @@ h4 {
 /* Hover labels */
 .race-label {
   position: absolute;
-  left: 36px;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 56px;
+  top: 100%;
+  transform: none;
   opacity: 0;
   pointer-events: none;
 
@@ -1635,6 +1635,20 @@ h4 {
 }
 
 .race-checkpoint:hover .race-label {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.race-checkpoint:nth-child(1) .race-label,
+.race-checkpoint:nth-child(2) .race-label,
+.race-checkpoint:last-child .race-label {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.race-checkpoint:nth-child(1):hover .race-label,
+.race-checkpoint:nth-child(2):hover .race-label,
+.race-checkpoint:last-child:hover .race-label {
   opacity: 1;
   transform: translateY(-50%) translateX(4px);
 }
