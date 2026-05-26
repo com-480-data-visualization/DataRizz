@@ -171,7 +171,7 @@ p {
   flex-direction: column;
 }
 
-.intro-columns {
+.text-columns {
   display: flex;
   justify-content: center;
   gap: 80px;
@@ -180,12 +180,12 @@ p {
   margin-top: 40px;
 }
 
-.intro-column {
+.text-column {
   flex: 1;
   max-width: 500px;
 }
 
-.intro-column p {
+.text-column p {
   width: 100%;
   text-align: justify;
   margin: 0;
@@ -497,7 +497,7 @@ p {
 }
 
 @media (max-width: 900px) {
-  .intro-columns {
+  .text-columns {
     flex-direction: column;
     gap: 30px;
     width: 90%;

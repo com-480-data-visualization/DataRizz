@@ -376,12 +376,16 @@
 
       const year = Number(event.detail?.year);
       const season = event.detail?.season || state.currentSeason;
+      const mode = event.detail?.mode || state.currentMode;
 
       if (!Number.isFinite(year)) return;
 
       state.currentSeason = season;
       d3.select(selectors.seasonSelect).property("value", season);
 
+      state.currentMode = mode;
+      d3.select(selectors.modeSelect).property("value", mode);
+  
       state.availableYears = getAvailableYears(season);
 
       if (state.availableYears.includes(year)) {
@@ -520,6 +524,7 @@
       detail: {
         year: state.currentYear,
         season: state.currentSeason,
+        mode: state.currentMode,
         source: "delegations"
       }
     }));

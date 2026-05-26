@@ -3,13 +3,13 @@
 
   const sectionLabels = {
     title: "Start",
-    introduction: "Intro",
+    introduction: "Starting Blocks",
     gender: "Gender",
     delegations: "Medals",
     "body-types": "Bodies",
     geopolitics: "Politics",
     fair: "Fairness",
-    conclusion: "Finish"
+    conclusion: "Finish Line"
   };
 
   const config = {

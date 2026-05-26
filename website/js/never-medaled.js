@@ -446,6 +446,7 @@
     d3.select(selectors.modeSelect).on("change", function () {
       state.currentMode = this.value;
       update();
+      broadcastYear(state.currentYear);
     });
 
     d3.select(selectors.yearSlider).on("input", function () {
@@ -464,13 +465,20 @@
     d3.select(selectors.play).on("click", togglePlay);
 
     window.addEventListener("olympic-year-change", event => {
+      if (event.detail?.source === "never-medaled") return;
+
       const year = Number(event.detail?.year);
       const season = event.detail?.season || state.currentSeason;
+      const mode = event.detail?.mode || state.currentMode;
 
       if (!Number.isFinite(year)) return;
 
       state.currentSeason = season;
       d3.select(selectors.seasonSelect).property("value", season);
+
+      state.currentMode = mode;
+      d3.select(selectors.modeSelect).property("value", mode);
+
       state.availableYears = getAvailableYears(season);
 
       if (state.availableYears.includes(year)) {
@@ -597,6 +605,7 @@
       detail: {
         year,
         season: state.currentSeason,
+        mode: state.currentMode,
         source: "never-medaled"
       }
     }));
