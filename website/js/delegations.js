@@ -823,36 +823,23 @@
     root.selectAll("*").remove();
 
     const width = 1280;
-    const height = 520;
-    const margin = { top: 75, right: 40, bottom: 20, left: 40 };
+    const height = 445;
+    const margin = { top: 20, right: 40, bottom: 20, left: 40 };
 
     const svg = root
       .append("svg")
       .attr("viewBox", `0 0 ${width} ${height}`)
       .attr("class", "medal-sankey-svg");
 
-    svg.append("text")
-      .attr("x", width / 2)
-      .attr("y", 32)
-      .attr("text-anchor", "middle")
-      .attr("fill", "white")
-      .attr("font-family", "'Elms Sans', sans-serif")
-      .attr("font-size", 24)
-      .attr("font-weight", 700)
-      .text(`Distribution of medals in ${graph.season} Olympics`);
+    d3.select(selectors.root).select(".medal-viz-title").text(
+      `Distribution of medals in ${graph.season} Olympics`
+    );
 
-    svg.append("text")
-      .attr("x", width / 2)
-      .attr("y", 58)
-      .attr("text-anchor", "middle")
-      .attr("fill", "rgba(255,255,255,0.75)")
-      .attr("font-family", "'Elms Sans', sans-serif")
-      .attr("font-size", 14)
-      .text(
-        graph.mode === "country"
-          ? `Flows show top medal-winning countries + other countries → medal type → top 10 sports · ${graph.medalCount} medals shown`
-          : `Flows show continents → medal type → top 10 sports · ${graph.medalCount} medals shown`
-      );
+    d3.select(selectors.root).select(".medal-viz-subtitle").text(
+      graph.mode === "country"
+        ? `Top medal-winning countries + others → medal type → top 10 sports · ${graph.medalCount} medals shown`
+        : `Continents → medal type → top 10 sports · ${graph.medalCount} medals shown`
+    );
 
     if (!graph.links.length) {
       svg.append("text")

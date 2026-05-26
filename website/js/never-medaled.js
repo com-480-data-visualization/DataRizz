@@ -322,7 +322,7 @@
         justify-content: center;
         gap: 28px;
         align-items: center;
-        margin: 0 auto 8px;
+        margin: 0 auto;
       }
 
       .never-controls label {
@@ -347,8 +347,7 @@
 
       .never-layout {
         display: grid;
-        grid-template-columns: 1.08fr 0.92fr;
-        gap: 24px;
+        grid-template-columns: 1.2fr 0.8fr;
         align-items: start;
         margin-top: 50px;
       }
@@ -366,13 +365,6 @@
         background: transparent;
       }
 
-      .never-panel-title {
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        font-weight: 800;
-        fill: white;
-      }
-
       .never-medaled-tooltip {
         position: absolute;
         pointer-events: none;
@@ -382,7 +374,7 @@
         border: 1px solid rgba(255, 255, 255, 0.18);
         border-radius: 10px;
         padding: 10px 12px;
-        font-family: Arial, sans-serif;
+        font-family: "Elms Sans", sans-serif;
         font-size: 14px;
         line-height: 1.35;
         max-width: 330px;
@@ -771,25 +763,21 @@
   }
 
   function drawMap(container, data) {
-    const width = 760;
-    const height = 420;
+    const width = 800;
+    const height = 520;
 
     const svg = container.append("svg")
       .attr("viewBox", `0 0 ${width} ${height}`)
       .attr("class", "never-map-svg");
 
     const projection = d3.geoNaturalEarth1()
-      .fitExtent([[10, 28], [width - 10, height - 10]], state.worldGeo);
+      .fitExtent([[20, 20], [width - 10, height - 10]], state.worldGeo);
 
     const path = d3.geoPath().projection(projection);
 
-    svg.append("text")
-      .attr("x", width / 2)
-      .attr("y", 20)
-      .attr("text-anchor", "middle")
-      .attr("class", "never-panel-title")
-      .attr("font-family", "'Elms Sans', sans-serif")
-      .text("Countries that have participated without ever winning a medal");
+    d3.select(".never-medaled-viz-title").text(
+      `Countries that have participated without ever winning a medal`
+    );
 
     const byCountry = new Map(
       data.neverMedaled.map(d => [normalizeCountryName(d.country), d])
@@ -816,7 +804,7 @@
       })
       .attr("stroke-width", d => {
         const country = normalizeCountryName(d.properties.name);
-        return byCountry.has(country) ? 0.95 : 0.45;
+        return byCountry.has(country) ? 1.6 : 0.6;
       })
       .attr("opacity", d => {
         const country = normalizeCountryName(d.properties.name);
@@ -866,6 +854,35 @@
 
         tooltip.style("opacity", 0);
       });
+
+    const legendData = Object.entries(continentColors);
+    const legendY = height - 8;
+    const legendItemWidth = width / legendData.length;
+
+    const legend = svg.append("g")
+      .attr("transform", `translate(0, ${legendY})`);
+
+    legendData.forEach(([continent, color], i) => {
+      const x = i * legendItemWidth + legendItemWidth / 2;
+
+      legend.append("rect")
+        .attr("x", x - 28)
+        .attr("y", -10)
+        .attr("width", 12)
+        .attr("height", 12)
+        .attr("rx", 2)
+        .attr("fill", color);
+
+      legend.append("text")
+        .attr("x", x - 10)
+        .attr("y", 0)
+        .attr("dy", "0.1em")
+        .attr("fill", "white")
+        .attr("font-family", "'Elms Sans', sans-serif")
+        .attr("font-size", 16)
+        .attr("font-weight", 600)
+        .text(continent);
+    });
   }
 
   function drawBarChart(container, data, mode) {
@@ -893,7 +910,10 @@
       .attr("x", width / 2)
       .attr("y", 22)
       .attr("text-anchor", "middle")
-      .attr("class", "never-panel-title")
+      .attr("font-family", "Elms Sans, sans-serif")
+      .attr("font-size", 16)
+      .attr("font-weight", 700)
+      .attr("fill", "white")
       .text(mode === "continent"
         ? "Participations without a medal by continent"
         : "Most participations without a medal");
@@ -917,8 +937,8 @@
       .attr("dy", "0.35em")
       .attr("text-anchor", "end")
       .attr("fill", "white")
-      .attr("font-family", "Arial, sans-serif")
-      .attr("font-size", mode === "continent" ? 15 : 12)
+      .attr("font-family", "Elms Sans, sans-serif")
+      .attr("font-size", 14)
       .attr("font-weight", 700)
       .text(d => shortenLabel(d.name, mode === "continent" ? 18 : 20));
 
@@ -967,8 +987,8 @@
       .attr("y", d => y(d.name) + y.bandwidth() / 2)
       .attr("dy", "0.35em")
       .attr("fill", "white")
-      .attr("font-family", "Arial, sans-serif")
-      .attr("font-size", mode === "continent" ? 12 : 10)
+      .attr("font-family", "Elms Sans, sans-serif")
+      .attr("font-size", 12)
       .attr("font-weight", 700)
       .text(d => {
         if (mode === "continent") {
@@ -989,16 +1009,18 @@
       .call(g => g.selectAll("line").attr("stroke", "rgba(255,255,255,0.35)"))
       .call(g => g.selectAll("text")
         .attr("fill", "rgba(255,255,255,0.75)")
-        .attr("font-family", "Arial, sans-serif")
-        .attr("font-size", 11));
+        .attr("font-family", "Elms Sans, sans-serif")
+        .attr("font-size", 14))
+        .attr("font-weight", 700);
 
     svg.append("text")
       .attr("x", (margin.left + width - margin.right) / 2)
       .attr("y", height - 8)
       .attr("text-anchor", "middle")
       .attr("fill", "rgba(255,255,255,0.72)")
-      .attr("font-family", "Arial, sans-serif")
-      .attr("font-size", 11)
+      .attr("font-family", "Elms Sans, sans-serif")
+      .attr("font-size", 14)
+      .attr("font-weight", 700)
       .text("Athlete participations");
   }
 
