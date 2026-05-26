@@ -1134,10 +1134,22 @@ h4 {
   padding: 24px;
 }
 
-.fair-ranking-card h2 {
-  font-size: 28px;
+.fair-ranking-card p {
+  font-family: "Elms Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 14px;
   width: 100%;
-  padding-bottom: 18px;
+  text-align: center;
+}
+
+.fair-ranking-scroll {
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
 }
 
 .fair-ranking-table {
@@ -1266,22 +1278,16 @@ h4 {
   justify-content: space-between;
 }
 
-.fair-ranking-card {
-  max-height: 520px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.fair-ranking-card::-webkit-scrollbar {
+.fair-ranking-scroll::-webkit-scrollbar {
   width: 8px;
 }
 
-.fair-ranking-card::-webkit-scrollbar-track {
+.fair-ranking-scroll::-webkit-scrollbar-track {
   background: rgba(255,255,255,0.08);
   border-radius: 999px;
 }
 
-.fair-ranking-card::-webkit-scrollbar-thumb {
+.fair-ranking-scroll::-webkit-scrollbar-thumb {
   background: #f4b400;
   border-radius: 999px;
 }
@@ -1290,7 +1296,7 @@ h4 {
   position: sticky;
   top: 0;
   background: #111;
-  z-index: 2;
+  z-index: 10;
 }
 
 .medal-tooltip {

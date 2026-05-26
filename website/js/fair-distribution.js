@@ -18,7 +18,8 @@
     gdpAdjustment: 100,
     rankingSeason: "Summer",
     rankingYear: null,
-    expandedPredictionCountry: null
+    expandedPredictionCountry: null,
+    highlightedCountry: null,
   };
 
   const medalOrder = ["Gold", "Silver", "Bronze"];
@@ -1000,8 +1001,8 @@
       </div>
 
       <div class="fair-ranking-layout">
-        ${rankingTable("Actual medal table", actualRanking, "actual")}
-        ${rankingTable("Fair medal table", fairRanking, "fair")}
+        ${rankingTable("Actual medal ranking", actualRanking, "actual")}
+        ${rankingTable("Fair medal ranking", fairRanking, "fair")}
       </div>
     `);
 
@@ -1018,34 +1019,96 @@
       state.rankingYear = Number(this.value);
       renderRankingTable();
     });
+
+    // Click highlight country
+    d3.selectAll(".fair-ranking-table tbody tr").style("cursor", "pointer")
+      .on("click", function () {
+        const country = d3.select(this).select("td:nth-child(2)").text().trim();
+        const alreadyHighlighted = state.highlightedCountry === country;
+        state.highlightedCountry = alreadyHighlighted ? null : country;
+        if (state.highlightedCountry) {
+          highlightCountryInRanking(state.highlightedCountry);
+        } else {
+          clearRankingHighlight();
+        }
+      });
+
+    if (state.highlightedCountry) {
+      highlightCountryInRanking(state.highlightedCountry);
+    }
+
+    // Hover country
+    d3.selectAll(".fair-ranking-table tbody tr")
+      .on("mouseover", function () {
+        const country = d3.select(this).select("td:nth-child(2)").text().trim();
+        const indicators = getCountryIndicators(country);
+
+        const tooltip = d3.select("body").select(".fair-ranking-tooltip");
+
+        const html = `
+          <strong>${country}</strong><br>
+          Population: ${formatBig(indicators.population)}<br>
+          GDP per capita: ${formatBig(indicators.gdp)}
+        `;
+
+        tooltip.html(html).style("opacity", 1);
+      })
+      .on("mousemove", function (event) {
+        d3.select(".fair-ranking-tooltip")
+          .style("left", `${event.pageX + 14}px`)
+          .style("top", `${event.pageY + 14}px`);
+      })
+      .on("mouseleave", function () {
+        d3.select(".fair-ranking-tooltip").style("opacity", 0);
+      });
+
+    if (d3.select("body").select(".fair-ranking-tooltip").empty()) {
+      d3.select("body").append("div").attr("class", "fair-ranking-tooltip")
+        .style("position", "fixed")
+        .style("pointer-events", "none")
+        .style("opacity", 0)
+        .style("background", "rgba(20,20,20,0.96)")
+        .style("color", "white")
+        .style("border", "1px solid rgba(255,255,255,0.18)")
+        .style("border-radius", "10px")
+        .style("padding", "10px 12px")
+        .style("font-size", "14px")
+        .style("font-family", "'Elms Sans', sans-serif")
+        .style("line-height", "1.35")
+        .style("max-width", "260px")
+        .style("z-index", "99999")
+        .style("box-shadow", "0 8px 25px rgba(0,0,0,0.35)");
+    }
   }
 
   function rankingTable(title, rows, type) {
     return `
       <div class="fair-ranking-card">
-        <h2>${title}</h2>
-        <table class="fair-ranking-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Country</th>
-              <th>Gold</th>
-              <th>Silver</th>
-              <th>Bronze</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${rows.map((row, i) => `
+        <p>${title}</p>
+        <div class="fair-ranking-scroll">
+          <table class="fair-ranking-table">
+            <thead>
               <tr>
-                <td>${i + 1}</td>
-                <td>${row.country}</td>
-                <td>${formatFair(row[type].Gold)}</td>
-                <td>${formatFair(row[type].Silver)}</td>
-                <td>${formatFair(row[type].Bronze)}</td>
+                <th>#</th>
+                <th>Country</th>
+                <th>Gold</th>
+                <th>Silver</th>
+                <th>Bronze</th>
               </tr>
-            `).join("")}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              ${rows.map((row, i) => `
+                <tr>
+                  <td>${i + 1}</td>
+                  <td>${row.country}</td>
+                  <td>${formatFair(row[type].Gold)}</td>
+                  <td>${formatFair(row[type].Silver)}</td>
+                  <td>${formatFair(row[type].Bronze)}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
       </div>
     `;
   }
@@ -1100,5 +1163,31 @@
         }).join("")}
       </div>
     `;
+  }
+
+  function highlightCountryInRanking(country) {
+    d3.selectAll(".fair-ranking-table tbody tr")
+      .each(function () {
+        const row = d3.select(this);
+        const rowCountry = row.select("td:nth-child(2)").text().trim();
+        const isMatch = rowCountry === country;
+
+        row.style("background", isMatch ? "rgba(244, 180, 0, 0.25)" : null)
+          .style("color", isMatch ? "#f4b400" : null)
+          .style("font-weight", isMatch ? "800" : null)
+          .attr("data-highlighted", isMatch ? "true" : null);
+
+        if (isMatch) {
+          this.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      });
+  }
+
+  function clearRankingHighlight() {
+    d3.selectAll(".fair-ranking-table tbody tr")
+      .style("background", null)
+      .style("color", null)
+      .style("font-weight", null)
+      .attr("data-highlighted", null);
   }
 })();
