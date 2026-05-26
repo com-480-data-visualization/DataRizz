@@ -91,7 +91,10 @@ body {
    =========================================== */
 
 body,
+h1,
 h2,
+h3,
+h4
 p {
   color: white;
   line-height: 1.15;
@@ -113,9 +116,17 @@ p {
   font-size: 24px;
 }
 
+h1,
 h2 {
   font-family: "Carter One", sans-serif;
   text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  padding-bottom: 48px;
+  margin: 0 auto;
+  width: 80%;
 }
 
 h2 {
