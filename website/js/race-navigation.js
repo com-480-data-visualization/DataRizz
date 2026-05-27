@@ -7,7 +7,7 @@
     gender: "Gender",
     delegations: "Medals",
     "body-types": "Bodies",
-    geopolitics: "Politics",
+    geopolitics: "Geopolitics",
     fair: "Fairness",
     conclusion: "Finish Line"
   };
