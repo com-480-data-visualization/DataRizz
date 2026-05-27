@@ -184,6 +184,9 @@
     const nav = document.getElementById("race-nav");
     if (!nav || !state.sections.length) return;
 
+    // Footer section index is beyond our tracked sections — let the MutationObserver handle it
+    if (sectionIndex >= state.sections.length) return;
+
     const safeSectionIndex = clamp(sectionIndex, 0, state.sections.length - 1);
     const currentSection = state.sections[safeSectionIndex];
 
