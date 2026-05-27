@@ -382,15 +382,15 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     wrapper.appendChild(canvasWrap);
 
     const width = Math.max(canvasWrap.clientWidth || 1180, 900);
-    const height = 700;
+    const height = 520;
 
     const scene = new THREE.Scene();
     scene.background = null;
     currentScene = scene;
 
     const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 200);
-    camera.position.set(0, 18, 38);
-    camera.lookAt(0, 7, 0);
+    camera.position.set(0, 20, 28);
+    camera.lookAt(0, 11, 0);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -520,6 +520,7 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     const silverH = pos.Silver.podiumHeight;
     const goldH = pos.Gold.podiumHeight;
 
+    const overlap = 0.02;
     const layers = [
       {
         w: bronzeRight - silverLeft,
@@ -529,15 +530,15 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
       },
       {
         w: goldRight - silverLeft,
-        h: silverH - bronzeH,
+        h: silverH - bronzeH + overlap,
         cx: (silverLeft + goldRight) / 2,
-        cy: bronzeH + (silverH - bronzeH) / 2
+        cy: bronzeH + (silverH - bronzeH + overlap) / 2 - overlap / 2
       },
       {
         w: pos.Gold.podiumWidth,
-        h: goldH - silverH,
+        h: goldH - silverH + overlap,
         cx: pos.Gold.x,
-        cy: silverH + (goldH - silverH) / 2
+        cy: silverH + (goldH - silverH + overlap) / 2 - overlap / 2
       }
     ];
 

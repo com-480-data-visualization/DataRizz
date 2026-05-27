@@ -981,7 +981,7 @@ h4 {
   justify-content: center;
   align-items: center;
   gap: 14px 18px;
-  margin: 0 auto 18px;
+  margin: 0 auto;
   width: 100%;
   max-width: 1200px;
 }
@@ -1024,14 +1024,14 @@ h4 {
 
 .bodytype-canvas-wrap {
   width: 100%;
-  height: 700px;
+  height: 520px;
   pointer-events: none;
 }
 
 .bodytype-canvas-wrap canvas {
   display: block;
   width: 100% !important;
-  height: 700px !important;
+  height: 520px !important;
   background: transparent;
   pointer-events: none;
 }
