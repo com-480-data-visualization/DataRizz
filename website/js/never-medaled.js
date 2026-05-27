@@ -277,7 +277,6 @@
       state.worldGeo = worldGeo;
       state.columns = detectColumns(rows);
 
-      injectStyles();
       removeLoading(root);
       injectControls(root);
       setupControls();
@@ -304,109 +303,6 @@
 
   function findColumn(columns, candidates) {
     return candidates.find(candidate => columns.includes(candidate)) || null;
-  }
-
-  function injectStyles() {
-    if (document.getElementById("never-medaled-inline-styles")) return;
-
-    const style = document.createElement("style");
-    style.id = "never-medaled-inline-styles";
-
-    style.textContent = `
-      #never-medaled-viz {
-        width: 100%;
-        max-width: 1440px;
-        margin: 0 auto;
-        color: white;
-      }
-
-      .never-controls {
-        display: flex;
-        justify-content: center;
-        gap: 28px;
-        align-items: center;
-        margin: 0 auto;
-      }
-
-      .never-controls label {
-        color: white;
-        font-size: 18px;
-        font-weight: 700;
-        font-family: "Elms Sans", sans-serif;
-        margin-right: 8px;
-      }
-
-      .never-controls select {
-        background: #f4b400;
-        color: #111;
-        border: 3px solid #222;
-        border-radius: 12px;
-        padding: 8px 14px;
-        font-size: 18px;
-        font-weight: 700;
-        font-family: "Elms Sans", sans-serif;
-        cursor: pointer;
-      }
-
-      .never-layout {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 34px;
-        align-items: start;
-        margin-top: 12px;
-      }
-
-      .never-map-panel,
-      .never-chart-panel {
-        min-width: 0;
-      }
-
-      .never-map-svg,
-      .never-medaled-svg {
-        width: 100%;
-        height: auto;
-        display: block;
-        background: transparent;
-      }
-
-      .never-medaled-tooltip {
-        position: absolute;
-        pointer-events: none;
-        opacity: 0;
-        background: rgba(20, 20, 20, 0.96);
-        color: white;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 10px;
-        padding: 10px 12px;
-        font-family: "Elms Sans", sans-serif;
-        font-size: 14px;
-        line-height: 1.35;
-        max-width: 330px;
-        z-index: 9999;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-      }
-
-      .never-medaled-error {
-        color: white;
-        text-align: center;
-        padding: 24px;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 12px;
-      }
-
-      @media (max-width: 1000px) {
-        .never-controls {
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .never-layout {
-          grid-template-columns: 1fr;
-        }
-      }
-    `;
-
-    document.head.appendChild(style);
   }
 
   function injectControls(root) {
