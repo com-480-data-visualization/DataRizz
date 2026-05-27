@@ -239,6 +239,14 @@
         flex-shrink: 0;
       }
 
+      .fair-medal-overflow {
+        font-size: 12px;
+        font-weight: 800;
+        color: rgba(255,255,255,0.7);
+        align-self: flex-end;
+        margin-left: 2px;
+      }
+
       .fair-note {
         text-align: center;
         margin-top: 22px;
@@ -385,23 +393,34 @@
   function bindControls() {
     d3.select("#fair-season").on("change", function () {
       state.season = this.value;
+      state.rankingSeason = this.value;
 
       const years = getAvailableYears(state.season);
       if (!years.includes(state.year)) {
         state.year = years[years.length - 1] || null;
       }
+      if (!years.includes(state.rankingYear)) {
+        state.rankingYear = years[years.length - 1] || null;
+      }
 
       updateCountriesAfterSeasonOrYearChange();
       populateControls();
       render();
+
+      const rankingSeasonEl = document.getElementById("fair-ranking-season");
+      if (rankingSeasonEl) rankingSeasonEl.value = this.value;
     });
 
     d3.select("#fair-year").on("change", function () {
       state.year = Number(this.value);
+      state.rankingYear = Number(this.value);
 
       updateCountriesAfterSeasonOrYearChange();
       populateControls();
       render();
+
+      const rankingYearEl = document.getElementById("fair-ranking-year");
+      if (rankingYearEl) rankingYearEl.value = this.value;
     });
 
     d3.select("#fair-country-1").on("change", function () {
@@ -773,6 +792,7 @@
     grid.append("div").html(renderCountryCard(state.country1, data1, maxScale));
     grid.append("div").html(renderCountryCard(state.country2, data2, maxScale));
     renderRankingTable();
+    requestAnimationFrame(measureIconOverflow);
   }
 
   function renderMedalIcons(value, color) {
@@ -783,12 +803,44 @@
     const full = Array(fullCount).fill(0).map(() =>
       `<div class="fair-medal-icon" style="background:${color}"></div>`
     ).join("");
-
     const half = hasHalf
       ? `<div class="fair-medal-half-wrap"><div class="fair-medal-icon" style="background:${color}"></div></div>`
       : "";
 
-    return `<div class="fair-medal-icons">${full}${half}</div>`;
+    return `<div class="fair-medal-icons" data-total="${rounded}">${full}${half}</div>`;
+  }
+
+  function measureIconOverflow() {
+    document.querySelectorAll(".fair-medal-icons").forEach(container => {
+      container.querySelectorAll(".fair-medal-overflow").forEach(el => el.remove());
+
+      const ROW_HEIGHT = 16;
+      const GAP = 3;
+      const MAX_ROWS = 2;
+      const maxH = MAX_ROWS * ROW_HEIGHT + (MAX_ROWS - 1) * GAP;
+
+      if (container.scrollHeight <= maxH + 1) return;
+
+      const total = parseFloat(container.dataset.total) || 0;
+      const iconW = ROW_HEIGHT + GAP;
+      const containerW = container.clientWidth;
+      const iconsPerRow = Math.max(1, Math.floor((containerW + GAP) / iconW));
+      const maxVisible = iconsPerRow * MAX_ROWS;
+
+      const icons = Array.from(container.children).filter(
+        el => el.classList.contains("fair-medal-icon") || el.classList.contains("fair-medal-half-wrap")
+      );
+
+      icons.slice(maxVisible).forEach(el => el.style.display = "none");
+
+      const hidden = Math.ceil(total - maxVisible);
+      if (hidden > 0) {
+        const label = document.createElement("span");
+        label.className = "fair-medal-overflow";
+        label.textContent = `+${hidden}`;
+        container.appendChild(label);
+      }
+    });
   }
 
   function renderCountryCard(country, data, maxScale) {
@@ -951,16 +1003,40 @@
 
     d3.select("#fair-ranking-season").on("change", function () {
       state.rankingSeason = this.value;
+      state.season = this.value;
+
       const newYears = getAvailableYears(state.rankingSeason);
       state.rankingYear = newYears.includes(state.rankingYear)
         ? state.rankingYear
         : newYears[newYears.length - 1];
+      if (!newYears.includes(state.year)) {
+        state.year = newYears[newYears.length - 1] || null;
+      }
+
       renderRankingTable();
+
+      const fairSeasonEl = document.getElementById("fair-season");
+      if (fairSeasonEl) {
+        fairSeasonEl.value = this.value;
+        updateCountriesAfterSeasonOrYearChange();
+        populateControls();
+        render();
+      }
     });
 
     d3.select("#fair-ranking-year").on("change", function () {
       state.rankingYear = Number(this.value);
+      state.year = Number(this.value);
+
       renderRankingTable();
+
+      const fairYearEl = document.getElementById("fair-year");
+      if (fairYearEl) {
+        fairYearEl.value = this.value;
+        updateCountriesAfterSeasonOrYearChange();
+        populateControls();
+        render();
+      }
     });
 
     // Click highlight country
