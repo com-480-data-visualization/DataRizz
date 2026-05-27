@@ -1506,6 +1506,22 @@ h4 {
   transform: scale(1.08);
 }
 
+.race-finish-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.race-finish-wrap .race-label {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.race-finish-wrap:hover .race-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(4px);
+}
+
 .race-track {
   position: relative;
   width: 100%;

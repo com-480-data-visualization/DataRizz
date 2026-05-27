@@ -676,7 +676,7 @@
     const path = d3.geoPath().projection(projection);
 
     d3.select(".never-medaled-viz-title").text(
-      `Countries that have participated without ever winning a medal`
+      `Countries That Have Participated Without Ever Winning a Medal`
     );
 
     const byCountry = new Map(

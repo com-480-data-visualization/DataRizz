@@ -812,8 +812,8 @@
       </div>
 
       <div class="fair-ranking-layout">
-        ${rankingTable("Actual medal ranking", actualRanking, "actual")}
-        ${rankingTable("Fair medal ranking", fairRanking, "fair")}
+        ${rankingTable("Actual Medal Ranking", actualRanking, "actual")}
+        ${rankingTable("Fair Medal Ranking", fairRanking, "fair")}
       </div>
     `);
 

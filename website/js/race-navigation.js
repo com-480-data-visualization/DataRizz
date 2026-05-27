@@ -67,9 +67,12 @@
         </div>
 
         <span class="race-anchor-label">FINISH</span>
-        <button class="race-finish-btn" type="button" title="Go to Finish">
-          ${waterBottleSvg()}
-        </button>
+        <div class="race-finish-wrap">
+          <button class="race-finish-btn" type="button">
+            ${waterBottleSvg()}
+          </button>
+          <span class="race-label">Cool Down</span>
+        </div>
       </div>
     `;
 

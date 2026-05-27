@@ -836,7 +836,7 @@
       .attr("class", "medal-sankey-svg");
 
     d3.select(selectors.root).select(".medal-viz-title").text(
-      `Distribution of medals in ${graph.season} Olympics`
+      `Distribution of Medals in ${graph.season} Olympics`
     );
 
     d3.select(selectors.root).select(".medal-viz-subtitle").text(
