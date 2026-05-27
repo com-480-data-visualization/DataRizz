@@ -801,15 +801,12 @@
       })
       .attr("stroke", d => {
         const country = normalizeCountryName(d.properties.name);
-        return byCountry.has(country) ? "rgba(255,255,255,0.78)" : "#4d4d4d";
+        const record = byCountry.get(country);
+        return record ? (continentColors[record.continent] || "#aeeaf2") : "#5b5b5b";
       })
       .attr("stroke-width", d => {
         const country = normalizeCountryName(d.properties.name);
         return byCountry.has(country) ? 1.6 : 0.6;
-      })
-      .attr("opacity", d => {
-        const country = normalizeCountryName(d.properties.name);
-        return byCountry.has(country) ? 0.94 : 0.68;
       })
       .style("cursor", "pointer")
       .on("mousemove", function (event, d) {
@@ -819,7 +816,6 @@
 
         if (record) {
           d3.select(this)
-            .attr("opacity", 1)
             .attr("stroke-width", 1.8);
 
           tooltip
@@ -844,13 +840,9 @@
       })
       .on("mouseleave", function () {
         d3.select(this)
-          .attr("opacity", d => {
-            const country = normalizeCountryName(d.properties.name);
-            return byCountry.has(country) ? 0.94 : 0.68;
-          })
           .attr("stroke-width", d => {
             const country = normalizeCountryName(d.properties.name);
-            return byCountry.has(country) ? 0.95 : 0.45;
+            return byCountry.has(country) ? 1.6 : 0.6;
           });
 
         tooltip.style("opacity", 0);
