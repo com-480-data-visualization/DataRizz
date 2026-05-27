@@ -417,14 +417,6 @@
     scrollHorizontally: true,
 
     onLeave: function(origin, destination, direction) {
-      if (origin && origin.item) {
-        const activeSlide = origin.item.querySelector(".fp-slide.active");
-
-        if (activeSlide && activeSlide.dataset.anchor && !activeSlide.dataset.anchor.endsWith("-text")) {
-          window.fullpage_api.silentMoveTo(origin.index + 1, 0);
-        }
-      }
-
       if (window.RaceNavigation) {
         window.RaceNavigation.update(destination.index, 0, direction);
       }
@@ -432,7 +424,13 @@
 
     afterLoad: function(origin, destination, direction) {
       if (window.RaceNavigation) {
-        window.RaceNavigation.update(destination.index, 0, direction);
+        let slideIndex = 0;
+        if (destination && destination.item) {
+          const slides = Array.from(destination.item.querySelectorAll(".fp-slide"));
+          const activeSlide = destination.item.querySelector(".fp-slide.active");
+          slideIndex = activeSlide ? slides.indexOf(activeSlide) : 0;
+        }
+        window.RaceNavigation.update(destination.index, slideIndex, direction);
       }
     },
 
