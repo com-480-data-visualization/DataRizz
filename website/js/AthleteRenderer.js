@@ -36,7 +36,7 @@ export class AthleteRenderer {
     const base = this.cache[cacheKey].clone(true);
 
     const group = new THREE.Group();
-    group.position.set(pos.x, pos.podiumHeight, 0);
+    group.position.set(pos.x, pos.podiumHeight, pos.z ?? 0);
 
     const height = athlete.height || 170;
     const weight = athlete.weight || 65;

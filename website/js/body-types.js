@@ -415,9 +415,9 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
     scene.add(fillLight);
 
     const positions = {
-      Silver: { x: -9.75, podiumHeight: 2.2, podiumWidth: 10.0, podiumDepth: 3.0 },
-      Gold:   { x: 0,     podiumHeight: 3.2, podiumWidth: 9.5,  podiumDepth: 3.0 },
-      Bronze: { x: 9.75,  podiumHeight: 1.5, podiumWidth: 10.0, podiumDepth: 3.0 }
+      Silver: { x: -9.75, podiumHeight: 2.2, podiumWidth: 10.0, podiumDepth: 3.0, z: -0.55 },
+      Gold:   { x: 0,     podiumHeight: 3.2, podiumWidth: 9.5,  podiumDepth: 3.0, z: -0.55 },
+      Bronze: { x: 9.75,  podiumHeight: 1.5, podiumWidth: 10.0, podiumDepth: 3.0, z: -0.55 }
     };
 
     camera.updateProjectionMatrix();
