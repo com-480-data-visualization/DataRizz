@@ -499,54 +499,54 @@ import { AthleteRenderer } from "./AthleteRenderer.js";
 
   function addConnectedPodium(scene, pos) {
     const depth = pos.Gold.podiumDepth;
+    const capH  = 0.18; // thickness of the grey standing cap
+    const overlap = 0.02;
 
-    const sideMat = new THREE.MeshStandardMaterial({
-      color: 0xf5f5f5,
-      roughness: 0.8
-    });
+    const whiteMat = new THREE.MeshStandardMaterial({ color: 0xf5f5f5, roughness: 0.8 });
+    const greyMat  = new THREE.MeshStandardMaterial({ color: 0xaaaaaa, roughness: 0.7 });
 
-    const topMat = new THREE.MeshStandardMaterial({
-      color: 0xaaaaaa,
-      roughness: 0.7
-    });
+    // Cap material: grey ONLY on the top face (+Y = index 2), white everywhere else
+    const capMat = [whiteMat, whiteMat, greyMat, whiteMat, whiteMat, whiteMat];
 
-    const mat = [sideMat, sideMat, topMat, sideMat, sideMat, sideMat];
-
-    const silverLeft = pos.Silver.x - pos.Silver.podiumWidth / 2;
-    const goldRight = pos.Gold.x + pos.Gold.podiumWidth / 2;
+    const silverLeft  = pos.Silver.x - pos.Silver.podiumWidth / 2;
+    const goldRight   = pos.Gold.x   + pos.Gold.podiumWidth   / 2;
     const bronzeRight = pos.Bronze.x + pos.Bronze.podiumWidth / 2;
 
     const bronzeH = pos.Bronze.podiumHeight;
     const silverH = pos.Silver.podiumHeight;
-    const goldH = pos.Gold.podiumHeight;
+    const goldH   = pos.Gold.podiumHeight;
 
-    const overlap = 0.02;
-    const layers = [
-      {
-        w: bronzeRight - silverLeft,
-        h: bronzeH,
-        cx: (silverLeft + bronzeRight) / 2,
-        cy: bronzeH / 2
-      },
-      {
-        w: goldRight - silverLeft,
-        h: silverH - bronzeH + overlap,
-        cx: (silverLeft + goldRight) / 2,
-        cy: bronzeH + (silverH - bronzeH + overlap) / 2 - overlap / 2
-      },
-      {
-        w: pos.Gold.podiumWidth,
-        h: goldH - silverH + overlap,
-        cx: pos.Gold.x,
-        cy: silverH + (goldH - silverH + overlap) / 2 - overlap / 2
-      }
-    ];
-
-    layers.forEach(({ w, h, cx, cy }) => {
+    // Helper to add a box
+    const addBox = (w, h, cx, cy, mat) => {
       const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, depth), mat);
       mesh.position.set(cx, cy, 0);
       scene.add(mesh);
-    });
+    };
+
+    // ── Structural boxes (all white) ──────────────────────────────────
+    // Heights are shortened by capH so the grey cap sits flush on top.
+    // A small overlap prevents z-fighting at the seam between layers.
+
+    // Layer 1 — full-width base, y: 0 → bronzeH-capH
+    const h1 = bronzeH - capH;
+    addBox(bronzeRight - silverLeft, h1,
+      (silverLeft + bronzeRight) / 2, h1 / 2, whiteMat);
+
+    // Layer 2 — silver+gold section, y: bronzeH-capH → silverH-capH
+    const h2 = silverH - bronzeH + overlap;
+    addBox(goldRight - silverLeft, h2,
+      (silverLeft + goldRight) / 2, (bronzeH - capH) - overlap / 2 + h2 / 2, whiteMat);
+
+    // Layer 3 — gold-only section, y: silverH-capH → goldH-capH
+    const h3 = goldH - silverH + overlap;
+    addBox(pos.Gold.podiumWidth, h3,
+      pos.Gold.x, (silverH - capH) - overlap / 2 + h3 / 2, whiteMat);
+
+    // ── Grey caps (grey top, white sides) ────────────────────────────
+    // Each cap sits exactly in the athlete's standing area.
+    addBox(pos.Bronze.podiumWidth, capH, pos.Bronze.x, bronzeH - capH / 2, capMat);
+    addBox(pos.Silver.podiumWidth, capH, pos.Silver.x, silverH - capH / 2, capMat);
+    addBox(pos.Gold.podiumWidth,   capH, pos.Gold.x,   goldH   - capH / 2, capMat);
 
     const ringsW = 6.0;
     const ringsH = ringsW * (175 / 420);
