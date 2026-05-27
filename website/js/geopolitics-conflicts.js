@@ -323,6 +323,8 @@
       season: findColumn(columns, ["Season", "season"]),
       country: findColumn(columns, ["Country", "country", "Team", "team", "region", "Region", "NOC", "noc"]),
       medal: findColumn(columns, ["Medal", "medal"]),
+      medalCount: findColumn(columns, ["medal_count", "medal_Count"]),
+      participated: findColumn(columns, ["participated", "Participated"]),
       event: findColumn(columns, ["Event", "event"])
     };
   }
@@ -437,18 +439,37 @@
       season: seasonCol,
       country: countryCol,
       medal: medalCol,
+      medalCount: medalCountCol,
+      participated: participatedCol,
       event: eventCol
     } = state.columns;
 
-    if (!yearCol || !countryCol || !medalCol) return [];
+    if (!yearCol || !countryCol) return [];
 
     const minYear = selectedYear - windowSize;
     const maxYear = selectedYear + windowSize;
 
-    // Only Summer Olympic years are used here.
     const relevantYears = state.olympicYears
       .filter(year => year >= minYear && year <= maxYear)
       .sort((a, b) => a - b);
+
+    // Pre-aggregated CSV (has medal_count column): one row per country+year
+    if (medalCountCol) {
+      return relevantYears.map(year => {
+        const row = state.rows.find(r =>
+          Number(r[yearCol]) === year &&
+          normalizeCountryName(cleanCountryName(r[countryCol])) === countryName
+        );
+        return {
+          year,
+          value: row ? Number(row[medalCountCol]) || 0 : 0,
+          participated: row ? (participatedCol ? String(row[participatedCol]).toLowerCase() !== "false" : true) : false
+        };
+      });
+    }
+
+    // Raw CSV (has individual medal rows): count medals by event
+    if (!medalCol) return [];
 
     return relevantYears.map(year => {
       const medalKeys = new Set();
@@ -459,26 +480,18 @@
         const season = seasonCol ? String(row[seasonCol] || "").trim() : "Summer";
         const rowCountry = normalizeCountryName(cleanCountryName(row[countryCol]));
 
-        if (
-          rowYear === year &&
-          season === "Summer" &&
-          rowCountry === countryName
-        ) {
+        if (rowYear === year && season === "Summer" && rowCountry === countryName) {
           participated = true;
 
           if (isRealMedal(row[medalCol])) {
             const eventName = eventCol ? String(row[eventCol] || "Unknown Event") : "Unknown Event";
-            const medalName = medalCol ? String(row[medalCol] || "") : "";
+            const medalName = String(row[medalCol] || "");
             medalKeys.add(`${eventName}|||${medalName}`);
           }
         }
       });
 
-      return {
-        year,
-        value: medalKeys.size,
-        participated
-      };
+      return { year, value: medalKeys.size, participated };
     });
   }
 
@@ -698,7 +711,7 @@
     if (!selected.hasOlympicData) {
       root.append("p")
         .attr("class", "geo-note")
-        .text("No Summer Olympic competition data exists in the CSV for this year because the Games were cancelled or absent.");
+        .text("No Summer Olympic Games were held this year.");
     }
 
     const list = root.append("ul").attr("class", "geo-events-list");
