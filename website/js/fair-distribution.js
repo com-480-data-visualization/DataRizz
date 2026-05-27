@@ -740,7 +740,7 @@
 
   function findSimilarGdpMedalCountry(country) {
     const base = getCountryIndicators(country);
-    if (!base.gdp) return null;
+    if (!base.gdp && !base.population) return null;
 
     const countries = getAvailableCountries(state.season, state.year);
 
@@ -753,12 +753,22 @@
         if (totalMedals === 0) return null;
 
         const indicators = getCountryIndicators(candidate);
-        if (!indicators.gdp) return null;
 
-        return {
-          country: candidate,
-          distance: Math.abs(Math.log(indicators.gdp) - Math.log(base.gdp))
-        };
+        let distance = 0;
+        let terms = 0;
+
+        if (base.gdp && indicators.gdp) {
+          distance += Math.abs(Math.log(indicators.gdp) - Math.log(base.gdp));
+          terms++;
+        }
+        if (base.population && indicators.population) {
+          distance += Math.abs(Math.log(indicators.population) - Math.log(base.population));
+          terms++;
+        }
+
+        if (terms === 0) return null;
+
+        return { country: candidate, distance: distance / terms };
       })
       .filter(Boolean)
       .sort((a, b) => d3.ascending(a.distance, b.distance));
@@ -861,7 +871,7 @@
           ${data.similarCountry ? `
             <div class="fair-warning fair-warning--lg">
               No medals for ${country}. Fair values are estimated from ${data.similarCountry},
-              a medal-winning country with similar GDP.
+              a medal-winning country with similar GDP and population.
             </div>
           ` : medalOrder.map(medal => {
             const value = data.actual[medal] || 0;
