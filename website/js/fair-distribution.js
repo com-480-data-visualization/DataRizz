@@ -36,6 +36,11 @@
     const root = document.querySelector(selectors.root);
     if (!root) return;
 
+    showLoading(root);
+
+    const rankingRoot = document.querySelector("#fair-ranking-viz");
+    if (rankingRoot) showLoading(rankingRoot);
+
     try {
       const rows = await d3.csv(DATA_PATH, d3.autoType);
 
@@ -44,6 +49,7 @@
 
       ensureRequiredColumns();
       injectStyles();
+      removeLoading(root);
       buildScaffold();
       initializeState();
       populateControls();
@@ -931,6 +937,23 @@
     return d3.format(",.0f")(value);
   }
 
+  function showLoading(root) {
+    root.classList.add("is-loading");
+    const slide = root.closest(".slide");
+    if (slide) slide.classList.add("is-loading");
+    const div = document.createElement("div");
+    div.className = "fair-loading";
+    div.textContent = "Loading data, please wait…";
+    root.appendChild(div);
+  }
+
+  function removeLoading(root) {
+    root.classList.remove("is-loading");
+    const slide = root.closest(".slide");
+    if (slide) slide.classList.remove("is-loading");
+    root.querySelectorAll(".fair-loading").forEach(el => el.remove());
+  }
+
   function showError(message) {
     const root = document.querySelector(selectors.root);
     if (!root) return;
@@ -941,6 +964,9 @@
   function renderRankingTable() {
     const root = d3.select("#fair-ranking-viz");
     if (root.empty()) return;
+    root.classed("is-loading", false);
+    const slide = root.node().closest(".slide");
+    if (slide) slide.classList.remove("is-loading");
 
     if (!state.rankingYear) {
       state.rankingSeason = state.season;

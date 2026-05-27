@@ -397,6 +397,35 @@ h4 {
   max-width: 280px;
 }
 
+.viz-loading,
+.geo-loading,
+.fair-loading,
+.never-loading {
+  font-family: "Elms Sans", sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  text-align: center;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+/* Hide controls, timebars, and subtitles while data is loading */
+#gender-viz.is-loading .gender-controls,
+#gender-viz.is-loading .gender-timeline,
+#gender-viz.is-loading h4,
+#medal-viz.is-loading .medal-controls,
+#medal-viz.is-loading .medal-timeline,
+#medal-viz.is-loading .medal-viz-subtitle,
+#bodytype-viz.is-loading .bodytype-controls,
+#fair-viz.is-loading .fair-controls,
+#fair-ranking-viz.is-loading .fair-ranking-controls,
+#never-medaled-viz.is-loading ~ .medal-timeline.never-timeline,
+.slide.is-loading .fair-viz-subtitle,
+.slide.is-loading .geo-viz-subtitle,
+.slide.is-loading .geo-country-hint {
+  visibility: hidden;
+}
+
 .gender-empty,
 .gender-error {
   font-family: "Elms Sans", sans-serif;

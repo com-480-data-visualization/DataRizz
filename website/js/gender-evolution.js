@@ -92,6 +92,8 @@
     if (!root) return;
     if (typeof d3 === "undefined") { showError("D3 is not loaded."); return; }
 
+    showLoading(root);
+
     try {
       const raw = await d3.json(DATA_PATH);
 
@@ -135,6 +137,7 @@
       );
 
       state.sportColorScale = buildGlobalSportColorScale(state.dataBySeasonYear);
+      removeLoading(root);
       setupControls();
       setSeason("Summer");
     } catch (error) {
@@ -815,6 +818,19 @@
   /* ============================================================
      Error
      ============================================================ */
+
+  function showLoading(root) {
+    root.classList.add("is-loading");
+    const div = document.createElement("div");
+    div.className = "viz-loading";
+    div.textContent = "Loading data, please wait…";
+    root.appendChild(div);
+  }
+
+  function removeLoading(root) {
+    root.classList.remove("is-loading");
+    root.querySelectorAll(".viz-loading").forEach(el => el.remove());
+  }
 
   function showError(message) {
     const root = d3.select(selectors.root);

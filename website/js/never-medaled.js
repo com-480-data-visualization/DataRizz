@@ -265,6 +265,8 @@
       return;
     }
 
+    showLoading(root);
+
     try {
       const [rows, worldGeo] = await Promise.all([
         d3.csv(DATA_PATH, d3.autoType),
@@ -276,6 +278,7 @@
       state.columns = detectColumns(rows);
 
       injectStyles();
+      removeLoading(root);
       injectControls(root);
       setupControls();
       setSeason("Summer");
@@ -1181,6 +1184,19 @@
     }
 
     return tooltip;
+  }
+
+  function showLoading(root) {
+    root.classList.add("is-loading");
+    const div = document.createElement("div");
+    div.className = "never-loading";
+    div.textContent = "Loading data, please wait…";
+    root.appendChild(div);
+  }
+
+  function removeLoading(root) {
+    root.classList.remove("is-loading");
+    root.querySelectorAll(".never-loading").forEach(el => el.remove());
   }
 
   function showError(message) {

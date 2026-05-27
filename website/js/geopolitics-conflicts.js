@@ -282,6 +282,8 @@
       return;
     }
 
+    showGeoLoading();
+
     try {
       const [rows, worldGeo] = await Promise.all([
         d3.csv(DATA_PATH, d3.autoType),
@@ -303,6 +305,7 @@
         hasOlympicData: state.olympicYears.includes(event.year)
       }));
 
+      removeGeoLoading();
       ensureTooltip();
 
       const initialYear = state.events[0]?.year || state.olympicYears[0];
@@ -988,8 +991,27 @@
   }
 
   /* ============================================================
-     Error
+     Loading / Error
      ============================================================ */
+
+  function showGeoLoading() {
+    const root = document.querySelector(selectors.mapRoot);
+    if (!root) return;
+    const slide = root.closest(".slide");
+    if (slide) slide.classList.add("is-loading");
+    const div = document.createElement("div");
+    div.className = "geo-loading";
+    div.textContent = "Loading data, please wait…";
+    root.appendChild(div);
+  }
+
+  function removeGeoLoading() {
+    document.querySelectorAll(".geo-loading").forEach(el => {
+      const slide = el.closest(".slide");
+      if (slide) slide.classList.remove("is-loading");
+      el.remove();
+    });
+  }
 
   function showGeoError(message) {
     d3.select(selectors.mapRoot)

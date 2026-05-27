@@ -299,7 +299,8 @@
   document.addEventListener("DOMContentLoaded", init);
 
   async function init() {
-    if (!document.querySelector(selectors.root)) return;
+    const root = document.querySelector(selectors.root);
+    if (!root) return;
 
     if (typeof d3 === "undefined") {
       showError("D3 is not loaded.");
@@ -311,12 +312,15 @@
       return;
     }
 
+    showLoading(root);
+
     try {
       const rows = await d3.csv(DATA_PATH, d3.autoType);
 
       state.rows = rows;
       state.columns = detectColumns(rows);
 
+      removeLoading(root);
       setupControls();
       setSeason("Summer");
     } catch (error) {
@@ -1251,6 +1255,19 @@
     }
 
     return tooltip;
+  }
+
+  function showLoading(root) {
+    root.classList.add("is-loading");
+    const div = document.createElement("div");
+    div.className = "viz-loading";
+    div.textContent = "Loading data, please wait…";
+    root.appendChild(div);
+  }
+
+  function removeLoading(root) {
+    root.classList.remove("is-loading");
+    root.querySelectorAll(".viz-loading").forEach(el => el.remove());
   }
 
   function showError(message) {
