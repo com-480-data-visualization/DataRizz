@@ -676,7 +676,7 @@
     const path = d3.geoPath().projection(projection);
 
     d3.select(".never-medaled-viz-title").text(
-      `Countries That Have Participated Without Ever Winning a Medal`
+      `Countries That Participated Without Winning a Medal`
     );
 
     const byCountry = new Map(
@@ -707,7 +707,7 @@
         const country = normalizeCountryName(d.properties.name);
         return byCountry.has(country) ? 1.6 : 0.6;
       })
-      .style("cursor", "pointer")
+      .style("cursor", d => byCountry.has(normalizeCountryName(d.properties.name)) ? "pointer" : "default")
       .on("mousemove", function (event, d) {
         const rawName = d.properties.name || "Unknown country";
         const country = normalizeCountryName(rawName);
@@ -723,18 +723,13 @@
               Continent: <strong>${record.continent}</strong><br>
               Participations: <strong>${d3.format(",")(record.participations)}</strong><br>
               Sports entered: <strong>${record.sports}</strong><br>
-              Years: ${formatYearRange(record.firstYear, record.lastYear)}<br>
-              <span style="color:#aeeaf2;">No Olympic medals in this dataset</span>
+              Years: ${formatYearRange(record.firstYear, record.lastYear)}
             `)
             .style("left", `${event.pageX + 14}px`)
             .style("top", `${event.pageY + 14}px`)
             .style("opacity", 1);
         } else {
-          tooltip
-            .html(`<strong>${rawName}</strong><br>Not in the never-medaled group.`)
-            .style("left", `${event.pageX + 14}px`)
-            .style("top", `${event.pageY + 14}px`)
-            .style("opacity", 1);
+          tooltip.style("opacity", 0);
         }
       })
       .on("mouseleave", function () {

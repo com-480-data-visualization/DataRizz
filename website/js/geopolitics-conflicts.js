@@ -584,11 +584,6 @@
             ${note}<br>
             <span style="color:#f4b400;">Click to see medal performance</span>
           `);
-        } else {
-          showTooltip(
-            event,
-            `<strong>${rawName}</strong><br>Not specifically highlighted for ${selected.year}.`
-          );
         }
       })
       .on("mouseleave", hideTooltip)
