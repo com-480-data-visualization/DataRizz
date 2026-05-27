@@ -1455,16 +1455,17 @@ h4 {
 }
 
 /* FINISH: golden by default, white when active */
-#race-nav:not(.race-is-finish) .race-finish-btn {
+#race-nav:not(.race-is-footer) .race-finish-btn {
   color: #f4b400;
   filter: drop-shadow(0 0 6px rgba(244, 180, 0, 0.5));
 }
 
-#race-nav.race-is-finish .race-finish-btn {
+#race-nav.race-is-footer .race-finish-btn {
   color: white;
   filter:
-    drop-shadow(0 0 8px rgba(255, 255, 255, 0.6))
-    drop-shadow(0 0 14px rgba(244, 180, 0, 0.35));
+    drop-shadow(0 0 6px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 14px rgba(255, 255, 255, 0.85))
+    drop-shadow(0 0 28px rgba(244, 180, 0, 0.6));
 }
 
 .race-start-btn:hover,
@@ -1573,6 +1574,12 @@ h4 {
   box-shadow:
     0 0 0 6px rgba(244, 180, 0, 0.22),
     0 0 18px rgba(255, 255, 255, 0.85);
+}
+
+#race-nav.race-is-footer .race-checkpoint.is-active .race-dot {
+  background: #f4b400;
+  border-color: #f4b400;
+  box-shadow: none;
 }
 
 /* =============================================

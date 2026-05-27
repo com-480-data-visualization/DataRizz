@@ -97,17 +97,23 @@
 
     function applyFooterRunner() {
       nav.classList.add("race-is-footer");
+      nav.style.setProperty("--race-progress", "100%");
       if (runner) {
         runner.style.top = "calc(100% + 60px)";
+        runner.style.setProperty("--runner-x", config.mainRunnerX);
       }
+      updateCheckpoints(state.sections.length - 1, 0);
     }
 
     function restoreRunner() {
       nav.classList.remove("race-is-footer");
       if (runner) {
         const progress = getProgressPercent(state.currentSectionIndex);
+        const lineProgress = state.currentSectionIndex === 0 ? 0 : progress;
+        nav.style.setProperty("--race-progress", `${lineProgress}%`);
         runner.style.top = `${progress}%`;
       }
+      updateCheckpoints(state.currentSectionIndex, state.currentSlideIndex);
     }
 
     const observer = new MutationObserver(() => {
