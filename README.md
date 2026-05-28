@@ -69,13 +69,13 @@ The Milestone 2 report can be found [here](milestones/milestone2/Report_M2.pdf).
 
 ##### Milestone 3 
 
-The final process book can be found [here](milestones/milestone2/ProcessBook.pdf).
+The final process book can be found [here](milestones/milestone3/ProcessBook.pdf).
 
 
 
 ## Running the Project Locally
 
-Cloning the repository:
+To clone the repository:
 ```bash
 git clone https://github.com/com-480-data-visualization/DataRizz.git
 ```

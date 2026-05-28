@@ -209,6 +209,11 @@ h4 {
   max-width: 500px;
 }
 
+.intro-key {
+  color: #f4b400;
+  font-weight: bold;
+}
+
 .text-column p {
   width: 100%;
   text-align: justify;
