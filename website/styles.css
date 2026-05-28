@@ -1872,7 +1872,7 @@ h4 {
 
 .fair-controls {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 14px 18px;
   align-items: center;
   justify-content: center;
@@ -1898,6 +1898,13 @@ h4 {
   font-weight: 700;
   color: #111;
   cursor: pointer;
+}
+
+#fair-country-1,
+#fair-country-2 {
+  width: 360px;
+  min-width: 360px;
+  max-width: 360px;
 }
 
 .fair-summary {
