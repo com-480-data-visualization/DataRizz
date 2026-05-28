@@ -526,7 +526,11 @@
 
   function findSimilarGdpMedalCountry(country) {
     const base = getCountryIndicators(country);
-    if (!base.gdp && !base.population) return null;
+
+    const hasBaseGDP = Number.isFinite(base.gdp) && base.gdp > 0;
+    const hasBasePopulation = Number.isFinite(base.population) && base.population > 0;
+
+    if (!hasBaseGDP && !hasBasePopulation) return null;
 
     const countries = getAvailableCountries(state.season, state.year);
 
@@ -540,21 +544,32 @@
 
         const indicators = getCountryIndicators(candidate);
 
+        const hasCandidateGDP =
+          Number.isFinite(indicators.gdp) && indicators.gdp > 0;
+
+        const hasCandidatePopulation =
+          Number.isFinite(indicators.population) && indicators.population > 0;
+
+        // skip medal-winning countries that cannot be used for the fair formula
+        if (!hasCandidateGDP || !hasCandidatePopulation) return null;
+
         let distance = 0;
         let terms = 0;
 
-        if (base.gdp && indicators.gdp) {
+        if (hasBaseGDP) {
           distance += Math.abs(Math.log(indicators.gdp) - Math.log(base.gdp));
           terms++;
         }
-        if (base.population && indicators.population) {
+
+        if (hasBasePopulation) {
           distance += Math.abs(Math.log(indicators.population) - Math.log(base.population));
           terms++;
         }
 
-        if (terms === 0) return null;
-
-        return { country: candidate, distance: distance / terms };
+        return {
+          country: candidate,
+          distance: distance / terms
+        };
       })
       .filter(Boolean)
       .sort((a, b) => d3.ascending(a.distance, b.distance));
