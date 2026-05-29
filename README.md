@@ -3,7 +3,7 @@
 
 Have a look at our [website](https://com-480-data-visualization.github.io/DataRizz/).
 
----
+## Motivation
 
 The Olympic Games are often seen as a symbol of fairness: athletes from all around the world competing on equal ground. But are the Olympics really as equal as they appear?
 
@@ -11,23 +11,7 @@ Our project explores how sociocultural, economic, and geopolitical contexts have
 
 By combining storytelling with interactive data visualizations, our website reveals the inequalities hidden behind medal counts and Olympic narratives.
 
-
-## Project Structure
-
-```text
-├── data/                 # Datasets and data processing files
-├── milestones/           # Milestone submissions
-└── website/              # Website source files
-    ├── data/             # Processed data files
-    ├── img/              # Images and icons
-    ├── js/               # JavaScript files for the interactive visualisations
-    └── models/           # 3D athlete models
-```
-
-## Main Themes
-
-Our website is organized as a scrollytelling experience exploring several dimensions of Olympic inequalities:
-
+We explore the following themes:
 - **Gender Representation**  
   The evolution of men's and women’s participation across Olympic history.
 
@@ -44,9 +28,22 @@ Our website is organized as a scrollytelling experience exploring several dimens
   Comparing medal counts while accounting for GDP and population differences.
 
 
+## Project Structure
+
+```text
+├── data/                 # Datasets and data processing files
+├── milestones/           # Milestone submissions
+└── website/              # Website source files
+    ├── data/             # Processed data files
+    ├── img/              # Images and icons
+    ├── js/               # JavaScript files for the interactive visualisations
+    └── models/           # 3D athlete models
+```
+
 ## Screen cast
 
 Have a look at ou [screencast](https://youtu.be/ow9zDZU0r-M).
+
 
 ## Authors
 
@@ -59,18 +56,11 @@ Have a look at ou [screencast](https://youtu.be/ow9zDZU0r-M).
 
 ## Milestones
 
-##### Milestone 1
 The Milestone 1 report can be found [here](milestones/milestone1/Milestone1.md).
-
-##### Milestone 2
 
 The Milestone 2 report can be found [here](milestones/milestone2/Report_M2.pdf).
 
-
-##### Milestone 3 
-
 The final process book can be found [here](milestones/milestone3/ProcessBook.pdf).
-
 
 
 ## Running the Project Locally
