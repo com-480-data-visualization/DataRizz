@@ -1,7 +1,13 @@
 # Olympic Inequalities 
 
+<p align="center">
+  <img src="website/img/logo_footer.png" alt="Logo" width="600"></img>
+</p>
+
+Project created in the context of EPFL COM-480 Data visualisation course in 2026.
 
 Have a look at our [website](https://com-480-data-visualization.github.io/DataRizz/).
+
 
 ## Motivation
 
@@ -28,6 +34,27 @@ We explore the following themes:
   Comparing medal counts while accounting for GDP and population differences.
 
 
+## Target Audiance
+This website is accessible for everybody interested in how inequalities are reflected through the Olympics.  
+Try out our visualisations and have fun on the website !
+
+
+## Screen cast
+
+Have a look at ou [screencast](https://youtu.be/ow9zDZU0r-M) to have an idea of what you can expect from our website.
+
+
+## Dataset
+We combined many datasets from Kaggle:
+- [athlete_events.csv](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?select=athlete_events.csv)
+- [noc_regions.csv](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?select=noc_regions.csv)
+- [gdp_per_capita.csv](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD)
+- [pop_count.csv](https://www.kaggle.com/datasets/aliaamiri/historical-worldwide-countries-population)
+- [conflicts.csv](https://www.kaggle.com/datasets/nikolaosroufas/history-of-large-conflicts-between-1800-2024)
+
+We first [merged](milestones/milestone1/merge_datasets.ipynb) them into a single [olympic.csv](milestones/milestone3/olympics.csv) file. We then [created individual](milestones/milestone3/extract_viz_data.ipynb) extracted datasets per visualisation topic (see `website/data` folder) to make our website run smoother.
+
+
 ## Project Structure
 
 ```text
@@ -40,10 +67,17 @@ We explore the following themes:
     └── models/           # 3D athlete models
 ```
 
-## Screen cast
+## Running the Project Locally
 
-Have a look at ou [screencast](https://youtu.be/ow9zDZU0r-M).
-
+To clone the repository:
+```bash
+git clone https://github.com/com-480-data-visualization/DataRizz.git
+```
+To run the website locally:
+```bash
+cd DataRizz/website
+python -m http.server 8080
+```
 
 ## Authors
 
@@ -56,21 +90,6 @@ Have a look at ou [screencast](https://youtu.be/ow9zDZU0r-M).
 
 ## Milestones
 
-The Milestone 1 report can be found [here](milestones/milestone1/Milestone1.md).
-
-The Milestone 2 report can be found [here](milestones/milestone2/Report_M2.pdf).
-
-The final process book can be found [here](milestones/milestone3/ProcessBook.pdf).
-
-
-## Running the Project Locally
-
-To clone the repository:
-```bash
-git clone https://github.com/com-480-data-visualization/DataRizz.git
-```
-To run the website locally:
-```bash
-cd DataRizz/website
-python -m http.server 8080
-```
+- [Milestone 1 report](milestones/milestone1/Milestone1.md).  
+- [Milestone 2 report](milestones/milestone2/Report_M2.pdf).  
+- [Final process book](milestones/milestone3/ProcessBook.pdf).
