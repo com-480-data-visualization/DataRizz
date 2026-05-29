@@ -15,7 +15,7 @@ The Olympic Games are often seen as a symbol of fairness: athletes from all arou
 
 Our project explores how sociocultural, economic, and geopolitical contexts have shaped Olympic participation and success over time. Through a series of interactive visualizations, we investigate how wealth, population, gender representation, politics, and historical events influence the Games.
 
-By combining storytelling with interactive data visualizations, our website reveals the inequalities hidden behind medal counts and Olympic narratives.
+By combining storytelling with interactive data visualizations, our website reveals the inequalities hidden behind medal counts and athelete participation.
 
 We explore the following themes:
 - **Gender Representation**  
@@ -34,7 +34,7 @@ We explore the following themes:
   Comparing medal counts while accounting for GDP and population differences.
 
 
-## Target Audiance
+## Target Audience
 This website is accessible for everybody interested in how inequalities are reflected through the Olympics.  
 Try out our visualisations and have fun on the website !
 
